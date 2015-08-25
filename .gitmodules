@@ -1,0 +1,4 @@
+[submodule "nemea-framework"]
+	path = nemea-framework
+	url = https://github.com/cejkato2/Nemea-Framework
+
