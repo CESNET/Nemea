@@ -16,7 +16,7 @@ building process much more easier.
 
 To clone the read-only repositories, use:
 
-```git clone --recurse https://github.com/CESNET/nemea``
+```git clone --recurse https://github.com/CESNET/nemea```
 
 Libraries from the Nemea framework can be compiled without any special
 dependencies.
@@ -33,8 +33,7 @@ the results of the build process. The important parameters for changing paths ar
   ```--prefix```, ```--libdir```, ```--bindir```, ```--docdir```, ```--sysconfigdir```
 
 The configure script enables silent mode of make(1) by default. To disable this
-feature, please pass the parameter:
-  ```--disable-silent-rules```
+feature, please pass the parameter: ```--disable-silent-rules```
 
 After successful run of the configure script, package should be ready for
 compilation. The compilation can be started by:
