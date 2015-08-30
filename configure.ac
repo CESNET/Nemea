@@ -1,7 +1,7 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.69])
+AC_PREREQ([2.63])
 AC_INIT([nemea], [2.1.0], [traffic-analysis@cesnet.cz])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 
