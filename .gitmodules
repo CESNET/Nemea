@@ -5,3 +5,6 @@
 [submodule "nemea-supervisor"]
 	path = nemea-supervisor
 	url = https://github.com/CESNET/Nemea-Supervisor
+[submodule "modules"]
+	path = modules
+	url = https://github.com/CESNET/Nemea-Modules
