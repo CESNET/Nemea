@@ -1,7 +1,7 @@
 [submodule "nemea-framework"]
 	path = nemea-framework
-	url = https://github.com/cejkato2/Nemea-Framework
+	url = https://github.com/CESNET/Nemea-Framework
 
 [submodule "nemea-supervisor"]
 	path = nemea-supervisor
-	url = https://github.com/svepemar/Nemea-Supervisor
+	url = https://github.com/CESNET/Nemea-Supervisor
