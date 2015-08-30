@@ -1,1 +1,1 @@
-SUBDIRS=nemea-framework
+SUBDIRS=nemea-framework nemea-supervisor
