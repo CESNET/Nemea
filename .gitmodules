@@ -2,3 +2,6 @@
 	path = nemea-framework
 	url = https://github.com/cejkato2/Nemea-Framework
 
+[submodule "nemea-supervisor"]
+	path = nemea-supervisor
+	url = https://github.com/svepemar/Nemea-Supervisor
