@@ -16,5 +16,5 @@ AM_INIT_AUTOMAKE([foreign subdir-objects])
 # Checks for library functions.
 
 AC_CONFIG_FILES([Makefile])
-AC_CONFIG_SUBDIRS([nemea-framework nemea-supervisor])
+AC_CONFIG_SUBDIRS([nemea-framework nemea-supervisor modules detectors])
 AC_OUTPUT

@@ -1,1 +1,1 @@
-SUBDIRS=nemea-framework nemea-supervisor
+SUBDIRS=nemea-framework nemea-supervisor modules detectors
