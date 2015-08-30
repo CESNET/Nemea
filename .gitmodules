@@ -8,3 +8,6 @@
 [submodule "modules"]
 	path = modules
 	url = https://github.com/CESNET/Nemea-Modules
+[submodule "detectors"]
+	path = detectors
+	url = https://github.com/CESNET/Nemea-Detectors
