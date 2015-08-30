@@ -1,6 +1,8 @@
 NEMEA System
 ============
 
+Travis CI build: [![Build Status](https://travis-ci.org/CESNET/Nemea.svg?branch=master)](https://travis-ci.org/CESNET/Nemea)
+
 This file describes the Nemea system in detail. To see more general information,
 please have a look at https://www.liberouter.org/nemea or the CESNET
 technical report 6/2013: V. Bartos, M. Zadnik, T. Cejka: "[Nemea: Framework for stream-wise analysis of network traffic](http://www.cesnet.cz/wp-content/uploads/2014/02/trapnemea.pdf)".
