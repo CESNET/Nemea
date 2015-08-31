@@ -26,5 +26,5 @@ addons:
 
 script:
   - git submodule init; git submodule update
-  - ./bootstrap.sh && ./configure --enable-debug && make clean && make -j5
+  - ./bootstrap.sh && ./configure && make clean && make -j5
 
