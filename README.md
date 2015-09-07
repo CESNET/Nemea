@@ -19,7 +19,7 @@ building process much more easier.
 To clone the read-only repositories, use:
 
 ```
-git clone --recurse https://github.com/CESNET/nemea
+git clone --recursive https://github.com/CESNET/nemea
 ```
 
 Libraries from the Nemea framework can be compiled without any special
