@@ -1,0 +1,27 @@
+<module>
+<name>traffic_repeater</name>
+<enabled>true</enabled>
+<path>/usr/bin/nemea/traffic_repeater</path>
+<params></params>
+<trapinterfaces>
+<interface>
+  <note/>
+  <type>TCP</type>
+  <direction>IN</direction>
+  <params>localhost,7600</params>
+</interface>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>OUT</direction>
+  <params>flow_data_source</params>
+</interface>
+<interface>
+  <note/>
+  <type>SERVICE</type>
+  <direction>SERVICE</direction>
+  <params>service_traffic_repeater</params>
+</interface>
+</trapinterfaces>
+</module>
+

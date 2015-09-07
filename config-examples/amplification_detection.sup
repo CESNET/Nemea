@@ -1,0 +1,48 @@
+<module>
+<name>dns_amplification</name>
+<enabled>true</enabled>
+<path>/usr/bin/nemea/amplification_detection</path>
+<params>-d /data/dns_amplification_detection/</params>
+<trapinterfaces>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>IN</direction>
+  <params>flow_data_source</params>
+</interface>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>OUT</direction>
+  <params>dns_amp_reports</params>
+</interface>
+<interface>
+  <note/>
+  <type>SERVICE</type>
+  <direction>SERVICE</direction>
+  <params>service_dns_amp</params>
+</interface>
+</trapinterfaces>
+</module>
+
+<module>
+<name>dns_amplification_logger</name>
+<enabled>true</enabled>
+<path>/usr/bin/nemea/logger</path>
+<params>-t -T -a /data/dns_amplification_detection/detected.log &lt;AMPLIFICATION_ALERT&gt;</params>
+<trapinterfaces>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>IN</direction>
+  <params>localhost,dns_amp_reports</params>
+</interface>
+<interface>
+  <note/>
+  <type>SERVICE</type>
+  <direction>SERVICE</direction>
+  <params>service_dns_amp_logger</params>
+</interface>
+</trapinterfaces>
+</module>
+

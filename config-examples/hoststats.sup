@@ -1,0 +1,47 @@
+<module>
+<name>hoststatsnemea</name>
+<enabled>true</enabled>
+<path>/usr/bin/nemea/hoststatsnemea</path>
+<params>-c /etc/nemea/hoststats.conf</params>
+<trapinterfaces>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>IN</direction>
+  <params>flow_data_source</params>
+</interface>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>OUT</direction>
+  <params>hs_nemea_reports</params>
+</interface>
+<interface>
+  <note/>
+  <type>SERVICE</type>
+  <direction>SERVICE</direction>
+  <params>service_hs_nemea</params>
+</interface>
+</trapinterfaces>
+</module>
+
+<module>
+<name>hs_nemea_logger</name>
+<enabled>true</enabled>
+<path>/usr/bin/nemea/logger</path>
+<params>-t -T -a /data/hoststatsnemea/detected.log EVENT_TYPE,TIME_FIRST,TIME_LAST,SRC_IP,DST_IP,SRC_PORT,DST_PORT,PROTOCOL,EVENT_SCALE,NOTE</params>
+<trapinterfaces>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>IN</direction>
+  <params>localhost,hs_nemea_reports</params>
+</interface>
+<interface>
+  <note/>
+  <type>SERVICE</type>
+  <direction>SERVICE</direction>
+  <params>service_hs_nemea_logger</params>
+</interface>
+</trapinterfaces>
+</module>
