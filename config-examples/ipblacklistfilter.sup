@@ -1,0 +1,48 @@
+<module>
+<name>ipblacklistfilter</name>
+<enabled>true</enabled>
+<path>/usr/bin/nemea/ipblacklistfilter</path>
+<params>-D</params>
+<trapinterfaces>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>IN</direction>
+  <params>flow_data_source</params>
+</interface>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>OUT</direction>
+  <params>ipblacklistfilter_reports</params>
+</interface>
+<interface>
+  <note/>
+  <type>SERVICE</type>
+  <direction>SERVICE</direction>
+  <params>service_ipblacklistfilter_detector</params>
+</interface>
+</trapinterfaces>
+</module>
+
+<module>
+<name>ipblf_logger</name>
+<enabled>true</enabled>
+<path>/usr/bin/nemea/logger</path>
+<params>-t -T -a /data/ipblacklistfilter/detected.log &lt;COLLECTOR_FLOW&gt;,SRC_BLACKLIST,DST_BLACKLIST,EVENT_SCALE</params>
+<trapinterfaces>
+<interface>
+  <note/>
+  <type>UNIXSOCKET</type>
+  <direction>IN</direction>
+  <params>localhost,ipblacklistfilter_reports</params>
+</interface>
+<interface>
+  <note/>
+  <type>SERVICE</type>
+  <direction>SERVICE</direction>
+  <params>service_ipblacklistfilter_logger</params>
+</interface>
+</trapinterfaces>
+</module>
+
