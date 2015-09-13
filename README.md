@@ -10,7 +10,20 @@ technical report 6/2013: V. Bartos, M. Zadnik, T. Cejka: "[Nemea: Framework for 
 Installation
 ============
 
-TODO: Vagrant installation
+Vagrant
+-------
+
+To try the system "out-of-box", you can use [Vagrant](https://www.vagrantup.com/).
+For more information see vagrant/.
+
+Binary packages
+---------------
+
+The Nemea system can be also installed using binary packages. Information will
+be supplied soon.
+
+Source Codes installation
+-------------------------
 
 The Nemea system consists of the [Nemea framework](cejkato2/Nemea-Framework), Nemea modules (basic and detection) and Nemea Supervisor. The whole system
 is based on GNU/Autotools build system that makes dependency checking and
@@ -22,27 +35,20 @@ To clone the read-only repositories, use:
 git clone --recursive https://github.com/CESNET/nemea
 ```
 
-Libraries from the Nemea framework can be compiled without any special
-dependencies.
+After successful clone, use:
+```
+./bootstrap.sh
+```
+that will create `configure` scripts and other needed files.
 
-The first step in compilation from the Nemea distribution package is the
-execution of `configure` script. The script supplies various possibilities of
+The `configure` script supplies various possibilities of
 configuration and uses some environmental variables that influence the build
-and compilation process. The list of supported settings with the description
-of environmental variables are available by the help of configure script, see:
+and compilation process. For more information see:
 ```
 ./configure --help
 ```
 
-The configure script allows users to set target paths for installation of
-the results of the build process. The important parameters for changing paths are:
-  ```--prefix```, ```--libdir```, ```--bindir```, ```--docdir```, ```--sysconfigdir```
-
-The configure script enables silent mode of make(1) by default. To disable this
-feature, please pass the parameter: ```--disable-silent-rules```
-
-After successful run of the configure script, package should be ready for
-compilation. The compilation can be started by:
+Build process can be started by:
 
 ```
 make
@@ -52,9 +58,9 @@ The make(1) tool has various parameters, to build the Nemea package faster on
 multicore systems, we recommend to use parameter -j with the number of jobs
 that should be run in parallel.
 
-When compilation ends without any error, the package can be installed into paths
-that were set during configuration. It is recommended NOT to change target paths
-by passing variables to make(1).
+When the compilation process ends without any error, the package can be installed
+into paths that were set by `configure`. It is recommended NOT to change
+target paths by passing variables to make(1).
 The installation can be done by (usually it requires root / sudo):
 
 ```
@@ -134,7 +140,7 @@ nfdump_reader -i "u:HS_src" /data/0601/nfcapd.0000 /data/0601/nfcapd.0005
   hoststatsnemea -i u:HS_an,u:HS_report -F
   logger -i "u:HS_report"
 ```
-    
+
 note: In hoststatsnemea configuration file should be "port-flowdir = 1".
 
 Example of configuration file for UniRec plugin for IPFIXcol:
@@ -180,55 +186,7 @@ TODO: update if needed
 Manage Nemea modules efficiently
 ================================
 
-TODO: link to separate supervisor repository
-
-The Nemea system contains a module called Supervisor. This module allows user
-to configure and monitor Nemea modules. User specifies modules in XML configuration
-file, which is input for the Supervisor.
-
-Example configuration of one module called flowcounter:
-
-```
-<module>
-  <enabled>false</enabled>
-  <params></params>
-  <name>flowcounter</name>
-  <path>../modules/flowcounter/flowcounter</path>
-  <trapinterfaces>
-    <interface>
-      <note></note>
-      <type>TCP</type>
-      <direction>IN</direction>
-      <params>localhost:8004</params>
-    </interface>
-  </trapinterfaces>
-</module>
-```
-
-Every module contains unique name, path to binary file, parameters, enabled flag
-and trap interfaces. Enabled flag tells Supervisor to run or not to run module after
-startup. Every trap interface is specified by type (TCP, unixsocket or service),
-direction (in or out), parameters (output interface: address + port; input
-interface: port + number of clients) and optional note.
-
-User can do various operations with modules via Supervisor:
- - start or stop all modules,
- - start or stop one module,
- - display modules status,
- - display loaded configuration,
- - reload configuration (initial XML file or another XML file).
-
-Supervisor monitors the status of all modules and if needed, modules are auto-restarted.
-Every module can be run with special "service" interface, which allows Supervisor to get
-statistics about sent and received messages from module.
-Another monitored event is CPU usage of every module.
-These events are periodically monitored.
-
-Supervisor also provides logs with different types of output:
- logs#1 - stdout and stderr of every started module
- logs#2 - supervisor output - this includes modules events (start, stop, restart,
-          connecting to module, errors etc.) and in different output file statistics
-          about messages and CPU usage.
-
-To get more information about Supervisor, read nemea/supervisor/README.
+The Nemea system can be managed and monitored by a special module called
+[Supervisor](https://github.com/CESNET/Nemea-Supervisor).
+For examples and more information see its README.
 

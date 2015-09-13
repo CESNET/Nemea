@@ -1,0 +1,99 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+#yum update -y
+$bootstrap_linux = <<SCRIPT
+rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+
+yum install -y autoconf automake gcc gcc-g++ libtool libxml2-devel m4 make \
+openssl libssl-devel pkg-config libxslt-devel \
+libcurl4-openssl-dev xsltproc git curl-devel \
+libxml2-python libxslt-python doxygen munin munin-node \
+httpd bison flex
+
+wget -q http://downloads.sourceforge.net/project/libnfdump/libnfdump-0.1.1.tar.gz && tar -xf libnfdump-0.1.1.tar.gz
+cd libnfdump-0.1.1
+./configure  --prefix=/usr --libdir=/usr/lib64 -q && make V=0 install
+cd ..
+rm -rf libnfdump-0.1.1*
+yum clean all
+
+SCRIPT
+
+$install_nemea = <<SCRIPT
+cd /root/
+git clone --recursive --depth 10 https://github.com/CESNET/nemea
+cd nemea
+./bootstrap.sh&&./configure --prefix=/usr --bindir=/usr/bin/nemea --sysconfdir=/etc/nemea --libdir=/usr/lib64 -q&&make -j5 install
+ldconfig
+mkdir -p /var/log/nemea-supervisor
+echo "export PATH=\$PATH:/usr/bin/nemea/" > /etc/profile.d/nemea.sh
+SCRIPT
+
+$run_supervisor = <<SCRIPT
+cd /root/nemea/config-examples
+./prepare_default_config.sh
+cp supervisor_config.xml /etc/nemea/
+service nemea-supervisor restart
+chkconfig nemea-supervisor on
+SCRIPT
+
+$run_munin = <<SCRIPT
+cat > /etc/httpd/conf.d/munin.conf <<SCRIPT2
+<Directory /var/www/html/munin/>
+Order Allow,Deny
+Allow from all
+</Directory>
+SCRIPT2
+ln -s /usr/share/munin/plugins/nemea_supervisor /etc/munin/plugins/
+service httpd restart
+service munin-node start
+chkconfig munin-node on
+chkconfig httpd on
+SCRIPT
+
+$run_netopeer = <<SCRIPT
+cat > /var/lib/libnetconf/datastore-acm.xml <<SCRIPT2
+<?xml version="1.0" encoding="UTF-8"?>
+<datastores xmlns="urn:cesnet:tmc:datastores:file">
+<running lock="">
+<nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+<enable-nacm>false</enable-nacm>
+</nacm>
+</running>
+<startup lock="">
+<nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+<enable-nacm>false</enable-nacm>
+</nacm>
+</startup>
+<candidate modified="false" lock=""/>
+</datastores>
+SCRIPT2
+
+service netopeer.rc start
+chkconfig netopeer.rc on
+SCRIPT
+
+$run_iptables = <<SCRIPT
+iptables -I INPUT 2 -p TCP --dport 830 -j ACCEPT
+iptables -I INPUT 2 -p TCP --dport 80 -j ACCEPT
+SCRIPT
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.define "Nemea-Demo" do |nemeademo|
+     nemeademo.vm.box = "cesnet/nemea-2-1-0"
+
+     # If private network is needed due to communication with other VMs:
+     #nemeademo.vm.network "private_network", :type => 'dhcp'
+
+     # Already installed in the nemea-2-1-0 box -> skip:
+     nemeademo.vm.provision :shell, inline: $install_nemea
+     nemeademo.vm.provision :shell, inline: $run_supervisor
+     nemeademo.vm.provision :shell, inline: $run_munin
+     nemeademo.vm.provision :shell, inline: $run_iptables
+  end
+end
+
