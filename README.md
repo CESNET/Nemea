@@ -71,117 +71,58 @@ Congratulations, the whole Nemea system should be installed right now... :-)
 Quick Start Guide
 =================
 
-TODO: add logreplay and logger, since nfreader requires additional
-dependency.
-
-This section shows how to manually start Nemea modules. Module description and
-specific parameters could be shown by running module with parameter "-h":
-```
-nfdump_reader -h
+The heart of the Nemea system is a Nemea module. Nemea modules are building blocks - independent system processes
+that can be connected with each other. Information about every module can be found in its help:
+````
+./module -h
 ```
 
-There are two possible data inputs for Nemea modules:
-  a) from nfdump file (static data)
-  b) from [IPFIXcol](https://github.com/CESNET/ipfixcol/) with UniRec plugin
-     (real-time data).
+Every Nemea module can have one or more communication interfaces (IFC) implemented in
+[libtrap](./nemea-framework/libtrap). There are two types of IFCs: **input** and **output**. Numbers of module's IFCs
+can be found in its help.
 
-a) Data from nfdump files could be read and sent to Nemea by "nfdump_reader"
-module. Following command will send records from file "nfcapd.201406001" to TCP
-interface on port 9988 in UniRec format:
+At the beginning, let's try the `logreplay` module ([./modules/logreplay](./modules/logreplay)).
+The help output shows that `logreplay` has one output IFC:
 ```
-nfdump_reader -i t:9988 /data/nfcapd.201406001
-```
-
-Another module then could capture and process this data, e.g. DNS amplification
-detector:
-```
-dns_amplification -i t:localhost:9988,u:DNS_amp
-```
-  
-After executing both commands, DNS amplification detection on data from given
-file will be done. Possible attacks will be reported on Unix socket "DNS_amp".
-
-b) Real-time data from IPFIXcol could be provided to Nemea also. First run
-IPFIXcol, e.g.:
-```
-ipfixcol -d -c /data/configs/startup.xml
+Name: LogReplay
+Inputs: 0
+Outputs: 1
+Description:
+  This module converts CSV from logger and sends it in UniRec. The first row
+  of CSV file has to be data format of fields.
 ```
 
-File `startup.xml` should contains configuration for IPFIXcol plugin, among
-others there will be settings for output UniRec format and output interface.
-Example of such configuration file for UniRec plugin is at the end of this
-section. Command for running Nemea module with input from IPFIXcol (e.g. on TCP
-port 9966) remains same as with input from `nfdump_reader`:
+The complement module is `logger` ([./modules/logger](./modules/logger)), help output:
 ```
-dns_amplification -i t:localhost:9966,u:RT_DNS_amp
-```
-  
-Another examples of starting Nemea modules follows:
-ex1) This example starts two `nfdump_readers` on two different files. Records
-from both files are then merged into one stream and sent on TCP interface,
-port 9920:
-
-```
-nfdump_reader -i "t:9911" /data/link1/nfcapd.201406001
-nfdump_reader -i "t:9912" /data/link2/nfcapd.201406001
-merger -i t:localhost:9911,t:localhost:9912,t:9920 -n 2
+Name: Logger
+Inputs: variable
+Outputs: 0
+Description:
+  This module logs all incoming UniRec records to standard output or into a
+  specified file. Each record is written as one line containing values of its
+  fields in human-readable format separated by chosen delimiters (CSV format).
+  If you use more than one input interface you have to specify output format
+  by parameter "-o".
 ```
 
-ex2) This more complex example start one "nfdump_reader" on multiple files. All
-files are read sequentially and sent on output interface. Data from
-"nfdump_reader" are then anonymized and sent to "hoststatsnemea" detector and
-to "flowcounter". Reports from detector are then stored to CSV file via
-"logger":
+Two modules can be interconnected using one input IFC and one output IFC.
+
+The [./use-cases](./use-cases) directory contains example scripts that demonstrate usage and functionality of
+Nemea modules. `logreplay` and `logger` can be found in [logger-repeater.sh](./use-cases/logger-repeater.sh).
+Start the script to see how flow records are replayed from CSV file by `logreplay` and received by `logger`:
 ```
-nfdump_reader -i "u:HS_src" /data/0601/nfcapd.0000 /data/0601/nfcapd.0005
-    /data/0601/nfcapd.0010 /data/0601/nfcapd.0015
-  anonymizer -i u:localhost:HS_src,u:HS_an -k 0AnonymizationKeyWithLengthof32B
-  flowcounter -i u:localhost:HS_an -p 100000
-  hoststatsnemea -i u:HS_an,u:HS_report -F
-  logger -i "u:HS_report"
+cd use-cases
+./logger-repeater.sh generate
 ```
 
-note: In hoststatsnemea configuration file should be "port-flowdir = 1".
+To get usage of scripts from `use-cases`, execute a script without parameter. The `generate` parameter of
+`logger-repeater.sh` can be used to generate CSV file automatically. For more information, see source codes of
+scripts.
 
-Example of configuration file for UniRec plugin for IPFIXcol:
-
-TODO: update if needed
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<ipfix xmlns="urn:ietf:params:xml:ns:yang:ietf-ipfix-psamp">
-
-  <collectingProcess>
-    <name>UDP collector</name>
-    <udpCollector>
-      <name>Listening port 4740</name>
-      <localPort>4740</localPort>
-      <localIPAddress></localIPAddress>
-    </udpCollector>
-    <exportingProcess>UniRec output</exportingProcess>
-  </collectingProcess>
-
-  <exportingProcess>
-    <name>UniRec output</name>
-    <destination>
-      <name>Make unirec from the flow data</name>
-      <fileWriter>
-        <fileFormat>unirec</fileFormat>
-        <!-- Default interface -->
-        <interface>
-          <type>t</type>
-          <params>9966,16</params>
-          <ifcTimeout>0</ifcTimeout>
-          <flushTimeout>10000000</flushTimeout>
-          <bufferSwitch>1</bufferSwitch>
-          <format>DST_IP,SRC_IP,BYTES,LINK_BIT_FIELD,TIME_FIRST,TIME_LAST,
-		    PACKETS,?DST_PORT,?SRC_PORT,DIR_BIT_FIELD,PROTOCOL,?TCP_FLAGS</format>
-        </interface>
-      </fileWriter>
-    </destination>
-  </exportingProcess>
-</ipfix>
-```
+`logreplay` is one of possible ways of getting data into the Nemea system.
+There is a [nfreader](./modules/nfreader) module that is able to read and replay `nfdump` files.
+Last but not least, there is an [ipfixcol(]https://github.com/CESNET/ipfixcol/) with [ipfixcol2unirec](https://github.com/CESNET/ipfixcol/tree/master/plugins/storage/unirec)
+that is capable of exporting flow data in UniRec format and send it via libtrap IFC.
 
 Manage Nemea modules efficiently
 ================================
