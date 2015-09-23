@@ -50,7 +50,7 @@ fi
 if [ "$1" = "generate" ]; then
   file=`mktemp`
   cat > $file <<KONEC
-SRC_IP,DST_IP,SRC_PORT,DST_PORT
+ipaddr DST_IP,ipaddr SRC_IP,uint16 SRC_PORT,uint16 DST_PORT
 192.168.0.1,192.168.0.2,1234,80
 192.168.0.2,192.168.0.1,80,1234
 1.2.3.4,8.8.8.8,6853,53
