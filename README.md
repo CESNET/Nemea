@@ -3,11 +3,15 @@ NEMEA System
 
 Travis CI build: [![Build Status](https://travis-ci.org/CESNET/Nemea.svg?branch=master)](https://travis-ci.org/CESNET/Nemea)
 
-This file describes the Nemea system in detail. To see more general information,
-please have a look at https://www.liberouter.org/nemea.
+This file describes the installation and basic usage of the Nemea system.
+To see more general information, please have a look at
+https://www.liberouter.org/nemea.
 
 Installation
 ============
+
+There are three different ways of installation of the Nemea system covered
+in this document: vagrant, binary packages and spurce codes.
 
 Vagrant
 -------
@@ -18,7 +22,7 @@ For more information see [./vagrant/](./vagrant/).
 Binary packages
 ---------------
 
-The Nemea system can be also installed using binary packages. Information will
+The Nemea system can be installed from binary packages. Information will
 be supplied soon.
 
 Source Codes installation
@@ -41,13 +45,18 @@ After successful clone, use:
 that will create `configure` scripts and other needed files.
 
 The `configure` script supplies various possibilities of
-configuration and uses some environmental variables that influence the build
+configuration and it uses some environmental variables that influence the build
 and compilation process. For more information see:
 ```
 ./configure --help
 ```
 
-Build process can be started by:
+We recommend to set paths according to the used operating system e.g.:
+```
+./configure --prefix=/usr --bindir=/usr/bin/nemea --sysconfdir=/etc/nemea --libdir=/usr/lib64
+```
+
+After finishing `./configure`, build process can be started by:
 
 ```
 make
@@ -59,7 +68,7 @@ that should be run in parallel.
 
 When the compilation process ends without any error, the package can be installed
 into paths that were set by `configure`. It is recommended NOT to change
-target paths by passing variables to make(1).
+target paths by passing variables directly to make(1).
 The installation can be done by (usually it requires root / sudo):
 
 ```
@@ -121,8 +130,8 @@ scripts.
 
 `logreplay` is one of possible ways of getting data into the Nemea system.
 There is a [nfreader](./modules/nfreader) module that is able to read and replay `nfdump` files.
-Last but not least, there is an [ipfixcol(]https://github.com/CESNET/ipfixcol/) with [ipfixcol2unirec](https://github.com/CESNET/ipfixcol/tree/master/plugins/storage/unirec)
-that is capable of exporting flow data in UniRec format and send it via libtrap IFC.
+Last but not least, there is an [ipfixcol](https://github.com/CESNET/ipfixcol/) with [ipfixcol2unirec](https://github.com/CESNET/ipfixcol/tree/master/plugins/storage/unirec)
+that is capable of exporting flow data in UniRec format and sending it via libtrap IFC.
 
 Manage Nemea modules efficiently
 ================================
