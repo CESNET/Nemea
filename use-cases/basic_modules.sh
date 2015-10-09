@@ -37,13 +37,13 @@
 
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
   printf " Usage:
-  \t\"$0 netflow_input_file\"
+  \t\"$0 nfdump_file\"
   \tor
   \t\"$0 default\" default input file with 6000 flows is used
 
  This script shows connection of the basic Nemea modules
  (nfreader, merger, logger, logreplay and flowcounter). Three nfreader
- modules read netflow data from input file (specified by program argument)
+ modules read netflow data from nfdump file (specified by program argument)
  and send them in unirec format to merger module which sends incoming
  data from all input interfaces to one output interface. The data from merger
  are stored into csv file by logger module. The csv file can be read by logreplay
@@ -52,22 +52,25 @@ if [ $# -eq 0 ] || [ $# -gt 1 ]; then
  number of flows from nfreader input file x 3).
 
  Step 1:
-                     ----------
-  netflow_file ---> | nfreader | ----------
-                     ----------           |
+                    +----------+
+   nfdump_file ---> | nfreader |-----------
+                    +----------+          |
                                           v
-                     ----------        --------        --------
-  netflow_file ---> | nfreader | ---> | merger | ---> | logger | ---> file.csv
-                     ----------        --------        --------
+                    +----------+      +--------+      +--------+
+   nfdump_file ---> | nfreader |----> | merger |----> | logger |---> file.csv
+                    +----------+      +--------+      +--------+
                                           ^
-                     ----------           |
-  netflow_file ---> | nfreader | ----------
-                     ----------
+                    +----------+          |
+   nfdump_file ---> | nfreader |-----------
+                    +----------+
 
  Step 2:
-                 -----------        -------------
-  file.csv ---> | logreplay | ---> | flowcounter | ---> Result (number of flows)
-                 -----------        -------------\n"
+                +-----------+     +-------------+
+  file.csv ---> | logreplay |---> | flowcounter |---> Result (number of flows)
+                +-----------+     +-------------+
+
+ Note: To run this script, ../modules/ repository has to be compiled.
+       \"libnf\" or \"libnfdump\" library is need for nfreader compilation.\n"
 
   exit 0
 fi
