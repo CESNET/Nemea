@@ -1,1 +1,1 @@
-EXTRA_DIST=traffic-filtering-stats.sh logger-repeater.sh flow_meter.sh
+EXTRA_DIST=traffic-filtering-stats.sh logger-repeater.sh flow_meter.sh basic_modules.sh
