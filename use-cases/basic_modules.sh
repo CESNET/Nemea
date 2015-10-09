@@ -35,34 +35,55 @@
 # if advised of the possibility of such damage.
 #
 
+if [ $# -eq 0 ] || [ $# -gt 1 ]; then
+  printf " Usage:
+  \t\"$0 netflow_input_file\"
+  \tor
+  \t\"$0 default\" default input file with 6000 flows is used
 
-# This script shows connection of the basic Nemea modules
-# (nfreader, merger, logger, logreplay and flowcounter). Three nfreader
-# modules read netflow data from input file and send them in unirec format
-# to merger module which sends incoming data from all input interfaces
-# to one output interface. The data are stored into csv file by logger module.
-# The csv file can be read by logreplay module which sends them again
-# in unirec format to flowcounter module. Result of this module is number
-# of received flows (it should be number of flows from nfreader input file x 3).
+ This script shows connection of the basic Nemea modules
+ (nfreader, merger, logger, logreplay and flowcounter). Three nfreader
+ modules read netflow data from input file (specified by program argument)
+ and send them in unirec format to merger module which sends incoming
+ data from all input interfaces to one output interface. The data from merger
+ are stored into csv file by logger module. The csv file can be read by logreplay
+ module which sends them again in unirec format to flowcounter module.
+ Result of this module is number of received flows (it should be
+ number of flows from nfreader input file x 3).
 
-#                     ----------
-#  netflow.data ---> | nfreader | ----------
-#                     ----------           |
-#                                          v
-#                     ----------        --------        --------
-#  netflow.data ---> | nfreader | ---> | merger | ---> | logger | ---> file.csv
-#                     ----------        --------        --------
-#                                          ^
-#                     ----------           |
-#  netflow.data ---> | nfreader | ----------
-#                     ----------
+ Step 1:
+                     ----------
+  netflow_file ---> | nfreader | ----------
+                     ----------           |
+                                          v
+                     ----------        --------        --------
+  netflow_file ---> | nfreader | ---> | merger | ---> | logger | ---> file.csv
+                     ----------        --------        --------
+                                          ^
+                     ----------           |
+  netflow_file ---> | nfreader | ----------
+                     ----------
 
-#                 -----------        -------------
-#  file.csv ---> | logreplay | ---> | flowcounter | ---> Result (number of flows)
-#                 -----------        -------------
+ Step 2:
+                 -----------        -------------
+  file.csv ---> | logreplay | ---> | flowcounter | ---> Result (number of flows)
+                 -----------        -------------\n"
 
-# Input file for nfreader modules (netflow data)
-INPUT_FILE="./nfcap_6000_gener_flows.dat"
+  exit 0
+fi
+
+# INPUT_FILE - Input file for nfreader modules (netflow data)
+if [ "$1" = "default" ]; then
+  INPUT_FILE="./nfcap_6000_gener_flows.dat"
+else
+  INPUT_FILE="$1"
+fi
+
+if [ ! -r "$INPUT_FILE" ]; then
+  echo "Input file \"$INPUT_FILE\" cannot be opened. Exiting..."
+  exit 1
+fi
+
 # Logger output file (csv format)
 LOGGER_OUTPUT_FILE="./logger_test_out"
 
@@ -78,4 +99,4 @@ printf ">>> Starting logreplay and flowcounter...\n>Flowcounter received:\n"
 ../modules/flowcounter/flowcounter -i u:logrep_test_out
 
 # Cleanup
-rm -f ./logger_test_out
+rm -f $LOGGER_OUTPUT_FILE
