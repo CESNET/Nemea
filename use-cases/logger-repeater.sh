@@ -67,7 +67,7 @@ fi
 # Start replaying
 ../modules/logreplay/logreplay -i "u:my_socket" -f "$file"&
 
-../modules/logger/logger -i "u:my_socket" -t `head -1 "$file"`
+../modules/logger/logger -i "u:my_socket" -t
 
 # Cleanup
 if [ "$1" = "generate" ]; then
