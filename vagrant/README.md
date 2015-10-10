@@ -26,7 +26,7 @@ For installation of Fedora 22 Cloud, rename `Vagrantfile.Fedora22` to `Vagrantfi
 and use the following command to get Vagrant box:
 
 ```
-vagrant box add fedora22 https://download.fedoraproject.org/pub/fedora/linux/releases/22/Cloud/x86_64/Images/Fedora-Cloud-Base-Vagrant-22-20150521.x86_64.vagrant-virtualbox.box
+vagrant box add fedora22-cloud https://download.fedoraproject.org/pub/fedora/linux/releases/22/Cloud/x86_64/Images/Fedora-Cloud-Base-Vagrant-22-20150521.x86_64.vagrant-virtualbox.box
 ```
 
 Scientific Linux
