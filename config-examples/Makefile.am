@@ -16,5 +16,5 @@ supervisor_config.xml:
 	./prepare_default_config.sh configonly
 
 clean-local:
-	@rm ${BUILT_SOURCES}
+	@rm -f ${BUILT_SOURCES}
 
