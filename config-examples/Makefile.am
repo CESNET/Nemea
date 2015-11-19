@@ -10,3 +10,11 @@ EXTRA_DIST=amplification_detection.mkdir \
 	   supervisor.mkdir \
 	   traffic_repeater.sup
 
+BUILT_SOURCES=supervisor_config.xml
+
+supervisor_config.xml:
+	./prepare_default_config.sh configonly
+
+clean-local:
+	@rm ${BUILT_SOURCES}
+

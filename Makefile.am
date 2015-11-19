@@ -1,4 +1,4 @@
-SUBDIRS=nemea-framework nemea-supervisor modules detectors
+SUBDIRS=nemea-framework nemea-supervisor modules detectors config-examples
 
 # because of supervisor, disable systemd checking and installation during
 # distcheck

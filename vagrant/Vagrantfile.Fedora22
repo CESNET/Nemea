@@ -31,7 +31,7 @@ SCRIPT
 
 $run_supervisor = <<SCRIPT
 cd /root/nemea/config-examples
-./prepare_default_config.sh
+./prepare_default_config.sh install
 cp supervisor_config.xml /etc/nemea/
 systemctl enable nemea-supervisor
 service nemea-supervisor start
