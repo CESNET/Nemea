@@ -5,6 +5,17 @@ AC_PREREQ([2.63])
 AC_INIT([nemea], [2.1.0], [traffic-analysis@cesnet.cz])
 AM_INIT_AUTOMAKE([foreign subdir-objects])
 
+AC_MSG_CHECKING([network interface name])
+ifcs="`netstat -i`";
+NIC_NAME=`grep -q eth0 <<<"$ifcs" && echo "eth0" ||
+          grep -q enp0s25 <<<"$ifcs" && echo "enp0s25"`
+if [[ -n "$NIC_NAME" ]]; then
+    AC_MSG_RESULT([$NIC_NAME])
+    AC_SUBST([NIC_NAME])
+else
+    AC_MSG_RESULT([not found])
+fi
+
 # Checks for programs.
 
 # Checks for libraries.
@@ -15,6 +26,6 @@ AM_INIT_AUTOMAKE([foreign subdir-objects])
 
 # Checks for library functions.
 
-AC_CONFIG_FILES([Makefile config-examples/Makefile])
+AC_CONFIG_FILES([Makefile config-examples/Makefile config-examples/flow_meter.sup])
 AC_CONFIG_SUBDIRS([nemea-framework nemea-supervisor modules detectors])
 AC_OUTPUT
