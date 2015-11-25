@@ -29,13 +29,13 @@
 <name>hs_nemea_logger</name>
 <enabled>true</enabled>
 <path>/usr/bin/nemea/logger</path>
-<params>-t -T -a /data/hoststatsnemea/detected.log EVENT_TYPE,TIME_FIRST,TIME_LAST,SRC_IP,DST_IP,SRC_PORT,DST_PORT,PROTOCOL,EVENT_SCALE,NOTE</params>
+<params>-t -T -a /data/hoststatsnemea/detected.log</params>
 <trapinterfaces>
 <interface>
   <note/>
   <type>UNIXSOCKET</type>
   <direction>IN</direction>
-  <params>localhost,hs_nemea_reports</params>
+  <params>hs_nemea_reports</params>
 </interface>
 <interface>
   <note/>
