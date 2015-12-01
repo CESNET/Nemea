@@ -10,7 +10,7 @@ echo "This script expects one argument: 'configonly' or 'install'.
 
 Note: root permissions are probably needed for 'install'"
 
-if [ "$1" == "configonly" -o "$1" == "install" ]; then
+if [ "$1" = "configonly" -o "$1" = "install" ]; then
 	cat > "$conffile" <<END
 <?xml version="1.0"?>
 <nemea-supervisor>
@@ -38,7 +38,7 @@ END
 fi
 
 # creation of needed directories and permissions setup
-if [ "$1" == "install" ]; then
+if [ "$1" = "install" ]; then
 	for f in *.mkdir; do
 		for d in `cat "$f"`; do
 			mkdir -p "$d"
