@@ -138,7 +138,23 @@ Manage Nemea modules efficiently
 
 The Nemea system can be managed and monitored by a special module called
 [Supervisor](https://github.com/CESNET/Nemea-Supervisor).
-For examples and more information see its README.
+
+Some modules that are contained in Nemea-Modules and Nemea-Detectors provide their default configuration in [config-examples/](./config-examples).
+To use prepared configuration, run `make` in `config-examples` and start:
+```
+nemea-supervisor/supervisor -f config-examples/supervisor_config.xml
+```
+To start `supervisor` in an interactive mode, use `-d`
+
+Some modules need a created directory for data or logs. As it is described in [config-examples/README.md](./config-examples/README.md), the directories might be created by `prepare-default-config.sh`:
+```
+cd config-examples
+./prepare-default-config.sh install
+```
+
+Note: It is totally up to user whether to use `config-examples` or not. It is just an example of working configuration.
+
+For more information about Supervisor see its README.
 
 Nemea Related Publications
 ==========================
