@@ -16,17 +16,11 @@
   <direction>OUT</direction>
   <params>hs_nemea_reports</params>
 </interface>
-<interface>
-  <note/>
-  <type>SERVICE</type>
-  <direction>SERVICE</direction>
-  <params>service_hs_nemea</params>
-</interface>
 </trapinterfaces>
 </module>
 
 <module>
-<name>hs_nemea_logger</name>
+<name>hoststatsnemea_logger</name>
 <enabled>true</enabled>
 <path>/usr/bin/nemea/logger</path>
 <params>-t -T -a /data/hoststatsnemea/detected.log</params>
@@ -36,12 +30,6 @@
   <type>UNIXSOCKET</type>
   <direction>IN</direction>
   <params>hs_nemea_reports</params>
-</interface>
-<interface>
-  <note/>
-  <type>SERVICE</type>
-  <direction>SERVICE</direction>
-  <params>service_hs_nemea_logger</params>
 </interface>
 </trapinterfaces>
 </module>

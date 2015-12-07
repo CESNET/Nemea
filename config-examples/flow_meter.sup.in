@@ -8,13 +8,7 @@
   <note/>
   <type>UNIXSOCKET</type>
   <direction>OUT</direction>
-  <params>flow_meter</params>
-</interface>
-<interface>
-  <note/>
-  <type>SERVICE</type>
-  <direction>SERVICE</direction>
-  <params>service_flow_meter</params>
+  <params>flow_data_source</params>
 </interface>
 </trapinterfaces>
 </module>
@@ -30,12 +24,6 @@
   <type>UNIXSOCKET</type>
   <direction>IN</direction>
   <params>flow_meter</params>
-</interface>
-<interface>
-  <note/>
-  <type>SERVICE</type>
-  <direction>SERVICE</direction>
-  <params>service_flow_meter_logger</params>
 </interface>
 </trapinterfaces>
 </module>
