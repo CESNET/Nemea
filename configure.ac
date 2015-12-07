@@ -8,7 +8,7 @@ AM_INIT_AUTOMAKE([foreign subdir-objects])
 AC_MSG_CHECKING([network interface name])
 
 # get IFC of default gateway
-NIC_NAME=`route -n | sed -n '/^0\.0\.0\.0/ s/.*\s\([a-zA-Z0-9]\)/\1/p'`
+NIC_NAME=$(route -n | awk '/^0\.0\.0\.0/ {print $NF}')
 
 if [[ -n "$NIC_NAME" ]]; then
     AC_MSG_RESULT([$NIC_NAME])
