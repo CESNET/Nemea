@@ -1,5 +1,5 @@
 <module>
-<name>hoststatsnemea</name>
+<name>flow_meter</name>
 <enabled>false</enabled>
 <path>/usr/bin/nemea/flow_meter</path>
 <params>-I @NIC_NAME@</params>
