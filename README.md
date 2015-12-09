@@ -10,6 +10,8 @@ https://www.liberouter.org/nemea.
 Installation
 ============
 
+For the list of dependencies, please have a look into [dependencies.md](./dependencies.md).
+
 There are three different ways of installation of the Nemea system covered
 in this document: vagrant, binary packages and spurce codes.
 
