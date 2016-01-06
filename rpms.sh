@@ -73,37 +73,37 @@ export chuser
    (
       cd libtrap
       su $chuser -p -c "$topdir/generate-rpm.sh"
-      $pkginst install -y -q RPM*/RPMS/*/*
+      $pkginst install -y -q ./RPM*/RPMS/*/*
    )
    (
       cd common
       su $chuser -p -c "$topdir/generate-rpm.sh"
-      $pkginst install -y -q RPM*/RPMS/*/*
+      $pkginst install -y -q ./RPM*/RPMS/*/*
    )
    (
       cd unirec
       su $chuser -p -c "$topdir/generate-rpm.sh"
-      $pkginst install -y -q RPM*/RPMS/*/*
+      $pkginst install -y -q ./RPM*/RPMS/*/*
    )
    (
       cd python
       su $chuser -p -c "$topdir/generate-rpm.sh"
-      $pkginst install -y -q RPM*/RPMS/*/*
+      $pkginst install -y -q ./RPM*/RPMS/*/*
    )
 )
 (
    cd modules
    su $chuser -p -c "$topdir/generate-rpm.sh"
-   $pkginst install -y -q RPM*/RPMS/*/*
+   $pkginst install -y -q ./RPM*/RPMS/*/*
 )
 (
    cd detectors
    su $chuser -p -c "$topdir/generate-rpm.sh"
-   $pkginst install -y -q RPM*/RPMS/*/*
+   $pkginst install -y -q ./RPM*/RPMS/*/*
 )
 (
    cd nemea-supervisor
    su $chuser -p -c "$topdir/generate-rpm.sh"
-   $pkginst install -y -q RPM*/RPMS/*/*
+   $pkginst install -y -q ./RPM*/RPMS/*/*
 )
 
