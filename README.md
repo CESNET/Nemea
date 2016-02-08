@@ -30,7 +30,7 @@ be supplied soon.
 Source Codes installation
 -------------------------
 
-The Nemea system consists of the [Nemea framework](cejkato2/Nemea-Framework), Nemea modules (basic and detection) and Nemea Supervisor. The whole system
+The Nemea system consists of the [Nemea framework](CESNET/Nemea-Framework), [Nemea modules](CESNET/Nemea-Modules), [Nemea detectors](CESNET/Nemea-Detectors) and [Nemea Supervisor](CESNET/Nemea-Supervisor). The whole system
 is based on GNU/Autotools build system that makes dependency checking and
 building process much more easier.
 
