@@ -3,6 +3,12 @@ NEMEA System
 
 Travis CI build: [![Build Status](https://travis-ci.org/CESNET/Nemea.svg?branch=master)](https://travis-ci.org/CESNET/Nemea)
 
+The Nemea system consists of:
+* [Nemea framework](https://github.com/CESNET/Nemea-Framework): The heart of the system that provides interconnection of modules, data format (and its handling) and common functions, algorithms and data structures.
+* [Nemea modules](https://github.com/CESNET/Nemea-Modules): Base modules of the system for export&storage of flow data, replay of stored flow data, filtering, merging, and others. It also contains a basic flow exporter capable of L7 information. 
+* [Nemea detectors](https://github.com/CESNET/Nemea-Detectors): Detection modules that can detect and report various types of malicious traffic such as DoS, DDoS, scanning, bruteforce attacks.
+* [Nemea Supervisor](https://github.com/CESNET/Nemea-Supervisor): Central management and monitoring module of the Nemea system. It takes care of running modules according to configuration.
+
 This file describes the installation and basic usage of the Nemea system.
 To see more general information, please have a look at
 https://www.liberouter.org/nemea.
@@ -30,8 +36,7 @@ be supplied soon.
 Source Codes installation
 -------------------------
 
-The Nemea system consists of the [Nemea framework](https://github.com/CESNET/Nemea-Framework), [Nemea modules](https://github.com/CESNET/Nemea-Modules), [Nemea detectors](https://github.com/CESNET/Nemea-Detectors) and [Nemea Supervisor](https://github.com/CESNET/Nemea-Supervisor). The whole system
-is based on GNU/Autotools build system that makes dependency checking and
+The whole system is based on GNU/Autotools build system that makes dependency checking and
 building process much more easier.
 
 To clone the read-only repositories, use:
