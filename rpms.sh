@@ -73,37 +73,48 @@ export chuser
    (
       cd libtrap
       su $chuser -p -c "$topdir/generate-rpm.sh"
-      $pkginst install -y -q ./RPM*/RPMS/*/*
+      $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
    (
       cd common
       su $chuser -p -c "$topdir/generate-rpm.sh"
-      $pkginst install -y -q ./RPM*/RPMS/*/*
+      $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
    (
       cd unirec
       su $chuser -p -c "$topdir/generate-rpm.sh"
-      $pkginst install -y -q ./RPM*/RPMS/*/*
+      $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
    (
       cd python
-      su $chuser -p -c "$topdir/generate-rpm.sh"
-      $pkginst install -y -q ./RPM*/RPMS/*/*
+      su $chuser -p -c "python setup.py bdist_rpm"
+      $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
+   )
+   (
+      cd pycommon
+      su $chuser -p -c "python setup.py bdist_rpm"
+      $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
 )
 (
    cd modules
    su $chuser -p -c "$topdir/generate-rpm.sh"
-   $pkginst install -y -q ./RPM*/RPMS/*/*
+   $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
 )
 (
    cd detectors
    su $chuser -p -c "$topdir/generate-rpm.sh"
-   $pkginst install -y -q ./RPM*/RPMS/*/*
+   $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
 )
 (
    cd nemea-supervisor
    su $chuser -p -c "$topdir/generate-rpm.sh"
-   $pkginst install -y -q ./RPM*/RPMS/*/*
+   $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
 )
+
+su $chuser -p -c "$topdir/bootstrap.sh >/dev/null 2>/dev/null&& $topdir/configure -q"
+mkdir -p "`pwd`/RPMBUILD"
+rpmbuild  -ba nemea.spec --define "_topdir `pwd`/RPMBUILD"
+mkdir -p "`pwd`/rpms"
+find -name *.rpm -not -path "./rpms/*" -exec mv {} rpms/ \;
 

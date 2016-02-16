@@ -3,6 +3,12 @@ NEMEA System
 
 Travis CI build: [![Build Status](https://travis-ci.org/CESNET/Nemea.svg?branch=master)](https://travis-ci.org/CESNET/Nemea)
 
+The Nemea system consists of:
+* [Nemea framework](https://github.com/CESNET/Nemea-Framework): The heart of the system that provides interconnection of modules, data format (and its handling) and common functions, algorithms and data structures.
+* [Nemea modules](https://github.com/CESNET/Nemea-Modules): Base modules of the system for export&storage of flow data, replay of stored flow data, filtering, merging, and others. It also contains a basic flow exporter capable of L7 information. 
+* [Nemea detectors](https://github.com/CESNET/Nemea-Detectors): Detection modules that can detect and report various types of malicious traffic such as DoS, DDoS, scanning, bruteforce attacks.
+* [Nemea Supervisor](https://github.com/CESNET/Nemea-Supervisor): Central management and monitoring module of the Nemea system. It takes care of running modules according to configuration.
+
 This file describes the installation and basic usage of the Nemea system.
 To see more general information, please have a look at
 https://www.liberouter.org/nemea.
@@ -30,8 +36,7 @@ be supplied soon.
 Source Codes installation
 -------------------------
 
-The Nemea system consists of the [Nemea framework](cejkato2/Nemea-Framework), Nemea modules (basic and detection) and Nemea Supervisor. The whole system
-is based on GNU/Autotools build system that makes dependency checking and
+The whole system is based on GNU/Autotools build system that makes dependency checking and
 building process much more easier.
 
 To clone the read-only repositories, use:
@@ -89,10 +94,10 @@ that can be connected with each other. Information about every module can be fou
 ```
 
 Every Nemea module can have one or more communication interfaces (IFC) implemented in
-[libtrap](./nemea-framework/libtrap). There are two types of IFCs: **input** and **output**. Numbers of module's IFCs
+[libtrap](https://github.com/CESNET/Nemea-Framework/tree/master/libtrap). There are two types of IFCs: **input** and **output**. Numbers of module's IFCs
 can be found in its help.
 
-At the beginning, let's try the `logreplay` module ([./modules/logreplay](./modules/logreplay)).
+At the beginning, let's try the `logreplay` module ([modules/logreplay](https://github.com/CESNET/Nemea-Modules/tree/master/logreplay)).
 The help output shows that `logreplay` has one output IFC:
 ```
 Name: LogReplay
@@ -103,7 +108,7 @@ Description:
   of CSV file has to be data format of fields.
 ```
 
-The complement module is `logger` ([./modules/logger](./modules/logger)), help output:
+The complement module is `logger` ([modules/logger](https://github.com/CESNET/Nemea-Modules/tree/master/logger)), help output:
 ```
 Name: Logger
 Inputs: variable
@@ -119,7 +124,7 @@ Description:
 Two modules can be interconnected using one input IFC and one output IFC.
 
 The [./use-cases](./use-cases) directory contains example scripts that demonstrate usage and functionality of
-Nemea modules. `logreplay` and `logger` can be found in [logger-repeater.sh](./use-cases/logger-repeater.sh).
+Nemea modules. `logreplay` and `logger` can be found in [./use-cases/logger-repeater.sh](./use-cases/logger-repeater.sh).
 Start the script to see how flow records are replayed from CSV file by `logreplay` and received by `logger`:
 ```
 cd use-cases
@@ -131,7 +136,7 @@ To get usage of scripts from `use-cases`, execute a script without parameter. Th
 scripts.
 
 `logreplay` is one of possible ways of getting data into the Nemea system.
-There is a [nfreader](./modules/nfreader) module that is able to read and replay `nfdump` files.
+There is a [nfreader](https://github.com/CESNET/Nemea-modules/tree/master/nfreader) module that is able to read and replay `nfdump` files.
 Last but not least, there is an [ipfixcol](https://github.com/CESNET/ipfixcol/) with [ipfixcol2unirec](https://github.com/CESNET/ipfixcol/tree/master/plugins/storage/unirec)
 that is capable of exporting flow data in UniRec format and sending it via libtrap IFC.
 
@@ -142,7 +147,7 @@ The Nemea system can be managed and monitored by a special module called
 [Supervisor](https://github.com/CESNET/Nemea-Supervisor).
 
 Some modules that are contained in Nemea-Modules and Nemea-Detectors provide their default
-configuration in [https://github.com/CESNET/Nemea-Supervisor/tree/master/configs/](nemea-supervisor/configs/).
+configuration in [nemea-supervisor/configs/](https://github.com/CESNET/Nemea-Supervisor/tree/master/configs/).
 To use prepared configuration, run `make` in `nemea-supervisor/configs` and start:
 ```
 nemea-supervisor/supervisor -f nemea-supervisor/configs/supervisor_config.xml
