@@ -64,6 +64,7 @@ fi
 
 echo "Remove previously installed packages"
 $pkginst remove -q -y libtrap\* unirec\* nemea\*
+$pkginst install -q -y libnf-devel libpcap-devel libidn-devel bison flex
 
 export topdir=$PWD
 export chuser
