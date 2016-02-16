@@ -87,12 +87,12 @@ export chuser
    )
    (
       cd python
-      su $chuser -p -c "python setup.py bdist_rpm"
+      su $chuser -p -c "python setup.py bdist_rpm --no-autoreq"
       $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
    (
       cd pycommon
-      su $chuser -p -c "python setup.py bdist_rpm"
+      su $chuser -p -c "python setup.py bdist_rpm --no-autoreq"
       $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
 )
