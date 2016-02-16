@@ -7,51 +7,23 @@ The goal is to simplify the installation setup and get started with using the Ne
 Requirements
 ------------
 
-The guide assumes that Virtualbox and Vagrant are installed in your machine.
+The guide assumes that Virtualbox and Vagrant are properly installed in your machine.
 You can download these software here:
 
 - Virtualbox: https://www.virtualbox.org/wiki/Downloads
 - Vagrant: http://www.vagrantup.com/downloads
 
-Vagrant preparation
-====================
+NEMEA Installation Steps
+========================
 
-This directory contains Vagrantfile configuration files that can be used.
-Choose what system you want to use:
+This directory contains prepared configuration (Vagrantfile) for the following systems:
 
-Fedora 22 Cloud
----------------
+* [CentOS 7](./CentOS7/)
+* [Fedora 22 Cloud](./Fedora22/)
+* [Scientific Linux](./ScientificLinux6/)
 
-For installation of Fedora 22 Cloud, rename `Vagrantfile.Fedora22` to `Vagrantfile`
-and use the following command to get Vagrant box:
-
-```
-vagrant box add fedora22-cloud https://download.fedoraproject.org/pub/fedora/linux/releases/22/Cloud/x86_64/Images/Fedora-Cloud-Base-Vagrant-22-20150521.x86_64.vagrant-virtualbox.box
-```
-
-Scientific Linux
-----------------
-
-
-For installation of Scientific Linux, rename `Vagrantfile.SL6` to `Vagrantfile`
-and use the following command to get Vagrant box:
-
-```
-vagrant box add --insecure cesnet/nemea-2-1-0 https://sauvignon.liberouter.org/nemea-2-1-0.box
-```
-
-Installation - Final Step
-=========================
-
-Start the VM Installation using (this will take few minutes):
-```
-vagrant up
-```
-
-Once the installation is complete, SSH into the VM:
-```
-vagrant ssh
-```
+After choosing the system change working directory into the chosen one and follow the
+system dependent instructions in the README.md file.
 
 Troubleshooting
 ===============
