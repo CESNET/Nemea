@@ -85,16 +85,14 @@ export chuser
       su $chuser -p -c "$topdir/generate-rpm.sh"
       $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
-   su $chuser -p -c "./bootstrap.sh >/dev/null 2>/dev/null&& ./configure -q"
-   
    (
       cd python
-      su $chuser -p -c "make -j4 && make rpm"
+      su $chuser -p -c "python setup.py bdist_rpm"
       $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
    (
       cd pycommon
-      su $chuser -p -c "make -j4 && make rpm"
+      su $chuser -p -c "python setup.py bdist_rpm"
       $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
 )
