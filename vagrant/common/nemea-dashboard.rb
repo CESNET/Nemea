@@ -23,9 +23,8 @@ systemctl start mongod
 # clone Nemea-Dashboard
 mkdir -p /var/www/html
 cd /var/www/html
-git clone https://github.com/CESNET/Nemea-Dashboard
+git clone --depth 1 https://github.com/CESNET/Nemea-Dashboard
 cd Nemea-Dashboard
-git checkout -b dev origin/dev
 
 # install dashboard dependencies
 pip install -r requirements.txt
