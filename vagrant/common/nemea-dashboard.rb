@@ -17,8 +17,10 @@ wget -q https://bootstrap.pypa.io/get-pip.py
 python3.4 get-pip.py
 
 # start services
-systemctl start httpd
-systemctl start mongod
+systemctl enable httpd
+systemctl enable mongod
+service httpd start
+service mongod start
 
 # clone Nemea-Dashboard
 mkdir -p /var/www/html
@@ -28,6 +30,10 @@ cd Nemea-Dashboard
 
 # install dashboard dependencies
 pip install -r requirements.txt
+
+# start backend on background
+cd /var/log;
+nohup python3.4 /var/www/html/Nemea-Dashboard/apiv2.py > nemea-dashboard.out 2> nemea-dashboard.err < /dev/null &
 
 SCRIPT
 
