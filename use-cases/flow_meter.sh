@@ -47,7 +47,7 @@
 # Check if interface is specified.
 if [ "$1" = "" ]; then
    echo "Specify the network interface."
-   echo "Usage: ./flow_meter.sh interface-name"
+   echo "Usage: $0 interface-name"
    exit 2
 fi
 
