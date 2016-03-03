@@ -53,7 +53,7 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                <!-- Default interface -->
 +                                <interface>
 +                                        <type>t</type>
-+                                        <params>7500</params>
++                                        <params>7600</params>
 +                                        <ifcTimeout>10000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
@@ -62,16 +62,16 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                               <!-- VOIP interface -->
 +                                <interface>
 +                                        <type>t</type>
-+                                        <params>7501</params>
++                                        <params>7601</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
-+                                        <format>DST_IP,?INVEA_SIP_RTP_IP4,?INVEA_SIP_RTP_IP6,SRC_IP,BYTES,?INVEA_RTCP_OCTETS,?INVEA_RTCP_PACKETS,?INVEA_SIP_BYE_TIME,?INVEA_SIP_INVITE_RINGING_TIME,?INVEA_SIP_OK_TIME,?INVEA_SIP_STATS,LINK_BIT_FIELD,TIME_FIRST,TIME_LAST,?INVEA_RTCP_LOST,?INVEA_RTP_JITTER,PACKETS,?DST_PORT,?INVEA_SIP_RTP_AUDIO,?INVEA_SIP_RTP_VIDEO,?SRC_PORT,DIR_BIT_FIELD,?INVEA_RTCP_SOURCE_COUNT,?INVEA_RTP_CODEC,?INVEA_VOIP_PACKET_TYPE,PROTOCOL,?TCP_FLAGS,?TOS,?TTL,?INVEA_SIP_CALLED_PARTY,?INVEA_SIP_CALLING_PARTY,?INVEA_SIP_CALL_ID,INVEA_SIP_REQUEST_URI,?INVEA_SIP_USER_AGENT,?INVEA_SIP_VIA</format>
++                                        <format>DST_IP,?INVEA_SIP_RTP_IP4,?INVEA_SIP_RTP_IP6,SRC_IP,BYTES,?INVEA_RTCP_OCTETS,?INVEA_RTCP_PACKETS,?INVEA_SIP_BYE_TIME,?INVEA_SIP_INVITE_RINGING_TIME,?INVEA_SIP_OK_TIME,?INVEA_SIP_STATS,LINK_BIT_FIELD,TIME_FIRST,TIME_LAST,?INVEA_RTCP_LOST,?INVEA_RTP_JITTER,PACKETS,?DST_PORT,?INVEA_SIP_RTP_AUDIO,?INVEA_SIP_RTP_VIDEO,?SRC_PORT,DIR_BIT_FIELD,?INVEA_RTCP_SOURCE_COUNT,?INVEA_RTP_CODEC,?INVEA_VOIP_PACKET_TYPE,PROTOCOL,?TCP_FLAGS,?TOS,?TTL,?INVEA_SIP_CALLED_PARTY,?INVEA_SIP_CALLING_PARTY,?INVEA_SIP_CALL_ID,?INVEA_SIP_REQUEST_URI,?INVEA_SIP_USER_AGENT,?INVEA_SIP_VIA</format>
 +                                </interface>
 +                                <!-- SMTP interface -->
 +                                <interface>
 +                                        <type>t</type>
-+                                        <params>7502</params>
++                                        <params>7602</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
@@ -80,7 +80,7 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                <!-- HTTP interface -->
 +                                <interface>
 +                                        <type>t</type>
-+                                        <params>7503</params>
++                                        <params>7604</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
@@ -89,7 +89,7 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                <!-- IPv6 Tunnel interface -->
 +                                <interface>
 +                                        <type>t</type>
-+                                        <params>7504</params>
++                                        <params>7605</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
@@ -98,7 +98,7 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                <!-- DNS interface -->
 +                                <interface>
 +                                        <type>t</type>
-+                                        <params>7505</params>
++                                        <params>7608</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
