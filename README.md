@@ -5,9 +5,9 @@ Travis CI build: [![Build Status](https://travis-ci.org/CESNET/Nemea.svg?branch=
 
 The Nemea system consists of:
 * [Nemea framework](https://github.com/CESNET/Nemea-Framework): The heart of the system that provides interconnection of modules, data format (and its handling) and common functions, algorithms and data structures.
-* [Nemea modules](https://github.com/CESNET/Nemea-Modules): Base modules of the system for export&storage of flow data, replay of stored flow data, filtering, merging, and others. It also contains a basic flow exporter capable of L7 information. 
-* [Nemea detectors](https://github.com/CESNET/Nemea-Detectors): Detection modules that can detect and report various types of malicious traffic such as DoS, DDoS, scanning, bruteforce attacks.
-* [Nemea Supervisor](https://github.com/CESNET/Nemea-Supervisor): Central management and monitoring module of the Nemea system. It takes care of running modules according to configuration.
+* [Nemea modules](https://github.com/CESNET/Nemea-Modules): Base modules of the system for export&storage of flow data, replay of stored flow data, filtering, merging, and others. It also contains a basic flow exporter capable of extracting L7 information. 
+* [Nemea detectors](https://github.com/CESNET/Nemea-Detectors): Detection modules that can detect and report various types of malicious traffic such as DoS, DDoS, scanning, bruteforce attacks, etc.
+* [Nemea Supervisor](https://github.com/CESNET/Nemea-Supervisor): Central management and monitoring tool of the Nemea system. It takes care of running modules according to a specified configuration.
 
 This file describes the installation and basic usage of the Nemea system.
 To see more general information, please have a look at
@@ -154,20 +154,20 @@ nemea-supervisor/supervisor -f nemea-supervisor/configs/supervisor_config.xml
 ```
 To start `supervisor` in an interactive mode, use `-d`
 
-For more information about Supervisor see its README.
+For more information about Supervisor see its [README](https://github.com/CESNET/Nemea-Supervisor/blob/master/README.md).
 
 Note: It is totally up to user whether to use `nemea-supervisor/configs` or not.  It is just
-an example of working configuration.
+an example of a working configuration.
 
 
 Nemea Related Publications
 ==========================
 
-* Tomáš Čejka, Radoslav Bodó, Hana Kubátová: Nemea: Searching for Botnet Footprints. In: Proceedings of the 3rd Prague Embedded Systems Workshop, Prague, Czech Republic, 2015.
+* Tomáš Čejka, Radoslav Bodó, Hana Kubátová: Nemea: Searching for Botnet Footprints. In: Proceedings of the 3rd Prague Embedded Systems Workshop (PESW), Prague, CZ, 2015.
 
 * Tomáš Čejka, Václav Bartoš, Lukáš Truxa, Hana Kubátová: [Using Application-Aware Flow Monitoring for SIP Fraud Detection](http://link.springer.com/chapter/10.1007/978-3-319-20034-7_10). In: Proc. of 9th International Conference on Autonomous Infrastructure, Management and Security (AIMS15), 2015.
 
-* Tomáš Čejka, Zdeněk Rosa and Hana Kubátová: [Stream-wise Detection of Surreptitious Traffic over DNS](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=7033254). In: 2014 IEEE 19th International Workshop on Computer Aided Modeling and Design of Communication Links and Networks (CAMAD) (CAMAD 2014). Athens, 2014
+* Tomáš Čejka, Zdeněk Rosa and Hana Kubátová: [Stream-wise Detection of Surreptitious Traffic over DNS](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=7033254). In: Proc. of 19th IEEE International Workshop on Computer Aided Modeling and Design of Communication Links and Networks (CAMAD 2014). Athens, 2014.
 
-* V. Bartos, M. Zadnik, T. Cejka: [Nemea: Framework for stream-wise analysis of network traffic](http://www.cesnet.cz/wp-content/uploads/2014/02/trapnemea.pdf), CESNET technical report 6/2013.
+* Václav Bartoš, Martin Žádník, Tomáš Čejka: [Nemea: Framework for stream-wise analysis of network traffic](http://www.cesnet.cz/wp-content/uploads/2014/02/trapnemea.pdf), CESNET technical report 6/2013.
 
