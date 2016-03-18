@@ -32,12 +32,13 @@ pip install -r requirements.txt
 
 mongo 127.0.0.1/nemeadb --eval '
 db.users.drop();
-var d = { "name" : "Nemea",
-"surname" : "Test User",
-"username" : "nemea",
-"password" : "$2a$12$Z9PaH.uCgAEOY7JDVEo78efEcoL0oiTWY88gbJTJhIIKFMOQGkOei",
-"settings" : []
- };
+var d = { 
+	"password" : "$2a$12$MuAuralQ8p01q8eXPtTm4eZsflipBKx6cK0HZMpQbCNyDgcX4YPse", 
+	"username" : "nemea", 
+	"name" : "Default", 
+	"surname" : "User", 
+	"settings" : [ { "settings" : { "title" : "Basic", "timeshift" : "0", "interval" : "60" }, "items" : [ { "content" : "Click the menu icon to select edit", "sizeY" : 3, "row" : 0, "type" : "piechart", "col" : 0, "loading" : false, "config" : { "type" : "piechart", "metric" : "Category", "period" : "24" }, "sizeX" : 4, "title" : "24h shares" } ] } ] 
+};
 db.users.insert(d);
 '
 
