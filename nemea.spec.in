@@ -10,7 +10,7 @@ Vendor: CESNET, z.s.p.o.
 Packager: @USERNAME@ <@USERMAIL@>
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 BuildArch: noarch
-Requires: libtrap nemea-common nemea-modules nemea-detectors nemea-python nemea-pycommon nemea-supervisor
+Requires: nemea-framework libtrap nemea-common nemea-modules nemea-detectors nemea-python nemea-pycommon nemea-supervisor
 
 %description
 Meta-package of the Nemea system, the distributed modular system for network traffic analysis and anomaly detection.
