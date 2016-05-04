@@ -30,8 +30,21 @@ For more information see [./vagrant/](./vagrant/).
 Binary packages
 ---------------
 
-The Nemea system can be installed from binary packages. Information will
-be supplied soon.
+The NEMEA system can be installed from binary RPM packages.
+To add CESNET's repository containing the packages, run (as root/sudo):
+```
+rpm -ivh https://homeproj.cesnet.cz/rpm/liberouter/devel/x86_64/liberouter-devel-1.0.0-1.noarch.rpm
+```
+
+After that, NEMEA can be installed as any other package (run as root/sudo):
+```
+yum install nemea
+```
+
+Note: `yum` was replaced by `dnf` in some distributions.
+
+For development purposes, there is `nemea-framework-devel` package that installs
+all needed development files and docs.
 
 Source Codes installation
 -------------------------
