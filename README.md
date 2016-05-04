@@ -19,7 +19,7 @@ Installation
 For the list of dependencies, please have a look into [dependencies.md](./dependencies.md).
 
 There are three different ways of installation of the Nemea system covered
-in this document: vagrant, binary packages and spurce codes.
+in this document: vagrant, binary packages and source codes.
 
 Vagrant
 -------
@@ -58,7 +58,7 @@ and compilation process. For more information see:
 ./configure --help
 ```
 
-We recommend to set paths according to the used operating system e.g.:
+We recommend to set paths according to the used operating system, e.g.:
 ```
 ./configure --prefix=/usr --bindir=/usr/bin/nemea --sysconfdir=/etc/nemea --libdir=/usr/lib64
 ```
