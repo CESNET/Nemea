@@ -11,7 +11,7 @@ The guide assumes that Virtualbox and Vagrant are properly installed in your mac
 You can download these software here:
 
 - Virtualbox: https://www.virtualbox.org/wiki/Downloads
-- Vagrant: http://www.vagrantup.com/downloads
+- Vagrant: http://www.vagrantup.com/downloads.html
 
 NEMEA Installation Steps
 ========================
