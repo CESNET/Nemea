@@ -3,13 +3,13 @@ NEMEA System
 
 Travis CI build: [![Build Status](https://travis-ci.org/CESNET/Nemea.svg?branch=master)](https://travis-ci.org/CESNET/Nemea)
 
-The Nemea system consists of:
-* [Nemea framework](https://github.com/CESNET/Nemea-Framework): The heart of the system that provides interconnection of modules, data format (and its handling) and common functions, algorithms and data structures.
-* [Nemea modules](https://github.com/CESNET/Nemea-Modules): Base modules of the system for export&storage of flow data, replay of stored flow data, filtering, merging, and others. It also contains a basic flow exporter capable of extracting L7 information. 
-* [Nemea detectors](https://github.com/CESNET/Nemea-Detectors): Detection modules that can detect and report various types of malicious traffic such as DoS, DDoS, scanning, bruteforce attacks, etc.
-* [Nemea Supervisor](https://github.com/CESNET/Nemea-Supervisor): Central management and monitoring tool of the Nemea system. It takes care of running modules according to a specified configuration.
+The NEMEA system consists of:
+* [NEMEA framework](https://github.com/CESNET/Nemea-Framework): The heart of the system that provides interconnection of modules, data format (and its handling) and common functions, algorithms and data structures.
+* [NEMEA modules](https://github.com/CESNET/Nemea-Modules): Base modules of the system for export&storage of flow data, replay of stored flow data, filtering, merging, and others. It also contains a basic flow exporter capable of extracting L7 information. 
+* [NEMEA detectors](https://github.com/CESNET/Nemea-Detectors): Detection modules that can detect and report various types of malicious traffic such as DoS, DDoS, scanning, bruteforce attacks, etc.
+* [NEMEA Supervisor](https://github.com/CESNET/Nemea-Supervisor): Central management and monitoring tool of the NEMEA system. It takes care of running modules according to a specified configuration.
 
-This file describes the installation and basic usage of the Nemea system.
+This file describes the installation and basic usage of the NEMEA system.
 To see more general information, please have a look at
 https://www.liberouter.org/nemea.
 
@@ -18,7 +18,7 @@ Installation
 
 For the list of dependencies, please have a look into [dependencies.md](./dependencies.md).
 
-There are three different ways of installation of the Nemea system covered
+There are three different ways of installation of the NEMEA system covered
 in this document: vagrant, binary packages and source codes.
 
 Vagrant
@@ -82,7 +82,7 @@ After finishing `./configure`, build process can be started by:
 make
 ```
 
-The make(1) tool has various parameters, to build the Nemea package faster on
+The make(1) tool has various parameters, to build the NEMEA package faster on
 multicore systems, we recommend to use parameter -j with the number of jobs
 that should be run in parallel.
 
@@ -95,18 +95,18 @@ The installation can be done by (usually it requires root / sudo):
 make install
 ```
 
-Congratulations, the whole Nemea system should be installed right now... :-)
+Congratulations, the whole NEMEA system should be installed right now... :-)
 
 Quick Start Guide
 =================
 
-The heart of the Nemea system is a Nemea module. Nemea modules are building blocks - independent system processes
+The heart of the NEMEA system is a NEMEA module. NEMEA modules are building blocks - independent system processes
 that can be connected with each other. Information about every module can be found in its help:
 ````
 ./module -h
 ```
 
-Every Nemea module can have one or more communication interfaces (IFC) implemented in
+Every NEMEA module can have one or more communication interfaces (IFC) implemented in
 [libtrap](https://github.com/CESNET/Nemea-Framework/tree/master/libtrap). There are two types of IFCs: **input** and **output**. Numbers of module's IFCs
 can be found in its help.
 
@@ -137,7 +137,7 @@ Description:
 Two modules can be interconnected using one input IFC and one output IFC.
 
 The [./use-cases](./use-cases) directory contains example scripts that demonstrate usage and functionality of
-Nemea modules. `logreplay` and `logger` can be found in [./use-cases/logger-repeater.sh](./use-cases/logger-repeater.sh).
+NEMEA modules. `logreplay` and `logger` can be found in [./use-cases/logger-repeater.sh](./use-cases/logger-repeater.sh).
 Start the script to see how flow records are replayed from CSV file by `logreplay` and received by `logger`:
 ```
 cd use-cases
@@ -148,12 +148,12 @@ To get usage of scripts from `use-cases`, execute a script without parameter. Th
 `logger-repeater.sh` can be used to generate CSV file automatically. For more information, see source codes of
 scripts.
 
-`logreplay` is one of possible ways of getting data into the Nemea system.
+`logreplay` is one of possible ways of getting data into the NEMEA system.
 There is a [nfreader](https://github.com/CESNET/Nemea-modules/tree/master/nfreader) module that is able to read and replay `nfdump` files.
 Last but not least, there is an [ipfixcol](https://github.com/CESNET/ipfixcol/) with [ipfixcol2unirec](https://github.com/CESNET/ipfixcol/tree/master/plugins/storage/unirec)
 that is capable of exporting flow data in UniRec format and sending it via libtrap IFC.
 
-Manage Nemea modules efficiently
+Manage NEMEA modules efficiently
 ================================
 
 The Nemea system can be managed and monitored by a special module called
@@ -173,7 +173,7 @@ Note: It is totally up to user whether to use `nemea-supervisor/configs` or not.
 an example of a working configuration.
 
 
-Nemea Related Publications
+NEMEA Related Publications
 ==========================
 
 * Tomáš Čejka, Radoslav Bodó, Hana Kubátová: Nemea: Searching for Botnet Footprints. In: Proceedings of the 3rd Prague Embedded Systems Workshop (PESW), Prague, CZ, 2015.
