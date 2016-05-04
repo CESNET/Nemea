@@ -86,14 +86,15 @@ export chuser
       su $chuser -p -c "$topdir/generate-rpm.sh"
       $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
+   su $chuser -p -c "./bootstrap.sh >/dev/null 2>/dev/null&& ./configure -q"
    (
       cd python
-      su $chuser -p -c "python setup.py bdist_rpm --no-autoreq"
+      su $chuser -p -c "make && make rpm"
       $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
    (
       cd pycommon
-      su $chuser -p -c "python setup.py bdist_rpm --no-autoreq"
+      su $chuser -p -c "make && make rpm"
       $pkginst install -y -q $(find \( -name '*noarch.rpm' -o -name '*64.rpm' \))
    )
 )
@@ -118,4 +119,5 @@ mkdir -p "`pwd`/RPMBUILD"
 rpmbuild  -ba nemea.spec --define "_topdir `pwd`/RPMBUILD"
 mkdir -p "`pwd`/rpms"
 find -name *.rpm -not -path "./rpms/*" -exec mv {} rpms/ \;
+chown -R $chuser rpms/
 

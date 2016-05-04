@@ -52,8 +52,8 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                <fileFormat>unirec</fileFormat>
 +                                <!-- Default interface -->
 +                                <interface>
-+                                        <type>t</type>
-+                                        <params>7600</params>
++                                        <type>u</type>
++                                        <params>flow_data_source</params>
 +                                        <ifcTimeout>10000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
@@ -61,8 +61,8 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                </interface>
 +                               <!-- VOIP interface -->
 +                                <interface>
-+                                        <type>t</type>
-+                                        <params>7601</params>
++                                        <type>u</type>
++                                        <params>voip_data_source</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
@@ -70,8 +70,8 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                </interface>
 +                                <!-- SMTP interface -->
 +                                <interface>
-+                                        <type>t</type>
-+                                        <params>7602</params>
++                                        <type>u</type>
++                                        <params>smtp_data_source</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
@@ -79,8 +79,8 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                </interface>
 +                                <!-- HTTP interface -->
 +                                <interface>
-+                                        <type>t</type>
-+                                        <params>7604</params>
++                                        <type>u</type>
++                                        <params>http_data_source</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
@@ -88,8 +88,8 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                </interface>
 +                                <!-- IPv6 Tunnel interface -->
 +                                <interface>
-+                                        <type>t</type>
-+                                        <params>7605</params>
++                                        <type>u</type>
++                                        <params>ipv6tunnel_data_source</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
@@ -97,8 +97,8 @@ echo '--- startup.xml	2016-02-25 14:30:15.595229902 +0100
 +                                </interface>
 +                                <!-- DNS interface -->
 +                                <interface>
-+                                        <type>t</type>
-+                                        <params>7608</params>
++                                        <type>u</type>
++                                        <params>dns_data_source</params>
 +                                        <ifcTimeout>1000</ifcTimeout>
 +                                        <flushTimeout>1000000</flushTimeout>
 +                                        <bufferSwitch>1</bufferSwitch>
