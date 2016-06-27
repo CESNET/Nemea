@@ -15,30 +15,36 @@
 - [NEMEA Related publications](#nemea-related-publications)
 
 
-
 ## Project status
 Travis CI build: [![Build Status](https://travis-ci.org/CESNET/Nemea.svg?branch=master)](https://travis-ci.org/CESNET/Nemea)
 
 
-
 # NEMEA System
+
+NEMEA (Network Measurements Analysis) system is a **stream-wise**, **flow-based** and **modular** detection system for network traffic analysis. It consists of many independent modules which are interconnected via communication interfaces and each of the modules has its own task. Communication between modules is done by message passing where the messages contain flow records, alerts, some statistics or preprocessed data.
 
 ## Parts of the system
 
+The following picture shows all important parts of the system.
+
 ![NEMEA parts](doc/NEMEA-parts.png)
+
+1. Modules - basic building blocks; separate system processes; receive stream of data on their input interfaces, process it and send another stream of data to their output interfaces; all modules are simply divided into two groups according to their task:
+   * **detectors** (*red*) - detect some malicious traffic, e.g. *DNS tunnel*, *DoS*, *scanning*
+   * **modules** (*yellow*) - export&storage of flow data, preprocess or postprocess the data (filter, aggregate, merge etc.)
+2. NEMEA Framework - set of libraries implementing features common for all modules
+   * **TRAP** (Traffic Analysis Platform) (*blue*) - implements communication interfaces and functions for sending/receiving the messages between interfaces
+   * **UniRec** (Unified Record) (*orange*) - implements efficient data format of the sent/received messages
+   * **Common** library (*purple*) - implements common algorithms and data structures used in modules
+3. **Supervisor** (*green*) - central management and monitoring tool of the NEMEA system. It takes care of running modules according to a specified configuration.
 
 ## Repositories
 
-The NEMEA system consists of:
-* [NEMEA framework](https://github.com/CESNET/Nemea-Framework): The heart of the system that provides interconnection of modules, data format (and its handling) and common functions, algorithms and data structures.
-* [NEMEA modules](https://github.com/CESNET/Nemea-Modules): Base modules of the system for export&storage of flow data, replay of stored flow data, filtering, merging, and others. It also contains a basic flow exporter capable of extracting L7 information. 
-* [NEMEA detectors](https://github.com/CESNET/Nemea-Detectors): Detection modules that can detect and report various types of malicious traffic such as DoS, DDoS, scanning, bruteforce attacks, etc.
-* [NEMEA Supervisor](https://github.com/CESNET/Nemea-Supervisor): Central management and monitoring tool of the NEMEA system. It takes care of running modules according to a specified configuration.
-
-This file describes the installation and basic usage of the NEMEA system.
-To see more general information, please have a look at
-https://www.liberouter.org/nemea.
-
+The project is divided into four repositories added as submodules:
+* [NEMEA framework](https://github.com/CESNET/Nemea-Framework)
+* [NEMEA modules](https://github.com/CESNET/Nemea-Modules)
+* [NEMEA detectors](https://github.com/CESNET/Nemea-Detectors)
+* [NEMEA Supervisor](https://github.com/CESNET/Nemea-Supervisor)
 
 
 ## Dependencies
