@@ -1,34 +1,98 @@
-NEMEA System
-============
+## README outline
+- [Project status](#project-status)
+- [NEMEA System](#nemea-system)
+   - [Parts of the system](#parts-of-the-system)
+   - [Repositories](#repositories)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+   - [Binary packages](#binary-packages)
+   - [Source codes](#source-codes)
+   - [Vagrant](#vagrant)
+   - Packer
+- [Quick start and how to](#quick-start-and-how-to)
+   - [Deploy NEMEA](#deploy-nemea)
+   - [Create your own module](#create-your-own-module)
+- [NEMEA Related publications](#nemea-related-publications)
 
+
+## Project status
 Travis CI build: [![Build Status](https://travis-ci.org/CESNET/Nemea.svg?branch=master)](https://travis-ci.org/CESNET/Nemea)
 
-The NEMEA system consists of:
-* [NEMEA framework](https://github.com/CESNET/Nemea-Framework): The heart of the system that provides interconnection of modules, data format (and its handling) and common functions, algorithms and data structures.
-* [NEMEA modules](https://github.com/CESNET/Nemea-Modules): Base modules of the system for export&storage of flow data, replay of stored flow data, filtering, merging, and others. It also contains a basic flow exporter capable of extracting L7 information. 
-* [NEMEA detectors](https://github.com/CESNET/Nemea-Detectors): Detection modules that can detect and report various types of malicious traffic such as DoS, DDoS, scanning, bruteforce attacks, etc.
-* [NEMEA Supervisor](https://github.com/CESNET/Nemea-Supervisor): Central management and monitoring tool of the NEMEA system. It takes care of running modules according to a specified configuration.
 
-This file describes the installation and basic usage of the NEMEA system.
-To see more general information, please have a look at
-https://www.liberouter.org/nemea.
+# NEMEA System
 
-Installation
-============
+NEMEA (Network Measurements Analysis) system is a **stream-wise**, **flow-based** and **modular** detection system for network traffic analysis. It consists of many independent modules which are interconnected via communication interfaces and each of the modules has its own task. Communication between modules is done by message passing where the messages contain flow records, alerts, some statistics or preprocessed data.
 
-For the list of dependencies, please have a look into [dependencies.md](./dependencies.md).
+## Parts of the system
+
+The following picture shows all important parts of the system.
+
+![NEMEA parts](doc/NEMEA-parts.png)
+
+1. Modules - basic building blocks; separate system processes; receive stream of data on their input interfaces, process it and send another stream of data to their output interfaces; all modules are simply divided into two groups according to their task:
+   * **detectors** (*red*) - detect some malicious traffic, e.g. *DNS tunnel*, *DoS*, *scanning*
+   * **modules** (*yellow*) - export&storage of flow data, preprocess or postprocess the data (filter, aggregate, merge etc.)
+2. NEMEA Framework - set of libraries implementing features common for all modules
+   * **TRAP** (Traffic Analysis Platform) (*blue*) - implements communication interfaces and functions for sending/receiving the messages between interfaces
+   * **UniRec** (Unified Record) (*orange*) - implements efficient data format of the sent/received messages
+   * **Common** library (*purple*) - implements common algorithms and data structures used in modules
+3. **Supervisor** (*green*) - central management and monitoring tool of the NEMEA system. It takes care of running modules according to a specified configuration.
+
+## Repositories
+
+The project is divided into four repositories added as submodules:
+* [NEMEA framework](https://github.com/CESNET/Nemea-Framework)
+* [NEMEA modules](https://github.com/CESNET/Nemea-Modules)
+* [NEMEA detectors](https://github.com/CESNET/Nemea-Detectors)
+* [NEMEA Supervisor](https://github.com/CESNET/Nemea-Supervisor)
+
+
+## Dependencies
+
+### Building environment
+
+* autoconf
+* automake
+* gcc
+* gcc-c++
+* libtool
+* libxml2-devel
+* libxml2-utils (contains xmllint on Debian)
+* make
+* pkg-config
+
+### Optional dependencies of modules and detectors
+
+* rpm-build (build of RPM packages)
+* libpcap (flow_meter)
+* libnfdump (http://sourceforge.net/projects/libnfdump/) or libnf (https://github.com/VUTBR/nf-tools/tree/master/libnf/c) (nfreader)
+* libidn (blacklistfilter)
+* bison and flex (unirecfilter)
+
+### How to install dependencies:
+
+```
+dnf install -y autoconf automake gcc gcc-c++ libtool libxml2-devel make pkg-config libpcap libidn bison flex
+```
+
+On older systems use `yum` instead of `dnf`.
+
+On Debian-based systems:
+
+```
+apt-get update;
+apt-get install TODO
+```
+
+
+
+# Installation
 
 There are three different ways of installation of the NEMEA system covered
-in this document: vagrant, binary packages and source codes.
+in this document: **vagrant**, **binary packages** and **source codes**.
 
-Vagrant
--------
 
-To try the system "out-of-box", you can use [Vagrant](https://www.vagrantup.com/).
-For more information see [./vagrant/](./vagrant/).
-
-Binary packages
----------------
+## Binary packages
 
 The NEMEA system can be installed from binary RPM packages.
 To add CESNET's repository containing the packages, run (as root/sudo):
@@ -46,8 +110,8 @@ Note: `yum` was replaced by `dnf` in some distributions.
 For development purposes, there is `nemea-framework-devel` package that installs
 all needed development files and docs.
 
-Source Codes installation
--------------------------
+
+## Source codes
 
 The whole system is based on GNU/Autotools build system that makes dependency checking and
 building process much more easier.
@@ -96,6 +160,29 @@ make install
 ```
 
 Congratulations, the whole NEMEA system should be installed right now... :-)
+
+
+## Vagrant
+
+To try the system "out-of-box", you can use [Vagrant](https://www.vagrantup.com/).
+For more information see [./vagrant/](./vagrant/).
+
+
+
+
+# Quick start and how to
+## Deploy NEMEA
+## Create your own module
+
+
+
+
+
+
+
+
+
+
 
 Quick Start Guide
 =================
