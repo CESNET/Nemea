@@ -15,6 +15,7 @@ yum -y install mongodb-org git wget python34 python34-devel httpd
 yum groupinstall -y "Development Tools"
 wget -q https://bootstrap.pypa.io/get-pip.py
 python3.4 get-pip.py
+yum install -y python-pymongo
 
 # start services
 systemctl enable httpd
