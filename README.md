@@ -11,7 +11,7 @@
    - Packer
 - [Quick start and how to](#quick-start-and-how-to)
    - [Deploy NEMEA](#deploy-nemea)
-   - [Create your own module](#create-your-own-module)
+   - [Create your own module in C step by step](#create-your-own-module-in-c-step-by-step)
 - [NEMEA Related publications](#nemea-related-publications)
 
 
@@ -122,7 +122,7 @@ To clone the read-only repositories, use:
 git clone --recursive https://github.com/CESNET/nemea
 ```
 
-After successful clone, use:
+After successful clone and [dependencies](#dependencies) installation (**!**), use:
 ```
 ./bootstrap.sh
 ```
@@ -171,17 +171,133 @@ For more information see [./vagrant/](./vagrant/).
 
 
 # Quick start and how to
+
+
+## Create your own module in C step by step
+
+
+**Important**: Nemea-Framework has to be installed in advance. Follow [these instructions](#installation) to install whole NEMEA system (including NEMEA framework) or [these instructions]() to install only NEMEA framework.
+
+
+#### Use Example module as a template
+
+Let `/data/mighty-module/` be the directory we want to develop our module in (replace path `/data/mighty-module/` in all commands with another directory if needed) and *mighty_module* the name of our module. We will use example module as a template - copy all files from [this directory](https://github.com/CESNET/Nemea-Framework/tree/master/examples/module) to `/data/mighty-module/`.
+
+In `/data/mighty-module/configure.ac` replace the following lines
+```
+AC_INIT([example_module], [1.0.0], [traffic-analysis@cesnet.cz])
+AC_CONFIG_SRCDIR([example_module.c])
+```
+with
+```
+AC_INIT([migty_module], [1.0.0], [YOUR EMAIL ADDRESS])
+AC_CONFIG_SRCDIR([mighty_module.c])
+```
+
+In `/data/mighty-module/Makefile.am` replace the following lines
+```
+bin_PROGRAMS=example_module
+example_module_SOURCES=example_module.c fields.c fields.h
+example_module_LDADD=-lunirec -ltrap
+```
+with
+```
+bin_PROGRAMS=mighty_module
+mighty_module_SOURCES=mighty_module.c fields.c fields.h
+mighty_module_LDADD=-lunirec -ltrap
+```
+
+Finally execute `mv /data/mighty-module/example_module.c /data/mighty-module/mighty_module.c` to rename the source file.
+
+
+####Build the module
+
+Execute the following commands in `/data/might-module/`:
+
+1) Let Autotools process the configuration files.
+```
+autoreconf -i
+```
+
+2) Configure the module directory.
+```
+./configure
+```
+
+3) Build the module.
+```
+make
+```
+
+4) (**Optional**) Install the module. The command should be performed as root (e.g. using sudo).
+```
+make install
+```
+
+
+### Code explanation
+
+The example module already links **TRAP** (libtrap) and **UniRec** libraries. It is a simple module with one input and one output interface which receives on input inteface a message in UniRec format with two numbers and sends them together with their sum to output interface.
+
+The code contains comments but here is the list of important operations:
+
+
+#### LibTRAP
+
+1. [Basic module information](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L74) - specify name, description and number of input / output interfaces of the module
+2. [Module parameters](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L87) - define parameters the module accepts as program arguments
+3. [Module info structure initialization](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L111) - initialize a structure with information from the two previsous points
+4. [TRAP initialization](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L116) - initialize module interfaces
+5. [GETOPT macro](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L127) - parse program arguments
+6. Main loop:
+   * [Receive a message](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L172) - receive a message in UniRec format from input interface
+   * [Handle receive error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L175) - check whether an error has occured during receive
+   * [Send a message](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L200) - send a message in UniRec format via output interface
+   * [Handle send error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L203) - check whether an error has ocurred during send
+7. [TRAP and module info clean-up](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L210) - free everything, libtrap finalization
+
+
+#### UniRec
+
+1. [UniRec fields definition](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L62) - define data types and names of the fields which will be used in UniRec messages (both received and sent messages), e.g. *uint32 PACKETS*
+2. [Templates creation](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L141) - create UniRec templates separately for every interface (a template defines set of fields in the message) note: two input interfaces receiving same messages can use one template
+3. [Output record allocation](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L154) - allocate a memory for message sent via output interface
+4. Main loop (*fields manipulation*):
+   * [get field](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L191) - get a value of specified field from received message according to UniRec template
+   * [set field](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L196) - set a value of specified field in message which will be sent according to UniRec template
+   * [copy fields](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L195) - copy values of fields in received message to fields in message which will be sent according to UniRec templates of both interfaces (only fields that are common for both interfaces are copied)
+5. [UniRec cleanup](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L219) - free everything, UniRec finalization
+
+
+### Execute the module
+
+Modules using TRAP library have two implicit program arguments. `module -h` for help (optional) and `module -i IFC_SPEC` for interface specification (mandatory).
+
+
+#### Module help
+
+After executing `/data/mighty-module/mighty_module -h`, program prints help which contains information from module info structure:
+
+* module basic information - name, description, number of input / output interfaces
+* module parameters - short opt, long opt, description, argument data type
+* TRAP library parameters - parameters common for all modules using libtrap
+
+
+#### Interface specifier
+
+Format of the specifier with examples is explained in detail [here](https://github.com/CESNET/Nemea-Framework/blob/master/libtrap/README.ifcspec.md).
+
+
+### Develop the module
+
+Now just modify the algorithm in the main loop and job is done :-)
+
+
 ## Deploy NEMEA
-## Create your own module
 
+#### Add a new module to running conf
 
-
-
-
-
-
-
-
+#### Get flows to your system - nfreader, logreplay, flowmeter, ipfixcol
 
 
 Quick Start Guide
