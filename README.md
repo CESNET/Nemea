@@ -10,6 +10,7 @@
    - [Vagrant](#vagrant)
    - Packer
 - [Quick start and how to](#quick-start-and-how-to)
+   - [Try out NEMEA modules](#try-out-nemea-modules)
    - [Deploy NEMEA](#deploy-nemea)
    - [Create your own module in C step by step](#create-your-own-module-in-c-step-by-step)
 - [NEMEA Related publications](#nemea-related-publications)
@@ -168,13 +169,121 @@ To try the system "out-of-box", you can use [Vagrant](https://www.vagrantup.com/
 For more information see [./vagrant/](./vagrant/).
 
 
-
-
 # Quick start and how to
 
 
-## Create your own module in C step by step
+## Try out NEMEA modules
 
+**Important**: Nemea has to be compiled in advance. Follow [these instructions](#installation) to install NEMEA system from source codes (for this part the *make install* step is optional).
+
+
+### Execute a module
+
+Modules using TRAP library have two implicit program arguments. `module -h` for help (optional) and `module -i IFC_SPEC` for interface specification (mandatory).
+
+
+**Module help `-h`**
+
+The example below shows part of help output of the [logger]() module. It contains modules name, description, number of input and output interfaces, modules paramteters and TRAP library parameters (common for all modules).
+
+```
+TRAP module, libtrap version: 0.7.6 b258bb4
+===========================================
+Name: Logger
+Inputs: variable
+Outputs: 0
+Description:
+  This module logs all incoming UniRec records to standard output or into a specified file. Each record
+  is written as one line containing values of its fields in human-readable format separated by chosen
+  delimiters (CSV format). If you use more than one input interface you have to specify output format by
+  parameter "-o".
+
+Usage:  logger [COMMON]... [OPTIONS]...
+
+Parameters of module [OPTIONS]:
+-------------------------------
+  -w  --write <string>             Write output to FILE instead of stdout (rewrite the file).
+
+  -a  --append <string>            Write output to FILE instead of stdout (append to the end).
+
+  -t  --title                      Write names of fields on the first line.
+
+  -c  --cut <uint32>               Quit after N records are received, 0 can be useful in combination
+                                   with -t to print UniRec.
+
+Common TRAP parameters [COMMON]:
+--------------------------------
+  -h [trap,1]                      If no argument, print this message. If "trap" or 1 is given, print
+                                   TRAP help.
+
+  -i IFC_SPEC                      Specification of interface types and their parameters, see "-h trap"
+                                   (mandatory parameter).
+
+  -v                               Be verbose.
+
+Environment variables that affects output:
+------------------------------------------
+  LIBTRAP_OUTPUT_FORMAT            If set to "json", information about module is printed in JSON format.
+
+  PAGER                            Show the help output in the set PAGER.
+```
+
+
+**Interface specifier `-i`**
+
+The `-i` parameter with the interface specifier *IFC_SPEC* (`module -i IFC_SPEC`) specifies modules interfaces - their types and parameters. The interface specifier has the following format:
+
+`<IFC 1>,<IFC 2>,...,<IFC N>`.
+
+where `<IFC x>` looks like
+
+`<type>:<par1>:<par2>:...:<parN>`.
+
+Interfaces are separated by `,` and their parameters are separated by `:`. Input IFCs must be specified at first, output IFCs follow. Examples below show the two most common cases.
+
+* `module1 -i t:address:port1,t:port2`
+* `module2 -i u:sock1,u:sock2`
+
+First example *module1* uses TCPIP interfaces (for machine to machine communication) and it has one input and one output interface. The first interface (`t:address:port1`) has type `t` (TCPIP) and it will connect to machine with address `address` on port `port1` (it behaves as a client). The second interface (`t:port2`) is also TCPIP and it will listen on port `port2` for incoming connections (it behaves as a server).
+
+Second example *module2* uses UNIX-SOCKET interfaces (for communication on the same machine) and it has also one input and one output interface. The first interface (`u:sock1`) has type `u` (UNIX-SOCKET) and it will connect to socket `sock1` (it behaves as a client). The second interface (`u:sock2`) is also UNIX-SOCKET and it will listen on `sock2` for incoming connections (it behaves as a server).
+
+**Important findings:**
+* TCPIP interface for machine to machine communication, UNIX-SOCKET for communication on the same machine
+* input interface behaves as a client, output interfaces behaves as a server
+
+For detailed information and another examples with *IFC_SPEC* click [here](https://github.com/CESNET/Nemea-Framework/blob/master/libtrap/README.ifcspec.md).
+
+
+### Interconnect two modules
+
+Let´s try to interconnect [logreplay](https://github.com/CESNET/Nemea-Modules/tree/master/logreplay) and [logger](https://github.com/CESNET/Nemea-Modules/tree/master/logger) modules to see them communicate.
+Logreplay module has one output interface and it reads CSV file from logger module and sends it in UniRec format.
+Logger has one input interface and it logs all incoming UniRec records to standard output or into specified file in CSV format.
+These two modules can be interconnected using one input IFC and one output IFC.
+
+[This script](https://github.com/CESNET/Nemea/blob/master/use-cases/logger-repeater.sh) can be used for the demonstration. With no parameter it prints help with description, otherwise it accepts *generate* parameter or a name of input CSV file. With *generate* parameter it first creates tmp CSV file with header and 3 flow records (see [this](https://github.com/CESNET/Nemea/blob/master/use-cases/logger-repeater.sh#L53)). Thereafter it executes logreplay and logger modules
+
+```
+logreplay -i "u:my_socket"` -f CSV_file
+```
+and
+```
+logger -i "u:my_socket" -t
+```
+
+Logreplay has one UNIX-SOCKET output interface listening on *my_socket* and logger has one UNIX-SOCKET input interface which connects to *my_socket*.
+
+Now finally open [this directory](https://github.com/CESNET/Nemea/tree/master/use-cases) and execute the script:
+```
+./logger-repeater.sh generate
+```
+
+It should print exactly the same output as generated CSV tmp input (header with 3 records). In [use-cases](https://github.com/CESNET/Nemea/tree/master/use-cases) there are more examples with basic modules.
+`logreplay` is one of possible ways of getting data into the NEMEA system. [Here]() is the list of all possible ways.
+
+
+## Create your own module in C step by step
 
 **Important**: Nemea-Framework has to be installed in advance. Follow [these instructions](#installation) to install whole NEMEA system (including NEMEA framework) or [these instructions]() to install only NEMEA framework.
 
@@ -299,81 +408,6 @@ Now just modify the algorithm in the main loop and job is done :-)
 
 #### Get flows to your system - nfreader, logreplay, flowmeter, ipfixcol
 
-
-Quick Start Guide
-=================
-
-The heart of the NEMEA system is a NEMEA module. NEMEA modules are building blocks - independent system processes
-that can be connected with each other. Information about every module can be found in its help:
-````
-./module -h
-```
-
-Every NEMEA module can have one or more communication interfaces (IFC) implemented in
-[libtrap](https://github.com/CESNET/Nemea-Framework/tree/master/libtrap). There are two types of IFCs: **input** and **output**. Numbers of module's IFCs
-can be found in its help.
-
-At the beginning, let's try the `logreplay` module ([modules/logreplay](https://github.com/CESNET/Nemea-Modules/tree/master/logreplay)).
-The help output shows that `logreplay` has one output IFC:
-```
-Name: LogReplay
-Inputs: 0
-Outputs: 1
-Description:
-  This module converts CSV from logger and sends it in UniRec. The first row
-  of CSV file has to be data format of fields.
-```
-
-The complement module is `logger` ([modules/logger](https://github.com/CESNET/Nemea-Modules/tree/master/logger)), help output:
-```
-Name: Logger
-Inputs: variable
-Outputs: 0
-Description:
-  This module logs all incoming UniRec records to standard output or into a
-  specified file. Each record is written as one line containing values of its
-  fields in human-readable format separated by chosen delimiters (CSV format).
-  If you use more than one input interface you have to specify output format
-  by parameter "-o".
-```
-
-Two modules can be interconnected using one input IFC and one output IFC.
-
-The [./use-cases](./use-cases) directory contains example scripts that demonstrate usage and functionality of
-NEMEA modules. `logreplay` and `logger` can be found in [./use-cases/logger-repeater.sh](./use-cases/logger-repeater.sh).
-Start the script to see how flow records are replayed from CSV file by `logreplay` and received by `logger`:
-```
-cd use-cases
-./logger-repeater.sh generate
-```
-
-To get usage of scripts from `use-cases`, execute a script without parameter. The `generate` parameter of
-`logger-repeater.sh` can be used to generate CSV file automatically. For more information, see source codes of
-scripts.
-
-`logreplay` is one of possible ways of getting data into the NEMEA system.
-There is a [nfreader](https://github.com/CESNET/Nemea-modules/tree/master/nfreader) module that is able to read and replay `nfdump` files.
-Last but not least, there is an [ipfixcol](https://github.com/CESNET/ipfixcol/) with [ipfixcol2unirec](https://github.com/CESNET/ipfixcol/tree/master/plugins/storage/unirec)
-that is capable of exporting flow data in UniRec format and sending it via libtrap IFC.
-
-Manage NEMEA modules efficiently
-================================
-
-The Nemea system can be managed and monitored by a special module called
-[Supervisor](https://github.com/CESNET/Nemea-Supervisor).
-
-Some modules that are contained in Nemea-Modules and Nemea-Detectors provide their default
-configuration in [nemea-supervisor/configs/](https://github.com/CESNET/Nemea-Supervisor/tree/master/configs/).
-To use prepared configuration, run `make` in `nemea-supervisor/configs` and start:
-```
-nemea-supervisor/supervisor -f nemea-supervisor/configs/supervisor_config.xml
-```
-To start `supervisor` in an interactive mode, use `-d`
-
-For more information about Supervisor see its [README](https://github.com/CESNET/Nemea-Supervisor/blob/master/README.md).
-
-Note: It is totally up to user whether to use `nemea-supervisor/configs` or not.  It is just
-an example of a working configuration.
 
 
 NEMEA Related Publications
