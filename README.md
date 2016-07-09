@@ -184,7 +184,7 @@ Modules using TRAP library have two implicit program arguments. `module -h` for 
 
 **Module help `-h`**
 
-The example below shows part of help output of the [logger]() module. It contains modules name, description, number of input and output interfaces, modules paramteters and TRAP library parameters (common for all modules).
+The example below shows part of help output of the [logger](https://github.com/CESNET/Nemea-Modules/tree/master/logger) module. It contains modules name, description, number of input and output interfaces, modules paramteters and TRAP library parameters (common for all modules).
 
 ```
 TRAP module, libtrap version: 0.7.6 b258bb4
@@ -279,8 +279,8 @@ Now finally open [this directory](https://github.com/CESNET/Nemea/tree/master/us
 ./logger-repeater.sh generate
 ```
 
-It should print exactly the same output as generated CSV tmp input (header with 3 records). In [use-cases](https://github.com/CESNET/Nemea/tree/master/use-cases) there are more examples with basic modules.
-`logreplay` is one of possible ways of getting data into the NEMEA system. [Here]() is the list of all possible ways.
+It should print exactly the same output as generated CSV tmp input (header and 3 records). In [use-cases](https://github.com/CESNET/Nemea/tree/master/use-cases) there are more examples with basic modules.
+`logreplay` is one of possible ways of getting data into the NEMEA system. Here(TODO) is the list of all possible ways.
 
 
 ## Create your own module in C step by step
