@@ -283,6 +283,78 @@ It should print exactly the same output as generated CSV tmp input (header and 3
 `logreplay` is one of possible ways of getting data into the NEMEA system. Here(TODO) is the list of all possible ways.
 
 
+## Deploy NEMEA
+
+This section shows how to deploy NEMEA in four steps.
+
+It only covers the basics needed to run the system in its default configuration. Keep in mind that NEMEA was designed as a very flexible framework, so every user can (and should) adjust the configuration of NEMEA modules to their own purposes.
+
+
+### 1. Installation
+
+First of all, the whole system (NEMEA Framework, Modules, Detectors and Supervisor) has to be installed. Follow [these](#installation) instructions to install the system from RPM or from source codes.
+
+
+### 2. Prepare configurations
+
+To avoid manual control of the system, there is [NEMEA Supervisor](https://github.com/CESNET/Nemea-Supervisor). It is central management and monitoring tool of the system and it takes care of running modules **according to a specified XML configuration**.
+
+We need to prepare XML configuration file for Supervisor. Fortunatelly, almost everything is already done.
+
+After installation (from RPM or from source codes with recommended `configure` parameters), there are 2 important paths with configurations:
+* `/ush/share/nemea-supervisor/` - contains default prepared XML configuraions of all NEMEA modules (like [here](https://github.com/CESNET/Nemea-Supervisor/tree/master/configs))
+* `/etc/nemea/` - contains XML configuration file for Supervisor and directories with used modules configurations (they are empty after installation)
+
+Note: these two paths depend on *datarootdir* and *sysconfdir* parameters of the `configure` script during the installation.
+
+The only thing we have to do is this (probably with sudo / root):
+```
+cp -r /usr/share/nemea-supervisor /etc/nemea
+```
+
+After this command, supervisor will use default configurations of the modules. It is shown [here]() that the paths from sysconfdir (/etc/nemea in our case) are included in the configuration file. For detailed information about supervisor configuration file click [here]().
+
+
+### 3. Start and control modules
+
+Once the set of NEMEA modules was configured, all of them can be started easily by [Nemea Supervisor](https://github.com/CESNET/Nemea-Supervisor):
+* `service nemea-supervisor start`
+* OR? `supcli`, option 6 (reload configuration)
+  * (*TODO*: will this start the modules? and would this work for every installation option or for RPM/Vagrant only?)
+* Check status of the modules:
+  * `supcli`, option 4
+  * All modules previously enabled should be *running*.
+
+The modules are running, but they don't receive any data yet. We need to send some flow data to the system ...
+
+
+### 4. Get flows to your system
+
+**IpfixCol**
+
+*(recommended)* Use IPFIXcol to collect NetFlow/IPFIX data from routers/probes and an IPFIXcol [unirec plugin](https://github.com/CESNET/ipfixcol/tree/master/plugins/storage/unirec) to re-send the data to NEMEA.
+  * needed to install IPFIXcol and the plugin and to set up the routers/probes
+  * default and recommended solution for production
+
+
+**FlowMeter**
+
+Use NEMEA internal flow exporter (*flow_meter* module).
+  * it reads data directly from network interface (via libpcap), measures flows and export it to other NEMEA modules
+  * simple, but not very performing solution (flow_meter was not designed for performance), suitable only for testing or very small networks
+    * *TODO*: measure how much traffic can flow_meter handle and make recommendation what "very small network" means?
+
+
+**NfReader**
+
+[NfReader](https://github.com/CESNET/Nemea-Modules/tree/master/nfreader) reads **nfdump** files and sends flow records in UniRec format on its output TRAP interface.
+
+
+**LogReplay**
+
+[LogReplay](https://github.com/CESNET/Nemea-Modules/tree/master/logreplay) converts CSV format of data, from logger module to UniRec format and sends it to the output interface.
+
+
 ## Create your own module in C step by step
 
 **Important**: Nemea-Framework has to be installed in advance. Follow [these instructions](#installation) to install whole NEMEA system (including NEMEA framework) or [these instructions]() to install only NEMEA framework.
@@ -402,12 +474,7 @@ Format of the specifier with examples is explained in detail [here](https://gith
 Now just modify the algorithm in the main loop and job is done :-)
 
 
-## Deploy NEMEA
-
-#### Add a new module to running conf
-
-#### Get flows to your system - nfreader, logreplay, flowmeter, ipfixcol
-
+### Add a new module to running conf
 
 
 NEMEA Related Publications
