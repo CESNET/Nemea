@@ -12,7 +12,8 @@
 - [Quick start and how to](#quick-start-and-how-to)
    - [Try out NEMEA modules](#try-out-nemea-modules)
    - [Deploy NEMEA](#deploy-nemea)
-   - [Create your own module in C step by step](#create-your-own-module-in-c-step-by-step)
+   - [Create your own module in C](#create-your-own-module-in-c)
+   - [Add new module to running configuration](#add-new-module-to-running-configuration)
 - [NEMEA Related publications](#nemea-related-publications)
 
 
@@ -312,18 +313,23 @@ The only thing we have to do is this (probably with sudo / root):
 cp -r /usr/share/nemea-supervisor /etc/nemea
 ```
 
-After this command, supervisor will use default configurations of the modules. It is shown [here]() that the paths from sysconfdir (/etc/nemea in our case) are included in the configuration file. For detailed information about supervisor configuration file click [here]().
+After this command, supervisor will use default configurations of the modules. It is shown [here](https://github.com/CESNET/Nemea-Supervisor/blob/master/configs/supervisor_config_template.xml.in#L8) that the paths from sysconfdir (/etc/nemea in our case) are included in the configuration file. For detailed information about supervisor configuration file click [here](https://github.com/CESNET/Nemea-Supervisor#configuration).
 
 
 ### 3. Start and control modules
 
-Once the set of NEMEA modules was configured, all of them can be started easily by [Nemea Supervisor](https://github.com/CESNET/Nemea-Supervisor):
-* `service nemea-supervisor start`
-* OR? `supcli`, option 6 (reload configuration)
-  * (*TODO*: will this start the modules? and would this work for every installation option or for RPM/Vagrant only?)
-* Check status of the modules:
-  * `supcli`, option 4
-  * All modules previously enabled should be *running*.
+Once the configurations are prepared, modules can be managed by Supervisor. It can be easily started as a systemd service with
+
+`service nemea-supervisor start` (recommended, probably with root / sudo)
+
+or manually
+
+`/usr/bin/nemea/supervisor --daemon -T /etc/nemea/supervisor_config_template.xml -L /var/log/nemea-supervisor` TODO run as nemead user
+
+See all service commands [here](https://github.com/CESNET/Nemea-Supervisor#program-modes) and all program parameters with `/usr/bin/nemea/supervisor -h`. You can also check whether the process is running or not with `ps -ef | grep supervisor`.
+If Supervisor did not start successfully, it should print error info directly to terminal (in case of manual start) or to system log (in case of service) which can be browsed with `journalctl -xe`. Runtime errors and events can be found in `supervisor_log` file located in the -L directory (`/var/log/nemea-supervisor` by default).
+
+Now we can connect to running supervisor with supervisor client simply with command `supcli`. The menu with options is described in detail [here](https://github.com/CESNET/Nemea-Supervisor#supervisor-functions). After pressing number *4* and *enter*, it prints current status of the system. By default, all *detectors* and *loggers* (except flow_meter logger) should be enabled and running.
 
 The modules are running, but they don't receive any data yet. We need to send some flow data to the system ...
 
@@ -355,7 +361,7 @@ Use NEMEA internal flow exporter (*flow_meter* module).
 [LogReplay](https://github.com/CESNET/Nemea-Modules/tree/master/logreplay) converts CSV format of data, from logger module to UniRec format and sends it to the output interface.
 
 
-## Create your own module in C step by step
+## Create your own module in C
 
 **Important**: Nemea-Framework has to be installed in advance. Follow [these instructions](#installation) to install whole NEMEA system (including NEMEA framework) or [these instructions]() to install only NEMEA framework.
 
@@ -474,7 +480,16 @@ Format of the specifier with examples is explained in detail [here](https://gith
 Now just modify the algorithm in the main loop and job is done :-)
 
 
-### Add a new module to running conf
+## Add new module to running configuration
+
+This section is for those who has already deployed the system ([see this section](#deploy-nemea)) and wants to add their module to the running configuration. It can be done in 3 steps:
+
+1. Create a *.sup* config file for your module. You can use [this](https://github.com/CESNET/Nemea-Supervisor/blob/master/configs/template.sup#L10) empty template and fill it according to [this](https://github.com/CESNET/Nemea-Supervisor/blob/master/configs/detectors/dnstunnel_detection.sup) example ([example with comments](https://github.com/CESNET/Nemea-Supervisor/blob/master/configs/config_example.xml#L19)).
+2. Add the new *.sup* file to directory included in the Supervisor configuration file. If you have used recommended parameters of the `configure` script during the installation, both the configuraion file and the directories should be located in `/etc/nemea`, otherwise check the paths in the configuration file the Supervisor is running with. Than copy the file to one of the directories you want e.g. `cp ./your_module.sup /etc/nemea/others`.
+3. Connect to Supervisor using `supcli` command and select option 6 *reload configuration*. New module should be added and if the enabled flag is set to *true*, it should be also running.
+
+For detailed information about Supervisor configuration see [this](https://github.com/CESNET/Nemea-Supervisor#configuration).
+
 
 
 NEMEA Related Publications
