@@ -31,35 +31,141 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>
-<a id="nemea-system" class="anchor" href="#nemea-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NEMEA System</h1>
+        <h2>
+<a id="readme-outline" class="anchor" href="#readme-outline" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>README outline</h2>
+
+<ul>
+<li><a href="#project-status">Project status</a></li>
+<li>
+<a href="#nemea-system">NEMEA System</a>
+
+<ul>
+<li><a href="#parts-of-the-system">Parts of the system</a></li>
+<li><a href="#repositories">Repositories</a></li>
+</ul>
+</li>
+<li><a href="#dependencies">Dependencies</a></li>
+<li>
+<a href="#installation">Installation</a>
+
+<ul>
+<li><a href="#binary-packages">Binary packages</a></li>
+<li><a href="#source-codes">Source codes</a></li>
+<li><a href="#vagrant">Vagrant</a></li>
+<li>Packer</li>
+</ul>
+</li>
+<li>
+<a href="#quick-start-and-how-to">Quick start and how to</a>
+
+<ul>
+<li><a href="#try-out-nemea-modules">Try out NEMEA modules</a></li>
+<li><a href="#deploy-nemea">Deploy NEMEA</a></li>
+<li><a href="#create-your-own-module-in-c">Create your own module in C</a></li>
+<li><a href="#add-new-module-to-running-configuration">Add new module to running configuration</a></li>
+</ul>
+</li>
+<li><a href="#nemea-related-publications">NEMEA Related publications</a></li>
+</ul>
+
+<h2>
+<a id="project-status" class="anchor" href="#project-status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project status</h2>
 
 <p>Travis CI build: <a href="https://travis-ci.org/CESNET/Nemea"><img src="https://travis-ci.org/CESNET/Nemea.svg?branch=master" alt="Build Status"></a></p>
 
-<p>The Nemea system consists of:</p>
+<h1>
+<a id="nemea-system" class="anchor" href="#nemea-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NEMEA System</h1>
+
+<p>NEMEA (Network Measurements Analysis) system is a <strong>stream-wise</strong>, <strong>flow-based</strong> and <strong>modular</strong> detection system for network traffic analysis. It consists of many independent modules which are interconnected via communication interfaces and each of the modules has its own task. Communication between modules is done by message passing where the messages contain flow records, alerts, some statistics or preprocessed data.</p>
+
+<h2>
+<a id="parts-of-the-system" class="anchor" href="#parts-of-the-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parts of the system</h2>
+
+<p>The following picture shows all important parts of the system.</p>
+
+<p><img src="doc/NEMEA-parts.png" alt="NEMEA parts"></p>
+
+<ol>
+<li>Modules - basic building blocks; separate system processes; receive stream of data on their input interfaces, process it and send another stream of data to their output interfaces; all modules are simply divided into two groups according to their task:
 
 <ul>
 <li>
-<a href="https://github.com/CESNET/Nemea-Framework">Nemea framework</a>: The heart of the system that provides interconnection of modules, data format (and its handling) and common functions, algorithms and data structures.</li>
+<strong>Detectors</strong> (<em>red</em>) - detect some malicious traffic, e.g. <em>DNS tunnel</em>, <em>DoS</em>, <em>scanning</em>
+</li>
 <li>
-<a href="https://github.com/CESNET/Nemea-Modules">Nemea modules</a>: Base modules of the system for export&amp;storage of flow data, replay of stored flow data, filtering, merging, and others. It also contains a basic flow exporter capable of L7 information. </li>
+<strong>Modules</strong> (<em>yellow</em>) - export&amp;storage of flow data, preprocess or postprocess the data (filter, aggregate, merge etc.)</li>
+</ul>
+</li>
+<li>NEMEA Framework - set of libraries implementing features common for all modules
+
+<ul>
 <li>
-<a href="https://github.com/CESNET/Nemea-Detectors">Nemea detectors</a>: Detection modules that can detect and report various types of malicious traffic such as DoS, DDoS, scanning, bruteforce attacks.</li>
+<strong>TRAP</strong> (Traffic Analysis Platform) (<em>blue</em>) - implements communication interfaces and functions for sending/receiving the messages between interfaces</li>
 <li>
-<a href="https://github.com/CESNET/Nemea-Supervisor">Nemea Supervisor</a>: Central management and monitoring module of the Nemea system. It takes care of running modules according to configuration.</li>
+<strong>UniRec</strong> (Unified Record) (<em>orange</em>) - implements efficient data format of the sent/received messages</li>
+<li>
+<strong>Common</strong> library (<em>purple</em>) - implements common algorithms and data structures used in modules</li>
+</ul>
+</li>
+<li>
+<strong>Supervisor</strong> (<em>green</em>) - central management and monitoring tool of the NEMEA system. It takes care of running modules according to a specified configuration.</li>
+</ol>
+
+<h2>
+<a id="repositories" class="anchor" href="#repositories" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Repositories</h2>
+
+<p>The project is divided into four repositories added as submodules:</p>
+
+<ul>
+<li><a href="https://github.com/CESNET/Nemea-Framework">NEMEA framework</a></li>
+<li><a href="https://github.com/CESNET/Nemea-Modules">NEMEA modules</a></li>
+<li><a href="https://github.com/CESNET/Nemea-Detectors">NEMEA detectors</a></li>
+<li><a href="https://github.com/CESNET/Nemea-Supervisor">NEMEA Supervisor</a></li>
 </ul>
 
-<p>This file describes the installation and basic usage of the Nemea system.
-To see more general information, please have a look at
-<a href="https://www.liberouter.org/nemea">https://www.liberouter.org/nemea</a>.</p>
+<h2>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h2>
+
+<h3>
+<a id="building-environment" class="anchor" href="#building-environment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building environment</h3>
+
+<ul>
+<li>autoconf</li>
+<li>automake</li>
+<li>gcc</li>
+<li>gcc-c++</li>
+<li>libtool</li>
+<li>libxml2-devel</li>
+<li>libxml2-utils (contains xmllint on Debian)</li>
+<li>make</li>
+<li>pkg-config</li>
+</ul>
+
+<h3>
+<a id="optional-dependencies-of-modules-and-detectors" class="anchor" href="#optional-dependencies-of-modules-and-detectors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Optional dependencies of modules and detectors</h3>
+
+<ul>
+<li>rpm-build (build of RPM packages)</li>
+<li>libpcap (<a href="https://github.com/CESNET/Nemea-Modules/tree/master/flow_meter">flow_meter</a>)</li>
+<li>
+<a href="https://github.com/VUTBR/nf-tools/tree/master/libnf/c">libnf</a> or <a href="http://sourceforge.net/projects/libnfdump/">libnfdump</a> (<a href="https://github.com/CESNET/Nemea-Modules/tree/master/nfreader">nfreader</a>)</li>
+<li>libidn (<a href="https://github.com/CESNET/Nemea-Detectors/tree/master/blacklistfilter">blacklistfilter</a>)</li>
+<li>bison and flex (<a href="https://github.com/CESNET/Nemea-Modules/tree/master/unirecfilter">unirecfilter</a>)</li>
+</ul>
+
+<h3>
+<a id="how-to-install-dependencies" class="anchor" href="#how-to-install-dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to install dependencies:</h3>
+
+<pre><code>yum install -y autoconf automake gcc gcc-c++ libtool libxml2-devel make pkg-config libpcap libidn bison flex
+</code></pre>
+
+<p>Note: Latest systems (e.g. Fedora) use <code>dnf</code> instead of <code>yum</code>.</p>
 
 <h1>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h1>
 
-<p>For the list of dependencies, please have a look into <a href="./dependencies.md">dependencies.md</a>.</p>
-
-<p>There are three different ways of installation of the Nemea system covered
-in this document: vagrant, binary packages and spurce codes.</p>
+<p>There are three different ways of installation of the NEMEA system covered
+in this document: <strong>vagrant</strong>, <strong>binary packages</strong> and <strong>source codes</strong>.</p>
 
 <h2>
 <a id="vagrant" class="anchor" href="#vagrant" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Vagrant</h2>
@@ -70,21 +176,36 @@ For more information see <a href="./vagrant/">./vagrant/</a>.</p>
 <h2>
 <a id="binary-packages" class="anchor" href="#binary-packages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Binary packages</h2>
 
-<p>The Nemea system can be installed from binary packages. Information will
-be supplied soon.</p>
+<p>The NEMEA system can be installed from binary RPM packages.
+To add CESNET repository containing the packages, run (as root/sudo):</p>
+
+<pre><code>rpm -ivh https://homeproj.cesnet.cz/rpm/liberouter/devel/x86_64/liberouter-devel-1.0.0-1.noarch.rpm
+</code></pre>
+
+<p>After that, NEMEA can be installed as any other package (run as root/sudo):</p>
+
+<pre><code>yum install nemea
+</code></pre>
+
+<p>Note: Latest systems (e.g. Fedora) use <code>dnf</code> instead of <code>yum</code>.</p>
+
+<p>For development purposes, there is <code>nemea-framework-devel</code> package that installs
+all needed development files and docs.</p>
+
+<p>Currently, we do not have .deb packages (for Debian/Ubuntu/...) but we are working on it. Please follow installation from <a href="#source-codes">source codes</a></p>
 
 <h2>
-<a id="source-codes-installation" class="anchor" href="#source-codes-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Source Codes installation</h2>
+<a id="source-codes" class="anchor" href="#source-codes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Source codes</h2>
 
 <p>The whole system is based on GNU/Autotools build system that makes dependency checking and
 building process much more easier.</p>
 
-<p>To clone the read-only repositories, use:</p>
+<p>To clone the NEMEA repositories, use:</p>
 
 <pre><code>git clone --recursive https://github.com/CESNET/nemea
 </code></pre>
 
-<p>After successful clone, use:</p>
+<p>After successful clone and <a href="#dependencies">dependencies</a> installation (<strong>!</strong>), use:</p>
 
 <pre><code>./bootstrap.sh
 </code></pre>
@@ -98,7 +219,7 @@ and compilation process. For more information see:</p>
 <pre><code>./configure --help
 </code></pre>
 
-<p>We recommend to set paths according to the used operating system e.g.:</p>
+<p>We recommend to set paths according to the used operating system, e.g.:</p>
 
 <pre><code>./configure --prefix=/usr --bindir=/usr/bin/nemea --sysconfdir=/etc/nemea --libdir=/usr/lib64
 </code></pre>
@@ -108,7 +229,7 @@ and compilation process. For more information see:</p>
 <pre><code>make
 </code></pre>
 
-<p>The make(1) tool has various parameters, to build the Nemea package faster on
+<p>The make(1) tool has various parameters, to build the NEMEA package faster on
 multicore systems, we recommend to use parameter -j with the number of jobs
 that should be run in parallel.</p>
 
@@ -120,92 +241,469 @@ The installation can be done by (usually it requires root / sudo):</p>
 <pre><code>make install
 </code></pre>
 
-<p>Congratulations, the whole Nemea system should be installed right now... :-)</p>
+<p>Congratulations, the whole NEMEA system should be installed right now... :-)</p>
 
 <h1>
-<a id="quick-start-guide" class="anchor" href="#quick-start-guide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick Start Guide</h1>
+<a id="quick-start-and-how-to" class="anchor" href="#quick-start-and-how-to" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick start and how to</h1>
 
-<p>The heart of the Nemea system is a Nemea module. Nemea modules are building blocks - independent system processes
-that can be connected with each other. Information about every module can be found in its help:</p>
+<h2>
+<a id="try-out-nemea-modules" class="anchor" href="#try-out-nemea-modules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Try out NEMEA modules</h2>
 
-<pre><code>./module -h
-</code></pre>
+<h3>
+<a id="execute-a-module" class="anchor" href="#execute-a-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Execute a module</h3>
 
-<p>Every Nemea module can have one or more communication interfaces (IFC) implemented in
-<a href="https://github.com/CESNET/Nemea-Framework/tree/master/libtrap">libtrap</a>. There are two types of IFCs: <strong>input</strong> and <strong>output</strong>. Numbers of module's IFCs
-can be found in its help.</p>
+<p>NEMEA modules using have two implicit arguments. <code>module -h</code> for help
+(optional) and <code>module -i IFC_SPEC</code> for communication interface (IFC)
+specification.  The <code>-i</code> parameter is mandatory for all NEMEA modules.</p>
 
-<p>At the beginning, let's try the <code>logreplay</code> module (<a href="https://github.com/CESNET/Nemea-Modules/tree/master/logreplay">modules/logreplay</a>).
-The help output shows that <code>logreplay</code> has one output IFC:</p>
+<p><strong>Module help <code>-h</code></strong></p>
 
-<pre><code>Name: LogReplay
-Inputs: 0
-Outputs: 1
-Description:
-  This module converts CSV from logger and sends it in UniRec. The first row
-  of CSV file has to be data format of fields.
-</code></pre>
+<p>The example below shows part of help output of <a href="https://github.com/CESNET/Nemea-Modules/tree/master/logger">logger</a>.
+It contains module's name, description, number of input and output IFC, modules
+parameters and TRAP library parameters (common for all modules).</p>
 
-<p>The complement module is <code>logger</code> (<a href="https://github.com/CESNET/Nemea-Modules/tree/master/logger">modules/logger</a>), help output:</p>
-
-<pre><code>Name: Logger
+<pre><code>TRAP module, libtrap version: 0.7.6 b258bb4
+===========================================
+Name: Logger
 Inputs: variable
 Outputs: 0
 Description:
-  This module logs all incoming UniRec records to standard output or into a
-  specified file. Each record is written as one line containing values of its
-  fields in human-readable format separated by chosen delimiters (CSV format).
-  If you use more than one input interface you have to specify output format
-  by parameter "-o".
+  This module logs all incoming UniRec records to standard output or into a specified file. Each record
+  is written as one line containing values of its fields in human-readable format separated by chosen
+  delimiters (CSV format). If you use more than one input interface you have to specify output format by
+  parameter "-o".
+
+Usage:  logger [COMMON]... [OPTIONS]...
+
+Parameters of module [OPTIONS]:
+-------------------------------
+  -w  --write &lt;string&gt;             Write output to FILE instead of stdout (rewrite the file).
+
+  -a  --append &lt;string&gt;            Write output to FILE instead of stdout (append to the end).
+
+  -t  --title                      Write names of fields on the first line.
+
+  -c  --cut &lt;uint32&gt;               Quit after N records are received, 0 can be useful in combination
+                                   with -t to print UniRec.
+
+Common TRAP parameters [COMMON]:
+--------------------------------
+  -h [trap,1]                      If no argument, print this message. If "trap" or 1 is given, print
+                                   TRAP help.
+
+  -i IFC_SPEC                      Specification of interface types and their parameters, see "-h trap"
+                                   (mandatory parameter).
+
+  -v                               Be verbose.
+
+Environment variables that affects output:
+------------------------------------------
+  LIBTRAP_OUTPUT_FORMAT            If set to "json", information about module is printed in JSON format.
+
+  PAGER                            Show the help output in the set PAGER.
 </code></pre>
 
-<p>Two modules can be interconnected using one input IFC and one output IFC.</p>
+<p><strong>Interface specifier <code>-i</code></strong></p>
 
-<p>The <a href="./use-cases">./use-cases</a> directory contains example scripts that demonstrate usage and functionality of
-Nemea modules. <code>logreplay</code> and <code>logger</code> can be found in <a href="./use-cases/logger-repeater.sh">./use-cases/logger-repeater.sh</a>.
-Start the script to see how flow records are replayed from CSV file by <code>logreplay</code> and received by <code>logger</code>:</p>
+<p>The <code>-i</code> parameter with the interface specifier <em>IFC_SPEC</em> (<code>module -i IFC_SPEC</code>)
+specifies modules interfaces - their types and parameters.  The interface
+specifier has the following format:</p>
 
-<pre><code>cd use-cases
-./logger-repeater.sh generate
+<p><code>&lt;IFC 1&gt;,&lt;IFC 2&gt;,...,&lt;IFC N&gt;</code></p>
+
+<p>where <code>&lt;IFC x&gt;</code> looks like</p>
+
+<p><code>&lt;type&gt;:&lt;par1&gt;:&lt;par2&gt;:...:&lt;parN&gt;</code>.</p>
+
+<p><code>&lt;type&gt;</code> can be one of the following: <code>t</code> - TCP socket (for remote
+communication), <code>u</code> - UNIX socket (for local communication), <code>b</code> - blackhole to
+drop all messages during sending, <code>f</code> - File IFC.</p>
+
+<p>Interfaces are separated by <code>,</code> and their parameters are separated by <code>:</code>.
+Input IFCs must be specified at first, output IFCs follow. Examples below show</p>
+
+<p>Example:</p>
+
+<pre><code>module1 -i t:address:port1,t:port2
 </code></pre>
 
-<p>To get usage of scripts from <code>use-cases</code>, execute a script without parameter. The <code>generate</code> parameter of
-<code>logger-repeater.sh</code> can be used to generate CSV file automatically. For more information, see source codes of
-scripts.</p>
+<p><em>module1</em> uses TCP interfaces (for machine to machine communication). Let's
+assume it has one input and one output interface (number of input and output
+IFCs is given by programmer of the module). Therefore, input IFC will connect
+to <code>address:port1</code> and output IFC will listen on <code>port2</code>.</p>
 
-<p><code>logreplay</code> is one of possible ways of getting data into the Nemea system.
-There is a <a href="https://github.com/CESNET/Nemea-modules/tree/master/nfreader">nfreader</a> module that is able to read and replay <code>nfdump</code> files.
-Last but not least, there is an <a href="https://github.com/CESNET/ipfixcol/">ipfixcol</a> with <a href="https://github.com/CESNET/ipfixcol/tree/master/plugins/storage/unirec">ipfixcol2unirec</a>
-that is capable of exporting flow data in UniRec format and sending it via libtrap IFC.</p>
+<p>TCP type of IFC expects mandatory parameter <code>port</code> and optionally, additional
+parameter <code>address</code> (as it is used in example).  Default value of <code>address</code> is
+<code>localhost</code>.</p>
 
-<h1>
-<a id="manage-nemea-modules-efficiently" class="anchor" href="#manage-nemea-modules-efficiently" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Manage Nemea modules efficiently</h1>
+<p>Example:</p>
 
-<p>The Nemea system can be managed and monitored by a special module called
-<a href="https://github.com/CESNET/Nemea-Supervisor">Supervisor</a>.</p>
-
-<p>Some modules that are contained in Nemea-Modules and Nemea-Detectors provide their default
-configuration in <a href="https://github.com/CESNET/Nemea-Supervisor/tree/master/configs/">nemea-supervisor/configs/</a>.
-To use prepared configuration, run <code>make</code> in <code>nemea-supervisor/configs</code> and start:</p>
-
-<pre><code>nemea-supervisor/supervisor -f nemea-supervisor/configs/supervisor_config.xml
+<pre><code>module2 -i u:sock1,u:sock2
 </code></pre>
 
-<p>To start <code>supervisor</code> in an interactive mode, use <code>-d</code></p>
+<p>UNIX type of IFC expects unique identifier of the socket.  For compatibility
+with TCP IFC, <code>address</code> can be specified but <strong>it has no effect!</strong></p>
 
-<p>For more information about Supervisor see its README.</p>
-
-<p>Note: It is totally up to user whether to use <code>nemea-supervisor/configs</code> or not.  It is just
-an example of working configuration.</p>
-
-<h1>
-<a id="nemea-related-publications" class="anchor" href="#nemea-related-publications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Nemea Related Publications</h1>
+<p><strong>Important findings:</strong></p>
 
 <ul>
-<li><p>Tomáš Čejka, Radoslav Bodó, Hana Kubátová: Nemea: Searching for Botnet Footprints. In: Proceedings of the 3rd Prague Embedded Systems Workshop, Prague, Czech Republic, 2015.</p></li>
+<li>TCP interface for machine to machine communication, UNIX-SOCKET for communication on the same machine</li>
+<li>input interface behaves as a client, output interfaces behaves as a server</li>
+</ul>
+
+<p>Detailed information and another examples of <em>IFC_SPEC</em> can be found in <a href="https://github.com/CESNET/Nemea-Framework/blob/master/libtrap/README.ifcspec.md">libtrap/README.ifcspec.md</a>.</p>
+
+<h3>
+<a id="interconnect-two-modules" class="anchor" href="#interconnect-two-modules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interconnect two modules</h3>
+
+<p>Let´s try to interconnect
+<a href="https://github.com/CESNET/Nemea-Modules/tree/master/logreplay">logreplay</a> and
+<a href="https://github.com/CESNET/Nemea-Modules/tree/master/logger">logger</a> modules to
+see them communicate.
+Logreplay module has one output IFC.  It reads CSV file created by logger
+module and sends it in UniRec format.  Logger has one input interface and it
+logs all incoming UniRec records to standard output or into specified file in
+CSV format.  These two modules can be interconnected using one input IFC and
+one output IFC.</p>
+
+<p><a href="https://github.com/CESNET/Nemea/blob/master/use-cases/logger-repeater.sh">use-cases/logger-repeater.sh</a>
+can be used for the demonstration. With no parameter, it prints help with
+description.  With <em>generate</em> parameter, the script creates a CSV file with header and 3
+flow records (see
+<a href="https://github.com/CESNET/Nemea/blob/master/use-cases/logger-repeater.sh#L53">use-cases/logger-repeater.sh#L53</a>).
+Thereafter it executes logreplay and logger modules</p>
+
+<pre><code>logreplay -i "u:my_socket"` -f CSV_file
+</code></pre>
+
+<p>and</p>
+
+<pre><code>logger -i "u:my_socket" -t
+</code></pre>
+
+<p>Logreplay has one UNIX output IFC listening on <em>my_socket</em> and logger has one UNIX input IFC which connects to <em>my_socket</em>.</p>
+
+<p>To see the effect, go to <code>use-cases/</code> and execute the script:</p>
+
+<pre><code>./logger-repeater.sh generate
+</code></pre>
+
+<p>It should print exactly the same output as generated CSV tmp input (header and
+3 records). In
+<a href="https://github.com/CESNET/Nemea/tree/master/use-cases">use-cases</a> there are
+more examples with basic modules.
+<code>logreplay</code> is one of possible ways of getting data into the NEMEA system.</p>
+
+<p>Other data sources are discussed later in <a href="https://github.com/CESNET/Nemea#4-get-flows-to-your-system">Get flows to your system</a>.</p>
+
+<h2>
+<a id="deploy-nemea" class="anchor" href="#deploy-nemea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Deploy NEMEA</h2>
+
+<p>This section shows how to deploy NEMEA in four steps.</p>
+
+<p>It only covers the basics needed to run the system in its default
+configuration.  Keep in mind that NEMEA was designed as a very flexible
+framework, so every user can (and should) adjust the configuration of NEMEA
+modules to their own purposes.</p>
+
+<h3>
+<a id="1-installation" class="anchor" href="#1-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Installation</h3>
+
+<p>First of all, the whole system (NEMEA Framework, Modules, Detectors and
+Supervisor) has to be installed.  Follow <a href="#installation">installation instructions</a> to
+install the system from RPM or from source codes.</p>
+
+<h3>
+<a id="2-prepare-configurations" class="anchor" href="#2-prepare-configurations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Prepare configurations</h3>
+
+<p>To avoid manual control of the system, there is <a href="https://github.com/CESNET/Nemea-Supervisor">NEMEA Supervisor</a>.
+It is a central management and monitoring tool of the system and it takes care of running
+modules <strong>according to a specified XML configuration</strong>.</p>
+
+<p>We need to prepare XML configuration file for Supervisor.  Fortunately, almost
+everything is already done.</p>
+
+<p>After installation (from RPM or from source codes with recommended <code>configure</code>
+parameters), there are 2 important paths with configurations:</p>
+
+<ul>
+<li>
+<code>/ush/share/nemea-supervisor/</code> - contains default prepared XML configuraions of all NEMEA modules (like <a href="https://github.com/CESNET/Nemea-Supervisor/tree/master/configs">nemea-supervisor/configs/</a>)</li>
+<li>
+<code>/etc/nemea/</code> - contains XML configuration file for Supervisor and directories with used modules configurations (they are empty after installation)</li>
+</ul>
+
+<p>Note: these two paths depend on <em>datarootdir</em> and <em>sysconfdir</em> parameters of the <code>configure</code> script during the installation.</p>
+
+<p>The only thing we have to do is this (probably with sudo / root):</p>
+
+<pre><code>cp -r /usr/share/nemea-supervisor/*/ /etc/nemea
+</code></pre>
+
+<p>After this command, supervisor will use default configurations of the modules.
+It is shown in <a href="https://github.com/CESNET/Nemea-Supervisor/blob/master/configs/supervisor_config_template.xml.in#L8">nemea-supervisor/configs/supervisor_config_template.xml.in#L8</a>
+that the paths from <code>sysconfdir</code> (<code>/etc/nemea/</code> in our case) are included in the
+configuration file.  For detailed information about supervisor configuration
+see <a href="https://github.com/CESNET/Nemea-Supervisor#configuration">README</a> of Supervisor.</p>
+
+<h3>
+<a id="3-start-and-control-modules" class="anchor" href="#3-start-and-control-modules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Start and control modules</h3>
+
+<p>Once the configurations are prepared, modules can be managed by Supervisor. It can be easily started as a systemd service with</p>
+
+<p><code>service nemea-supervisor start</code> (recommended, probably with root / sudo)</p>
+
+<p>or manually</p>
+
+<p><code>/usr/bin/nemea/supervisor --daemon -T /etc/nemea/supervisor_config_template.xml -L /var/log/nemea-supervisor</code>
+Note: manual approach does not change UID that supervisor runs with.
+Contrary, using <code>service</code>, NEMEA runs as <code>nemead</code> UID and <code>nemead</code> GID.</p>
+
+<p>See all service commands in
+<a href="https://github.com/CESNET/Nemea-Supervisor#program-modes">README</a> and all
+program parameters with <code>/usr/bin/nemea/supervisor -h</code>.  You can also check
+whether the process is running or not with <code>ps -ef | grep supervisor</code>.
+If Supervisor has not started successfully, it should print error info directly
+to system log (in case of service), which can be browsed with <code>journalctl -xe</code>,
+or to stdout (in case of manual start).  Runtime errors and events can be
+found in <code>supervisor_log</code> file located in the -L directory
+(<code>/var/log/nemea-supervisor</code> by default).</p>
+
+<p>Now we can connect to running supervisor with supervisor client simply with
+command <code>supcli</code>.  The menu with options is described in detail
+in <a href="https://github.com/CESNET/Nemea-Supervisor#supervisor-functions">README</a>.
+After pressing number <em>4</em> and <em>enter</em>, it prints current status of the system.
+By default, all <em>detectors</em> and <em>loggers</em> (except flow_meter logger) should be
+enabled and running.</p>
+
+<p>The modules are running, but they don't receive any data yet. We need to send
+some flow data to the system...</p>
+
+<h3>
+<a id="4-get-flows-to-your-system" class="anchor" href="#4-get-flows-to-your-system" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. Get flows to your system</h3>
+
+<p><strong>IPFIXcol</strong></p>
+
+<p><em>(recommended)</em> Use IPFIXcol to collect NetFlow/IPFIX data from routers/probes
+and an <a href="https://github.com/CESNET/ipfixcol">IPFIXcol</a> <a href="https://github.com/CESNET/ipfixcol/tree/master/plugins/storage/unirec">unirec plugin</a>
+to re-send the data to NEMEA.</p>
+
+<ul>
+<li>needed to install IPFIXcol and the plugin and to set up the routers/probes</li>
+<li>default and recommended solution for production</li>
+</ul>
+
+<p><strong>FlowMeter</strong></p>
+
+<p>Use NEMEA internal flow exporter (<em>flow_meter</em> module).</p>
+
+<ul>
+<li>it reads data directly from network interface (via libpcap), measures flows and export it to other NEMEA modules</li>
+<li>simple, but not very performing solution (flow_meter was not designed for performance), suitable only for testing or very small networks
+
+<ul>
+<li>
+<em>TODO</em>: measure how much traffic can flow_meter handle and make recommendation what "very small network" means?</li>
+</ul>
+</li>
+</ul>
+
+<p><strong>NfReader</strong></p>
+
+<p><a href="https://github.com/CESNET/Nemea-Modules/tree/master/nfreader">NfReader</a> reads
+<strong>nfdump</strong> files and sends flow records in UniRec format on its output TRAP
+interface.</p>
+
+<p><strong>LogReplay</strong></p>
+
+<p><a href="https://github.com/CESNET/Nemea-Modules/tree/master/logreplay">LogReplay</a>
+converts CSV format of data, from logger module to UniRec format and sends it
+to the output interface.</p>
+
+<h2>
+<a id="create-your-own-module-in-c" class="anchor" href="#create-your-own-module-in-c" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create your own module in C</h2>
+
+<p><strong>Important</strong>: Nemea-Framework has to be installed in advance.  Follow
+<a href="#installation">installation instructions</a></p>
+
+<h4>
+<a id="use-example-module-as-a-template" class="anchor" href="#use-example-module-as-a-template" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use Example module as a template</h4>
+
+<p>Let <code>~/mighty-module/</code> be the directory we want to develop our module in (replace path <code>~/mighty-module/</code> in all commands with another directory if needed) and <em>mighty_module</em> the name of our module.  We will use example module as a template - copy the directory <a href="https://github.com/CESNET/Nemea-Framework/tree/master/examples/module">nemea-framework/examples/module/</a> to <code>~/mighty-module/</code>.</p>
+
+<p>In <code>~/mighty-module/configure.ac</code> update the following lines</p>
+
+<pre><code>AC_INIT([example_module], [1.0.0], [traffic-analysis@cesnet.cz])
+AC_CONFIG_SRCDIR([example_module.c])
+</code></pre>
+
+<p>with</p>
+
+<pre><code>AC_INIT([migty_module], [1.0.0], [YOUR EMAIL ADDRESS])
+AC_CONFIG_SRCDIR([mighty_module.c])
+</code></pre>
+
+<p>In <code>/data/mighty-module/Makefile.am</code> update the following lines</p>
+
+<pre><code>bin_PROGRAMS=example_module
+example_module_SOURCES=example_module.c fields.c fields.h
+example_module_LDADD=-lunirec -ltrap
+</code></pre>
+
+<p>with</p>
+
+<pre><code>bin_PROGRAMS=mighty_module
+mighty_module_SOURCES=mighty_module.c fields.c fields.h
+mighty_module_LDADD=-lunirec -ltrap
+</code></pre>
+
+<p>Finally, execute</p>
+
+<pre><code>mv /data/mighty-module/example_module.c /data/mighty-module/mighty_module.c
+</code></pre>
+
+<p>to rename the source file.</p>
+
+<h4>
+<a id="build-the-module" class="anchor" href="#build-the-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build the module</h4>
+
+<p>Execute the following commands in <code>~/might-module/</code>:</p>
+
+<p>1) Let Autotools process the configuration files.</p>
+
+<pre><code>autoreconf -i
+</code></pre>
+
+<p>2) Configure the module directory.</p>
+
+<pre><code>./configure
+</code></pre>
+
+<p>3) Build the module.</p>
+
+<pre><code>make
+</code></pre>
+
+<p>4) (<strong>Optional</strong>) Install the module. The command should be performed as root (e.g. using sudo).</p>
+
+<pre><code>make install
+</code></pre>
+
+<h3>
+<a id="code-explanation" class="anchor" href="#code-explanation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code explanation</h3>
+
+<p>The example module already links <strong>TRAP</strong> (libtrap) and <strong>UniRec</strong> libraries.
+It is a simple module with one input and one output interface which receives on
+input inteface a message in UniRec format with two numbers and sends them
+together with their sum to output interface.</p>
+
+<p>The code contains comments but here is the list of important operations:</p>
+
+<h4>
+<a id="libtrap" class="anchor" href="#libtrap" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Libtrap</h4>
+
+<p>Generated doxygen doc for module developers: <a href="https://rawgit.com/CESNET/Nemea-Framework/master/libtrap/doc/doxygen/html/index.html">https://rawgit.com/CESNET/Nemea-Framework/master/libtrap/doc/doxygen/html/index.html</a></p>
+
+<p>Generated doxygen doc for libtrap developers: <a href="https://rawgit.com/CESNET/Nemea-Framework/master/libtrap/doc/devel/html/index.html">https://rawgit.com/CESNET/Nemea-Framework/master/libtrap/doc/devel/html/index.html</a></p>
+
+<ol>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L74">Basic module information</a> - specify name, description and number of input / output interfaces of the module</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L87">Module parameters</a> - define parameters the module accepts as program arguments</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L111">Module info structure initialization</a> - initialize a structure with information from the two previous points</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L116">TRAP initialization</a> - initialize module interfaces</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L127">GETOPT macro</a> - parse program arguments</li>
+<li>Main loop:
+
+<ul>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L172">Receive a message</a> - receive a message in UniRec format from input interface</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L175">Handle receive error</a> - check whether an error has occured during receive</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L200">Send a message</a> - send a message in UniRec format via output interface</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L203">Handle send error</a> - check whether an error has ocurred during send</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L210">TRAP and module info clean-up</a> - free everything, libtrap finalization</li>
+</ol>
+
+<h4>
+<a id="unirec" class="anchor" href="#unirec" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UniRec</h4>
+
+<p>Generated doxygen doc: <a href="https://rawgit.com/CESNET/Nemea-Framework/master/unirec/doc/html/index.html">https://rawgit.com/CESNET/Nemea-Framework/master/unirec/doc/html/index.html</a></p>
+
+<ol>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L62">UniRec fields definition</a> - define data types and names of the fields which will be used in UniRec messages (both received and sent messages), e.g. <em>uint32 PACKETS</em>
+</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L141">Templates creation</a> - create UniRec templates separately for every interface (a template defines set of fields in the message) note: two input interfaces receiving same messages can use one template</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L154">Output record allocation</a> - allocate a memory for message sent via output interface</li>
+<li>Main loop (<em>fields manipulation</em>):
+
+<ul>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L191">get field</a> - get a value of specified field from received message according to UniRec template</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L196">set field</a> - set a value of specified field in message which will be sent according to UniRec template</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L195">copy fields</a> - copy values of fields in received message to fields in message which will be sent according to UniRec templates of both interfaces (only fields that are common for both interfaces are copied)</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L219">UniRec cleanup</a> - free everything, UniRec finalization</li>
+</ol>
+
+<h3>
+<a id="execute-the-module" class="anchor" href="#execute-the-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Execute the module</h3>
+
+<h4>
+<a id="module-help" class="anchor" href="#module-help" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Module help</h4>
+
+<p>After executing <code>/data/mighty-module/mighty_module -h</code>, program prints help which contains information from module info structure:</p>
+
+<ul>
+<li>module basic information - name, description, number of input / output interfaces</li>
+<li>module parameters - short opt, long opt, description, argument data type</li>
+<li>TRAP library parameters - parameters common for all modules using libtrap</li>
+</ul>
+
+<h3>
+<a id="develop-the-module" class="anchor" href="#develop-the-module" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Develop the module</h3>
+
+<p>Now just modify the algorithm in the main loop and the job is done :-)</p>
+
+<h2>
+<a id="add-new-module-to-running-configuration" class="anchor" href="#add-new-module-to-running-configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Add new module to running configuration</h2>
+
+<p>This section is for those who has already deployed the system (<a href="#deploy-nemea">Deploy NEMEA</a>
+section) and wants to add their module to the running configuration.  It can be done in 3 steps:</p>
+
+<ol>
+<li>Create a <em>.sup</em> config file for your module. You can use <a href="https://github.com/CESNET/Nemea-Supervisor/blob/master/configs/template.sup#L10">this</a> empty template and fill it according to <a href="https://github.com/CESNET/Nemea-Supervisor/blob/master/configs/detectors/dnstunnel_detection.sup">this</a> example (<a href="https://github.com/CESNET/Nemea-Supervisor/blob/master/configs/config_example.xml#L19">example with comments</a>).</li>
+<li>Add the new <em>.sup</em> file to directory included in the Supervisor configuration file. If you have used recommended parameters of the <code>configure</code> script during the installation, both the configuration file and the directories should be located in <code>/etc/nemea</code>, otherwise check the paths in the configuration file the Supervisor is running with. Than copy the file to one of the directories you want e.g. <code>cp ./your_module.sup /etc/nemea/others</code>.</li>
+<li>Connect to Supervisor using <code>supcli</code> command and select option 6 <em>reload configuration</em>. New module should be added and if the enabled flag is set to <em>true</em>, it should be also running.</li>
+</ol>
+
+<p>For detailed information about Supervisor configuration see its <a href="https://github.com/CESNET/Nemea-Supervisor#configuration">README</a>.</p>
+
+<h1>
+<a id="nemea-related-publications" class="anchor" href="#nemea-related-publications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NEMEA Related Publications</h1>
+
+<ul>
+<li><p>Tomas Cejka, Marek Svepes. <a href="http://dx.doi.org/10.1007/978-3-319-39814-3_19">Analysis of Vertical Scans Discovered by Naive Detection</a>. Management and Security in the Age of Hyperconnectivity: 10th IFIP WG 6.6 International Conference on Autonomous Infrastructure, Management, and Security, AIMS 2016.</p></li>
+<li><p>Tomáš Čejka, Radoslav Bodó, Hana Kubátová: Nemea: Searching for Botnet Footprints. In: Proceedings of the 3rd Prague Embedded Systems Workshop (PESW), Prague, CZ, 2015.</p></li>
 <li><p>Tomáš Čejka, Václav Bartoš, Lukáš Truxa, Hana Kubátová: <a href="http://link.springer.com/chapter/10.1007/978-3-319-20034-7_10">Using Application-Aware Flow Monitoring for SIP Fraud Detection</a>. In: Proc. of 9th International Conference on Autonomous Infrastructure, Management and Security (AIMS15), 2015.</p></li>
-<li><p>Tomáš Čejka, Zdeněk Rosa and Hana Kubátová: <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&amp;arnumber=7033254">Stream-wise Detection of Surreptitious Traffic over DNS</a>. In: 2014 IEEE 19th International Workshop on Computer Aided Modeling and Design of Communication Links and Networks (CAMAD) (CAMAD 2014). Athens, 2014</p></li>
-<li><p>V. Bartos, M. Zadnik, T. Cejka: <a href="http://www.cesnet.cz/wp-content/uploads/2014/02/trapnemea.pdf">Nemea: Framework for stream-wise analysis of network traffic</a>, CESNET technical report 6/2013.</p></li>
+<li><p>Tomáš Čejka, Zdeněk Rosa and Hana Kubátová: <a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&amp;arnumber=7033254">Stream-wise Detection of Surreptitious Traffic over DNS</a>. In: Proc. of 19th IEEE International Workshop on Computer Aided Modeling and Design of Communication Links and Networks (CAMAD 2014). Athens, 2014.</p></li>
+<li><p>Václav Bartoš, Martin Žádník, Tomáš Čejka: <a href="http://www.cesnet.cz/wp-content/uploads/2014/02/trapnemea.pdf">Nemea: Framework for stream-wise analysis of network traffic</a>, CESNET technical report 6/2013.</p></li>
 </ul>
       </section>
     </div>
