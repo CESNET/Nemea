@@ -520,6 +520,10 @@ The code contains comments but here is the list of important operations:
 
 #### Libtrap
 
+Generated doxygen doc for module developers: https://rawgit.com/CESNET/Nemea-Framework/master/libtrap/doc/doxygen/html/index.html
+
+Generated doxygen doc for libtrap developers: https://rawgit.com/CESNET/Nemea-Framework/master/libtrap/doc/devel/html/index.html
+
 1. [Basic module information](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L74) - specify name, description and number of input / output interfaces of the module
 2. [Module parameters](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L87) - define parameters the module accepts as program arguments
 3. [Module info structure initialization](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L111) - initialize a structure with information from the two previous points
@@ -534,6 +538,8 @@ The code contains comments but here is the list of important operations:
 
 
 #### UniRec
+
+Generated doxygen doc: https://rawgit.com/CESNET/Nemea-Framework/master/unirec/doc/html/index.html
 
 1. [UniRec fields definition](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L62) - define data types and names of the fields which will be used in UniRec messages (both received and sent messages), e.g. *uint32 PACKETS*
 2. [Templates creation](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L141) - create UniRec templates separately for every interface (a template defines set of fields in the message) note: two input interfaces receiving same messages can use one template
