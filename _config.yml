@@ -11,7 +11,7 @@ email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   System for network traffic analysis and anomaly detection.
 baseurl: "/Nemea" # the subpath of your site, e.g. /blog
-url: "http://cesnet.github.io/" # the base hostname & protocol for your site
+url: "//cesnet.github.io/" # the base hostname & protocol for your site
 twitter_username: NEMEA_System
 github_username:
 
