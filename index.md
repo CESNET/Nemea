@@ -360,12 +360,14 @@ everything is already done.
 
 After installation (from RPM or from source codes with recommended `configure`
 parameters), there are 2 important paths with configurations:
+
 * `/ush/share/nemea-supervisor/` - contains default prepared XML configuraions of all NEMEA modules (like [nemea-supervisor/configs/](https://github.com/CESNET/Nemea-Supervisor/tree/master/configs))
 * `/etc/nemea/` - contains XML configuration file for Supervisor and directories with used modules configurations (they are empty after installation)
 
 Note: these two paths depend on *datarootdir* and *sysconfdir* parameters of the `configure` script during the installation.
 
 The only thing we have to do is this (probably with sudo / root):
+
 ```
 cp -r /usr/share/nemea-supervisor/*/ /etc/nemea
 ```
