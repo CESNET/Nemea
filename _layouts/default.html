@@ -15,6 +15,8 @@
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/CESNET/Nemea/zipball/master">Download this project as a .zip file</a>
               <a class="tar_download_link" href="https://github.com/CESNET/Nemea/tarball/master">Download this project as a tar.gz file</a>
+{% for page in site.pages %}{% if page.title and page.public %}<a class="page_link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
+<a class="page_link" href="{{ site.baseurl }}/">HOME</a>
             </section>
         </header>
     </div>
@@ -22,8 +24,6 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner">
-
-    {% include header.html %}
 
     <div class="page-content">
       <div class="wrapper">

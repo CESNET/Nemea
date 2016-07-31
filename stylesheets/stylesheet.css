@@ -317,12 +317,26 @@ Full-Width Styles
 
 #downloads {
   position: absolute;
-  width: 210px;
+  width: 100%;
   z-index: 10;
   bottom: -40px;
   right: 0;
   height: 70px;
-  background: url('../images/icon_download.png') no-repeat 0% 90%;
+}
+
+.page_link {
+  display: block;
+  float: right;
+  overflow: hidden;
+  background-color: #595959;
+  color: #ffffff;
+  padding: 15px;
+  margin-left: 5px;
+}
+
+.page_link:hover {
+  background-color: #0077de;
+  text-decoration: none;
 }
 
 .zip_download_link {
