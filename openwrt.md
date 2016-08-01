@@ -77,6 +77,7 @@ make
 This will take some time.
 
 ## Installing firmware image
+
 If you created `ipk` packages, skip this section.
 
 Image installation is not part of this guide, but you can follow official OpenWrt [guide](https://wiki.openwrt.org/doc/howto/generic.flashing).
@@ -92,15 +93,18 @@ scp bin/TARGET/packages/nemea/nemea-* root@<your_router_ip_address>:
 ```
 
 Next log into your router:
+
 ```
 ssh root@<your_router_ip_address>
 ```
 
 and run:
+
 ```
 opkg update
 opkg install nemea-*
 ```
+
 libtrap and NEMEA exporting modules are now installed.
 
 
@@ -111,13 +115,17 @@ NEMEA modules are installed in `/usr/bin/nemea` directory. On router you can sim
 ```
 /usr/bin/nemea/flow_meter -i t:12345 -I br-lan
 ```
+
 which will start flow_meter module capturing packets from `br-lan` interface and listening on port `12345`.
 
 If you have NEMEA installed on your computer, you can show exported flows from your router by running:
+
 ```
 logger -i t:<your_router_ip_address>:12345 -t
 ```
+
 or if your OpenWrt router uses big endian architecture, you will need to use special module:
+
 ```
 endiverter -i t:<your_router_ip_address>:12345,u:my_socket &
 logger -i u:my_socket -t
@@ -128,6 +136,7 @@ For help use:
 ```
 /usr/bin/nemea/flow_meter -h
 ```
+
 or [NEMEA readme](https://github.com/CESNET/Nemea/blob/master/README.md).
 
 
