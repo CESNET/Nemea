@@ -39,7 +39,7 @@ make menuconfig
 
 and set the target system, target profile and also other options or packages to compile you want.
 
-Once set, scroll down in main menu, find `NEMEA` entry and jump to it's configuration menu.
+Once set, scroll down in main menu, find `NEMEA` entry and enter to it's configuration menu.
 
 ![]({{ "/doc/menuconfig-main-menu.png" | prepend: site.baseurl }} "Main menu")
 
@@ -64,8 +64,7 @@ Otherwise set labels to `*`, NEMEA will be included in target firmware image fil
 
 ### Additional NEMEA configuration
 
-`TODO`: trap buffer size, flow cache size configuration
-
+If you enter into `nemea-framework` or `nemea-modules` menu, several variables for those packages can be configured. Defaults are recommended, so be careful when you set libtrap buffer size or flow cache size to higher values, otherwise modules might run out of memory.
 
 ## Compilation
 
@@ -77,36 +76,60 @@ make
 
 This will take some time.
 
+## Installing firmware image
+If you created `ipk` packages, skip this section.
+
+Image installation is not part of this guide, but you can follow official OpenWrt [guide](https://wiki.openwrt.org/doc/howto/generic.flashing).
 
 ## Installing ipk packages
 
-Created packages are located in `bin/TARGET/packages/base/` directory, where `TARGET` is the target system you set in `Target system` configuration menu 
+Created packages are located in `bin/TARGET/packages/nemea/` directory, where `TARGET` is the target system you set in `Target system` configuration menu.
 
 Assuming you already have installed OpenWrt system, copy NEMEA packages into your router using the following command:
 
 ```
-scp bin/TARGET/packages/base/nemea-* root@<your_router_ip_address>:
+scp bin/TARGET/packages/nemea/nemea-* root@<your_router_ip_address>:
 ```
 
 Next log into your router:
-
 ```
 ssh root@<your_router_ip_address>
 ```
 
 and run:
-
 ```
 opkg update
 opkg install nemea-*
 ```
-
 libtrap and NEMEA exporting modules are now installed.
 
 
 ## Using NEMEA modules
 
-`TODO`
+NEMEA modules are installed in `/usr/bin/nemea` directory. On router you can simply run:
+
+```
+/usr/bin/nemea/flow_meter -i t:12345 -I br-lan
+```
+which will start flow_meter module capturing packets from `br-lan` interface and listening on port `12345`.
+
+If you have NEMEA installed on your computer, you can show exported flows from your router by running:
+```
+logger -i t:<your_router_ip_address>:12345 -t
+```
+or if your OpenWrt router uses big endian architecture, you will need to use special module:
+```
+endiverter -i t:<your_router_ip_address>:12345,u:my_socket &
+logger -i u:my_socket -t
+```
+
+For help use:
+
+```
+/usr/bin/nemea/flow_meter -h
+```
+or [NEMEA readme](https://github.com/CESNET/Nemea/blob/master/README.md).
+
 
 ## USB Storage
 
