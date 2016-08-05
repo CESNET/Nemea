@@ -1,8 +1,8 @@
-Summary: Nemea system
+Summary: NEMEA system
 Name: nemea
 Version: @PACKAGE_VERSION@
 Release: @RELEASE@
-URL: http://www.liberouter.org/
+URL: https://github.com/CESNET/nemea
 #Source: https://www.liberouter.org/
 Group: Liberouter
 License: BSD
@@ -10,10 +10,10 @@ Vendor: CESNET, z.s.p.o.
 Packager: @USERNAME@ <@USERMAIL@>
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 BuildArch: noarch
-Requires: nemea-framework libtrap nemea-common nemea-modules nemea-detectors nemea-python nemea-pycommon nemea-supervisor
+Requires: nemea-framework nemea-modules nemea-detectors nemea-supervisor
 
 %description
-Meta-package of the Nemea system, the distributed modular system for network traffic analysis and anomaly detection.
+Meta-package of the NEMEA system, the distributed modular system for network traffic analysis and anomaly detection.
 
 %files
 
