@@ -14,6 +14,7 @@
    - [Deploy NEMEA](#deploy-nemea)
    - [Create your own module in C](#create-your-own-module-in-c)
    - [Add new module to running configuration](#add-new-module-to-running-configuration)
+- [Further Information](#further-information)
 - [NEMEA Related publications](#nemea-related-publications)
 
 
@@ -581,7 +582,7 @@ For detailed information about Supervisor configuration see its [README](https:/
 Further Information
 ===================
 
-* Public mailing list: nemea@cesnet.cz
+* Public mailing list: nemea@cesnet.cz, subscribe at: [https://random.cesnet.cz/mailman/listinfo/nemea](https://random.cesnet.cz/mailman/listinfo/nemea)
 * The archive of mailing list: [https://random.cesnet.cz/pipermail/nemea/](https://random.cesnet.cz/pipermail/nemea/)
 * Twitter: [@NEMEA_System](https://twitter.com/NEMEA_System)
 
