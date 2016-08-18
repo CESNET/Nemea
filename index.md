@@ -18,6 +18,7 @@ layout: default
    - [Deploy NEMEA](#deploy-nemea)
    - [Create your own module in C](#create-your-own-module-in-c)
    - [Add new module to running configuration](#add-new-module-to-running-configuration)
+- [Further Information](#further-information)
 - [NEMEA Related publications](#nemea-related-publications)
 
 
