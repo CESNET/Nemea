@@ -578,7 +578,12 @@ section) and wants to add their module to the running configuration.  It can be 
 
 For detailed information about Supervisor configuration see its [README](https://github.com/CESNET/Nemea-Supervisor#configuration).
 
+Further Information
+===================
 
+* Public mailing list: nemea@cesnet.cz
+* The archive of mailing list: [https://random.cesnet.cz/pipermail/nemea/](https://random.cesnet.cz/pipermail/nemea/)
+* Twitter: [@NEMEA_System](https://twitter.com/NEMEA_System)
 
 NEMEA Related Publications
 ==========================
