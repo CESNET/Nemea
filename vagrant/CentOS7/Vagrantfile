@@ -3,18 +3,51 @@
 
 load '../common/nemea-dashboard.rb'
 
+$tools = <<SCRIPT
+rpm -i https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+yum install -y vim wget
+SCRIPT
+
+$install_nemea = <<SCRIPT
+rpm -ivh https://homeproj.cesnet.cz/rpm/liberouter/devel/x86_64/liberouter-devel-1.0.0-1.noarch.rpm
+wget -O /etc/yum.repos.d/cesnet-nemea.repo https://copr.fedorainfracloud.org/coprs/g/CESNET/NEMEA/repo/epel-7/group_CESNET-NEMEA-epel-7.repo
+rpm --import https://copr-be.cloud.fedoraproject.org/results/@CESNET/NEMEA/pubkey.gpg
+yum install -y nemea nemea-cesnet-modules ipfixcol ipfixcol-unirec-output
+SCRIPT
+
+$run_supervisor = <<SCRIPT
+cp -R /usr/share/nemea-supervisor/* /etc/nemea/
+service nemea-supervisor start
+SCRIPT
+
+$munin = <<SCRIPT
+yum install -y httpd munin munin-node
+cat > /etc/httpd/conf.d/munin.conf <<SCRIPT2
+<Directory /var/www/html/munin/>
+Order Allow,Deny
+Allow from all
+</Directory>
+SCRIPT2
+ln -s /usr/share/munin/plugins/nemea_supervisor /etc/munin/plugins/
+service httpd restart
+service munin-node start
+chkconfig munin-node on
+chkconfig httpd on
+iptables -I INPUT 1 -p TCP --dport 80 -j ACCEPT
+SCRIPT
+
+
 Vagrant.configure(2) do |config|
-  config.vm.box = "centos/7"
+  config.vm.define "Nemea-Demo" do |nemeademo|
+    nemeademo.vm.box = "centos/7"
+    nemeademo.vm.network "forwarded_port", guest: 80, host: 2280
+    nemeademo.vm.network "forwarded_port", guest: 5555, host: 5555
 
-  config.vm.network "forwarded_port", guest: 80, host: 2280
-  config.vm.network "forwarded_port", guest: 5555, host: 5555
-
-  config.vm.provision "shell", inline: <<-SHELL
-     sudo rpm -ivh https://homeproj.cesnet.cz/rpm/liberouter/devel/x86_64/liberouter-devel-1.0.0-1.noarch.rpm
-     sudo yum install -y wget
-     sudo wget -O /etc/yum.repos.d/cesnet-nemea.repo https://copr.fedorainfracloud.org/coprs/g/CESNET/NEMEA/repo/epel-7/group_CESNET-NEMEA-epel-7.repo
-     sudo rpm --import https://copr-be.cloud.fedoraproject.org/results/@CESNET/NEMEA/pubkey.gpg
-     sudo yum install -y nemea nemea-cesnet-modules ipfixcol ipfixcol-unirec-output
-SHELL
-   config.vm.provision "shell", inline: $nemeadashboard
+    nemeademo.vm.provision :shell, inline: $tools
+    nemeademo.vm.provision :shell, inline: $install_nemea
+    nemeademo.vm.provision :shell, inline: $run_supervisor
+    nemeademo.vm.provision :shell, inline: $munin
+    nemeademo.vm.provision :shell, inline: $nemeadashboard
+  end
 end
