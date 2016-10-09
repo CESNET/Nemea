@@ -96,14 +96,11 @@ For more information see [./vagrant/](./vagrant/).
 
 ## Binary packages
 
-The NEMEA system can be installed from binary RPM packages.
-To add CESNET repository containing the packages, run (as root/sudo):
+Latest RPM packages can be found in COPR: https://copr.fedorainfracloud.org/groups/g/CESNET/coprs/
+The NEMEA repository is at https://copr.fedorainfracloud.org/coprs/g/CESNET/NEMEA/
 
-```
-rpm -ivh https://homeproj.cesnet.cz/rpm/liberouter/devel/x86_64/liberouter-devel-1.0.0-1.noarch.rpm
-```
+After installation of COPR repository, NEMEA can be installed as any other package (run as root/sudo):
 
-After that, NEMEA can be installed as any other package (run as root/sudo):
 ```
 yum install nemea
 ```
