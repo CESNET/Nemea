@@ -458,7 +458,7 @@ AC_INIT([migty_module], [1.0.0], [YOUR EMAIL ADDRESS])
 AC_CONFIG_SRCDIR([mighty_module.c])
 ```
 
-In `/data/mighty-module/Makefile.am` update the following lines
+In `~/mighty-module/Makefile.am` update the following lines
 ```
 bin_PROGRAMS=example_module
 example_module_SOURCES=example_module.c fields.c fields.h
@@ -473,7 +473,7 @@ mighty_module_LDADD=-lunirec -ltrap
 
 Finally, execute
 ```
-mv /data/mighty-module/example_module.c /data/mighty-module/mighty_module.c
+mv ~/mighty-module/example_module.c ~/mighty-module/mighty_module.c
 ```
 to rename the source file.
 
@@ -553,7 +553,7 @@ Generated doxygen doc: https://rawgit.com/CESNET/Nemea-Framework/master/unirec/d
 
 #### Module help
 
-After executing `/data/mighty-module/mighty_module -h`, program prints help which contains information from module info structure:
+After executing `~/mighty-module/mighty_module -h`, program prints help which contains information from module info structure:
 
 * module basic information - name, description, number of input / output interfaces
 * module parameters - short opt, long opt, description, argument data type
