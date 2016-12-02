@@ -592,6 +592,19 @@ Further Information
 * The archive of mailing list: [https://random.cesnet.cz/pipermail/nemea/](https://random.cesnet.cz/pipermail/nemea/)
 * Twitter: [@NEMEA_System](https://twitter.com/NEMEA_System)
 
+Attribution
+===========
+
+We kindly ask anyone using NEMEA for research and write an academic paper about it to cite NEMEA as follows:
+```
+@inproceedings{nemea16,
+    author = {Tomas Cejka, Vaclav Bartos, Marek Svepes, Zdenek Rosa, Hana Kubatova},
+    title = {NEMEA: A Framework for Network Traffic Analysis},
+    booktitle = {12th International Conference on Network and Service Management (CNSM 2016)},
+    year = 2016
+}
+```
+
 NEMEA Related Publications
 ==========================
 
