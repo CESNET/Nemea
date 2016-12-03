@@ -4,6 +4,17 @@ DEBUG=1
 EXISTING_FILE="`mktemp`"
 NEW_FILE="`mktemp`"
 TARGET_FILE=unirec_fields.md
+# Check for md file
+if ! [ -s "$TARGET_FILE" ]; then
+    echo "Target MD file does not exist or its empty."
+	echo "Generating new one.."
+	echo "# About this file
+This file contains a list of UniRec fields collected from all parts of project (including git submodules).
+The part of this file is generated automatically, so be careful during any editing.
+# List of UniRec fields
+
+" >"$TARGET_FILE"
+fi
 
 if fgrep -q "# List of UniRec fields" "$TARGET_FILE"; then
    existing=1
@@ -41,26 +52,22 @@ find . \( -name '*.c' -o -name '*.h' -o -name '*.cpp' \) -exec grep -l "\s*UR_FI
 '"$sizetable"'
 }
 {
-   if (NR == 1) {
-      type=$1;
-      iden=$2;
-   }
-   if ((iden == $2) && (type != $1)) {
-      printf("Conflicting types (%s, %s) of UniRec field (%s)\n", type, $1, iden);
-      exit 1;
-   }
-   type=$1;
-   if (NR == 1) {
-      type=$1;
-      iden=$2;
-   }
-   if ((iden == $2) && (type != $1)) {
-      printf("Conflicting types (%s, %s) of UniRec field (%s)\n", type, $1, iden);
-  }
-   type=$1;
-   iden=$2;
    print $1, $2;
-}' | sort -k2 >"$NEW_FILE"
+}' | sort -k2 >"$NEW_FILE" 
+
 #merge temporary files together and sort them
-cat "$EXISTING_FILE" "$NEW_FILE" |tail -n+2  |sort -buk2,2 >/dev/stderr
-exit 1;
+echo "|	Field name	|	Field data type	|	Description	|"
+cat "$EXISTING_FILE" "$NEW_FILE" |tail -n+2 |sort -buk2,2 | #>/dev/stderr
+awk '
+{
+	type=$1
+	name=$2
+	if ( $3=="" ) {
+		desc="#TODO DESCRIPTION"	
+	}
+	else { 
+		desc=$3
+	}
+	print "|"$2"|"$1"|"$3"|"
+}'
+exit 1;       
