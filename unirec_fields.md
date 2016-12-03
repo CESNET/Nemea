@@ -5,6 +5,7 @@ The part of this file is generated automatically, so be careful during any editi
 
 # List of UniRec fields
 | Field name | Field data type | Description |
+| ----- | ----- | ----- |
 | uint32 | ADDR_CNT |  |
 | bytes | ARP_DST_HA |  |
 | bytes | ARP_DST_PA |  |
