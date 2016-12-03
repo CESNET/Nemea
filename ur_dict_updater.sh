@@ -51,23 +51,33 @@ find . \( -name '*.c' -o -name '*.h' -o -name '*.cpp' \) -exec grep -l "\s*UR_FI
    awk -F' ' 'BEGIN{
 '"$sizetable"'
 }
-{
+{	
+	if (NR == 1) {
+      type=$1;
+      iden=$2;
+   }
+   if ((iden == $2) && (type != $1)) {
+      printf("Conflicting types (%s, %s) of UniRec field (%s)\n", type, $1, iden);
+      exit 1;
+   }
+   type=$1;
+   iden=$2;
    print $1, $2;
+
+   
 }' | sort -k2 >"$NEW_FILE" 
 
 #merge temporary files together and sort them
 echo "|	Field name	|	Field data type	|	Description	|"
 cat "$EXISTING_FILE" "$NEW_FILE" |tail -n+2 |sort -buk2,2 | #>/dev/stderr
 awk '
-{
-	type=$1
-	name=$2
-	if ( $3=="" ) {
-		desc="#TODO DESCRIPTION"	
-	}
-	else { 
-		desc=$3
-	}
-	print "|"$2"|"$1"|"$3"|"
-}'
-exit 1;       
+/^..*$/ {
+        name=$2
+        if ( $3=="" ) {
+                desc="//TODO"        
+        } else { 
+                desc=$3
+        }
+        print "|"$2"|"$1"|"desc"|"
+ }'
+ exit 1;       
