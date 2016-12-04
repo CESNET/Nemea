@@ -79,7 +79,7 @@ END {
 }' > "$NEW_FILE" 
 
 sed -i "/^\# List of UniRec fields\s*$/r $NEW_FILE
-/^\# List of UniRec fields\s*$/,/^$/d;" unirec_fields.md
+/^\# List of UniRec fields\s*$/,/^$/d;" "$TARGET_FILE"
 # clear temporary data
 echo "Removing temporary data.."
 rm "$EXISTING_FILE" "$NEW_FILE" 2> /dev/null
