@@ -55,14 +55,9 @@ BEGIN {
    print "| ----- | ----- | ----- |"
 }
 /^..*$/ {
-  if (NR == 1) {
-      type=$1;
-      iden=$2;
-   }
-   if ((iden == $2) && (type != $1)) {
-      printf("Conflicting types (%s, %s) of UniRec field (%s)\n", type, $1, iden);
-      exit 1;
-   }
+
+# TODO conflict types control 
+
    if (name != $2) {
       type=$1
       name=$2
