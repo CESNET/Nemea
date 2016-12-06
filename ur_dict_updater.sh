@@ -44,7 +44,7 @@ find . \( -name '*.c' -o -name '*.h' -o -name '*.cpp' \) -exec grep -l "\s*UR_FI
 # clean output to get fields only
    sed 's/^\s*UR_FIELDS\s*(\s*//g; s/)//g; s/,/\n/g; /^\s*$/d; s/^\s*//; s/\s\s*/ /g; s/\s\s*$//' |
 # sort by name
-   sort -k2 -t' ' | uniq >> "$EXISTING_FILE" 
+   sort -k2 -t' ' | uniq >> "$EXISTING_FILE"
 
 #merge temporary files together and sort them
 cat "$EXISTING_FILE" |tail -n+2 |sort -bk2,2 -bk3,3r |
@@ -60,17 +60,17 @@ BEGIN {
       name=$2
       desc=$3
       for (i=4; i<=NF; i++) {
-		desc=desc" "$i
+         desc=desc" "$i
       }
       print "| "type" | "name" | "desc" |"
     } else if (type != $1) {
-		printf("Conflicting types (%s, %s) of UniRec field (%s)\n", type, $1, name) > "/dev/stderr";
-	exit 1;
+       printf("Conflicting types (%s, %s) of UniRec field (%s)\n", type, $1, name) > "/dev/stderr";
+       exit 1;
     }
 }
 END {
    print ""
-}' > "$NEW_FILE" 
+}' > "$NEW_FILE"
 
 sed -i "/^\# List of UniRec fields\s*$/r $NEW_FILE
 /^\# List of UniRec fields\s*$/,/^$/d;" unirec_fields.md
