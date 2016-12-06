@@ -4,7 +4,7 @@ DEBUG=1
 EXISTING_FILE="`mktemp`"
 NEW_FILE="`mktemp`"
 TARGET_FILE=unirec_fields.md
-# check for md file
+# Check for md file
 if ! [ -s "$TARGET_FILE" ]; then
     echo "Target MD file does not exist or its empty."
 	echo "Generating new one.."
@@ -23,11 +23,11 @@ else
 fi
 
 if [ "$existing" -eq 1 ]; then
-# we need to retrieve the list of fields before any updates
+   # we need to retrieve the list of fields before any updates
    if [ "$DEBUG" -eq 1 ]; then
       echo "Existing section, loading..."
    fi
-# find the head of the list
+ # Find the head of the list
  sed -n "/^\# List of UniRec fields\s*$/,/^$/p" "$TARGET_FILE" | tail -n +3 | sed 's/| *\([^ ]*\) *| *\([^ ]*\) *| *\([^|]*\)|/\1 \2 \3/g' >"$EXISTING_FILE"
 
 fi
@@ -55,28 +55,28 @@ BEGIN {
    print "| ----- | ----- | ----- |"
 }
 /^..*$/ {
-
    if (name != $2) {
       type=$1
       name=$2
       desc=$3
-    	for (i=4; i<=NF; i++) {
-        	desc=desc" "$i
-    	}  
-   print "| "type" | "name" | "desc" |"
-   } else if (type != $1) {
-        printf("Conflicting types (%s, %s) of UniRec field (%s)\n", type, $1, name);
-   }
+      for (i=4; i<=NF; i++) {
+         desc=desc" "$i
+      }
+      print "| "type" | "name" | "desc" |"
+    } else if (type != $1) {
+    printf("Conflicting types (%s, %s) of UniRec field (%s)\n", type, $1, name) > "/dev/stderr";
+	exit 0;
+    }
 }
 END {
    print ""
 }' > "$NEW_FILE" 
 
 sed -i "/^\# List of UniRec fields\s*$/r $NEW_FILE
-/^\# List of UniRec fields\s*$/,/^$/d;" "$TARGET_FILE"
-# clear temporary data
-echo "Removing temporary data.."
+/^\# List of UniRec fields\s*$/,/^$/d;" unirec_fields.md
+
 rm "$EXISTING_FILE" "$NEW_FILE" 2> /dev/null
 
 exit 0;
+
 
