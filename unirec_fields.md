@@ -17,7 +17,7 @@ The part of this file is generated automatically, so be careful during any editi
 | uint32 | BAR |  |
 | uint32 | BAZ |  |
 | uint8 | BLACKLIST_TYPE |  |
-| uint64 | BYTES |  |
+| uint64 | BYTES | Total number of bytes transferred by the flow. |
 | uint64 | CALLEE_CNT |  |
 | uint64 | CALLER_CNT |  |
 | time | DETECTION_TIME |  |
@@ -43,7 +43,7 @@ The part of this file is generated automatically, so be careful during any editi
 | uint32 | EVENT_ID |  |
 | uint32 | EVENT_SCALE |  |
 | uint8 | EVENT_TYPE |  |
-| uint64 | FLOWS |  |
+| uint64 | FLOWS | Number of flows, used after aggregation. |
 | uint32 | FOO |  |
 | string | HTTP_CONTENT_TYPE |  |
 | string | HTTP_HOST |  |
@@ -75,9 +75,9 @@ The part of this file is generated automatically, so be careful during any editi
 | string | NTP_SENT |  |
 | uint8 | NTP_STRATUM |  |
 | uint8 | NTP_VERSION |  |
-| uint32 | PACKETS |  |
+| uint32 | PACKETS | Number of packets of the flow. |
 | uint32 | PORT_CNT |  |
-| uint8 | PROTOCOL |  |
+| uint8 | PROTOCOL | Transport protocol identification (e.g. 6 for TCP, 17 for UDP, https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers). |
 | uint64 | REQ_BYTES |  |
 | uint32 | REQ_FLOWS |  |
 | uint32 | REQ_PACKETS |  |
@@ -118,7 +118,7 @@ The part of this file is generated automatically, so be careful during any editi
 | time | TIME_LAST | Timestamp of the last packet of the flow. |
 | uint32 | TIMEOUT |  |
 | uint8 | TOS |  |
-| uint8 | TTL | Time-To-Live value. |
+| uint8 | TTL | Time-To-Live value from IP header (https://en.wikipedia.org/wiki/Time_to_live). |
 | uint32 | TUNNEL_CNT_PACKET |  |
 | string | TUNNEL_DOMAIN |  |
 | float | TUNNEL_PER_NEW_DOMAIN |  |
