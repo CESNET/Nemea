@@ -592,8 +592,25 @@ Further Information
 * The archive of mailing list: [https://random.cesnet.cz/pipermail/nemea/](https://random.cesnet.cz/pipermail/nemea/)
 * Twitter: [@NEMEA_System](https://twitter.com/NEMEA_System)
 
+Attribution
+===========
+
+We kindly ask anyone using NEMEA for research and write an academic paper about it to cite NEMEA as follows:
+```
+@inproceedings{nemea16,
+    author = {Tomas Cejka, Vaclav Bartos, Marek Svepes, Zdenek Rosa, Hana Kubatova},
+    title = {NEMEA: A Framework for Network Traffic Analysis},
+    booktitle = {12th International Conference on Network and Service Management (CNSM 2016)},
+    year = 2016
+}
+```
+
 NEMEA Related Publications
 ==========================
+
+* Tomas Cejka, Václav Bartoš, Marek Svepes, Zdenek Rosa, Hana Kubatova. [NEMEA: A Framework for Network Traffic Analysis](https://www.liberouter.org/wp-content/uploads/2016/11/cnsm2016-nemea.pdf). In 12th International Conference on Network and Service Management (CNSM 2016), Montreal, Canada, 2016.
+
+* Zdenek Rosa, Tomas Cejka, Martin Zadnik, Viktor Puš. [Building a Feedback Loop to Capture Evidence of Network Incidents](https://www.liberouter.org/wp-content/uploads/2016/11/cnsm2016-timemachine.pdf). In 12th International Conference on Network and Service Management (CNSM 2016), Montreal, Canada, 2016.
 
 * Tomas Cejka, Marek Svepes. [Analysis of Vertical Scans Discovered by Naive Detection](http://dx.doi.org/10.1007/978-3-319-39814-3_19). Management and Security in the Age of Hyperconnectivity: 10th IFIP WG 6.6 International Conference on Autonomous Infrastructure, Management, and Security, AIMS 2016.
 
