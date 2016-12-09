@@ -219,12 +219,14 @@ If we need to start `flow_meter` on startup, just enable it:
 /etc/init.d/flow_meter enable
 ```
 
-
 ## Tested versions and devices
 
-Tested on OpenWrt Chaos Calmer 15.05.1 with the following devices:
+Tested on OpenWrt Chaos Calmer 15.05.1:
 
 - `TP-Link Archer C7 v2`
 - `TP-Link TL-WR1043ND v1`
 
+and turris-os:
+
+- `Turris Omnia`
 
