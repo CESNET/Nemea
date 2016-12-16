@@ -6,7 +6,7 @@ The part of this file is generated automatically, so be careful during any editi
 # List of UniRec fields
 | Field name | Field data type | Description |
 | ----- | ----- | ----- |
-| uint32 | ADDR_CNT |  |
+| uint32 | ADDR_CNT | Number of probed destination addresses. |
 | bytes | ARP_DST_HA | ARP destination hardware address. |
 | bytes | ARP_DST_PA | ARP destination protocol address. |
 | uint16 | ARP_HA_FORMAT | Type of ARP hardware address. |
@@ -18,8 +18,8 @@ The part of this file is generated automatically, so be careful during any editi
 | uint32 | BAZ | Generic field containing 32bit unsigned integer (used for testing and example purposes). |
 | uint8 | BLACKLIST_TYPE | Type of the used blacklist (spam, C&C, malware, etc.). |
 | uint64 | BYTES | Total number of bytes transferred by the flow. |
-| uint64 | CALLEE_CNT |  |
-| uint64 | CALLER_CNT |  |
+| uint64 | CALLEE_CNT | VoIP Fraud Detection specific field for counting number of unique calling parties. |
+| uint64 | CALLER_CNT | VoIP Fraud Detection specific field for counting number of unique called parties. |
 | time | DETECTION_TIME | Timestamp of the detection of some event. |
 | uint8 | DIR_BIT_FIELD | Bit field used for detemining incomming/outgoing flow. |
 | uint8 | DIRECTION_FLAGS | Bit field for identification of flow direction. |
@@ -58,7 +58,7 @@ The part of this file is generated automatically, so be careful during any editi
 | string | HTTP_SDM_REQUEST_URL |  |
 | string | HTTP_URL | URL field from HTTP request message. |
 | string | HTTP_USER_AGENT | User agent field from HTTP request message. |
-| uint64 | INVITE_CNT |  |
+| uint64 | INVITE_CNT | VoIP Fraud Detection specific field for counting number INVITE requests observed. |
 | ipaddr | IP | IP address. |
 | uint64 | LINK_BIT_FIELD | Bit field where each bit marks whether a flow was captured on corresponding link. |
 | string | NOTE | Generic string note. |
@@ -76,7 +76,7 @@ The part of this file is generated automatically, so be careful during any editi
 | uint8 | NTP_STRATUM | NTP stratum field. |
 | uint8 | NTP_VERSION | NTP message version. |
 | uint32 | PACKETS | Number of packets of the flow. |
-| uint32 | PORT_CNT |  |
+| uint32 | PORT_CNT | Number of probed destination ports. |
 | uint8 | PROTOCOL | Transport protocol identification (e.g. 6 for TCP, 17 for UDP, https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers). |
 | uint64 | REQ_BYTES | Number of bytes in a flow or in an interval (requests). |
 | uint32 | REQ_FLOWS | Number of flows in an interval (requests). |
@@ -116,7 +116,7 @@ The part of this file is generated automatically, so be careful during any editi
 | time | TIME | Timestamp of packet capture. |
 | time | TIME_FIRST | Timestamp of the first packet of the flow. |
 | time | TIME_LAST | Timestamp of the last packet of the flow. |
-| uint32 | TIMEOUT |  |
+| uint32 | TIMEOUT | Timeout for capture rule. (related to time machine). |
 | uint8 | TOS | Type of service field from IP header. |
 | uint8 | TTL | Time-To-Live value from IP header (https://en.wikipedia.org/wiki/Time_to_live). |
 | uint32 | TUNNEL_CNT_PACKET | Number of packets which were recorded recognized like anomaly. |
