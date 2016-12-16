@@ -84,18 +84,18 @@ The part of this file is generated automatically, so be careful during any editi
 | uint64 | RSP_BYTES |  |
 | uint32 | RSP_FLOWS |  |
 | uint32 | RSP_PACKETS |  |
-| uint32 | SBFD_ATTEMPTS |  |
-| uint32 | SBFD_AVG_ATTEMPTS |  |
-| time | SBFD_BREACH_TIME |  |
-| time | SBFD_CEASE_TIME |  |
-| uint64 | SBFD_EVENT_ID |  |
-| time | SBFD_EVENT_TIME |  |
-| uint8 | SBFD_EVENT_TYPE |  |
-| uint64 | SBFD_LINK_BIT_FIELD |  |
-| uint8 | SBFD_PROTOCOL |  |
-| ipaddr | SBFD_SOURCE |  |
-| ipaddr | SBFD_TARGET |  |
-| string | SBFD_USER |  |
+| uint32 | SBFD_ATTEMPTS | total number of attack messages received |
+| uint32 | SBFD_AVG_ATTEMPTS | average count of attack messages received (relevant in case of user scan attack type) |
+| time | SBFD_BREACH_TIME | time of breach occurrence (can be 0 if the breach did not occur) |
+| time | SBFD_CEASE_TIME | time of the last attack message received |
+| uint64 | SBFD_EVENT_ID | a unique number of an alert |
+| time | SBFD_EVENT_TIME | time of the first attack message received |
+| uint8 | SBFD_EVENT_TYPE | type of an alert (0 - simple brute-force, 1 - distributed brute-force, 2 - user scan) |
+| uint64 | SBFD_LINK_BIT_FIELD | indicator of the particular monitoring probe |
+| uint8 | SBFD_PROTOCOL | used to perform the attack (TCP or UDP) |
+| ipaddr | SBFD_SOURCE | IP address of the attacker |
+| ipaddr | SBFD_TARGET | IP address of the targeted server |
+| string | SBFD_USER | name of the targeted user (can be empty in case of user scan alert) |
 | string | SDM_CAPTURE_FILE_ID |  |
 | string | SIP_CALLED_PARTY |  |
 | string | SIP_CALL_ID |  |
