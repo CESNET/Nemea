@@ -26,9 +26,7 @@ addons:
       - libpcap0.8
 
 before_install:
-  - ( wget -qO - http://libnf.net/packages/libnf-1.25.tar.gz | 
-  tar -xzf - && cd libnf-1.25 && 
-  ./configure -q && make -j3 install; )
+  - ( wget -qO - http://libnf.net/packages/libnf-1.25.tar.gz | tar -xzf - && cd libnf-1.25 && ./configure -q && make -j3 install; )
 
 script:
   - git submodule init; git submodule update
