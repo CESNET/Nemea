@@ -6,19 +6,33 @@
   <body>
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
-        <header class="inner">
+    <header class="inner">
           <a id="forkme_banner" href="https://github.com/CESNET/Nemea">View on GitHub</a>
 
           <h1 id="project_title">NEMEA</h1>
           <h2 id="project_tagline">System for network traffic analysis and anomaly detection.</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/CESNET/Nemea/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/CESNET/Nemea/tarball/master">Download this project as a tar.gz file</a>
-{% for page in site.pages %}{% if page.title and page.public %}<a class="page_link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
-<a class="page_link" href="{{ site.baseurl }}/">HOME</a>
-            </section>
-        </header>
+          <label for="show-menu" class="show-menu">Menu &#9776;</label>
+
+          	<input type="checkbox" id="show-menu" role="button">
+          		<ul id="menu" class="page_link">
+                <li>
+                  <a href="{{ site.baseurl }}/">HOME</a>
+                </li>
+                {% for page in site.pages %}{% if page.title and page.public %}
+                <li>
+                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                </li>
+                {% endif %}{% endfor %}
+                <li>
+                  <a href="#">Download ￬</a>
+                  <ul class="hidden">
+                    <li><a  href="https://github.com/CESNET/Nemea/zipball/master">Download as a .zip</a></li>
+                    <li><a  href="https://github.com/CESNET/Nemea/tarball/master">Download as a .tar</a></li>
+                  </ul>
+                </li>
+          	</ul>
+    </header>
     </div>
 
     <!-- MAIN CONTENT -->
@@ -38,7 +52,7 @@
     {% include footer.html %}
 
     <!-- FOOTER  -->
-    
+
 
   </body>
 
