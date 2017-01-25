@@ -48,8 +48,8 @@ The following screenshots capture several moments from the course.
 
 * VM image is available at [github release](https://github.com/CESNET/Nemea/releases/download/v2.3.2/tfcsirt-2017-vm.tar).
 * [ScreenCast]({{"./how-to-import-vm.webm" | prepend: site.baseurl}}) about importing VM into VirtualBox.
+* Latest presentation: [pdf presentation]({{"./workshop-presentation.pdf" | prepend: site.baseurl}}) 2017/01/25
 * Data traces are included in the VM
-* Latest presentation will be available soon.
 
 
 
