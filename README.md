@@ -69,7 +69,7 @@ The project is divided into four repositories added as submodules:
 
 * rpm-build (build of RPM packages)
 * libpcap ([flow_meter](https://github.com/CESNET/Nemea-Modules/tree/master/flow_meter))
-* [libnf](https://github.com/VUTBR/nf-tools/tree/master/libnf/c) or [libnfdump](http://sourceforge.net/projects/libnfdump/) ([nfreader](https://github.com/CESNET/Nemea-Modules/tree/master/nfreader))
+* [libnf](https://github.com/VUTBR/libnf) or [libnfdump](http://sourceforge.net/projects/libnfdump/) ([nfreader](https://github.com/CESNET/Nemea-Modules/tree/master/nfreader))
 * libidn ([blacklistfilter](https://github.com/CESNET/Nemea-Detectors/tree/master/blacklistfilter))
 * bison and flex ([unirecfilter](https://github.com/CESNET/Nemea-Modules/tree/master/unirecfilter))
 
