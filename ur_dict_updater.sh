@@ -51,7 +51,7 @@ cat "$EXISTING_FILE" |tail -n+2 |sort -bk2,2 -bk3,3r |
 awk '
 BEGIN {
    print "# List of UniRec fields"
-   print "| Field name | Field data type | Description |"
+   print "| Field data type | Field name | Description |"
    print "| ----- | ----- | ----- |"
 }
 /^..*$/ {
