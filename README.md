@@ -445,7 +445,7 @@ to the output interface.
 
 #### Use Example module as a template
 
-Let `~/mighty-module/` be the directory we want to develop our module in (replace path `~/mighty-module/` in all commands with another directory if needed) and *mighty_module* the name of our module.  We will use example module as a template - copy the directory [nemea-framework/examples/module/](https://github.com/CESNET/Nemea-Framework/tree/master/examples/module) to `~/mighty-module/`.
+Let `~/mighty-module/` be the directory we want to develop our module in (replace path `~/mighty-module/` in all commands with another directory if needed) and *mighty_module* the name of our module.  We will use example module as a template - copy the directory [nemea-framework/examples/c/module/](https://github.com/CESNET/Nemea-Framework/tree/master/examples/c/module) to `~/mighty-module/`.
 
 In `~/mighty-module/configure.ac` update the following lines
 ```
@@ -522,31 +522,31 @@ Generated doxygen doc for module developers: https://rawgit.com/CESNET/Nemea-Fra
 
 Generated doxygen doc for libtrap developers: https://rawgit.com/CESNET/Nemea-Framework/master/libtrap/doc/devel/html/index.html
 
-1. [Basic module information](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L74) - specify name, description and number of input / output interfaces of the module
-2. [Module parameters](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L87) - define parameters the module accepts as program arguments
-3. [Module info structure initialization](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L111) - initialize a structure with information from the two previous points
-4. [TRAP initialization](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L116) - initialize module interfaces
-5. [GETOPT macro](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L127) - parse program arguments
+1. [Basic module information](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L71) - specify name, description and number of input / output interfaces of the module
+2. [Module parameters](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L84) - define parameters the module accepts as program arguments
+3. [Module info structure initialization](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L114) - initialize a structure with information from the two previous points
+4. [TRAP initialization](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L120) - initialize module interfaces
+5. [GETOPT macro](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L131) - parse program arguments
 6. Main loop:
-   * [Receive a message](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L172) - receive a message in UniRec format from input interface
-   * [Handle receive error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L175) - check whether an error has occured during receive
-   * [Send a message](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L200) - send a message in UniRec format via output interface
-   * [Handle send error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L203) - check whether an error has ocurred during send
-7. [TRAP and module info clean-up](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L210) - free everything, libtrap finalization
+   * [Receive a message](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L176) - receive a message in UniRec format from input interface
+   * [Handle receive error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L179) - check whether an error has occured during receive
+   * [Send a message](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L204) - send a message in UniRec format via output interface
+   * [Handle send error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L207) - check whether an error has ocurred during send
+7. [TRAP and module info clean-up](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L214) - free everything, libtrap finalization
 
 
 #### UniRec
 
 Generated doxygen doc: https://rawgit.com/CESNET/Nemea-Framework/master/unirec/doc/html/index.html
 
-1. [UniRec fields definition](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L62) - define data types and names of the fields which will be used in UniRec messages (both received and sent messages), e.g. *uint32 PACKETS*
-2. [Templates creation](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L141) - create UniRec templates separately for every interface (a template defines set of fields in the message) note: two input interfaces receiving same messages can use one template
-3. [Output record allocation](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L154) - allocate a memory for message sent via output interface
+1. [UniRec fields definition](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L59) - define data types and names of the fields which will be used in UniRec messages (both received and sent messages), e.g. *uint32 PACKETS*
+2. [Templates creation](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L144) - create UniRec templates separately for every interface (a template defines set of fields in the message) note: two input interfaces receiving same messages can use one template
+3. [Output record allocation](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L157) - allocate a memory for message sent via output interface
 4. Main loop (*fields manipulation*):
-   * [get field](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L191) - get a value of specified field from received message according to UniRec template
-   * [set field](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L196) - set a value of specified field in message which will be sent according to UniRec template
-   * [copy fields](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L195) - copy values of fields in received message to fields in message which will be sent according to UniRec templates of both interfaces (only fields that are common for both interfaces are copied)
-5. [UniRec cleanup](https://github.com/CESNET/Nemea-Framework/blob/master/examples/module/example_module.c#L219) - free everything, UniRec finalization
+   * [get field](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L195) - get a value of specified field from received message according to UniRec template
+   * [set field](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L200) - set a value of specified field in message which will be sent according to UniRec template
+   * [copy fields](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L199) - copy values of fields in received message to fields in message which will be sent according to UniRec templates of both interfaces (only fields that are common for both interfaces are copied)
+5. [UniRec cleanup](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L219) - free everything, UniRec finalization
 
 
 ### Execute the module
