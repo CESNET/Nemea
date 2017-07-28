@@ -95,7 +95,7 @@ in this document: **vagrant**, **binary packages** and **source codes**.
 ## Vagrant
 
 To try the system "out-of-box", you can use [Vagrant](https://www.vagrantup.com/).
-For more information see [./vagrant/](./vagrant/).
+For more information see [./vagrant/](https://github.com/CESNET/Nemea/tree/master/vagrant).
 
 
 ## Binary packages
