@@ -21,7 +21,7 @@
                 </li>
                 {% for page in site.pages %}{% if page.title and page.public %}
                 <li>
-                    <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                    <a href="{{ page.url | prepend: site.baseurl }}">{% if page.menuentry %}{{ page.menuentry }}{% else %}{{ page.title }}{% endif %}</a>
                 </li>
                 {% endif %}{% endfor %}
                 <li>

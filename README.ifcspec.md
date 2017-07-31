@@ -1,6 +1,7 @@
 ---
 layout: page
 title: TRAP Interface Specifier
+menuentry: TRAP IFC
 public: true
 permalink: /trap-ifcspec/
 ---

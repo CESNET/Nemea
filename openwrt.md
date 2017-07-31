@@ -1,6 +1,7 @@
 ---
 layout: page
 title: OpenWRT probe
+menuentry: OpenWRT
 public: true
 permalink: /openwrt/
 ---

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Hands-on workshop at TF-CSIRT 2017
+menuentry: TFCSIRT17
 public: false
 permalink: /tfcsirt2017/
 ---
