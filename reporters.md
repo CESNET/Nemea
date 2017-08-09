@@ -2,7 +2,7 @@
 layout: page
 title: Reporting Modules and Alert Filtering
 menuentry: Reporters
-public: false
+public: true
 permalink: /reporting/
 ---
 
