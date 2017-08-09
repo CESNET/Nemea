@@ -39,6 +39,8 @@ Configuration consists of three sections: *address groups*, *custom actions* and
 This section contains definition of lists of addresses either specified directly "in-text" or loaded from a file.
 Since the lists have their identifiers - names, it is possible to refer the list of addresses in conditions of *rules*.
 
+The `addressgroups` section is optional.
+
 ## Custom actions
 
 `custom_actions`
@@ -47,30 +49,53 @@ The whole configuration stands upon lists of rules (described in the following s
 There are several types of actions that can be performed.
 Most of action types require some parameters so the action must be "defined" in the Custom actions section to be referred from a rule.
 
-To define an action in custom_actions list, unique name (id) and type of the action must be defined.
+To define an action in `custom_actions` list, unique name (id) and type of the action must be defined.
 Some action types can require additional arguments.
+
+The `custom_actions` section is optional.
 
 Each custom action can be one of the following action types:
 
 **warden** - send the message to Warden server
 
-Arguments:
-- url of a warden server
+Note: to use this action, the reporter module must be started with `--warden=` parameter that specifies path to Warden client config file.
+
+Action arguments:
+- url - URL of a warden server (this does not work right now)
 
 **file** - store message into file
 
-Arguments:
+Action arguments:
 - path to log file - if directory is given, create a separate file with unique name for each message, otherwise, append the message to the given file.
 
 **email** - send message via SMTP
 
-Arguments:
-- to - address
-- subject
+This action sends each alert as an e-mail message.
+Be careful with this action, it is not recommended for frequent alerts, it may
+generate lots of e-mails since there is currently no implemented aggregation in
+this action.
+
+Action arguments:
+- to - Destination e-mail address, multiple addresses might be specified, separated by comma (`,`).
+- subject - Subject of the messages.
+- from  - (optional) Source e-mail address.
+- server - (optional) Hostname of SMTP server
+- port - (optional) Port of SMTP server
+- key - (optional) Path to key file for TLS
+- chain - (optional) Path to certificate (chain) file for TLS
+- forceSSL - (optional) Boolean value to force SSL connection from the beginning (`False` by default)
+- startTLS - (optional) Boolean value to perform `STARTTLS` (`False` by default)
+- authuser - (optional) User name for SMTP server requiring authentication
+- authpass - (optional) Password for SMTP server requiring authentication
+
+Warning: Username and password (for authentication) are passed in plain-text so
+be cautious to use this.
+
+Note: If `forceSSL` is set to `True`, `startTLS` has no effect.
 
 **mongo** - store message into MongoDB
 
-Arguments:
+Action arguments:
 - host
 - port
 - db name
@@ -83,17 +108,17 @@ Arguments:
 The modification of the message by **mark** action is valid ONLY for the subsequent actions of the list of **actions**/**elseactions** where the mark action is used.
 That means the modification is not global - for more than one rule.
 
-Arguments:
-- path in JSON
-- value - string?
+Action arguments:
+- path - Path in JSON
+- value - string
 
 Note: `path_set(msg, path, value)` from Mentat is used
 
+**trap** - send the message via output TRAP IFC
 
-**trap** - send the message via TRAP IFC
-if it is opened for the reporter. Otherwise, the action takes no effect
+Note: to use this action, the reporter module must be started with `--trap` and correct `IFC_SPEC` with one input and one output IFC must be passed via `-i`.
 
-No arguments.
+Action arguments: No arguments.
 
 **drop** - implicitly defined action, it can be used without any definition in `custom_actions` section. Moreover, it MUST NOT be defined in `custom_actions`.
 
@@ -101,14 +126,18 @@ No arguments.
 
 `rules`
 
-This section consists of rules - list of rule ordered by id which is integer (the order is significant). The list of rules is evaluated by all modules from the first rule to the last one.
+This section consists of rules - list of `rule` ordered by id which is integer (the order is significant). The list of rules is evaluated by all modules from the first rule to the last one.
 
-Each rule is composed of **condition**, **actions**, **elseactions**.
+The `rules` section is mandatory and it must contain at least one `rule`.
+
+Each `rule` is composed of **condition**, **actions**, **elseactions**.
 
 All IDEA messages will be matched with filtering condition consisting of unary and binary operations, constants and JSON paths that are supported by Mentat filter (MFilter).
 When the IDEA message meets the condition, the specified list of actions is performed.
 Otherwise, the list of elseactions is performed.
 Both actions and elseactions are optional.
+
+To create condition representing tautology (always true) resp. contradiction (always false), simple use `True` resp. `False`.
 
 **actions** / **elseactions**
 
