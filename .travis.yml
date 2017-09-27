@@ -30,5 +30,5 @@ before_install:
 
 script:
   - git submodule init; git submodule update
-  - ./bootstrap.sh && ./configure && make clean && make -j5
+  - ./bootstrap.sh && ./configure --enable-repobuild && make clean && make -j5
 
