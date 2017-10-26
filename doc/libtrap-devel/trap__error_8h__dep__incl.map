@@ -1,0 +1,8 @@
+<map id="src/trap_error.h" name="src/trap_error.h">
+<area shape="rect" id="node2" href="$ifc__dummy_8c.html" title="TRAP dummy interfaces (generator and blackhole) " alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node3" href="$ifc__file_8c.html" title="TRAP file interfaces. " alt="" coords="149,80,242,107"/>
+<area shape="rect" id="node4" href="$ifc__tcpip_8c.html" title="TRAP TCP/IP interfaces. " alt="" coords="266,80,370,107"/>
+<area shape="rect" id="node5" href="$ifc__tls_8c.html" title="TRAP TCP with TLS interfaces. " alt="" coords="394,80,485,107"/>
+<area shape="rect" id="node6" href="$trap_8c.html" title="TRAP library base. " alt="" coords="509,80,586,107"/>
+<area shape="rect" id="node7" href="$trap__error_8c.html" title="Error handling for TRAP. " alt="" coords="611,80,721,107"/>
+</map>

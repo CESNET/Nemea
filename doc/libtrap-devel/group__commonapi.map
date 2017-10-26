@@ -1,0 +1,6 @@
+<map id="Common libtrap API" name="Common libtrap API">
+<area shape="rect" id="node1" href="$group__trap__mess__fmt.html" title="Message format" alt="" coords="231,5,347,32"/>
+<area shape="rect" id="node2" href="$group__trap__timeout.html" title="TRAP Timeout" alt="" coords="235,56,344,83"/>
+<area shape="rect" id="node4" href="$group__errorcodes.html" title="Error codes" alt="" coords="245,107,334,133"/>
+<area shape="rect" id="node5" href="$group__trapifcspec.html" title="Specifier of TRAP interfaces" alt="" coords="195,157,384,184"/>
+</map>

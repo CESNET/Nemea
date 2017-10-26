@@ -1,0 +1,5 @@
+<map id="TCP/IP and UNIX socket communication interface module" name="TCP/IP and UNIX socket communication interface module">
+<area shape="rect" id="node1" href="$group__tcpip__sender.html" title="TCPIP output IFC" alt="" coords="424,5,552,32"/>
+<area shape="rect" id="node4" href="$group__tcpip__receiver.html" title="TCPIP input IFC" alt="" coords="428,56,548,83"/>
+<area shape="rect" id="node3" href="$group__trap__ifc.html" title="TRAP communication\l module interface" alt="" coords="6,23,157,65"/>
+</map>

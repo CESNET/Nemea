@@ -2,7 +2,7 @@
 layout: page
 title: TRAP Interface Specifier
 menuentry: TRAP IFC
-public: true
+public: false
 permalink: /trap-ifcspec/
 ---
 
@@ -32,8 +32,16 @@ Communicates through a TCP socket. Output interface listens on a given port, inp
 Parameters when used as INPUT interface:
 
 ```
-<hostname or ip>:<port>
+t:<hostname or ip>:<port>
 ```
+
+or
+
+```
+t:<port>
+```
+
+If you skip `<hostname or ip>:`, IFC assumes you want to use localhost as the hostname.
 
 Parameters when used as OUTPUT interface:
 
@@ -42,6 +50,34 @@ Parameters when used as OUTPUT interface:
 ```
 
 Maximal number of connected clients (input interfaces) is optional (64 by default).
+
+## TLS interface ('T')
+
+Communicates through a TCP socket after establishing encrypted connection. You have to provide certificate, key and CA chain file with trusted CAs. Otherwise same as in TCP: Output interface listens on a given port, input interface connects to it. There may be more than one input interfaces connected to one output interface, every input interface will get the same data.
+
+Parameters when used as INPUT interface:
+
+```
+T:<hostname or ip>:<port>:<keyfile>:<certfile>:<CAfile>
+```
+
+or
+
+```
+T:<port>:<keyfile>:<certfile>:<CAfile>
+```
+
+If you skip `<hostname or ip>:`, IFC assumes you want to use localhost as a hostname.
+
+Parameters when used as OUTPUT interface:
+
+```
+<port>:<max_num_of_clients>:<keyfile>:<certfile>:<CAfile>
+```
+
+Maximal number of connected clients (input interfaces) is optional (64 by default).
+
+Parameters keyfile, certfile, CAfile expect a path to apropriate files in PEM format.
 
 UNIX domain socket ('u')
 ------------------------
@@ -75,18 +111,17 @@ Can be used as OUTPUT interface only. Does nothing, everything sent to this inte
 File interface ('f')
 --------------------
 
-Input interface reads data from given files, output interface can store data to multiple files.
-Value of `~` can be used to specify the file for the interface. E.g. `~/nemea/data.trapcap`.
+Input interface reads data from given files, output interface stores data to multiple files. Recommended file name extension for files with captured TRAP traffic is `.trapcap`. Tilde (`~`) can be used to specify home directory when specifying path, e.g. `~/nemea/data.trapcap`.
 
 Input interface:
 
 Files to be read by input interface can be specified with globbing.
-E.g. lets say, we have multiple data files captured on 18th of April, with names like data.041809, data.041810 etc. where the last two digits indicate the hour of data capture.
+E.g. lets say, we have multiple data files captured on 18th of April 2016, with names like data.201604180900, data.201604181000.
 Following syntax can be used:
 
 ```
-<file_name> 	// e.g. data.041809 - reads data only from file "data.041809"
-<file_name*> 	// e.g. data.0418* - reads data from all files in directory that were captured on 18th of April.
+<file_name> 	// e.g. data.201604180900 - reads data only from file "data.201604180900"
+<file_name*> 	// e.g. data.20160418* - reads data from all files in directory that were captured on 18th of April.
 ```
 
 Name of file (path to the file) must be specified.
@@ -100,19 +135,20 @@ Output interface:
 
 Name of file (path to the file) must be specified.
 
-Mode is optional. There are two types of mode: `a` - append, `w` - write.
-Mode append is set as default, if no mode is specified.
-Mode append writes data at the end of specified file, mode write overwrites specified file.
+Mode is optional. There are two types of mode: `a` - append (default), `w` - write.
+If the specified file exists, mode write overwrites it, mode append creates a new file with an integer suffix, e.g. `data.trapcap.0` (or `data.trapcap.1` if the former exists, and so on, it simply finds the first unused number).
 
 If parameter `time=` is set, the output interface will split captured data to individual files as often, as value of this parameter indicates.
 Output interface assumes the value of parameter `time=` is in minutes.
-If parameter `time=` is set, the output interface creates unique file name for each file according to current timestamp in formate: filename.YYYYmmddHHMM
+If parameter `time=` is set, the output interface creates unique file name for each file according to current timestamp in format: filename.YYYYmmddHHMM
 Parameter `time=` is optional and is not set by default.
 
 If parameter `size=` is set, the output interface will split captured data to individual files after size of current file exceeds given threshold.
 Output interface assumes the value of parameter `size=` is in MB.
 If parameter `size=` is set, numeric suffix as added to original file name for each file in ascending order starting with 0.
 Parameter `size=` is optional and is not set by default.
+
+If both `time=` and `size=` are specified, the data are split primarily by time, and only if a file of one time interval exceeds the size limit, it is further splitted. The index of size-splitted file is appended after the time, e.g. `data.trapcap.201604181000.0`.
 
 Example:
 
@@ -124,8 +160,8 @@ Example:
 ```
 
 Output file interface and negotiation:
-Whenever new formate of data is created, output interface creates new file with numeric suffix
-Example: `-i "f:~/nemea/data.trapcap:w"` following sequence of files will be created if data format change: data.trapcap, data.trapcap.0, data.trapcap.1 etc.
+Whenever new format of data is created, output interface creates new file with numeric suffix.
+Example: `-i "f:~/nemea/data.trapcap:w"` following sequence of files will be created if data format changes: data.trapcap, data.trapcap.0, data.trapcap.1 etc.
 
 When mode `a` is specified, the interface finds first non-existing file in which it writes data.
 

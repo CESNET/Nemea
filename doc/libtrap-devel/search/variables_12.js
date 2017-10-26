@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['tcpip_5faddr',['tcpip_addr',['../uniontcpip__socket__addr.html#a62e73f6a1f3324336efa8813fb1f05ed',1,'tcpip_socket_addr']]],
+  ['term_5fpipe',['term_pipe',['../structtcpip__sender__private__s.html#a2d291d39d4fa615d69eebeb4bffe1f4e',1,'tcpip_sender_private_s::term_pipe()'],['../structtls__sender__private__s.html#a249d112b71d13702659fd0d3f8385cad',1,'tls_sender_private_s::term_pipe()']]],
+  ['terminate',['terminate',['../structtrap__input__ifc__s.html#a4eba7ef455b394109a14d7e133a9fcd0',1,'trap_input_ifc_s::terminate()'],['../structtrap__output__ifc__s.html#ac7b9f92faabc9454e426e344d0fa42e1',1,'trap_output_ifc_s::terminate()']]],
+  ['terminated',['terminated',['../structtrap__ctx__priv__s.html#a55f60bd22104a0fb06eb665ed0f62e0a',1,'trap_ctx_priv_s']]],
+  ['thr',['thr',['../structreader__threads__s.html#a91f529465e26ed75d5bc193e6713d7a7',1,'reader_threads_s']]],
+  ['thread_5findex',['thread_index',['../structreader__threads__arg.html#af367f27a27dbd336446d79c624503107',1,'reader_threads_arg']]],
+  ['timeout',['timeout',['../structtrap__output__ifc__s.html#a12225c3a52f5fa28db243073ae58c2d3',1,'trap_output_ifc_s']]],
+  ['timeout_5ffixed',['timeout_fixed',['../structtrap__output__ifc__s.html#ae5f88f58a178f17e95596e4118fe69a8',1,'trap_output_ifc_s']]],
+  ['timeout_5fthread',['timeout_thread',['../structtrap__ctx__priv__s.html#a468cf11faf30ffb084fe96781b3eb500',1,'trap_ctx_priv_s']]],
+  ['timeout_5fthread_5finitialized',['timeout_thread_initialized',['../structtrap__ctx__priv__s.html#a27971c02026630d913c42a00544b5145',1,'trap_ctx_priv_s']]],
+  ['tls_5faddr',['tls_addr',['../uniontls__socket__addr.html#ab079470415e72216a900bbb4bac043ee',1,'tls_socket_addr']]],
+  ['tm',['tm',['../structout__ifc__timeout__s.html#a083890569e8dd91e5e3566d15e4e857e',1,'out_ifc_timeout_s']]],
+  ['trap_5fdebug',['trap_debug',['../group__debug.html#ga3b3befcce5bb831d533b29013308578e',1,'trap_debug():&#160;trap_internal.c'],['../group__debug.html#ga3b3befcce5bb831d533b29013308578e',1,'trap_debug():&#160;trap_internal.c']]],
+  ['trap_5fdefault_5fsocket_5fpath_5fformat',['trap_default_socket_path_format',['../group__commonapi.html#gaf7b7bed58a3f3c7900264fd442613526',1,'trap.h']]],
+  ['trap_5ferr_5fmsg',['trap_err_msg',['../group__debug.html#gafd6d8c7c2da47f1dbec20f5f8ae28c0e',1,'trap_internal.h']]],
+  ['trap_5fgit_5fversion',['trap_git_version',['../group__commonapi.html#gaf27b94a242d49569cd6f943023176083',1,'trap.h']]],
+  ['trap_5fglob_5fctx',['trap_glob_ctx',['../group__debug.html#ga4fcc14efc331481c2957dab472950df5',1,'trap_glob_ctx():&#160;trap.c'],['../group__debug.html#ga4fcc14efc331481c2957dab472950df5',1,'trap_glob_ctx():&#160;trap.c']]],
+  ['trap_5fhelp_5fifcspec',['trap_help_ifcspec',['../help__trapifcspec_8c.html#ad42ed2f9863287a22ef816d79e4cc4ab',1,'help_trapifcspec.c']]],
+  ['trap_5fhelp_5fspec',['trap_help_spec',['../trap_8c.html#ad538ab23674c9067a0dfd2570a521f7b',1,'trap.c']]],
+  ['trap_5fifc_5ftype_5fsupported',['trap_ifc_type_supported',['../group__ifctypes.html#ga6419b14997f2d75db88aae23213be54e',1,'trap_ifc_type_supported():&#160;trap.c'],['../group__ifctypes.html#ga6419b14997f2d75db88aae23213be54e',1,'trap_ifc_type_supported():&#160;trap.c']]],
+  ['trap_5flast_5ferror',['trap_last_error',['../structtrap__ctx__priv__s.html#a3df9ece66f6d6a59a99a720f12132539',1,'trap_ctx_priv_s::trap_last_error()'],['../group__simpleapi.html#ga605937391a4c6fbe1510bf4381a8a2b4',1,'trap_last_error():&#160;trap.c'],['../group__simpleapi.html#ga605937391a4c6fbe1510bf4381a8a2b4',1,'trap_last_error():&#160;trap.c']]],
+  ['trap_5flast_5ferror_5fmsg',['trap_last_error_msg',['../structtrap__ctx__priv__s.html#a9f89537f85add16fd2359ae690999247',1,'trap_ctx_priv_s::trap_last_error_msg()'],['../group__simpleapi.html#ga440c46189a0111c0946583c56e1ff7a9',1,'trap_last_error_msg():&#160;trap.c'],['../group__simpleapi.html#ga440c46189a0111c0946583c56e1ff7a9',1,'trap_last_error_msg():&#160;trap.c']]],
+  ['trap_5fverbose',['trap_verbose',['../group__debug.html#gaf2a32a74fdc82cfc2f13a9a8e4d32da1',1,'trap_verbose():&#160;trap_internal.c'],['../group__debug.html#gaf2a32a74fdc82cfc2f13a9a8e4d32da1',1,'trap_verbose():&#160;trap_internal.c']]],
+  ['trap_5fversion',['trap_version',['../group__commonapi.html#gabc3ef5d4460eee3691cc57d54ad3ee04',1,'trap.h']]],
+  ['types',['types',['../structtrap__ifc__spec__s.html#a6af4e85e62b9408f48e264516c5a4eae',1,'trap_ifc_spec_s']]]
+];
