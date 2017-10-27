@@ -77,7 +77,7 @@ this action.
 
 Action arguments:
 - to - Destination e-mail address, multiple addresses might be specified, separated by comma (`,`).
-- subject - Subject of the messages.
+- subject - Subject of the messages. May contain variables that are replaced by values from alert (see below).
 - from  - (optional) Source e-mail address.
 - server - (optional) Hostname of SMTP server
 - port - (optional) Port of SMTP server
@@ -92,6 +92,13 @@ Warning: Username and password (for authentication) are passed in plain-text so
 be cautious to use this.
 
 Note: If `forceSSL` is set to `True`, `startTLS` has no effect.
+
+The following variables may be used as part of `subject`, they are replaced by corresponding values from the alert before each message is sent:
+- `$category` - Category (joined by `,` in case of multiple categories)
+- `$node` - Name of the last item in Node array (i.e. ID of the detector)
+- `$src_ip` - First IP address in Source, followed by `(...)` if there are more than one.
+- `$tgt_ip` - The same as `$src_ip`, but with Target.
+- Note: If a value is not available in alert, `N/A` is used instead.
 
 **mongo** - store message into MongoDB
 
