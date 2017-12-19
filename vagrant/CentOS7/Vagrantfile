@@ -10,7 +10,8 @@ yum install -y vim wget
 SCRIPT
 
 $install_nemea = <<SCRIPT
-rpm -ivh https://homeproj.cesnet.cz/rpm/liberouter/devel/x86_64/liberouter-devel-1.0.0-1.noarch.rpm
+wget -O /etc/yum.repos.d/copr-cesnet-ipfix.repo https://copr.fedorainfracloud.org/coprs/g/CESNET/IPFIXcol/repo/epel-7/group_CESNET-IPFIXcol-epel-7.repo
+rpm --import https://copr-be.cloud.fedoraproject.org/results/@CESNET/IPFIXcol/pubkey.gpg
 wget -O /etc/yum.repos.d/cesnet-nemea.repo https://copr.fedorainfracloud.org/coprs/g/CESNET/NEMEA/repo/epel-7/group_CESNET-NEMEA-epel-7.repo
 rpm --import https://copr-be.cloud.fedoraproject.org/results/@CESNET/NEMEA/pubkey.gpg
 yum install -y nemea nemea-framework-devel ipfixcol ipfixcol-unirec-output
