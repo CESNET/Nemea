@@ -19,9 +19,9 @@ permalink: /aggregation/
 
 ## Input
 * User defined configuration specifying
-  *   **key for aggregation** (what fields must match to apply any aggregation function)
-  *   **field and function** (combination which tells what how aggreagate)
-  *   **time window** - sliding window checked for each record independently
+  *  **key for aggregation** (what fields must match to apply any aggregation function)
+  *  **field and function** (combination which tells what how aggreagate)
+  *  **time window** - sliding window checked for each record independently
 
 ## Output
 1. New UniRec record containing
@@ -51,14 +51,14 @@ permalink: /aggregation/
 
    Flows divided into more records (in case of too short probe active timeout) are combined into one.
    * Key
-     * SRC_IP, DST_IP, SRC_PORT, DST_PORT, PROTOCOL [, TOS, LINK_BIT_FIELD, DIR_BIT_FIELD]
+      * SRC_IP, DST_IP, SRC_PORT, DST_PORT, PROTOCOL [, TOS, LINK_BIT_FIELD, DIR_BIT_FIELD]
     * Aggregation
       * sum:BYTES, sum:PACKETS, min:TIME_FIRST, max:TIME_LAST, or:TCP_FLAGS
 
 4. DNS amplification attack detection 
 
    **Function mentioned there are not present in current solution.** In combination with input filter on SRC_Port=53 and ouptut filter with tresholds.
-    * Key
+     * Key
       * SRC_IP, DST_IP
     * Aggregation
       * sum:BYTES, sum:PACKETS, avg:BYTES_AVG, stdev:BYTES
