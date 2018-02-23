@@ -36,34 +36,48 @@ New UniRec record containing
 (eg. making graphs)
 * Key
   ```
-  Notning
+  Nothing
   ```
   ```
   LINK_BIT_FIELD (sums for different links)
   ```
 * Aggregation
-  * sum:BYTES, sum:PACKETS, sum:FLOWS, min:TIME_FIRST, max:TIME_LAST
+  ```
+  sum:BYTES, sum:PACKETS, sum:FLOWS, min:TIME_FIRST, max:TIME_LAST
+  ```
 
 ### Blacklist filter output aggregation.
 
 Requests from one source in specific time interval are aggregated to one record, which is in report system converted to IDEA message.
 * Key
-  * SRC_IP, DST_IP, DST_BLACKLIST
+  ```
+  SRC_IP, DST_IP, DST_BLACKLIST
+  ```
 * Aggregation
-  * sum:BYTES, sum:PACKETS, count:FLOWS, min:TIME_FIRST. max:TIME_LAST
+  ```
+  sum:BYTES, sum:PACKETS, count:FLOWS, min:TIME_FIRST. max:TIME_LAST
+  ```
 
 ### Clasic flow aggreagation
 
 Flows divided into more records (in case of too short probe active timeout) are combined into one.
 * Key
-  * SRC_IP, DST_IP, SRC_PORT, DST_PORT, PROTOCOL [, TOS, LINK_BIT_FIELD, DIR_BIT_FIELD]
+  ```
+  SRC_IP, DST_IP, SRC_PORT, DST_PORT, PROTOCOL [, TOS, LINK_BIT_FIELD, DIR_BIT_FIELD]
+  ```
 * Aggregation
-  * sum:BYTES, sum:PACKETS, min:TIME_FIRST, max:TIME_LAST, or:TCP_FLAGS
+  ```
+  sum:BYTES, sum:PACKETS, min:TIME_FIRST, max:TIME_LAST, or:TCP_FLAGS
+  ```
 
 ### DNS amplification attack detection 
 
 **Functions mentioned there are not present in current solution.** In combination with input filter on SRC_Port=53 and ouptut filter with tresholds.
 * Key
-  * SRC_IP, DST_IP
+  ```
+  SRC_IP, DST_IP
+  ```
 * Aggregation
-  * sum:BYTES, sum:PACKETS, avg:BYTES_AVG, stdev:BYTES
+  ```
+  sum:BYTES, sum:PACKETS, avg:BYTES_AVG, stdev:BYTES
+  ```
