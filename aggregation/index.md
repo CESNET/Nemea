@@ -35,8 +35,12 @@ New UniRec record containing
 ### Overall sum of bytes/packets/flows in given time window
 (eg. making graphs)
 * Key
-  * Notning
-  * LINK_BIT_FIELD (sums for different links)
+  ```
+  Notning
+  ```
+  ```
+  LINK_BIT_FIELD (sums for different links)
+  ```
 * Aggregation
   * sum:BYTES, sum:PACKETS, sum:FLOWS, min:TIME_FIRST, max:TIME_LAST
 
