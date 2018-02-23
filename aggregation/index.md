@@ -38,6 +38,7 @@ New UniRec record containing
   ```
   Nothing
   ```
+  or
   ```
   LINK_BIT_FIELD (sums for different links)
   ```
