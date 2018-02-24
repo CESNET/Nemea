@@ -8,13 +8,11 @@ permalink: /tfcsirt2017/
 
 # Tools for Monitoring and Security Analysis
 
-We are having a hands-on tutorial at 50th TF-CSIRT meeting:
+We had a hands-on tutorial at 50th TF-CSIRT meeting:
 
 [https://www.first.org/events/symposium/valencia2017](https://www.first.org/events/symposium/valencia2017)
 
 on Wednesday Jan 25th from 9:30 to 17:00.
-
-[Register now!](https://app.certain.com/profile/form/index.cfm?PKformID=0x2487766434e)
 
 ## Description
 
