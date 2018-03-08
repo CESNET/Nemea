@@ -22,7 +22,25 @@ RPM_RELEASE=1
 AC_SUBST(RPM_RELEASE)
 AM_CONDITIONAL(MAKE_RPMS, test x$RPMBUILD != x)
 
+AC_ARG_ENABLE([supervisor], AC_HELP_STRING([--disable-supervisor], [Disable supervisor.]),
+        [AM_CONDITIONAL([ENABLE_SUPERVISOR], [test "x$enableval" = xyes])],
+        [AM_CONDITIONAL([ENABLE_SUPERVISOR], [true])])
+
+AC_ARG_ENABLE([modules], AC_HELP_STRING([--disable-modules], [Disable NEMEA modules.]),
+        [AM_CONDITIONAL([ENABLE_MODULES], [test "x$enableval" = xyes])],
+        [AM_CONDITIONAL([ENABLE_MODULES], [true])])
+
+AC_ARG_ENABLE([detectors], AC_HELP_STRING([--disable-detectors], [Disable NEMEA detectors.]),
+        [AM_CONDITIONAL([ENABLE_DETECTORS], [test "x$enableval" = xyes])],
+        [AM_CONDITIONAL([ENABLE_DETECTORS], [true])])
+
 AC_CONFIG_FILES([Makefile
                   nemea.spec])
 AC_CONFIG_SUBDIRS([nemea-framework nemea-supervisor modules detectors])
 AC_OUTPUT
+
+echo "Components:"
+echo "  NEMEA modules....................: `if [[ -z "$ENABLE_MODULES_TRUE" ]]; then echo enabled; else echo disabled; fi`"
+echo "  NEMEA detectors..................: `if [[ -z "$ENABLE_DETECTORS_TRUE" ]]; then echo enabled; else echo disabled; fi`"
+echo "  NEMEA supervisor.................: `if [[ -z "$ENABLE_SUPERVISOR_TRUE" ]]; then echo enabled; else echo disabled; fi`"
+
