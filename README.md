@@ -75,12 +75,17 @@ The project is divided into four repositories added as submodules:
 
 ### How to install dependencies:
 
+Debian/Ubuntu:
 ```
-yum install -y autoconf automake gcc gcc-c++ libtool libxml2-devel make pkg-config libpcap libidn bison flex
+apt-get install -y gawk autoconf automake gcc g++ libtool libxml2-dev make pkg-config libpcap0.8-dev libidn11-dev bison flex
+```
+
+RHEL/CentOS/Fedora:
+```
+yum install -y autoconf automake gcc gcc-c++ libtool libxml2-devel make pkg-config libpcap-devel libidn-devel bison flex
 ```
 
 Note: Latest systems (e.g. Fedora) use `dnf` instead of `yum`.
-
 
 # Installation
 
@@ -143,7 +148,7 @@ and compilation process. For more information see:
 We recommend to set paths according to the used operating system, e.g.:
 
 ```
-./configure --prefix=/usr --bindir=/usr/bin/nemea --sysconfdir=/etc/nemea --libdir=/usr/lib64
+./configure --enable-repobuild --prefix=/usr --bindir=/usr/bin/nemea --sysconfdir=/etc/nemea --libdir=/usr/lib64
 ```
 
 After finishing `./configure`, build process can be started by:
