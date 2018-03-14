@@ -77,12 +77,12 @@ The project is divided into four repositories added as submodules:
 
 Debian/Ubuntu:
 ```
-apt-get install -y gawk autoconf automake gcc g++ libtool libxml2-dev make pkg-config libpcap0.8-dev libidn11-dev bison flex
+apt-get install -y gawk bc autoconf automake gcc g++ libtool libxml2-dev make pkg-config libpcap-dev libidn11-dev bison flex
 ```
 
 RHEL/CentOS/Fedora:
 ```
-yum install -y autoconf automake gcc gcc-c++ libtool libxml2-devel make pkg-config libpcap-devel libidn-devel bison flex
+yum install -y bc autoconf automake gcc gcc-c++ libtool libxml2-devel make pkg-config libpcap-devel libidn-devel bison flex
 ```
 
 Note: Latest systems (e.g. Fedora) use `dnf` instead of `yum`.
