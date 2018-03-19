@@ -42,28 +42,28 @@ Key is specified the same way as other aggregation function.
 ## Aggregation functions
 Functions are specified as pair of prefix and field name. Prefix determines the type of aggregation function to be assigned to given field name. Every field definition needs to be specified with own pair of prexix and field name the same way as key above
 
-1. **Sum** 
+- **Sum** 
   
   Makes total sum of field values. Function is assigned using `-s FIELD_NAME` or `--sum FIELD_NAME`.
-2. **Avg**
+- **Avg**
   
   Makes average of field values. Every record stores its sum and in postprocessing phase before the record is sent, the average is computed. Function is assigned using `-a FIELD_NAME` or `--avg FIELD_NAME`.
-3. **Min**
+- **Min**
   
   Keep minimal value of field across all received records. Function is assigned using `-m FIELD_NAME` or `--min FIELD_NAME`.
-4. **Max**
+- **Max**
   
   Keep maximal value of field across all received records. Function is assigned using `-M FIELD_NAME` or `--max FIELD_NAME`.
-5. **First**
+- **First**
   
   Keep the first obtained value of field. Function is assigned using `-f FIELD_NAME` or `--first FIELD_NAME`.
-6. **Last**
+- **Last**
   
   Update the field with every new received record. Function is assigned using `-l FIELD_NAME` or `--last FIELD_NAME`.
-7. **Bitwise OR**
+- **Bitwise OR**
   
   Makes bitwise OR of field with every new received record. Function is assigned using `-o FIELD_NAME` or `--or FIELD_NAME`.
-8. **Bitwise AND**
+- **Bitwise AND**
   
   Makes bitwise AND of field with every new received record. Function is assigned using `-n FIELD_NAME` or `--and FIELD_NAME`.
 
