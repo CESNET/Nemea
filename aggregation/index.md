@@ -13,12 +13,16 @@ User has to specify parameters for processing including aggregation key fields a
 
 Module work with 4 different timeout types, which describe how records should be handled and where should be send out from module.
 - **Active** (Default)
+  
   Every received record is compared with the stored one of the equal aggregation key (if exists). If the TIME_FIRST field value of received record is greater than TIME_FIRST field value + TIMEOUT of stored record, the stored record is sent out from module and replaced with the new one. Otherwise the record fields values are updated due to specified rules. 
 - **Passive**
+  
   Every stored record is periodically checked every TIMEOUT second. In case that TIME_LAST field value is TIMEOUT seconds old (untouched) or older, the record is sent out and removed from storage. No action is taken otherwise.
 - **Global**
+  
   Each stored records are periodically sent out every TIMEOUT second.
 - **Mixed**
+  
   This type presents combination of *Active* and *Passive* timeout types. Both can have different TIMEOUT length value and both values are used separately for given type. When specifying ordered values need to be used in form `-t M:Active,Passive`.
 
 Module receives UniRec and sends UniRec containing fields which take part in aggregation process (TIME_FIRST, TIME_LAST, COUNT, key fields and all with aggregation function assigned), other fields are discarded by module. 
@@ -28,6 +32,7 @@ Module receives UniRec and sends UniRec containing fields which take part in agg
 
   Used UniRec template **always has to** contain fields TIME_FIRST and TIME_LAST.
 - Output: One output interface represented by *libtrap*.
+  
   Output UniRec template is generated from module configuration specified by user (TIME_FIRST, TIME_LAST, COUNT are always included).
   
 ## Aggregation key specification
@@ -38,20 +43,28 @@ Key is specified the same way as other aggregation function.
 Functions are specified as pair of prefix and field name. Prefix determines the type of aggregation function to be assigned to given field name. Every field definition needs to be specified with own pair of prexix and field name the same way as key above
 
 1. **Sum** 
+  
   Makes total sum of field values. Function is assigned using `-s FIELD_NAME` or `--sum FIELD_NAME`.
 2. **Avg**
+  
   Makes average of field values. Every record stores its sum and in postprocessing phase before the record is sent, the average is computed. Function is assigned using `-a FIELD_NAME` or `--avg FIELD_NAME`.
 3. **Min**
+  
   Keep minimal value of field across all received records. Function is assigned using `-m FIELD_NAME` or `--min FIELD_NAME`.
 4. **Max**
+  
   Keep maximal value of field across all received records. Function is assigned using `-M FIELD_NAME` or `--max FIELD_NAME`.
 5. **First**
+  
   Keep the first obtained value of field. Function is assigned using `-f FIELD_NAME` or `--first FIELD_NAME`.
 6. **Last**
+  
   Update the field with every new received record. Function is assigned using `-l FIELD_NAME` or `--last FIELD_NAME`.
 7. **Bitwise OR**
+  
   Makes bitwise OR of field with every new received record. Function is assigned using `-o FIELD_NAME` or `--or FIELD_NAME`.
 8. **Bitwise AND**
+  
   Makes bitwise AND of field with every new received record. Function is assigned using `-n FIELD_NAME` or `--and FIELD_NAME`.
 
 ## Input
