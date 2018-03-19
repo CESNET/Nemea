@@ -25,6 +25,7 @@ Module receives UniRec and sends UniRec containing fields which take part in agg
 
 ## Interfaces
 - Input: One input interface represented by *libtrap*.
+
   Used UniRec template **always has to** contain fields TIME_FIRST and TIME_LAST.
 - Output: One output interface represented by *libtrap*.
   Output UniRec template is generated from module configuration specified by user (TIME_FIRST, TIME_LAST, COUNT are always included).
