@@ -7,7 +7,7 @@ permalink: /aggregation/
 ---
 
 ## Description
-Universal aggregation module (aggregator) for UniRec records. The main goal of this module is to aggregate receiving UniRec records due to rules specified by user. Rules can be combination of any implemented function with **only one** restriction, that **only one** aggregation function can be assigned to a field. This restriction is a result of module in place processing design.
+Universal aggregation module (agg) for UniRec records. The main goal of this module is to aggregate receiving UniRec records due to rules specified by user. Rules can be combination of any implemented function with **only one** restriction, that **only one** aggregation function can be assigned to a field. This restriction is a result of module in place processing design.
 
 User has to specify parameters for processing including aggregation key fields and other with aggregation function which will be applied to it. [There](./index.md#aggregation-functions) you can find list currently available functions.
 
@@ -69,7 +69,7 @@ Functions are specified as pair of prefix and field name. Prefix determines the 
 
 ## Input
 User defined configuration specifying
-*  **key for aggregation** (fields which have to match to aggregate records together with specified operations.)
+*  **key for aggregation** (fields which have to match to aggregate records together with specified operations.) *When no key specified all records are considered to have the equal key for processing.*
 *  **field and function** (pair of aggregation function prefix and field name)
 *  **time window** - Pair of timeout type and length described in [module description](./index.md#description). Available use for aggregation time window length 60 is `-t A:60` of `-t Active:60` for *Active*, `-t G:60` or `-t Global:60` for *Global*, `-t P:60` or `-t Passive:60` for *Passive*, `-t M:60,60` or `-t Mixed:60,60` for *Mixed*.
 
@@ -98,7 +98,8 @@ New UniRec record containing
   ```
 #### Module configuration
 ```
-./aggregator -i u:input,u:output -k LINK_BIT_FIELD -s BYTES -s PACKETS
+./agg-i u:input,u:output -s BYTES -s PACKETS
+./agg -i u:input,u:output -k LINK_BIT_FIELD -s BYTES -s PACKETS
 ```
 Fields TIME_FIRST and TIME_LAST are always automaticaly handled by module using minimal TIME_FIRST value and maximal TIME_LAST value for given key.
 
@@ -115,7 +116,7 @@ Requests from one source in specific time interval are aggregated to one record,
   ```
 #### Module configuration
 ```
-./aggregator -i u:input,u:output -k SRC_IP -k DST_IP -k DST_BLACKLIST -s BYTES -s PACKETS
+./agg -i u:input,u:output -k SRC_IP -k DST_IP -k DST_BLACKLIST -s BYTES -s PACKETS
 ```
 Fields TIME_FIRST, TIME_LAST, COUNT are always automaticaly handled by module using minimal TIME_FIRST value, maximal TIME_LAST value and count of processed records for given key.
 
@@ -132,7 +133,7 @@ Flows divided into more records (in case of too short probe active timeout) are 
   ```
 ### Module configuration
 ```
-./aggregator -i u:input,u:output -k SRC_IP -k DST_IP -k SRC_PORT -k DST_PORT -k PROTOCOL -s BYTES -s PACKETS -o TCP_FLAGS
+./agg -i u:input,u:output -k SRC_IP -k DST_IP -k SRC_PORT -k DST_PORT -k PROTOCOL -s BYTES -s PACKETS -o TCP_FLAGS
 ```
 Fields TIME_FIRST and TIME_LAST are always automaticaly handled by module using minimal TIME_FIRST value and maximal TIME_LAST value for given key.
 
@@ -149,6 +150,6 @@ Fields TIME_FIRST and TIME_LAST are always automaticaly handled by module using 
   ```
 ### Module configuration
   ```
-  ./aggregator -i u:input,u:output -k SRC_IP -k DST_IP -s BYTES -s PACKETS -a BYTES_AVG
+  ./agg -i u:input,u:output -k SRC_IP -k DST_IP -s BYTES -s PACKETS -a BYTES_AVG
   ```
 Current module implementation cannot apply 2 different aggregation functions on the same record field. The field BYTES_AVG has to be part of input record to be used like this. Function standard deviation (stdev) is not implemented in module (*Featured*).
