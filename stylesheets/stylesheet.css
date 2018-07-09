@@ -465,11 +465,16 @@ input[type=checkbox]:checked ~ #menu{
 	/*Make dropdown links appear inline*/
 	 ul {
 		position: static;
-		display: none;
 	}
+	 ul#menu {
+                display: none;
+        }
+	 img {
+                max-width: 100%;
+        }
 	/*Create vertical spacing*/
 	 li {
-		margin-bottom: 1px;
+		margin-bottom: 0px;
 	}
 	/*Make all menu links full width*/
 	 ul li, li a {
