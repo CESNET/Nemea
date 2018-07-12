@@ -1,0 +1,53 @@
+pipeline {
+    agent none
+    stages {
+        stage('Build Centos') {
+            agent {
+                dockerfile {
+                    filename 'Centos-Dockerfile'
+                    dir 'jenkins'
+                }
+            }
+            steps {
+                //sh './bootstrap.sh && ./configure --prefix=$PWD/install --libdir=$PWD/install/lib -q --enable-debug CXXFLAGS=-coverage CFLAGS=-coverage LDFLAGS=-lgcov && make rpm make install && export LD_LIBRARY_PATH=$PWD/install/lib && export CPPFLAGS=-I$PWD/install/include && (cd pytrap && make coverage; python setup.py install;)'
+
+               sh '/usr/sbin/groupadd -f -g `id -g` jenkins; /usr/sbin/useradd jenkins -u `id -u` -g `id -g`; true'
+
+               sh '( cd nemea-framework/libtrap; ./bootstrap.sh && ./configure -q && make rpm && sudo yum install -y ./RPMBUILD/RPMS/*/libtrap*.rpm;)'
+               sh '( cd nemea-framework/unirec; ./bootstrap.sh && ./configure -q && make rpm && sudo yum install -y ./RPMBUILD/RPMS/*/unirec*.rpm;)'
+               sh '( cd nemea-framework/common; ./bootstrap.sh && ./configure -q && make rpm && sudo yum install -y ./RPMBUILD/RPMS/*/nemea-common*.rpm;)'
+               sh '( ./bootstrap.sh && ./configure -q;)'
+               sh '( cd nemea-framework/pytrap; make rpm; sudo yum install -y ./dist/*.rpm;)'
+               sh '( cd nemea-framework/pycommon; make rpm; sudo yum install -y ./dist/*.rpm;)'
+               sh '( cd modules; ./bootstrap.sh && ./configure -q && make rpm; sudo yum install -y ./RPMBUILD/RPMS/*/*.rpm;)'
+               sh '( cd detectors; ./bootstrap.sh && ./configure -q && make rpm; sudo yum install -y ./RPMBUILD/RPMS/*/*.rpm;)'
+               sh '( cd supervisor; ./bootstrap.sh && ./configure -q && make rpm; sudo yum install -y ./RPMBUILD/RPMS/*/*.rpm;)'
+               sh 'mkdir -p rpms; find libtrap unirec common pytrap pycommon -name "*.rpm" -exec mv {} rpms ";"'
+               archiveArtifacts artifacts: 'rpms/*', onlyIfSuccessful: true
+            }
+        }
+        stage('Build Debian packages') {
+            agent {
+                dockerfile {
+                    filename 'Debian-Dockerfile'
+                    dir 'jenkins'
+                }
+            }
+            steps {
+               sh '/usr/sbin/groupadd -f -g `id -g` jenkins; /usr/sbin/useradd jenkins -u `id -u` -g `id -g`; true'
+
+               sh '( cd nemea-framework/libtrap; ./bootstrap.sh && ./configure -q && make deb && sudo dpkg -i ./libtrap*.deb;)'
+               sh '( cd nemea-framework/unirec; ./bootstrap.sh && ./configure -q && make deb && sudo dpkg -i ./unirec*.deb;)'
+               sh '( cd nemea-framework/common; ./bootstrap.sh && ./configure -q && make deb && sudo dpkg -i ./nemea-common*.deb;)'
+               sh '( cd nemea-framework/pytrap; python setup.py --command-packages=stdeb.command bdist_deb; python3 setup.py --command-packages=stdeb.command bdist_deb; sudo dpkg -i ./deb_dist/*.deb;)'
+               sh '( cd nemea-framework/pycommon; python setup.py --command-packages=stdeb.command bdist_deb; python3 setup.py --command-packages=stdeb.command bdist_deb; sudo dpkg -i ./deb_dist/*.deb;)'
+               sh '( cd modules; ./bootstrap.sh && ./configure -q && make rpm; sudo dpkg -i ./nemea-modules*.deb;)'
+               sh '( cd detectors; ./bootstrap.sh && ./configure -q && make rpm; sudo dpkg -i ./nemea-detectors*.deb;)'
+               sh '( cd supervisor; ./bootstrap.sh && ./configure -q && make rpm; sudo dpkg -i ./nemea-supervisor*.deb;)'
+               sh 'mkdir -p debs; find libtrap unirec common pytrap pycommon -name "*.deb" -exec mv {} debs ";"'
+               archiveArtifacts artifacts: 'debs/*', onlyIfSuccessful: true
+            }
+        }
+    }
+}
+
