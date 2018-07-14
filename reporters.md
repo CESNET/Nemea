@@ -30,7 +30,45 @@ The second and more complex example is placed in the [pycommon directory](https:
 
 # Specification
 
-Configuration consists of three sections: *address groups*, *custom actions* and list of *rules*.
+Configuration consists of four sections: *smtp connections*, *address groups*, *custom actions*, and list of *rules*.
+
+## SMTP connections
+
+`smtp_connections`
+
+This section contains a list of sonfigured SMTP servers that can be referenced from `email` action (see below in Custom actions).
+
+Each connection can contain the following parameters:
+
+- id - identifier of a SMTP server
+- server - (optional) Hostname of SMTP server
+- port - (optional) Port of SMTP server
+- key - (optional) Path to key file for TLS
+- chain - (optional) Path to certificate (chain) file for TLS
+- forceSSL - (optional) Boolean value to force SSL connection from the beginning (`False` by default)
+- startTLS - (optional) Boolean value to perform `STARTTLS` (`False` by default)
+- authuser - (optional) User name for SMTP server requiring authentication
+- authpass - (optional) Password for SMTP server requiring authentication
+
+Warning: Username and password (for authentication) are passed in plain-text so
+be cautious to use this.
+
+Note: If `forceSSL` is set to `True`, `startTLS` has no effect.
+
+Example:
+
+```
+smtp_connections:
+  - id: 'mylocalserver'
+    host: 127.0.0.1
+    port: 25
+    user: ''
+    pass: ''
+    key: ''
+    chain: ''
+    force_ssl: False
+    start_tls: False
+```
 
 ## Address groups
 
@@ -61,11 +99,13 @@ Each custom action can be one of the following action types:
 Note: to use this action, the reporter module must be started with `--warden=` parameter that specifies path to Warden client config file.
 
 Action arguments:
+
 - url - URL of a warden server (this does not work right now)
 
 **file** - store message into file
 
 Action arguments:
+
 - path to log file - if directory is given, create a separate file with unique name for each message, otherwise, append the message to the given file.
 
 **email** - send message via SMTP
@@ -76,33 +116,40 @@ generate lots of e-mails since there is currently no implemented aggregation in
 this action.
 
 Action arguments:
+
+- smtp_connection - reference to predefined SMTP server (see SMTP connections section above)
 - to - Destination e-mail address, multiple addresses might be specified, separated by comma (`,`).
-- subject - Subject of the messages. May contain variables that are replaced by values from alert (see below).
+- subject - Subject of the messages that is used as a [jinja2](http://jinja.pocoo.org/docs/2.10/) template; an IDEA message is passed as `idea` object
+- template - path to the file with body of the message that is used as a [jinja2](http://jinja.pocoo.org/docs/2.10/) template; an IDEA message is passed as `idea` object
 - from  - (optional) Source e-mail address.
-- server - (optional) Hostname of SMTP server
-- port - (optional) Port of SMTP server
-- key - (optional) Path to key file for TLS
-- chain - (optional) Path to certificate (chain) file for TLS
-- forceSSL - (optional) Boolean value to force SSL connection from the beginning (`False` by default)
-- startTLS - (optional) Boolean value to perform `STARTTLS` (`False` by default)
-- authuser - (optional) User name for SMTP server requiring authentication
-- authpass - (optional) Password for SMTP server requiring authentication
 
-Warning: Username and password (for authentication) are passed in plain-text so
-be cautious to use this.
+Example `template` file in [jinja2](http://jinja.pocoo.org/docs/2.10/):
 
-Note: If `forceSSL` is set to `True`, `startTLS` has no effect.
+```
+{% raw %}
+Nemea system has detected a picture of cat being sent over the internet.
 
-The following variables may be used as part of `subject`, they are replaced by corresponding values from the alert before each message is sent:
-- `$category` - Category (joined by `,` in case of multiple categories)
-- `$node` - Name of the last item in Node array (i.e. ID of the detector)
-- `$src_ip` - First IP address in Source, followed by `(...)` if there are more than one.
-- `$tgt_ip` - The same as `$src_ip`, but with Target.
-- Note: If a value is not available in alert, `N/A` is used instead.
+ Description:  {{ idea.Description | join(", ") }}
+ Category: {{ idea.Category | join(", ") }}
+ Source(s) of Trouble: {% for src in idea.Source %}{% if src.IP4 %}{{ src.IP4 | join(", ") }}{% endif %} {% if src.IP6 %}{{ src.IP6 | join(", ") }}{% endif %}{% endfor %}
+ Victim(s):  {% for tgt in idea.Target %}{% if tgt.IP4 %}{{ tgt.IP4 | join(", ") }}{% endif %} {% if tgt.IP6 %}{{ tgt.IP6 | join(", ") }}{% endif %}{% endfor %}
+ Note:      {{ idea.Note }}
+ Event Time: {{ idea.EventTime }}
+ Cease Time: {{ idea.CeaseTime }}
+ Detect Time: {{ idea.DetectTime }}
+
+Raw message:
+
+{{ idea }}
+{% endraw %}
+```
+
+Similarly, `subject` can contain similar [jinja2](http://jinja.pocoo.org/docs/2.10/) constructs like in the body template example.
 
 **mongo** - store message into MongoDB
 
 Action arguments:
+
 - host
 - port
 - db name
@@ -116,6 +163,7 @@ The modification of the message by **mark** action is valid ONLY for the subsequ
 That means the modification is not global - for more than one rule.
 
 Action arguments:
+
 - path - Path in JSON
 - value - string
 
@@ -155,6 +203,11 @@ The `custom_actions` is a list of action identified by id key which can be a str
 The actions and elseactions lists in rule are used to reference an action, which can be an implicitly defined action or an action defined in `custom_actions`.
 
 
+# Example configuration
+
+Yaml configuration example: [pycommon/reporter_config/example.yaml](https://github.com/CESNET/Nemea-Framework/blob/master/pycommon/reporter_config/example.yaml)
+
+E-mail body template: [pycommon/reporter_config/default.html](https://github.com/CESNET/Nemea-Framework/blob/master/pycommon/reporter_config/default.html)
 
 # Use-cases
 
@@ -171,8 +224,6 @@ The actions and elseactions lists in rule are used to reference an action, which
 
 
 Example in YAML:
-
-TODO revision needed
 
 
 ```
@@ -231,17 +282,6 @@ rules:
   - addtest
   - warden1
   - drop
-```
-
-## Use-case 2 (multiple Warden servers)
-
-- alerts from det1, det2 -> Warden1 (e.g. main international Warden)
-- alerts from det3 -> Warden2 (e.g. internal CESNET Warden )
-- alerts from det4 with Source in [list_of_IPs/networks] to Warden2, otherwise to Warden1
-
-
-```
-TODO
 ```
 
 # Appendix 1: Mentat filter
@@ -329,6 +369,8 @@ LE 15 le 15 <= 15
 (127.0.0.1 eq ::1 eq 2001:afdc::58 eq Source.Node eq "Value 525.89:X><" eq 'Value 525.89:X><')
 [1, 2, 3 , 4]
 ```
+
+{% comment %}
 
 # Appendix 2: Draft of data model in Yang
 
@@ -478,5 +520,7 @@ module "reporting-filter" {
     }
 }
 ```
+
+{% endcomment %}
 
 
