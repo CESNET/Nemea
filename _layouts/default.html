@@ -7,9 +7,32 @@
 <script type="text/javascript">
 //<!--
 
+var mouseondocmenu = 0;
+function setupMenu()
+{
+   if (parseInt($('body').css("width")) >= 640) {
+      $('a[href="/doc/"]').hover(function() {
+         $('#docmenu').show()
+      });
+
+      $('#docmenu').mouseenter(function() {
+         mouseondocmenu = mouseondocmenu + 1;
+      });
+      $('#docmenu').mouseleave(function() {
+         mouseondocmenu = mouseondocmenu - 1;
+         if (!mouseondocmenu) {
+            $('#docmenu').hide();
+         }
+      });
+   } else {
+      $('body').off("hover", 'a[href="/doc/"]');
+   }
+}
+
 $(document).ready(function() {
    $('div#main_content_wrap h1,div#main_content_wrap h2,div#main_content_wrap h3').filter('[id]').each(function () {
        $(this).html($(this).text() + ' <a href="#'+$(this).attr('id')+'" class="anchor">&para;</a>');
+   setupMenu();
 });
 
 //-->
@@ -44,9 +67,11 @@ $(document).ready(function() {
                   </ul>
                 </li>
           	</ul>
+                <div id="docmenu">
+{% for page in site.pages %}{% if page.docmenu %}<a href="{{ page.url | prepend: site.baseurl }}">{% if page.menuentry %}{{ page.menuentry }}{% else %}{{ page.title }}{% endif %}</a>{% endif %}{% endfor %}
+               </div>
     </header>
     </div>
-
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
     <section id="main_content" class="inner">

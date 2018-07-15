@@ -6,7 +6,7 @@ public: true
 permalink: /doc/
 ---
 
-Related pages: [TRAP IFCSPEC](/trap-ifcspec/), [Reporters](/reporting/)
+Related pages: [TRAP IFCSPEC](/trap-ifcspec/), [Reporters](/reporting/), [installation](/doc/installation/)
 
 This page is written from the high-level view by system users to the low-level
 API needed by developers of the NEMEA Modules/Detectors and by developers of

@@ -3,6 +3,7 @@ layout: page
 title: Reporting Modules and Alert Filtering
 menuentry: Reporters
 public: false
+docmenu: true
 permalink: /reporting/
 ---
 
