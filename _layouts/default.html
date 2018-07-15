@@ -3,6 +3,18 @@
 
   {% include head.html %}
 
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+//<!--
+
+$(document).ready(function() {
+   $('div#main_content_wrap h1,div#main_content_wrap h2,div#main_content_wrap h3').filter('[id]').each(function () {
+       $(this).html($(this).text() + ' <a href="#'+$(this).attr('id')+'" class="anchor">&para;</a>');
+});
+
+//-->
+});
+</script>
   <body>
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
