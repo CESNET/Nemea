@@ -40,15 +40,15 @@ This section contains a list of sonfigured SMTP servers that can be referenced f
 
 Each connection can contain the following parameters:
 
-- id - identifier of a SMTP server
-- server - (optional) Hostname of SMTP server
-- port - (optional) Port of SMTP server
+- id - identifier of an SMTP connection
+- server - (optional) Hostname of SMTP server, `localhost` is default
+- port - (optional) Port of SMTP server, `25` is default
 - key - (optional) Path to key file for TLS
 - chain - (optional) Path to certificate (chain) file for TLS
-- forceSSL - (optional) Boolean value to force SSL connection from the beginning (`False` by default)
-- startTLS - (optional) Boolean value to perform `STARTTLS` (`False` by default)
-- authuser - (optional) User name for SMTP server requiring authentication
-- authpass - (optional) Password for SMTP server requiring authentication
+- forceSSL - (optional) Boolean value to force SSL connection from the beginning, `False` is default
+- startTLS - (optional) Boolean value to perform `STARTTLS`, `False` is default
+- user - (optional) User name for SMTP server requiring authentication
+- pass - (optional) Password for SMTP server requiring authentication
 
 Warning: Username and password (for authentication) are passed in plain-text so
 be cautious to use this.
@@ -94,7 +94,9 @@ The `custom_actions` section is optional.
 
 Each custom action can be one of the following action types:
 
-**warden** - send the message to Warden server
+### warden
+
+Send the message to Warden server.
 
 Note: to use this action, the reporter module must be started with `--warden=` parameter that specifies path to Warden client config file.
 
@@ -102,13 +104,18 @@ Action arguments:
 
 - url - URL of a warden server (this does not work right now)
 
-**file** - store message into file
+### file
+
+Store message into file or into files in directory.
 
 Action arguments:
 
 - path to log file - if directory is given, create a separate file with unique name for each message, otherwise, append the message to the given file.
 
-**email** - send message via SMTP
+
+### email
+
+Send message via SMTP.
 
 This action sends each alert as an e-mail message.
 Be careful with this action, it is not recommended for frequent alerts, it may
@@ -127,12 +134,12 @@ Example `template` file in [jinja2](http://jinja.pocoo.org/docs/2.10/):
 
 ```
 {% raw %}
-Nemea system has detected a picture of cat being sent over the internet.
+NEMEA system has detected a possible security event.
 
- Description:  {{ idea.Description | join(", ") }}
+ Description:  {{ idea.Description }}
  Category: {{ idea.Category | join(", ") }}
- Source(s) of Trouble: {% for src in idea.Source %}{% if src.IP4 %}{{ src.IP4 | join(", ") }}{% endif %} {% if src.IP6 %}{{ src.IP6 | join(", ") }}{% endif %}{% endfor %}
- Victim(s):  {% for tgt in idea.Target %}{% if tgt.IP4 %}{{ tgt.IP4 | join(", ") }}{% endif %} {% if tgt.IP6 %}{{ tgt.IP6 | join(", ") }}{% endif %}{% endfor %}
+ Source(s) of Trouble: {% for s in idea.Source %}{% if s.IP4 %}{{ s.IP4 | join(", ") }}{% endif %} {% if s.IP6 %}{{ s.IP6 | join(", ") }}{% endif %}{% endfor %}
+ Victim(s):  {% for t in idea.Target %}{% if t.IP4 %}{{ t.IP4 | join(", ") }}{% endif %} {% if t.IP6 %}{{ t.IP6 | join(", ") }}{% endif %}{% endfor %}
  Note:      {{ idea.Note }}
  Event Time: {{ idea.EventTime }}
  Cease Time: {{ idea.CeaseTime }}
@@ -146,7 +153,9 @@ Raw message:
 
 Similarly, `subject` can contain similar [jinja2](http://jinja.pocoo.org/docs/2.10/) constructs like in the body template example.
 
-**mongo** - store message into MongoDB
+### mongo
+
+Store message into MongoDB.
 
 Action arguments:
 
@@ -157,7 +166,9 @@ Action arguments:
 - user (optional)
 - password (optional)
 
-**mark** - add label into alert / modify IDEA message
+### mark
+
+Add label into alert / modify IDEA message.
 
 The modification of the message by **mark** action is valid ONLY for the subsequent actions of the list of **actions**/**elseactions** where the mark action is used.
 That means the modification is not global - for more than one rule.
@@ -169,13 +180,17 @@ Action arguments:
 
 Note: `path_set(msg, path, value)` from Mentat is used
 
-**trap** - send the message via output TRAP IFC
+### trap
+
+Send the message via output TRAP IFC.
 
 Note: to use this action, the reporter module must be started with `--trap` and correct `IFC_SPEC` with one input and one output IFC must be passed via `-i`.
 
 Action arguments: No arguments.
 
-**drop** - implicitly defined action, it can be used without any definition in `custom_actions` section. Moreover, it MUST NOT be defined in `custom_actions`.
+### drop
+
+Implicitly defined action, it can be used without any definition in `custom_actions` section. Moreover, it MUST NOT be defined in `custom_actions`.
 
 ## Rules
 
