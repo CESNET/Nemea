@@ -37,7 +37,7 @@ Configuration consists of four sections: *smtp connections*, *address groups*, *
 
 `smtp_connections`
 
-This section contains a list of sonfigured SMTP servers that can be referenced from `email` action (see below in Custom actions).
+This section contains a list of configured SMTP servers that can be referenced from `email` action (see below in Custom actions).
 
 Each connection can contain the following parameters:
 
