@@ -117,8 +117,30 @@ a {
   -ms-transition: color 0.5s ease;
   -ms-transition: text-shadow 0.5s ease;
 }
-
 a:hover, a:focus {text-decoration: underline;}
+
+a.anchor {
+  text-decoration: none;
+  color: #b0b0b0;
+  text-shadow: none;
+  font-size: 0.9em;
+
+  transition: color 0.5s ease;
+  transition: text-shadow 0.5s ease;
+  -webkit-transition: color 0.5s ease;
+  -webkit-transition: text-shadow 0.5s ease;
+  -moz-transition: color 0.5s ease;
+  -moz-transition: text-shadow 0.5s ease;
+  -o-transition: color 0.5s ease;
+  -o-transition: text-shadow 0.5s ease;
+  -ms-transition: color 0.5s ease;
+  -ms-transition: text-shadow 0.5s ease;
+}
+
+a.anchor:hover, a.anchor:focus {
+  color: #000000;
+}
+
 
 footer a {
   color: #F2F2F2;
@@ -324,6 +346,34 @@ Full-Width Styles
   height: 70px;
 }
 
+#docmenu {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  z-index: 10;
+  bottom: -55px;
+  right: 0;
+  display: none;
+  padding: 5px;
+}
+
+#docmenu a {
+  min-width:140px;
+  display:inline-block;
+  height: 100%;
+  text-align: center;
+  line-height: 40px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  background: #2f3036;
+  text-decoration: none;
+}
+
+#docmenu a:hover {
+  background: #0090ff;
+  color: #fff;
+}
+
 .zip_download_link {
   display: block;
   float: right;
@@ -484,4 +534,7 @@ input[type=checkbox]:checked ~ #menu{
 	.show-menu {
 		display:block;
 	}
+        #docmenu {
+                display: none;
+        }
 }
