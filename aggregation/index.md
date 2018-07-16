@@ -12,7 +12,7 @@ Universal aggregation module (agg) for UniRec records. The main goal of this mod
 User has to specify parameters for processing including aggregation key fields and other with aggregation function which will be applied to it. [There](./index.md#aggregation-functions) you can find list currently available functions.
 
 Module work with 4 different timeout types, which describe how records should be handled and where should be send out from module.
-- **Active** (Default)
+- **Active** (Default with TIMEOUT length set to 10 seconds.)
   
   Every received record is compared with the stored one of the equal aggregation key (if exists). If the TIME_FIRST field value of received record is greater than TIME_FIRST field value + TIMEOUT of stored record, the stored record is sent out from module and replaced with the new one. Otherwise the record fields values are updated due to specified rules. 
 - **Passive**
