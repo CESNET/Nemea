@@ -111,7 +111,8 @@ Store message into file or into files in directory.
 
 Action arguments:
 
-- path to log file - if directory is given, create a separate file with unique name for each message, otherwise, append the message to the given file.
+- path - path to a log file; if a directory is given, create a separate files with unique name for each message; otherwise if a regular file is given, append the message to the given file.
+- temp\_path - temporary write the file into temp\_path directory; when the content is written, move the file into path automatically (this is useful for utilities that wait for the new files and need a complete content before opening the file, such as `warden_filer`)
 
 
 ### email
