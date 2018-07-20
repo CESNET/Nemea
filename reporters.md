@@ -61,7 +61,7 @@ Example:
 ```
 smtp_connections:
   - id: 'mylocalserver'
-    host: 127.0.0.1
+    server: 127.0.0.1
     port: 25
     user: ''
     pass: ''
