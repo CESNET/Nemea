@@ -45,6 +45,7 @@ function cont_prompt()
    fi
 }
 
+# Look up commit of last releasing
 lastreleased=$(git log -n 1 --grep="released\? \(RPM \)\?package" --format=%h -- ./configure.ac)
 
 if [ -z "$lastreleased" ]; then
@@ -60,6 +61,7 @@ else
    cont_prompt
 fi
 
+# Look up version of the latest package and the current version
 lastversion=$(git show $lastreleased:./configure.ac | sed -n 's/AC_INIT([^,]*, \?\([^,]*\),.*/\1/p;' |tr -d '[]')
 currversion=$(sed -n 's/AC_INIT([^,]*, \?\([^,]*\),.*/\1/p;' configure.ac |tr -d '[]')
 name=$(sed -n 's/AC_INIT(\([^,]*\),.*/\1/p;' configure.ac |tr -d '[]')
@@ -67,6 +69,61 @@ name=$(sed -n 's/AC_INIT(\([^,]*\),.*/\1/p;' configure.ac |tr -d '[]')
 echo "Version is changing from $lastversion to $currversion."
 
 cont_prompt
+
+echo "Analysing Makefiles..."
+for makefile in $(grep -Rl --include=*am -e '-version-info [0-9]\+:[0-9]\+:[0-9]\+' .); do
+   echo -e "\t$makefile"
+   lastlibvers="$(git show $lastreleased:$makefile |
+                  sed -n 's/^\(.*\)_la_LDFLAGS\s*=.*-version-info \([0-9]\+\):\([0-9]\+\):\([0-9]\+\).*/\1:\2:\3:\4/pg')"
+
+   currlibvers="$(sed -n 's/^\(.*\)_la_LDFLAGS\s*=.*-version-info \([0-9]\+\):\([0-9]\+\):\([0-9]\+\).*/\1:\2:\3:\4/pg' $makefile)"
+
+   tmplist=$(mktemp)
+   paste -d: <(echo "$lastlibvers" | sort) <(echo "$currlibvers" | sort) > $tmplist
+   while read -u 3 line; do
+      IFS=":" read -r -a cols <<< "$line"
+      if [ "${cols[0]}" = "${cols[4]}" -a "${cols[1]}" = "${cols[5]}" -a \
+           "${cols[2]}" = "${cols[6]}" -a "${cols[3]}" = "${cols[7]}" ]; then
+          read -p "Do You want to increase version of ${cols[0]}? [y/n]" -n1 prompt
+          echo ""
+          if [ "$prompt" = y -o "$prompt" = "Y" ]; then
+            current="${cols[1]}"
+            release="${cols[2]}"
+            age="${cols[3]}"
+            echo "FYI: Old version was: $current:$release:$age"
+            read -p "2. Was the library source code changed at all since the last update? [y/n] " -n1 prompt
+            echo ""
+            if [ "$prompt" = y -o "$prompt" = Y ]; then
+               ((release++))
+            fi
+            read -p "3. Was any interface added, removed, or changed since the last update? [y/n] " -n1 prompt
+            echo ""
+            if [ "$prompt" = y -o "$prompt" = Y ]; then
+               ((current++))
+               revision=0
+            fi
+            read -p "4. Was any interface added since the last public release? [y/n] " -n1 prompt
+            echo ""
+            if [ "$prompt" = y -o "$prompt" = Y ]; then
+               ((age++))
+            fi
+            read -p "5. Was any interfaces removed or changed since the last public release (INcompatibility)? [y/n] " -n1 prompt
+            echo ""
+            if [ "$prompt" = y -o "$prompt" = Y ]; then
+               age=0
+            fi
+            echo "New version for ${cols[0]} is $current:$release:$age."
+            echo ""
+            read -p "Should I update $makefile? [y/n] " -n1 prompt
+            echo ""
+            if [ "$prompt" = y -o "$prompt" = Y ]; then
+               sed -i "s/\(${cols[0]}_la_LDFLAGS.*-version-info \)\([0-9]\+:[0-9]\+:[0-9]\+\)\(.*\))/\1$current:$release:$age\3/" $makefile
+            fi
+          fi
+      fi
+   done 3< $tmplist
+   rm $tmplist
+done
 
 changelog="$(date "+%F $name-$currversion"
 git log --pretty='subject:%s%nbody:%b' $lastreleased..master -- .| sed -n 's/subject:\([^:]*\):.*/\t* \1:/p; s/\(body:\)\?\s*changelog: \(.*\)/\t\t\2/p;'
