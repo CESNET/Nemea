@@ -15,7 +15,7 @@ For efficient collaboration, please bear in mind the following advices:
 
 `git branch flow_meter-cifs; git checkout flow_meter-cifs`
 
-2. Make your idea real! This is the most funny part - programming. Please, follow our [Git commit policy](/developers/git-policy) to make code reviews easier for us.
+2. Make your idea real! This is the most funny part - programming. Please, follow our [Git commit policy](/developer/git-policy) to make code reviews easier for us.
 
 3. Write documentation immediatelly. It is really necessary for reviewers to see what parameters and return values your functions/methods have. And description of functionality is needed as well - it is possible to find errors in the code thanks to such brief description of your idea (what it should do vs. what it does).
 
