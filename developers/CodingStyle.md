@@ -47,7 +47,7 @@ parameters, and members of enumerations.
 
 Give arrays names that are plural.
 
-Avoid negative names: "found" is a better name than "not_found".
+Avoid negative names: `"found"` is a better name than "not_found".
 
 
 COMMENTS
@@ -114,16 +114,16 @@ On the other hand, comment must describe how the function can be used
 and what are its results.
 
 All function declarations and definitions should include a
-prototype.  Empty parentheses, e.g. "int foo();", do not include a
+prototype.  Empty parentheses, e.g. `"int foo();"`, do not include a
 prototype (they state that the function's parameters are unknown);
-write "void" in parentheses instead, e.g. "int foo(void);".
+write `"void"` in parentheses instead, e.g. `int foo(void);`.
 
 In the absence of good reasons for another order, the following
 parameter order is preferred.  One notable exception is that data
 parameters and their corresponding size parameters should be paired.
 
 1. The primary object being manipulated, if any (equivalent to the
-   "this" pointer in C++).
+   `"this"` pointer in C++).
 2. Input-only parameters.
 3. Input/output parameters.
 4. Output-only parameters.
@@ -154,7 +154,7 @@ such a function (including the C standard library function free())
 should omit a null-pointer check.  We find that this usually makes
 code easier to read.
 
-Functions in .c files should not normally be marked "inline", because
+Functions in .c files should not normally be marked `"inline"`, because
 it does not usually help code generation and it does suppress
 compilers warnings about unused functions.  (Functions defined in .h
 usually should be marked inline.)
@@ -180,7 +180,7 @@ placement:
        d();
     }
 
-Put a space between "if", "while", "for", etc. and the expressions
+Put a space between `if`, `while`, `for`, etc. and the expressions
 that follow them.
 
 Enclose single statements in braces:
@@ -194,14 +194,14 @@ Enclose single statements in braces:
 Use comments and blank lines to divide long functions into logical
 groups of statements.
 
-Try to avoid assignments inside "if" and "while" conditions.
+Try to avoid assignments inside `if` and `while` conditions.
 
-If it helps to clarify meaning of "if" and "else" branches (what can reader
+If it helps to clarify meaning of `if` and `else` branches (what can reader
 expect in the branch), write comment into the branch's block.
 
 Write only one statement per line.
 
-Indent "switch" statements like this:
+Indent `switch` statements like this:
 
     switch (conn->state) {
     case S_RECV:
@@ -220,14 +220,14 @@ Indent "switch" statements like this:
        OVS_NOT_REACHED();
     }
 
-Use "for (;;)" or "while (1)" to write an infinite loop.
+Use `for (;;)` or `while (1)` to write an infinite loop.
 
-In an if/else construct where one branch is the "normal" or "common"
-case and the other branch is the "uncommon" or "error" case, put the
-common case after the "if", not the "else".  This is a form of
+In an if/else construct where one branch is the `normal` or `common`
+case and the other branch is the `uncommon` or `error` case, put the
+common case after the `if`, not the `else`.  This is a form of
 documentation.  It also places the most important code in sequential
 order without forcing the reader to visually skip past less important
-details.  (Some compilers also assume that the "if" branch is the more
+details.  (Some compilers also assume that the `if` branch is the more
 common case, so this can be a real form of optimization as well.)
 
 
@@ -236,11 +236,11 @@ MACROS
 
 Don't define an object-like macro if an enum can be used instead.
 
-Don't define a function-like macro if a "static inline" function
+Don't define a function-like macro if a `static inline` function
 can be used instead.
 
 If a macro's definition contains multiple statements, enclose them
-with "do { ... } while (0)" to allow them to work properly in all
+with `do { ... } while (0)` to allow them to work properly in all
 syntactic circumstances.
 
 Do use macros to eliminate the need to update different parts of a
@@ -300,7 +300,7 @@ HEADER FILES
 ------------
 
 Each header file should start with its BSD license, as described under
-SOURCE FILES above, followed by a "header guard" to make the header
+SOURCE FILES above, followed by a `header guard` to make the header
 file idempotent, like so:
 
     #ifndef NETDEV_H
@@ -320,7 +320,7 @@ the definition is otherwise actually needed (e.g. inline functions
 defined in the header need them).
 
 Similarly, don't #include a header file just for the declaration of
-a struct or union tag (e.g. just for "struct name;").  Just declare
+a struct or union tag (e.g. just for `struct name;`).  Just declare
 the tag yourself.  This reduces the number of header file
 dependencies.
 
@@ -337,49 +337,49 @@ type.  That way, the typedef name can be used to declare function
 prototypes.  (It cannot be used for function definitions, because that
 is explicitly prohibited by C89 and C99.)
 
-You may assume that "char" is exactly 8 bits and that "int" and
-"long" are at least 32 bits.
+You may assume that `char` is exactly 8 bits and that `int` and
+`long` are at least 32 bits.
 
-Don't assume that "long" is big enough to hold a pointer.  If you
-need to cast a pointer to an integer, use "intptr_t" or "uintptr_t"
-from <stdint.h>.
+Don't assume that `long` is big enough to hold a pointer.  If you
+need to cast a pointer to an integer, use `intptr_t` or `uintptr_t`
+from `<stdint.h>`.
 
-Use the int<N>_t and uint<N>_t types from <stdint.h> for exact-width
-integer types.  Use the PRId<N>, PRIu<N>, and PRIx<N> macros from
-<inttypes.h> for formatting them with printf() and related functions.
+Use the `int<N>_t` and `uint<N>_t` types from `<stdint.h>` for exact-width
+integer types.  Use the `PRId<N>`, `PRIu<N>`, and `PRIx<N>` macros from
+`<inttypes.h>` for formatting them with `printf()` and related functions.
 
-For compatibility with antique printf() implementations:
+For compatibility with antique `printf()` implementations:
 
-    - Instead of "%zu", use "%"PRIuSIZE.
+- Instead of `%zu`, use `"%"PRIuSIZE`.
 
-    - Instead of "%td", use "%"PRIdPTR.
+- Instead of `%td`, use `"%"PRIdPTR`.
 
-    - Instead of "%ju", use "%"PRIuMAX.
+- Instead of `%ju`, use `"%"PRIuMAX`.
 
 Other variants exist for different radixes.  For example, use
-"%"PRIxSIZE instead of "%zx" or "%x" instead of "%hhx".
+`"%"PRIxSIZE` instead of `%zx` or `%x` instead of `%hhx`.
 
-Also, instead of "%hhd", use "%d".  Be cautious substituting "%u",
-"%x", and "%o" for the corresponding versions with "hh": cast the
-argument to unsigned char if necessary, because printf("%hhu", -1)
-prints 255 but printf("%u", -1) prints 4294967295.
+Also, instead of `%hhd`, use `%d`.  Be cautious substituting `%u`,
+`%x`, and `%o` for the corresponding versions with `hh`: cast the
+argument to unsigned char if necessary, because printf(`%hhu`, -1)
+prints 255 but printf(`%u`, -1) prints 4294967295.
 
 Use bit-fields sparingly.  Do not use bit-fields for layout of
 network protocol fields or in other circumstances where the exact
 format is important.
 
-Declare bit-fields to be signed or unsigned integer types or _Bool
-(aka bool).  Do *not* declare bit-fields of type "int": C99 allows
+Declare bit-fields to be signed or unsigned integer types or `_Bool`
+(aka `bool`).  Do *not* declare bit-fields of type `int`: C99 allows
 these to be either signed or unsigned according to the compiler's
-whim.  (A 1-bit bit-field of type "int" may have a range of -1...0!)
+whim.  (A 1-bit bit-field of type `int` may have a range of -1...0!)
 
 Try to order structure members such that they pack well on a system
-with 2-byte "short", 4-byte "int", and 4- or 8-byte "long" and pointer
+with 2-byte `short`, 4-byte `int`, and 4- or 8-byte `long` and pointer
 types.  Prefer clear organization over size optimization unless you
 are convinced there is a size or speed benefit.
 
 Pointer declarators bind to the variable name, not the type name.
-Write "int \*x", not "int\* x" and definitely not "int \* x".
+Write `int *x`, not `int* x` and definitely not `int * x`.
 
 
 EXPRESSIONS
@@ -387,67 +387,79 @@ EXPRESSIONS
 
 Put one space on each side of infix binary and ternary operators:
 
-    * / %
-    + -
-    << >>
-    < <= > >=
-    == !=
-    &
-    ^
-    |
-    &&
-    ||
-    ?:
-    = += -= *= /= %= &= ^= |= <<= >>=
+```
+* / %
++ -
+<< >>
+< <= > >=
+== !=
+&
+^
+|
+&&
+||
+?:
+= += -= *= /= %= &= ^= |= <<= >>=
+```
 
 Avoid comma operators.
 
 Do not put any white space around postfix, prefix, or grouping
 operators:
 
-    () [] -> .
-    ! ~ ++ -- + - * &
+```
+() [] -> .
+! ~ ++ -- + - * &
+```
 
-Exception: Put a space between the () used in a cast and the
-expression whose type is cast: (void *) 0.
+Exception: Put a space between the `()` used in a cast and the
+expression whose type is cast: `(void *) 0`.
 
-Break long lines before the ternary operators ? and :, rather than
+Break long lines before the ternary operators `?` and `:`, rather than
 after them, e.g.
 
-    return (out_port != VIGP_CONTROL_PATH
-            ? alpheus_output_port(dp, skb, out_port)
-            : alpheus_output_control(dp, skb, fwd_save_skb(skb),
-                                     VIGR_ACTION));
+```C
+return (out_port != VIGP_CONTROL_PATH
+        ? alpheus_output_port(dp, skb, out_port)
+        : alpheus_output_control(dp, skb, fwd_save_skb(skb),
+                                 VIGR_ACTION));
+```                                    
 
 
 Do not parenthesize the operands of && and || unless operator
 precedence makes it necessary, or unless the operands are themselves
 expressions that use && and ||.  Thus:
 
-    if (!isdigit((unsigned char) s[0])
-        || !isdigit((unsigned char) s[1])
-        || !isdigit((unsigned char) s[2])) {
-        printf("string %s does not start with 3-digit code\n", s);
-    }
+```
+if (!isdigit((unsigned char) s[0])
+    || !isdigit((unsigned char) s[1])
+    || !isdigit((unsigned char) s[2])) {
+    printf("string %s does not start with 3-digit code\n", s);
+}
+```
 
 but
 
-    if (rule && (!best || rule->priority > best->priority)) {
-       best = rule;
-    }
+```
+if (rule && (!best || rule->priority > best->priority)) {
+   best = rule;
+}
+```
 
 Do parenthesize a subexpression that must be split across more than
 one line, e.g.:
 
-    *idxp = ((l1_idx << PORT_ARRAY_L1_SHIFT)
-             | (l2_idx << PORT_ARRAY_L2_SHIFT)
-             | (l3_idx << PORT_ARRAY_L3_SHIFT));
+```
+*idxp = ((l1_idx << PORT_ARRAY_L1_SHIFT)
+         | (l2_idx << PORT_ARRAY_L2_SHIFT)
+         | (l3_idx << PORT_ARRAY_L3_SHIFT));
+```
 
 Try to avoid casts.
 
-When using a relational operator like "<" or "==", put an expression
+When using a relational operator like `<` or `==`, put an expression
 or variable argument on the left and a constant argument on the
-right, e.g. "x == 0", *not* "0 == x".
+right, e.g. `x == 0`, *not* `0 == x`.
 
 
 BLANK LINES
@@ -465,36 +477,36 @@ Most C99 features are OK because they are widely implemented:
 
 * Flexible array members (e.g. struct { int foo[]; }).
 
-* "static inline" functions (but no other forms of "inline", for
+* `static inline` functions (but no other forms of `inline`, for
   which GCC and C99 have differing interpretations).
 
-* "long long"
+* `long long`
 
-* <stdint.h> and <inttypes.h>.
+* `<stdint.h>` and `<inttypes.h>`.
 
-* bool and <stdbool.h>, but don't assume that bool or _Bool can
+* bool and `<stdbool.h>`, but don't assume that bool or `_Bool` can
   only take on the values 0 or 1, because this behavior can't be
   simulated on C89 compilers.
-  Also, don't assume that a conversion to bool or \_Bool follows
-  C99 semantics.  I.e. use "(bool)(some_value != 0)" rather than
-  "(bool)some_value".  The latter might produce unexpected results
+  Also, don't assume that a conversion to bool or `_Bool` follows
+  C99 semantics.  I.e. use `(bool) (some_value != 0)` rather than
+  `(bool) some_value`.  The latter might produce unexpected results
   on non-C99 environments.  For example, if bool is implemented as
-  a typedef of char and some_value = 0x10000000.
+  a typedef of char and `some_value = 0x10000000`.
 
-* Designated initializers (e.g. "struct foo foo = {.a = 1};" and
-  "int a[] = {[2] = 5};").
+* Designated initializers (e.g. `struct foo foo = {.a = 1};` and
+  `int a[] = {[2] = 5};`).
 
 * Mixing of declarations and code within a block.  Please use this
   judiciously; keep declarations nicely grouped together in the
   beginning of a block if possible.
 
 * Use of declarations in iteration statements (e.g.
-  "for (int i = 0; i < 10; i++)").
+  `for (int i = 0; i < 10; i++)`).
 
 * Use of a trailing comma in an enum declaration (e.g.
-  "enum { x = 1, };").
+  `enum { x = 1, };`).
 
-As a matter of style, avoid // comments.
+As a matter of style, avoid `//` comments.
 
 Avoid using GCC or Clang extensions unless you also add a fallback
 for other compilers.  You can, however, use C99 features or GCC
