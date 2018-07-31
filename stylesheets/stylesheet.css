@@ -465,7 +465,7 @@ Full-Width Styles
 }
 
 /*Hide dropdown links until they are needed*/
-li ul {
+li ul.hidden {
 	display: none;
 }
 
