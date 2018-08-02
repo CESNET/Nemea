@@ -236,7 +236,7 @@ rules:
   - id: 1
     condition: true
     actions:
-      - file"
+      - file
 ```
 
 ## Other Links
