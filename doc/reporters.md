@@ -222,6 +222,25 @@ The actions and elseactions lists in rule are used to reference an action, which
 
 # Example configuration
 
+## Minimal Example
+
+This prints all incoming alerts to `stdout`:
+
+```
+---
+custom_actions:
+  - id: file
+    file:
+      path: /dev/stdout
+rules:
+  - id: 1
+    condition: true
+    actions:
+      - file"
+```
+
+## Other Links
+
 Yaml configuration example: [pycommon/reporter_config/example.yaml](https://github.com/CESNET/Nemea-Framework/blob/master/pycommon/reporter_config/example.yaml)
 
 E-mail body template: [pycommon/reporter_config/default.html](https://github.com/CESNET/Nemea-Framework/blob/master/pycommon/reporter_config/default.html)
