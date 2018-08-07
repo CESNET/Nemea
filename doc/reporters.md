@@ -126,11 +126,17 @@ this action.
 
 Action arguments:
 
-- smtp_connection - reference to predefined SMTP server (see SMTP connections section above)
-- to - Destination e-mail address, multiple addresses might be specified, separated by comma (`,`).
-- subject - Subject of the messages that is used as a [jinja2](http://jinja.pocoo.org/docs/2.10/) template; an IDEA message is passed as `idea` object
-- template - path to the file with body of the message that is used as a [jinja2](http://jinja.pocoo.org/docs/2.10/) template; an IDEA message is passed as `idea` object
-- from  - (optional) Source e-mail address.
+- `smtp_connection` - reference to predefined SMTP server (see SMTP connections section above)
+- `to` - Destination e-mail address, multiple addresses might be specified, separated by comma (`,`).
+- `subject` - Subject of the messages that is used as a [jinja2](http://jinja.pocoo.org/docs/2.10/) template; an IDEA message is passed as `idea` object; Besides `idea`, the following variables can be used in the `subject`:
+    * `category` a comma separated list of Categories or "N/A",
+    * `node` a name of last `Node` (in IDEA message),
+    * `src_ip` an IP address and "(...)" when there are more, "N/A" when there is no IP,
+    * `tgt_ip` an IP address and "(...)" when there are more, "N/A" when there is no IP,
+    * `byte_rate` rate in `Mb/s` or empty string when it's not computable,
+    * `flow_rate`  rate in `flow/s` or empty string when it's not computable.
+- `template` - path to the file with body of the message that is used as a [jinja2](http://jinja.pocoo.org/docs/2.10/) template; an IDEA message is passed as `idea` object
+- `from`  - (optional) Source e-mail address.
 
 Example `template` file in [jinja2](http://jinja.pocoo.org/docs/2.10/):
 
