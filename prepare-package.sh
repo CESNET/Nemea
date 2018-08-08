@@ -155,4 +155,11 @@ cont_prompt
 
 git commit -a -m "$name: increased version, updated ChangeLog, released RPM package" -e
 
+echo "I will build the new RPM to get source package (SRPM)"
+./bootstrap.sh &&./configure -q && make rpm
+
+echo "I will upload the new RPM to copr"
+cont_prompt
+
+copr build @CESNET/NEMEA RPMBUILD/SRPMS/$name-$currversion-1.src.rpm
 
