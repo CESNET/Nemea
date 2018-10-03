@@ -37,6 +37,13 @@ AC_ARG_ENABLE([detectors], AC_HELP_STRING([--disable-detectors], [Disable NEMEA 
 AC_CONFIG_FILES([Makefile
                   nemea.spec])
 AC_CONFIG_SUBDIRS([nemea-framework nemea-supervisor modules detectors])
+
+# By default, users expects "repobuild" behavior, i.e., use relative path to NEMEA framework.
+# If there is some "repobuild" arg of configure, do not add "--enable-repobuild".
+if test -z "$ac_configure_args" || echo "$ac_configure_args" | grep -q -v -e 'repobuild'; then
+ac_configure_args="$ac_configure_args --enable-repobuild"
+fi
+
 AC_OUTPUT
 
 echo "Components:"
