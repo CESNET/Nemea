@@ -14,6 +14,5 @@ var searchData=
   ['size',['size',['../structtb__block__data__s.html#abb85247a2cd374080e6e3f6d93965801',1,'tb_block_data_s']]],
   ['socket_5ftype',['socket_type',['../structtcpip__sender__private__s.html#a19976c4d73b748dfd0a402fbe1d4a512',1,'tcpip_sender_private_s::socket_type()'],['../structtcpip__receiver__private__s.html#a9b9f68cd09485b9b2a50d012d9519edc',1,'tcpip_receiver_private_s::socket_type()']]],
   ['ssl',['ssl',['../structtlsclient__s.html#a7784cbc5018b861a41948fbef28bc73c',1,'tlsclient_s::ssl()'],['../structtls__receiver__private__s.html#a712ad2731c418bbdbd08b01989f84f92',1,'tls_receiver_private_s::ssl()']]],
-  ['sslctx',['sslctx',['../structtls__sender__private__s.html#a691a55a9c7a7c50a5779afa5a5c99796',1,'tls_sender_private_s::sslctx()'],['../structtls__receiver__private__s.html#a59a066f97ece753d4c44f75af5ec4f66',1,'tls_receiver_private_s::sslctx()']]],
-  ['starting_5ftime',['starting_time',['../structfile__private__s.html#af01b67ca25569558283de89ffffd5d24',1,'file_private_s']]]
+  ['sslctx',['sslctx',['../structtls__sender__private__s.html#a691a55a9c7a7c50a5779afa5a5c99796',1,'tls_sender_private_s::sslctx()'],['../structtls__receiver__private__s.html#a59a066f97ece753d4c44f75af5ec4f66',1,'tls_receiver_private_s::sslctx()']]]
 ];

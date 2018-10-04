@@ -1,5 +1,5 @@
 <map id="src/trap_internal.c" name="src/trap_internal.c">
-<area shape="rect" id="node3" href="$trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="384,80,488,107"/>
-<area shape="rect" id="node6" href="$trap_8h.html" title="Interface of TRAP library. " alt="" coords="319,155,433,196"/>
-<area shape="rect" id="node11" href="$trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="458,162,534,189"/>
+<area shape="rect" id="node3" href="$trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="409,80,527,107"/>
+<area shape="rect" id="node6" href="$trap_8h.html" title="Interface of TRAP library. " alt="" coords="341,155,467,196"/>
+<area shape="rect" id="node11" href="$trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="492,162,575,189"/>
 </map>

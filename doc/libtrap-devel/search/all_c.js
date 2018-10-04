@@ -10,9 +10,10 @@ var searchData=
   ['message_5fsize',['message_size',['../structtrap__multi__result.html#a067c01951ed1c711a65795f695b0b41e',1,'trap_multi_result']]],
   ['min',['MIN',['../group__tcpip__ifc.html#ga3acffbd305ee72dcd4593c0d8af64a4f',1,'MIN():&#160;ifc_tcpip.c'],['../group__tls__ifc.html#ga3acffbd305ee72dcd4593c0d8af64a4f',1,'MIN():&#160;ifc_tls.c']]],
   ['mode',['mode',['../structfile__private__s.html#ab92bb308a82414c03133b8aba613eea3',1,'file_private_s']]],
-  ['msg',['MSG',['../group__debug.html#ga68c148eb129fc92540a68240a85f5d7d',1,'trap_internal.h']]],
+  ['msg',['MSG',['../group__debug.html#ga97e1f6e119fbc0338e706020000d6ff6',1,'trap_internal.h']]],
   ['msg_5fheader_5fs',['msg_header_s',['../structmsg__header__s.html',1,'']]],
   ['msg_5fheader_5ft',['msg_header_t',['../group__supervisor.html#gaa438010db529a6f3b186ba789b877804',1,'trap.c']]],
+  ['msg_5fnonl',['MSG_NONL',['../group__debug.html#gaee080b4bbbc24ce18321314b33ac6c35',1,'trap_internal.h']]],
   ['mut_5fsem_5fcollector',['mut_sem_collector',['../structtrap__ctx__priv__s.html#a6940d95e929c62b32a619da27dcbf47f',1,'trap_ctx_priv_s']]],
   ['message_20format',['Message format',['../group__trap__mess__fmt.html',1,'']]]
 ];

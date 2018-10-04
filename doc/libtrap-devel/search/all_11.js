@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['safe_5fpath',['SAFE_PATH',['../ifc__file_8c.html#a3741a2529a3630f0de93fb8d5fe7c166',1,'ifc_file.c']]],
   ['sd',['sd',['../structclient__s.html#ad3adabb7ae7c7acd95fc58b8c91274d0',1,'client_s::sd()'],['../structtcpip__receiver__private__s.html#adeeedd594c051b2634657dfaa1846189',1,'tcpip_receiver_private_s::sd()'],['../structtlsclient__s.html#a51dc25444cc24571d9c6b23a51dcd81d',1,'tlsclient_s::sd()'],['../structtls__receiver__private__s.html#ad969cc2935980f27fc7bbdf5ed27ef18',1,'tls_receiver_private_s::sd()']]],
   ['sem',['sem',['../structreader__threads__s.html#af62b1ad716c2fa065143b125a31dfa7b',1,'reader_threads_s']]],
   ['sem_5fcollector',['sem_collector',['../structtrap__ctx__priv__s.html#a46885fa066dce58ffbd37f2d5e4abcb4',1,'trap_ctx_priv_s']]],
@@ -29,7 +30,6 @@ var searchData=
   ['somebody_5ftimedout',['SOMEBODY_TIMEDOUT',['../group__tcpip__sender.html#ggac9d2a14d5f36c214bfd88d8bcc67c259a25e04f87fe3a613f0f16d41e7d402e8f',1,'SOMEBODY_TIMEDOUT():&#160;ifc_tcpip.c'],['../group__tls__sender.html#ggab4c9969dd6b6362d01804745fdbbcf55a25e04f87fe3a613f0f16d41e7d402e8f',1,'SOMEBODY_TIMEDOUT():&#160;ifc_tls.c']]],
   ['ssl',['ssl',['../structtlsclient__s.html#a7784cbc5018b861a41948fbef28bc73c',1,'tlsclient_s::ssl()'],['../structtls__receiver__private__s.html#a712ad2731c418bbdbd08b01989f84f92',1,'tls_receiver_private_s::ssl()']]],
   ['sslctx',['sslctx',['../structtls__sender__private__s.html#a691a55a9c7a7c50a5779afa5a5c99796',1,'tls_sender_private_s::sslctx()'],['../structtls__receiver__private__s.html#a59a066f97ece753d4c44f75af5ec4f66',1,'tls_receiver_private_s::sslctx()']]],
-  ['starting_5ftime',['starting_time',['../structfile__private__s.html#af01b67ca25569558283de89ffffd5d24',1,'file_private_s']]],
   ['supervisor_20monitoring_20feature',['Supervisor monitoring feature',['../group__supervisor.html',1,'']]],
   ['specifier_20of_20trap_20interfaces',['Specifier of TRAP interfaces',['../group__trapifcspec.html',1,'']]]
 ];

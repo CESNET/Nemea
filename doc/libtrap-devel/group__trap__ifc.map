@@ -1,6 +1,6 @@
 <map id="TRAP communication module interface" name="TRAP communication module interface">
-<area shape="rect" id="node1" href="$group__tcpip__ifc.html" title="TCP/IP and UNIX socket\l communication interface\l module" alt="" coords="215,5,385,61"/>
-<area shape="rect" id="node2" href="$group__trap__ifc__api.html" title="IFC API" alt="" coords="265,85,335,112"/>
-<area shape="rect" id="node4" href="$group__file__ifc.html" title="file interface module" alt="" coords="231,136,369,163"/>
-<area shape="rect" id="node5" href="$group__tls__ifc.html" title="TLS communication interface\l module" alt="" coords="204,187,396,229"/>
+<area shape="rect" id="node1" href="$group__tcpip__ifc.html" title="TCP/IP and UNIX socket\l communication interface\l module" alt="" coords="225,5,414,61"/>
+<area shape="rect" id="node2" href="$group__trap__ifc__api.html" title="IFC API" alt="" coords="286,85,353,112"/>
+<area shape="rect" id="node4" href="$group__file__ifc.html" title="file interface module" alt="" coords="241,136,398,163"/>
+<area shape="rect" id="node5" href="$group__tls__ifc.html" title="TLS communication interface\l module" alt="" coords="213,187,425,229"/>
 </map>
