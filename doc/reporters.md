@@ -31,7 +31,20 @@ The second and more complex example is placed in the [pycommon directory](https:
 
 # Specification
 
-Configuration consists of four sections: *smtp connections*, *address groups*, *custom actions*, and list of *rules*.
+Configuration consists of several sections: *namespace*, *smtp connections*, *address groups*, *custom actions*, and list of *rules*.
+
+## Namespace
+
+Usually, all reporters share the common prefix of their name that identify deployed system.
+This prefix should be set by `namespace` key.
+For example, all reporters on CESNET collector with NEMEA system share the namespace `cz.cesnet.nemea`.
+
+Automatically, each reporter appends its unique name.
+For example, `vportscan2idea.py` reporter creates name: `cz.cesnet.nemea.vportscan`
+
+Note: it is set in the source code of the module, e.g., `MODULE_NAME = "vportscan"` in [source](https://github.com/CESNET/Nemea-Modules/blob/master/report2idea/vportscan/vportscan2idea.py).
+
+Note2: if you want to override this behavior, reporters still support `-n` option to provide a complete name.
 
 ## SMTP connections
 
@@ -234,6 +247,7 @@ This prints all incoming alerts to `stdout`:
 
 ```
 ---
+namespace: com.example.nemea
 custom_actions:
   - id: file
     file:
@@ -269,6 +283,7 @@ Example in YAML:
 
 
 ```
+namespace: com.example.nemea
 custom_actions:
 - id: warden1
   warden:
