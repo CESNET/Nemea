@@ -246,6 +246,7 @@ The actions and elseactions lists in rule are used to reference an action, which
 This prints all incoming alerts to `stdout`:
 
 ```
+{% raw %}
 ---
 namespace: com.example.nemea
 custom_actions:
@@ -257,6 +258,103 @@ rules:
     condition: true
     actions:
       - file
+{% endraw %}
+```
+
+## Tips and Troubleshooting
+
+Reporters are able to parse and check configuration file without actually running.
+There is `--dry` option that can be used to do it.
+
+### Example (malformed yaml):
+
+`$ cat malformedyaml.yaml`
+
+```
+{% raw %}
+ a b: abcdef
+1: aaa
+{% endraw %}
+```
+
+`$ idea2idea.py --dry -c malformedyaml.yaml`
+
+```
+{% raw %}
+Yaml file could not be parsed: expected '<document start>', but found '<block mapping start>'
+  in "<string>", line 2, column 1:
+    1: aaa
+    ^
+error: Parsing configuration file failed.
+{% endraw %}
+```
+
+### Example 2 (working example):
+
+`$ cat multiple_actions.yaml`
+
+```
+{% raw %}
+---
+namespace: com.example.nemea
+custom_actions:
+  - id: mark
+    mark:
+      path: Test
+      value: true
+  - id: mongo
+    mongo:
+      db: rc_test
+      collection: alerts
+  - id: file
+    file:
+      path: testfile.idea
+
+addressgroups:
+  - id: whitelist
+    list:
+    - 8.8.8.8
+
+rules:
+  - id: 1
+    condition: Source.IP4 in whitelist
+    actions:
+    - mark
+    - file
+    - mongo
+{% endraw %}
+```
+
+`$ idea2idea.py --dry -c multiple_actions.yaml`
+
+```
+{% raw %}
+Namespace: com.example.nemea
+----------------
+Smtp connections:
+
+----------------
+Address Groups:
+ID: 'whitelist' IPs: [IP4('8.8.8.8')]
+----------------
+Custom Actions:
+drop:
+	DROP
+
+mongo:
+	Host: localhost, Port: 27017, DB: rc_test, Collection: alerts
+
+file:
+	Path: testfile.idea
+
+mark:
+	Path: Test, Value: True
+
+----------------
+Rules:
+1: Source.IP4 in whitelist
+	Actions: mark (mark), file (file), mongo (mongo)
+{% endraw %}
 ```
 
 ## Other Links
