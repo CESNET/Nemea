@@ -224,9 +224,9 @@ The `rules` section is mandatory and it must contain at least one `rule`.
 Each `rule` is composed of **condition**, **actions**, **elseactions**.
 
 All IDEA messages will be matched with filtering condition consisting of unary and binary operations, constants and JSON paths that are supported by Mentat filter (MFilter).
-When the IDEA message meets the condition, the specified list of actions is performed.
-Otherwise, the list of elseactions is performed.
-Both actions and elseactions are optional.
+When the IDEA message meets the condition (it is True), the specified list of `actions` is performed.
+Otherwise (it is False), the list of `elseactions` is performed.
+Both `actions` and `elseactions` are optional.
 
 To create condition representing tautology (always true) resp. contradiction (always false), simple use `True` resp. `False`.
 
