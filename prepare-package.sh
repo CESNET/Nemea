@@ -35,15 +35,26 @@
 # if advised of the possibility of such damage.
 #
 
+function prompt()
+{
+   read -p "$1" -n 1 p
+   echo ""
+   if [ "$p" != "y" -a "$p" != "Y" ]; then
+      return 1
+   else
+      return 0
+   fi
+}
 
 function cont_prompt()
 {
-   read -p "Continue? [y/n] " -n 1 prompt
-   echo ""
-   if [ "$prompt" != "y" -a "$prompt" != "Y" ]; then
+   if prompt "Continue? [y/n] "; then
+      return 0
+   else
       exit 1
    fi
 }
+
 
 # Look up commit of last releasing
 lastreleased=$(git log -n 1 --grep="released\? \(RPM \)\?package" --format=%h -- ./configure.ac)
@@ -57,7 +68,7 @@ else
    echo ""
 
    echo "I found these changes since the last release:"
-   git shortlog --no-merges $lastreleased..HEAD -- ./
+   git shortlog $lastreleased..HEAD -- ./
    cont_prompt
 fi
 
@@ -67,6 +78,15 @@ currversion=$(sed -n 's/AC_INIT([^,]*, \?\([^,]*\),.*/\1/p;' configure.ac |tr -d
 name=$(sed -n 's/AC_INIT(\([^,]*\),.*/\1/p;' configure.ac |tr -d '[]')
 
 echo "Version is changing from $lastversion to $currversion."
+
+if [ "$lastversion" = "$currversion" ]; then
+   if prompt "Should I increase version? [y/n] "; then
+      echo ""
+      read -p "Write a new version in x.y.z format, please: " currversion
+      sed -i '/AC_INIT/ s/'"$lastversion"'/'"$currversion"'/;' configure.ac
+      echo "Version was replaced."
+   fi
+fi
 
 cont_prompt
 
@@ -84,39 +104,29 @@ for makefile in $(grep -Rl --include=*am -e '-version-info [0-9]\+:[0-9]\+:[0-9]
       IFS=":" read -r -a cols <<< "$line"
       if [ "${cols[0]}" = "${cols[4]}" -a "${cols[1]}" = "${cols[5]}" -a \
            "${cols[2]}" = "${cols[6]}" -a "${cols[3]}" = "${cols[7]}" ]; then
-          read -p "Do You want to increase version of ${cols[0]}? [y/n]" -n1 prompt
-          echo ""
-          if [ "$prompt" = y -o "$prompt" = "Y" ]; then
+
+          if prompt "Do You want to increase version of ${cols[0]}? [y/n]"; then
             current="${cols[1]}"
             release="${cols[2]}"
             age="${cols[3]}"
             echo "FYI: Old version was: $current:$release:$age"
-            read -p "2. Was the library source code changed at all since the last update? [y/n] " -n1 prompt
             echo ""
-            if [ "$prompt" = y -o "$prompt" = Y ]; then
+            if prompt "2. Was the library source code changed at all since the last update? [y/n] "; then
                ((release++))
             fi
-            read -p "3. Was any interface added, removed, or changed since the last update? [y/n] " -n1 prompt
-            echo ""
-            if [ "$prompt" = y -o "$prompt" = Y ]; then
+            if prompt "3. Was any interface added, removed, or changed since the last update? [y/n] "; then
                ((current++))
                revision=0
             fi
-            read -p "4. Was any interface added since the last public release? [y/n] " -n1 prompt
-            echo ""
-            if [ "$prompt" = y -o "$prompt" = Y ]; then
+            if prompt "4. Was any interface added since the last public release? [y/n] "; then
                ((age++))
             fi
-            read -p "5. Was any interfaces removed or changed since the last public release (INcompatibility)? [y/n] " -n1 prompt
-            echo ""
-            if [ "$prompt" = y -o "$prompt" = Y ]; then
+            if prompt "5. Was any interfaces removed or changed since the last public release (INcompatibility)? [y/n] "; then
                age=0
             fi
             echo "New version for ${cols[0]} is $current:$release:$age."
             echo ""
-            read -p "Should I update $makefile? [y/n] " -n1 prompt
-            echo ""
-            if [ "$prompt" = y -o "$prompt" = Y ]; then
+            if prompt "Should I update $makefile? [y/n] "; then
                sed -i "s/\(${cols[0]}_la_LDFLAGS.*-version-info \)\([0-9]\+:[0-9]\+:[0-9]\+\)\(.*\))/\1$current:$release:$age\3/" $makefile
             fi
           fi
@@ -127,6 +137,7 @@ done
 
 changelog="$(date "+%F $name-$currversion"
 git log --pretty='subject:%s%nbody:%b' $lastreleased..master -- .| sed -n 's/subject:\([^:]*\):.*/\t* \1:/p; s/\(body:\)\?\s*changelog: \(.*\)/\t\t\2/p;'
+echo ""
 echo ""
 )"
 
@@ -142,6 +153,7 @@ cat ChangeLog >> ChangeLog.tmp
 mv ChangeLog.tmp ChangeLog
 
 git log --date=short --no-merges --format="%cd (%an): %s" $lastreleased..HEAD -- ./>> NEWS.tmp
+echo "" >> NEWS.tmp
 $EDITOR NEWS.tmp
 
 echo "I will Insert this NEWS..."
@@ -162,4 +174,11 @@ echo "I will upload the new RPM to copr"
 cont_prompt
 
 copr build @CESNET/NEMEA RPMBUILD/SRPMS/$name-$currversion-1.src.rpm
+
+echo "Last commit:"
+git log -1
+
+if prompt "Push to git origin? [y/n] "; then
+   git push
+fi
 
