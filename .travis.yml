@@ -24,6 +24,7 @@ addons:
       - libxml2
       - libpcap0.8-dev
       - libpcap0.8
+      - libidn2-dev
 
 before_install:
   - ( wget -qO - http://libnf.net/packages/libnf-1.25.tar.gz | tar -xzf - && cd libnf-1.25 && ./configure -q && sudo make -j3 install; )
