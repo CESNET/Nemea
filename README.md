@@ -534,9 +534,9 @@ Generated doxygen doc for libtrap developers: https://rawgit.com/CESNET/Nemea-Fr
 5. [GETOPT macro](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L131) - parse program arguments
 6. Main loop:
    * [Receive a message](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L176) - receive a message in UniRec format from input interface
-   * [Handle receive error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L179) - check whether an error has occured during receive
+   * [Handle receive error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L179) - check whether an error has occurred during receive
    * [Send a message](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L204) - send a message in UniRec format via output interface
-   * [Handle send error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L207) - check whether an error has ocurred during send
+   * [Handle send error](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L207) - check whether an error has occurred during send
 7. [TRAP and module info clean-up](https://github.com/CESNET/Nemea-Framework/blob/master/examples/c/module/example_module.c#L214) - free everything, libtrap finalization
 
 
