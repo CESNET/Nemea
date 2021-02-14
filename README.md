@@ -5,9 +5,9 @@
    - [Repositories](#repositories)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
+   - [Vagrant](#vagrant)
    - [Binary packages](#binary-packages)
    - [Source codes](#source-codes)
-   - [Vagrant](#vagrant)
    - Packer
 - [Quick start and how to](#quick-start-and-how-to)
    - [Try out NEMEA modules](#try-out-nemea-modules)
@@ -104,7 +104,14 @@ For more information see [./vagrant/](./vagrant/).
 Latest RPM packages can be found in COPR: https://copr.fedorainfracloud.org/groups/g/CESNET/coprs/
 The NEMEA repository is at https://copr.fedorainfracloud.org/coprs/g/CESNET/NEMEA/
 
-After installation of COPR repository, NEMEA can be installed as any other package (run as root/sudo):
+The repository can be added trough `dnf copr enable` or by using the following commands (for CentOS/Fedora):
+
+```
+wget -O /etc/yum.repos.d/cesnet-nemea.repo https://copr.fedorainfracloud.org/coprs/g/CESNET/NEMEA/repo/epel-7/group_CESNET-NEMEA-epel-7.repo
+rpm --import https://copr-be.cloud.fedoraproject.org/results/@CESNET/NEMEA/pubkey.gpg
+```
+
+After installation of the COPR repository, NEMEA can be installed as any other package (run as root/sudo):
 
 ```
 yum install nemea
@@ -112,9 +119,8 @@ yum install nemea
 
 Note: Latest systems (e.g. Fedora) use `dnf` instead of `yum`.
 
-
 For development purposes, there is `nemea-framework-devel` package that installs
-all needed development files and docs.
+all needed development files and docs. To install this package, also add the `NEMEA-testing` repository.
 
 Currently, we do not have .deb packages (for Debian/Ubuntu/...) but we are working on it. Please follow installation from [source codes](#source-codes)
 
