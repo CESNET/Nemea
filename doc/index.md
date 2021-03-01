@@ -163,7 +163,7 @@ Examples can be found at [https://github.com/CESNET/Nemea-Framework/tree/master/
 
 **Docs**
 
-[Generated documentation of Python API for module developers](/doc/pytrap/)
+[Generated documentation of Python API for module developers](/doc/pytrap/index.html)
 
 ### pycommon
 
