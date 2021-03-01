@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UniRec
-   &#160;<span id="projectnumber">2.3.0</span>
+   &#160;<span id="projectnumber">2.9.3</span>
    </div>
   </td>
  </tr>
@@ -73,17 +73,27 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga52573ceb442ad4fbd35d76f244048ec3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga52573ceb442ad4fbd35d76f244048ec3">UR_TIME_MSEC_TO_FRAC</a>&#160;&#160;&#160;0x4189374BC6A7EFULL</td></tr>
-<tr class="separator:ga52573ceb442ad4fbd35d76f244048ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6decebb086670b8be48b9a3e185d1cb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga6decebb086670b8be48b9a3e185d1cb7">UR_TIME_FRAC_TO_MSEC</a>&#160;&#160;&#160;0x03E9ULL</td></tr>
-<tr class="separator:ga6decebb086670b8be48b9a3e185d1cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8a7a7eb122f30c16d0b3c18bbf313d50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga8a7a7eb122f30c16d0b3c18bbf313d50">ur_time_from_sec_msec</a>(sec,  msec)&#160;&#160;&#160;(<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>)( ((uint64_t)(sec) &lt;&lt; 32) | (((uint64_t)(msec)*<a class="el" href="group__urtime.html#ga52573ceb442ad4fbd35d76f244048ec3">UR_TIME_MSEC_TO_FRAC</a>) &gt;&gt; 32) )</td></tr>
+<tr class="memitem:gabf9c66312d957c70464b9cee3d757996"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#gabf9c66312d957c70464b9cee3d757996">UR_TIME_NSEC_TO_FRAC</a>&#160;&#160;&#160;0x44B82FA0AULL</td></tr>
+<tr class="separator:gabf9c66312d957c70464b9cee3d757996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf602d09ec17718d694202ce4eb05b383"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#gaf602d09ec17718d694202ce4eb05b383">ur_time_from_sec_nsec</a>(sec,  nsec)&#160;&#160;&#160;(<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>) (((uint64_t) (sec) &lt;&lt; 32) | (((uint64_t) (nsec) * <a class="el" href="group__urtime.html#gabf9c66312d957c70464b9cee3d757996">UR_TIME_NSEC_TO_FRAC</a>) &gt;&gt; 32))</td></tr>
+<tr class="memdesc:gaf602d09ec17718d694202ce4eb05b383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert seconds and nanoseconds to ur_time_t.  <a href="#gaf602d09ec17718d694202ce4eb05b383">More...</a><br /></td></tr>
+<tr class="separator:gaf602d09ec17718d694202ce4eb05b383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga287527535da0290d720da8c4aaf21a6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga287527535da0290d720da8c4aaf21a6f">ur_time_from_sec_usec</a>(sec,  usec)&#160;&#160;&#160;(<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>) (((uint64_t) (sec) &lt;&lt; 32) | (((uint64_t) (usec) * 1000 * <a class="el" href="group__urtime.html#gabf9c66312d957c70464b9cee3d757996">UR_TIME_NSEC_TO_FRAC</a>) &gt;&gt; 32))</td></tr>
+<tr class="memdesc:ga287527535da0290d720da8c4aaf21a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert seconds and microseconds to ur_time_t.  <a href="#ga287527535da0290d720da8c4aaf21a6f">More...</a><br /></td></tr>
+<tr class="separator:ga287527535da0290d720da8c4aaf21a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a7a7eb122f30c16d0b3c18bbf313d50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga8a7a7eb122f30c16d0b3c18bbf313d50">ur_time_from_sec_msec</a>(sec,  msec)&#160;&#160;&#160;(<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>) (((uint64_t) (sec) &lt;&lt; 32) | (((uint64_t) (msec) * 1000000 * <a class="el" href="group__urtime.html#gabf9c66312d957c70464b9cee3d757996">UR_TIME_NSEC_TO_FRAC</a>) &gt;&gt; 32))</td></tr>
 <tr class="memdesc:ga8a7a7eb122f30c16d0b3c18bbf313d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert seconds and milliseconds to ur_time_t.  <a href="#ga8a7a7eb122f30c16d0b3c18bbf313d50">More...</a><br /></td></tr>
 <tr class="separator:ga8a7a7eb122f30c16d0b3c18bbf313d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga19172b0ee74eb297f1f54bc868e50667"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga19172b0ee74eb297f1f54bc868e50667">ur_time_get_sec</a>(time)&#160;&#160;&#160;(uint32_t)((uint64_t)(time) &gt;&gt; 32)</td></tr>
+<tr class="memitem:ga19172b0ee74eb297f1f54bc868e50667"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga19172b0ee74eb297f1f54bc868e50667">ur_time_get_sec</a>(time)&#160;&#160;&#160;(uint32_t) ((uint64_t) (time) &gt;&gt; 32)</td></tr>
 <tr class="memdesc:ga19172b0ee74eb297f1f54bc868e50667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of seconds from ur_time_t.  <a href="#ga19172b0ee74eb297f1f54bc868e50667">More...</a><br /></td></tr>
 <tr class="separator:ga19172b0ee74eb297f1f54bc868e50667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga427dae14973a034c807ed2603fee1f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga427dae14973a034c807ed2603fee1f6e">ur_time_get_msec</a>(time)&#160;&#160;&#160;(uint32_t)((((uint64_t)(time) &amp; 0xffffffff) * UR_TIME_FRAC_TO_MSEC) &gt;&gt; 32)</td></tr>
+<tr class="memitem:ga293e48bc100219ca246cb621abfeea7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga293e48bc100219ca246cb621abfeea7e">ur_time_get_nsec</a>(time)&#160;&#160;&#160;(uint32_t) ((((uint64_t) (time) &amp; 0xffffffff) * 1000000000ULL + 0xffffffff) &gt;&gt; 32)</td></tr>
+<tr class="memdesc:ga293e48bc100219ca246cb621abfeea7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of nanoseconds from ur_time_t.  <a href="#ga293e48bc100219ca246cb621abfeea7e">More...</a><br /></td></tr>
+<tr class="separator:ga293e48bc100219ca246cb621abfeea7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5774265d525bcac313c6438d3425d9c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga5774265d525bcac313c6438d3425d9c7">ur_time_get_usec</a>(time)&#160;&#160;&#160;(uint32_t) (<a class="el" href="group__urtime.html#ga293e48bc100219ca246cb621abfeea7e">ur_time_get_nsec</a>(time) / 1000)</td></tr>
+<tr class="memdesc:ga5774265d525bcac313c6438d3425d9c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of microeconds from ur_time_t.  <a href="#ga5774265d525bcac313c6438d3425d9c7">More...</a><br /></td></tr>
+<tr class="separator:ga5774265d525bcac313c6438d3425d9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga427dae14973a034c807ed2603fee1f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga427dae14973a034c807ed2603fee1f6e">ur_time_get_msec</a>(time)&#160;&#160;&#160;(uint32_t) (<a class="el" href="group__urtime.html#ga293e48bc100219ca246cb621abfeea7e">ur_time_get_nsec</a>(time) / 1000000)</td></tr>
 <tr class="memdesc:ga427dae14973a034c807ed2603fee1f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of milliseconds from ur_time_t.  <a href="#ga427dae14973a034c807ed2603fee1f6e">More...</a><br /></td></tr>
 <tr class="separator:ga427dae14973a034c807ed2603fee1f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -97,28 +107,15 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ga2ae8aeccd3d51c898d627c5990e56640"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#ga2ae8aeccd3d51c898d627c5990e56640">ur_timediff</a> (<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a> a, <a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a> b)</td></tr>
 <tr class="separator:ga2ae8aeccd3d51c898d627c5990e56640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad153e75baab956f32bc8e8553e24b713"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#gad153e75baab956f32bc8e8553e24b713">ur_timediff_us</a> (<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a> a, <a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a> b)</td></tr>
+<tr class="separator:gad153e75baab956f32bc8e8553e24b713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae51ca7f8ebf8fc99e5d0fab05856e84"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#gaae51ca7f8ebf8fc99e5d0fab05856e84">ur_timediff_ns</a> (<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a> a, <a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a> b)</td></tr>
+<tr class="separator:gaae51ca7f8ebf8fc99e5d0fab05856e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac3eefb5beaa508724b2ea4f452926096"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtime.html#gac3eefb5beaa508724b2ea4f452926096">ur_time_from_string</a> (<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a> *ur, const char *str)</td></tr>
 <tr class="separator:gac3eefb5beaa508724b2ea4f452926096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga6decebb086670b8be48b9a3e185d1cb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6decebb086670b8be48b9a3e185d1cb7">&#9670;&nbsp;</a></span>UR_TIME_FRAC_TO_MSEC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UR_TIME_FRAC_TO_MSEC&#160;&#160;&#160;0x03E9ULL</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Constant used to convert fraction of second on 32 bits to milliseconds. Its value is 1000 / 2^32 in fixed-point notation. </p>
-
-<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00071">71</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
-
-</div>
-</div>
 <a id="ga8a7a7eb122f30c16d0b3c18bbf313d50"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8a7a7eb122f30c16d0b3c18bbf313d50">&#9670;&nbsp;</a></span>ur_time_from_sec_msec</h2>
 
@@ -140,7 +137,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>)( ((uint64_t)(sec) &lt;&lt; 32) | (((uint64_t)(msec)*<a class="el" href="group__urtime.html#ga52573ceb442ad4fbd35d76f244048ec3">UR_TIME_MSEC_TO_FRAC</a>) &gt;&gt; 32) )</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>) (((uint64_t) (sec) &lt;&lt; 32) | (((uint64_t) (msec) * 1000000 * <a class="el" href="group__urtime.html#gabf9c66312d957c70464b9cee3d757996">UR_TIME_NSEC_TO_FRAC</a>) &gt;&gt; 32))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -155,7 +152,87 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>UniRec timestamp (ur_time_t) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00079">79</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00116">116</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf602d09ec17718d694202ce4eb05b383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf602d09ec17718d694202ce4eb05b383">&#9670;&nbsp;</a></span>ur_time_from_sec_nsec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ur_time_from_sec_nsec</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">sec, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">nsec&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>) (((uint64_t) (sec) &lt;&lt; 32) | (((uint64_t) (nsec) * <a class="el" href="group__urtime.html#gabf9c66312d957c70464b9cee3d757996">UR_TIME_NSEC_TO_FRAC</a>) &gt;&gt; 32))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert seconds and nanoseconds to ur_time_t. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sec</td><td>seconds </td></tr>
+    <tr><td class="paramname">nsec</td><td>nanoseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>UniRec timestamp (ur_time_t) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00100">100</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+
+</div>
+</div>
+<a id="ga287527535da0290d720da8c4aaf21a6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga287527535da0290d720da8c4aaf21a6f">&#9670;&nbsp;</a></span>ur_time_from_sec_usec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ur_time_from_sec_usec</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">sec, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">usec&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>) (((uint64_t) (sec) &lt;&lt; 32) | (((uint64_t) (usec) * 1000 * <a class="el" href="group__urtime.html#gabf9c66312d957c70464b9cee3d757996">UR_TIME_NSEC_TO_FRAC</a>) &gt;&gt; 32))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert seconds and microseconds to ur_time_t. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sec</td><td>seconds </td></tr>
+    <tr><td class="paramname">usec</td><td>microseconds </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>UniRec timestamp (ur_time_t) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00108">108</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
 
 </div>
 </div>
@@ -170,7 +247,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">time</td><td>)</td>
-          <td>&#160;&#160;&#160;(uint32_t)((((uint64_t)(time) &amp; 0xffffffff) * UR_TIME_FRAC_TO_MSEC) &gt;&gt; 32)</td>
+          <td>&#160;&#160;&#160;(uint32_t) (<a class="el" href="group__urtime.html#ga293e48bc100219ca246cb621abfeea7e">ur_time_get_nsec</a>(time) / 1000000)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -184,7 +261,36 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>milliseconds </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00095">95</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00146">146</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+
+</div>
+</div>
+<a id="ga293e48bc100219ca246cb621abfeea7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga293e48bc100219ca246cb621abfeea7e">&#9670;&nbsp;</a></span>ur_time_get_nsec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ur_time_get_nsec</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">time</td><td>)</td>
+          <td>&#160;&#160;&#160;(uint32_t) ((((uint64_t) (time) &amp; 0xffffffff) * 1000000000ULL + 0xffffffff) &gt;&gt; 32)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get number of nanoseconds from ur_time_t. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>UniRec timestamp </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nanoseconds </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00132">132</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
 
 </div>
 </div>
@@ -199,7 +305,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">time</td><td>)</td>
-          <td>&#160;&#160;&#160;(uint32_t)((uint64_t)(time) &gt;&gt; 32)</td>
+          <td>&#160;&#160;&#160;(uint32_t) ((uint64_t) (time) &gt;&gt; 32)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -213,24 +319,53 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>seconds </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00087">87</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00124">124</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
 
 </div>
 </div>
-<a id="ga52573ceb442ad4fbd35d76f244048ec3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga52573ceb442ad4fbd35d76f244048ec3">&#9670;&nbsp;</a></span>UR_TIME_MSEC_TO_FRAC</h2>
+<a id="ga5774265d525bcac313c6438d3425d9c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5774265d525bcac313c6438d3425d9c7">&#9670;&nbsp;</a></span>ur_time_get_usec</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define UR_TIME_MSEC_TO_FRAC&#160;&#160;&#160;0x4189374BC6A7EFULL</td>
+          <td class="memname">#define ur_time_get_usec</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">time</td><td>)</td>
+          <td>&#160;&#160;&#160;(uint32_t) (<a class="el" href="group__urtime.html#ga293e48bc100219ca246cb621abfeea7e">ur_time_get_nsec</a>(time) / 1000)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constant used to convert milliseconds to fraction of second on 32 bits. Its values is 2^32 / 1000 in fixed-point notation. </p>
 
-<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00066">66</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+<p>Get number of microeconds from ur_time_t. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>UniRec timestamp </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>microseconds </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00139">139</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+
+</div>
+</div>
+<a id="gabf9c66312d957c70464b9cee3d757996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf9c66312d957c70464b9cee3d757996">&#9670;&nbsp;</a></span>UR_TIME_NSEC_TO_FRAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UR_TIME_NSEC_TO_FRAC&#160;&#160;&#160;0x44B82FA0AULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constant used to convert nanoseconds to fraction of second on 32 bits. Its value is 2^32/1e9 in fixed-point notation, which is (2^32/1e9)*2^32 = 2^64/1e9 (rounded). </p>
+
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00067">67</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
 
 </div>
 </div>
@@ -283,13 +418,13 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">ur</td><td>Target pointer to store result. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>String in the following format: 2018-06-27T16:52:54 or 2018-06-27T16:52:54.500 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>String in the following format: 2018-06-27T16:52:54 or 2018-06-27T16:52:54.500, str may end with "Z" (2018-06-27T16:52:54Z or 2018-06-27T16:52:54.500Z) indicating UTC timezone explicitly. UTC is recommended and should be used in any case. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, 1 is returned on parsing error (malformed format of str) and ur is set to 0, 2 on bad parameter (NULL was passed). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l01339">1339</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l01606">1606</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
 
 </div>
 </div>
@@ -336,7 +471,101 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>abs(A - B), the result is in miliseconds. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00105">105</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00157">157</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+
+</div>
+</div>
+<a id="gaae51ca7f8ebf8fc99e5d0fab05856e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaae51ca7f8ebf8fc99e5d0fab05856e84">&#9670;&nbsp;</a></span>ur_timediff_ns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t ur_timediff_ns </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Return a time difference between A and B in nanoseconds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Timestamp A </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Timestamp B </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>abs(A - B), the result is in nanoseconds. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00183">183</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
+
+</div>
+</div>
+<a id="gad153e75baab956f32bc8e8553e24b713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad153e75baab956f32bc8e8553e24b713">&#9670;&nbsp;</a></span>ur_timediff_us()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t ur_timediff_us </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__urtime.html#ga9d13a2ac3696e74a33a93aa0461a3899">ur_time_t</a>&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Return a time difference between A and B in microseconds.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Timestamp A </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Timestamp B </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>abs(A - B), the result is in microseconds. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ur__time_8h_source.html#l00170">170</a> of file <a class="el" href="ur__time_8h_source.html">ur_time.h</a>.</p>
 
 </div>
 </div>

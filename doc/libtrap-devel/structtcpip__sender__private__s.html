@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -69,20 +69,21 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Structure for TCP/IP IFC private information.  
+ <a href="structtcpip__sender__private__s.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for tcpip_sender_private_s:</div>
 <div class="dyncontent">
 <div class="center"><img src="structtcpip__sender__private__s__coll__graph.png" border="0" usemap="#tcpip__sender__private__s_coll__map" alt="Collaboration graph"/></div>
 <map name="tcpip__sender__private__s_coll__map" id="tcpip__sender__private__s_coll__map">
-<area shape="rect" id="node2" href="structclient__s.html" title="client_s" alt="" coords="381,5,453,32"/>
-<area shape="rect" id="node3" href="structtrap__buffer__header__s.html" title="trap_buffer_header_s" alt="" coords="337,56,496,83"/>
-<area shape="rect" id="node4" href="structtrap__ctx__priv__s.html" title="trap_ctx_priv_s" alt="" coords="356,107,477,133"/>
-<area shape="rect" id="node5" href="structtrap__output__ifc__s.html" title="trap_output_ifc_s" alt="" coords="7,5,142,32"/>
-<area shape="rect" id="node6" href="structtrap__multi__result.html" title="trap_multi_result" alt="" coords="8,56,141,83"/>
-<area shape="rect" id="node7" href="structreader__threads__s.html" title="reader_threads_s" alt="" coords="7,107,142,133"/>
-<area shape="rect" id="node8" href="structtrap__input__ifc__s.html" title="trap_input_ifc_s" alt="" coords="12,157,137,184"/>
-<area shape="rect" id="node9" href="structout__ifc__timeout__s.html" title="out_ifc_timeout_s" alt="" coords="5,208,144,235"/>
+<area shape="rect" id="node2" href="structclient__s.html" title="Structure for TCP/IP IFC client information. " alt="" coords="5,95,72,121"/>
+<area shape="rect" id="node3" href="structbuffer__s.html" title="Output buffer structure. " alt="" coords="96,95,165,121"/>
+<area shape="rect" id="node4" href="structtrap__ctx__priv__s.html" title="trap_ctx_priv_s" alt="" coords="190,95,301,121"/>
+<area shape="rect" id="node5" href="structtrap__output__ifc__s.html" title="trap_output_ifc_s" alt="" coords="32,5,155,32"/>
+<area shape="rect" id="node6" href="structautoflush__timeouts.html" title="List of autoflush timeouts of output interfaces. " alt="" coords="179,5,311,32"/>
+<area shape="rect" id="node7" href="structtrap__input__ifc__s.html" title="trap_input_ifc_s" alt="" coords="348,5,463,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -90,126 +91,274 @@ Collaboration diagram for tcpip_sender_private_s:</div>
 Data Fields</h2></td></tr>
 <tr class="memitem:aa77c2248885aef1d8c3eb76dae5ffc9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#aa77c2248885aef1d8c3eb76dae5ffc9d">ctx</a></td></tr>
 <tr class="separator:aa77c2248885aef1d8c3eb76dae5ffc9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad628d7081819b8236c693ba485cfd10b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#ad628d7081819b8236c693ba485cfd10b">server_port</a></td></tr>
-<tr class="separator:ad628d7081819b8236c693ba485cfd10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e0cc56dd2c6570b60ccbcfdfc6fc3ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a7e0cc56dd2c6570b60ccbcfdfc6fc3ac">server_sd</a></td></tr>
-<tr class="separator:a7e0cc56dd2c6570b60ccbcfdfc6fc3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a080c38a625ad56e7c307ea9b08f41127"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structclient__s.html">client_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a080c38a625ad56e7c307ea9b08f41127">clients</a></td></tr>
-<tr class="separator:a080c38a625ad56e7c307ea9b08f41127"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a221af302a0898e6cbaa4c39a48b1c276"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a221af302a0898e6cbaa4c39a48b1c276">connected_clients</a></td></tr>
-<tr class="separator:a221af302a0898e6cbaa4c39a48b1c276"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6729b56d04eae29cd663683e8fe50dee"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a6729b56d04eae29cd663683e8fe50dee">clients_arr_size</a></td></tr>
-<tr class="separator:a6729b56d04eae29cd663683e8fe50dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09a1ce5fc52208c9b13e1b561dd92a1e"><td class="memItemLeft" align="right" valign="top">sem_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a09a1ce5fc52208c9b13e1b561dd92a1e">have_clients</a></td></tr>
-<tr class="separator:a09a1ce5fc52208c9b13e1b561dd92a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19976c4d73b748dfd0a402fbe1d4a512"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="ifc__tcpip_8h.html#a5893d62a74cf9d99455f8226678f68e6">tcpip_ifc_sockettype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a19976c4d73b748dfd0a402fbe1d4a512">socket_type</a></td></tr>
 <tr class="separator:a19976c4d73b748dfd0a402fbe1d4a512"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9be09b81ae5a43fc55ddcffec63d4429"><td class="memItemLeft" align="right" valign="top"><a class="el" href="trap__internal_8h.html#a40b126ea10058bade088e6246959fd97">trap_buffer_header_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a9be09b81ae5a43fc55ddcffec63d4429">int_mess_header</a></td></tr>
-<tr class="separator:a9be09b81ae5a43fc55ddcffec63d4429"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae82f3e46b51cce1908d8321b71ceda22"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#ae82f3e46b51cce1908d8321b71ceda22">backup_buffer</a></td></tr>
-<tr class="separator:ae82f3e46b51cce1908d8321b71ceda22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3699c1616eaed6704139909198514ca2"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a3699c1616eaed6704139909198514ca2">ext_buffer</a></td></tr>
-<tr class="separator:a3699c1616eaed6704139909198514ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab03de00ed2afa54f97d4c585a44a645d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#ab03de00ed2afa54f97d4c585a44a645d">ext_buffer_size</a></td></tr>
-<tr class="separator:ab03de00ed2afa54f97d4c585a44a645d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d291d39d4fa615d69eebeb4bffe1f4e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a2d291d39d4fa615d69eebeb4bffe1f4e">term_pipe</a> [2]</td></tr>
+<tr class="separator:a2d291d39d4fa615d69eebeb4bffe1f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e0cc56dd2c6570b60ccbcfdfc6fc3ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a7e0cc56dd2c6570b60ccbcfdfc6fc3ac">server_sd</a></td></tr>
+<tr class="separator:a7e0cc56dd2c6570b60ccbcfdfc6fc3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad628d7081819b8236c693ba485cfd10b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#ad628d7081819b8236c693ba485cfd10b">server_port</a></td></tr>
+<tr class="separator:ad628d7081819b8236c693ba485cfd10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20a41fc7667d03bdc8134a5c5bee2229"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a20a41fc7667d03bdc8134a5c5bee2229">is_terminated</a></td></tr>
 <tr class="separator:a20a41fc7667d03bdc8134a5c5bee2229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0229b95daa25e85efe6f04b55bc3a150"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a0229b95daa25e85efe6f04b55bc3a150">initialized</a></td></tr>
 <tr class="separator:a0229b95daa25e85efe6f04b55bc3a150"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d291d39d4fa615d69eebeb4bffe1f4e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a2d291d39d4fa615d69eebeb4bffe1f4e">term_pipe</a> [2]</td></tr>
-<tr class="separator:a2d291d39d4fa615d69eebeb4bffe1f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a6b1968b74cd49ad7ac9a5b1ffbcdcc"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a3a6b1968b74cd49ad7ac9a5b1ffbcdcc">lock</a></td></tr>
-<tr class="separator:a3a6b1968b74cd49ad7ac9a5b1ffbcdcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cefa1c9bcd57c5c3515efc328c51dc4"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a2cefa1c9bcd57c5c3515efc328c51dc4">sending_lock</a></td></tr>
-<tr class="separator:a2cefa1c9bcd57c5c3515efc328c51dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60efcdd45df2dc2d809c491667b282ff"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a60efcdd45df2dc2d809c491667b282ff">accept_thread</a></td></tr>
-<tr class="separator:a60efcdd45df2dc2d809c491667b282ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2756e5f58f6fc3f786a8f60df248c9cf"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a2756e5f58f6fc3f786a8f60df248c9cf">autoflush_timestamp</a></td></tr>
+<tr class="separator:a2756e5f58f6fc3f786a8f60df248c9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5abdcd36392cb8f8d064c0f0923bf80a"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a5abdcd36392cb8f8d064c0f0923bf80a">clients_bit_arr</a></td></tr>
+<tr class="separator:a5abdcd36392cb8f8d064c0f0923bf80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80c87058c06716405b0fb99e8089afd1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a80c87058c06716405b0fb99e8089afd1">ifc_idx</a></td></tr>
 <tr class="separator:a80c87058c06716405b0fb99e8089afd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4810967e529ac208af0b5f7cb0677348"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a4810967e529ac208af0b5f7cb0677348">connected_clients</a></td></tr>
+<tr class="separator:a4810967e529ac208af0b5f7cb0677348"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02a377a621708255d892ada0c673cc3d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a02a377a621708255d892ada0c673cc3d">clients_arr_size</a></td></tr>
+<tr class="separator:a02a377a621708255d892ada0c673cc3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29dd6625940588237aebf9f69ed1adc8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a29dd6625940588237aebf9f69ed1adc8">buffer_count</a></td></tr>
+<tr class="separator:a29dd6625940588237aebf9f69ed1adc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df87fb84906232ded39166388dc682c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a4df87fb84906232ded39166388dc682c">buffer_size</a></td></tr>
+<tr class="separator:a4df87fb84906232ded39166388dc682c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb92d563f4d8f5fabdf7957496569b8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a8cb92d563f4d8f5fabdf7957496569b8">active_buffer</a></td></tr>
+<tr class="separator:a8cb92d563f4d8f5fabdf7957496569b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e8c10eab95a85dc2432062f23106d2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ifc__socket__common_8h.html#a9aa12143b2c71bd60b9418ee7f4d3bb6">buffer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a4e8c10eab95a85dc2432062f23106d2e">buffers</a></td></tr>
+<tr class="separator:a4e8c10eab95a85dc2432062f23106d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412b6897ac143d737be4975c10a867d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__tcpip__sender.html#ga8db229da62af6e778b15d0dfeab62c2d">client_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a412b6897ac143d737be4975c10a867d7">clients</a></td></tr>
+<tr class="separator:a412b6897ac143d737be4975c10a867d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f36f7fc99dbeff1c3b12efb94dead82"><td class="memItemLeft" align="right" valign="top">struct pollfd *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a8f36f7fc99dbeff1c3b12efb94dead82">clients_pfds</a></td></tr>
+<tr class="separator:a8f36f7fc99dbeff1c3b12efb94dead82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af688f39844447509add21404319679d7"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#af688f39844447509add21404319679d7">accept_thr</a></td></tr>
+<tr class="separator:af688f39844447509add21404319679d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3057afc26c4862f9245e25d31a01cbc0"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a3057afc26c4862f9245e25d31a01cbc0">send_thr</a></td></tr>
+<tr class="separator:a3057afc26c4862f9245e25d31a01cbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c0a335e7cde72ecd34a5e8ba15b47a3"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a5c0a335e7cde72ecd34a5e8ba15b47a3">mtx_no_data</a></td></tr>
+<tr class="separator:a5c0a335e7cde72ecd34a5e8ba15b47a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f604e6c4f8ecf8e440277b6e05efe8"><td class="memItemLeft" align="right" valign="top">pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#ac6f604e6c4f8ecf8e440277b6e05efe8">cond_no_data</a></td></tr>
+<tr class="separator:ac6f604e6c4f8ecf8e440277b6e05efe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d50d013267786b222ddaedef253200f"><td class="memItemLeft" align="right" valign="top">pthread_cond_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html#a3d50d013267786b222ddaedef253200f">cond_full_buffer</a></td></tr>
+<tr class="separator:a3d50d013267786b222ddaedef253200f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00084">84</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<div class="textblock"><p>Structure for TCP/IP IFC private information. </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00079">79</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a60efcdd45df2dc2d809c491667b282ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60efcdd45df2dc2d809c491667b282ff">&#9670;&nbsp;</a></span>accept_thread</h2>
+<a id="af688f39844447509add21404319679d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af688f39844447509add21404319679d7">&#9670;&nbsp;</a></span>accept_thr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pthread_t tcpip_sender_private_s::accept_thread</td>
+          <td class="memname">pthread_t tcpip_sender_private_s::accept_thr</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Pthread structure containing info about accept thread </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00118">118</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00106">106</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
-<a id="ae82f3e46b51cce1908d8321b71ceda22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae82f3e46b51cce1908d8321b71ceda22">&#9670;&nbsp;</a></span>backup_buffer</h2>
+<a id="a8cb92d563f4d8f5fabdf7957496569b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb92d563f4d8f5fabdf7957496569b8">&#9670;&nbsp;</a></span>active_buffer</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* tcpip_sender_private_s::backup_buffer</td>
+          <td class="memname">uint32_t tcpip_sender_private_s::active_buffer</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Internal backup buffer for message </p>
+<p>Index of active buffer in 'buffers' array </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00099">99</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2756e5f58f6fc3f786a8f60df248c9cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2756e5f58f6fc3f786a8f60df248c9cf">&#9670;&nbsp;</a></span>autoflush_timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t tcpip_sender_private_s::autoflush_timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Time when the last buffer was finished - used for autoflush </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00091">91</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a29dd6625940588237aebf9f69ed1adc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29dd6625940588237aebf9f69ed1adc8">&#9670;&nbsp;</a></span>buffer_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t tcpip_sender_private_s::buffer_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Number of buffers used </p>
 
 <p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00097">97</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
-<a id="a080c38a625ad56e7c307ea9b08f41127"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a080c38a625ad56e7c307ea9b08f41127">&#9670;&nbsp;</a></span>clients</h2>
+<a id="a4df87fb84906232ded39166388dc682c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df87fb84906232ded39166388dc682c">&#9670;&nbsp;</a></span>buffer_size</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structclient__s.html">client_s</a>* tcpip_sender_private_s::clients</td>
+          <td class="memname">uint32_t tcpip_sender_private_s::buffer_size</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Array of clients </p>
+<p>Buffer size [bytes] </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00089">89</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00098">98</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
-<a id="a6729b56d04eae29cd663683e8fe50dee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6729b56d04eae29cd663683e8fe50dee">&#9670;&nbsp;</a></span>clients_arr_size</h2>
+<a id="a4e8c10eab95a85dc2432062f23106d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e8c10eab95a85dc2432062f23106d2e">&#9670;&nbsp;</a></span>buffers</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t tcpip_sender_private_s::clients_arr_size</td>
+          <td class="memname"><a class="el" href="ifc__socket__common_8h.html#a9aa12143b2c71bd60b9418ee7f4d3bb6">buffer_t</a>* tcpip_sender_private_s::buffers</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Array of buffer structures </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00101">101</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a412b6897ac143d737be4975c10a867d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412b6897ac143d737be4975c10a867d7">&#9670;&nbsp;</a></span>clients</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__tcpip__sender.html#ga8db229da62af6e778b15d0dfeab62c2d">client_t</a>* tcpip_sender_private_s::clients</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Array of client structures </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00102">102</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a02a377a621708255d892ada0c673cc3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02a377a621708255d892ada0c673cc3d">&#9670;&nbsp;</a></span>clients_arr_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t tcpip_sender_private_s::clients_arr_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Maximum number of clients </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00096">96</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a5abdcd36392cb8f8d064c0f0923bf80a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5abdcd36392cb8f8d064c0f0923bf80a">&#9670;&nbsp;</a></span>clients_bit_arr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t tcpip_sender_private_s::clients_bit_arr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bit array of currently connected clients - lowest bit = index 0, highest bit = index 63 </p>
 
 <p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00092">92</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
-<a id="a221af302a0898e6cbaa4c39a48b1c276"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a221af302a0898e6cbaa4c39a48b1c276">&#9670;&nbsp;</a></span>connected_clients</h2>
+<a id="a8f36f7fc99dbeff1c3b12efb94dead82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f36f7fc99dbeff1c3b12efb94dead82">&#9670;&nbsp;</a></span>clients_pfds</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int32_t tcpip_sender_private_s::connected_clients</td>
+          <td class="memname">struct pollfd* tcpip_sender_private_s::clients_pfds</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Array of clients pfds for poll </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00091">91</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00104">104</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d50d013267786b222ddaedef253200f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d50d013267786b222ddaedef253200f">&#9670;&nbsp;</a></span>cond_full_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_cond_t tcpip_sender_private_s::cond_full_buffer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Condition struct used when waiting for free buffer </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00111">111</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac6f604e6c4f8ecf8e440277b6e05efe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f604e6c4f8ecf8e440277b6e05efe8">&#9670;&nbsp;</a></span>cond_no_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_cond_t tcpip_sender_private_s::cond_no_data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Condition struct used when waiting for new data </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00110">110</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a4810967e529ac208af0b5f7cb0677348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4810967e529ac208af0b5f7cb0677348">&#9670;&nbsp;</a></span>connected_clients</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t tcpip_sender_private_s::connected_clients</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Number of currently connected clients </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00095">95</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
@@ -226,56 +375,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Libtrap context </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00085">85</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a3699c1616eaed6704139909198514ca2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3699c1616eaed6704139909198514ca2">&#9670;&nbsp;</a></span>ext_buffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const void* tcpip_sender_private_s::ext_buffer</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Pointer to buffer that was passed by higher layer - this is the place we write </p>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00099">99</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="ab03de00ed2afa54f97d4c585a44a645d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab03de00ed2afa54f97d4c585a44a645d">&#9670;&nbsp;</a></span>ext_buffer_size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t tcpip_sender_private_s::ext_buffer_size</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00100">100</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a09a1ce5fc52208c9b13e1b561dd92a1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09a1ce5fc52208c9b13e1b561dd92a1e">&#9670;&nbsp;</a></span>have_clients</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">sem_t tcpip_sender_private_s::have_clients</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00093">93</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00080">80</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
@@ -290,8 +390,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Index of interface in 'out_ifc_list' array </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00119">119</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00094">94</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
@@ -306,25 +407,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initialization flag </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00104">104</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a9be09b81ae5a43fc55ddcffec63d4429"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9be09b81ae5a43fc55ddcffec63d4429">&#9670;&nbsp;</a></span>int_mess_header</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="trap__internal_8h.html#a40b126ea10058bade088e6246959fd97">trap_buffer_header_t</a> tcpip_sender_private_s::int_mess_header</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Internal message header </p>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00095">95</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00089">89</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
@@ -339,41 +424,43 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>size of content of the extbuffer </p>
+<p>Termination flag </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00102">102</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00088">88</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
-<a id="a3a6b1968b74cd49ad7ac9a5b1ffbcdcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a6b1968b74cd49ad7ac9a5b1ffbcdcc">&#9670;&nbsp;</a></span>lock</h2>
+<a id="a5c0a335e7cde72ecd34a5e8ba15b47a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c0a335e7cde72ecd34a5e8ba15b47a3">&#9670;&nbsp;</a></span>mtx_no_data</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pthread_mutex_t tcpip_sender_private_s::lock</td>
+          <td class="memname">pthread_mutex_t tcpip_sender_private_s::mtx_no_data</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Mutex for cond_no_data </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00116">116</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00109">109</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
-<a id="a2cefa1c9bcd57c5c3515efc328c51dc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cefa1c9bcd57c5c3515efc328c51dc4">&#9670;&nbsp;</a></span>sending_lock</h2>
+<a id="a3057afc26c4862f9245e25d31a01cbc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3057afc26c4862f9245e25d31a01cbc0">&#9670;&nbsp;</a></span>send_thr</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">pthread_mutex_t tcpip_sender_private_s::sending_lock</td>
+          <td class="memname">pthread_t tcpip_sender_private_s::send_thr</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Pthread structure containing info about sending thread </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00117">117</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00107">107</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
@@ -388,8 +475,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>TCPIP port number / UNIX socket path </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00086">86</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00087">87</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
@@ -404,8 +492,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Server socket descriptor </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00087">87</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00085">85</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
@@ -420,8 +509,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Socket type (TCPIP / UNIX) </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00094">94</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00082">82</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>
@@ -436,10 +526,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>File descriptor pair for select() termination.</p>
-<p>Using python wrapper, it is not possible to terminate module when no receiver is connected to output IFC. Therefore, this file descriptor will be used to signal termination to select(). </p>
+<p>File descriptor pair for select() termination </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00114">114</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00084">84</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
 
 </div>
 </div>

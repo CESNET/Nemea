@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -74,31 +74,42 @@ $(function() {
 , <a class="el" href="structtls__sender__private__s.html#a33339810bcd649fb009e7167c1346d58">tls_sender_private_s</a>
 </li>
 <li>client_state
-: <a class="el" href="structclient__s.html#a59cf212eceedbe9eb91957f183153560">client_s</a>
-, <a class="el" href="structtlsclient__s.html#a48bd9c29acbf7663d1d1667fb883b7ac">tlsclient_s</a>
-, <a class="el" href="structtrap__input__ifc__s.html#a2376f3c21323e16da224419553f5b0b1">trap_input_ifc_s</a>
+: <a class="el" href="structtrap__input__ifc__s.html#a2376f3c21323e16da224419553f5b0b1">trap_input_ifc_s</a>
 </li>
 <li>clients
-: <a class="el" href="structtcpip__sender__private__s.html#a080c38a625ad56e7c307ea9b08f41127">tcpip_sender_private_s</a>
-, <a class="el" href="structtls__sender__private__s.html#a4f2636281eeb8e1818bbbe4d98680671">tls_sender_private_s</a>
+: <a class="el" href="structtcpip__sender__private__s.html#a412b6897ac143d737be4975c10a867d7">tcpip_sender_private_s</a>
+, <a class="el" href="structtls__sender__private__s.html#a823f0044374b027154d88eea92347eb3">tls_sender_private_s</a>
 </li>
 <li>clients_arr_size
-: <a class="el" href="structtcpip__sender__private__s.html#a6729b56d04eae29cd663683e8fe50dee">tcpip_sender_private_s</a>
-, <a class="el" href="structtls__sender__private__s.html#a75abdf30e05a1860db2fc3d9d78212db">tls_sender_private_s</a>
+: <a class="el" href="structtcpip__sender__private__s.html#a02a377a621708255d892ada0c673cc3d">tcpip_sender_private_s</a>
+, <a class="el" href="structtls__sender__private__s.html#a00bed81250e7d1d9535282689cda77ec">tls_sender_private_s</a>
+</li>
+<li>clients_bit_arr
+: <a class="el" href="structbuffer__s.html#a0e0434b25109353c3306cbc5636c06e0">buffer_s</a>
+, <a class="el" href="structtcpip__sender__private__s.html#a5abdcd36392cb8f8d064c0f0923bf80a">tcpip_sender_private_s</a>
+, <a class="el" href="structtls__sender__private__s.html#a02d907d63b75a2b192089a8b317fa392">tls_sender_private_s</a>
+</li>
+<li>clients_pfds
+: <a class="el" href="structtcpip__sender__private__s.html#a8f36f7fc99dbeff1c3b12efb94dead82">tcpip_sender_private_s</a>
 </li>
 <li>com
 : <a class="el" href="structmsg__header__s.html#ad82826f258d15be6d9f75ffdb4807218">msg_header_s</a>
+</li>
+<li>cond_full_buffer
+: <a class="el" href="structtcpip__sender__private__s.html#a3d50d013267786b222ddaedef253200f">tcpip_sender_private_s</a>
+, <a class="el" href="structtls__sender__private__s.html#aa090c48986159a77c6cba2f47f242cc4">tls_sender_private_s</a>
+</li>
+<li>cond_no_data
+: <a class="el" href="structtcpip__sender__private__s.html#ac6f604e6c4f8ecf8e440277b6e05efe8">tcpip_sender_private_s</a>
+, <a class="el" href="structtls__sender__private__s.html#a4330546abe8d147885440cb91b89d9d5">tls_sender_private_s</a>
 </li>
 <li>connected
 : <a class="el" href="structtcpip__receiver__private__s.html#a981dafd77ae2442f3d21a4fd2e9758b9">tcpip_receiver_private_s</a>
 , <a class="el" href="structtls__receiver__private__s.html#a54f6857f38498677fdfe125dfa0a3734">tls_receiver_private_s</a>
 </li>
 <li>connected_clients
-: <a class="el" href="structtcpip__sender__private__s.html#a221af302a0898e6cbaa4c39a48b1c276">tcpip_sender_private_s</a>
-, <a class="el" href="structtls__sender__private__s.html#a768ccb44110b9f01319b3295bbde992f">tls_sender_private_s</a>
-</li>
-<li>context_lock
-: <a class="el" href="structtrap__ctx__priv__s.html#a5d10aa5aeb574ea74b56bbf09fc7d7fa">trap_ctx_priv_s</a>
+: <a class="el" href="structtcpip__sender__private__s.html#a4810967e529ac208af0b5f7cb0677348">tcpip_sender_private_s</a>
+, <a class="el" href="structtls__sender__private__s.html#a9b3305cd83e88e536c09444a29161f84">tls_sender_private_s</a>
 </li>
 <li>counter_autoflush
 : <a class="el" href="group__ctxifccounters.html#gae918d788c4f2e3b77fc3e3c9d7eef7a3">trap_ctx_priv_s</a>
@@ -108,6 +119,12 @@ $(function() {
 </li>
 <li>counter_recv_buffer
 : <a class="el" href="group__ctxifccounters.html#gabf8d83b97e6807743758827a9627a7b9">trap_ctx_priv_s</a>
+</li>
+<li>counter_recv_delay_last
+: <a class="el" href="group__ctxifccounters.html#ga5e34bd70f9d3373186a8bf6d5870733f">trap_ctx_priv_s</a>
+</li>
+<li>counter_recv_delay_total
+: <a class="el" href="group__ctxifccounters.html#ga94165668161797455663b67406badc8c">trap_ctx_priv_s</a>
 </li>
 <li>counter_recv_message
 : <a class="el" href="group__ctxifccounters.html#ga595bb998ac7a9257d8eb1bcb2b253311">trap_ctx_priv_s</a>
@@ -128,23 +145,10 @@ $(function() {
 <li>ctx
 : <a class="el" href="structfile__private__s.html#ae5af1c6b080272c106d3e397a3190bb5">file_private_s</a>
 , <a class="el" href="structgenerator__private__s.html#a1a6188d5c588d98d1f5eb02e51cf58c2">generator_private_s</a>
-, <a class="el" href="structreader__threads__arg.html#a112cf3a7782495983aca250f64d30469">reader_threads_arg</a>
 , <a class="el" href="structtcpip__receiver__private__s.html#ad37a1a719a07f93ac8110463c8d89894">tcpip_receiver_private_s</a>
 , <a class="el" href="structtcpip__sender__private__s.html#aa77c2248885aef1d8c3eb76dae5ffc9d">tcpip_sender_private_s</a>
 , <a class="el" href="structtls__receiver__private__s.html#a2b90d739337a901fe0aa0956468037ee">tls_receiver_private_s</a>
 , <a class="el" href="structtls__sender__private__s.html#a0a536abae4016eeb276e63830a4a3117">tls_sender_private_s</a>
-</li>
-<li>cur_rd_block
-: <a class="el" href="structtrap__buffer__s.html#a0dceca77c9aa7539a7ea1b130b8e062a">trap_buffer_s</a>
-</li>
-<li>cur_rd_block_idx
-: <a class="el" href="structtrap__buffer__s.html#ad00d0a5613cc40619368df7c78238acc">trap_buffer_s</a>
-</li>
-<li>cur_wr_block
-: <a class="el" href="structtrap__buffer__s.html#a0a6b4ca69cc323cdda996b274f427577">trap_buffer_s</a>
-</li>
-<li>cur_wr_block_idx
-: <a class="el" href="structtrap__buffer__s.html#ac3279df9308919bef2ea6c3d472fac20">trap_buffer_s</a>
 </li>
 </ul>
 </div><!-- contents -->

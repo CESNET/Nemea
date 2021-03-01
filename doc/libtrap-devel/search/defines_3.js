@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ifcdir2str',['ifcdir2str',['../trap_8c.html#a4aa0658cd79f30e7969f0d6821634b95',1,'trap.c']]],
-  ['in_5fifc_5fresults_5fsize',['IN_IFC_RESULTS_SIZE',['../trap_8c.html#a677fc595ea4a72363c8c0f1176a4911c',1,'trap.c']]]
+  ['file_5fsize_5fsuffix_5flen',['FILE_SIZE_SUFFIX_LEN',['../ifc__file_8h.html#a571617d34d96af5b74c232074e5d26c4',1,'ifc_file.h']]],
+  ['filename_5ftemplate_5flen',['FILENAME_TEMPLATE_LEN',['../ifc__file_8h.html#a9068e2ed91bc9b753cfa65d6fb849290',1,'ifc_file.h']]]
 ];

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -83,9 +83,9 @@ Include dependency graph for trap_internal.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="trap__internal_8c__incl.png" border="0" usemap="#src_2trap__internal_8c" alt=""/></div>
 <map name="src_2trap__internal_8c" id="src_2trap__internal_8c">
-<area shape="rect" id="node3" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="409,80,527,107"/>
-<area shape="rect" id="node6" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="341,155,467,196"/>
-<area shape="rect" id="node11" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="492,162,575,189"/>
+<area shape="rect" id="node3" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="384,80,488,107"/>
+<area shape="rect" id="node6" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="319,155,433,196"/>
+<area shape="rect" id="node11" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="458,162,534,189"/>
 </map>
 </div>
 </div>
@@ -99,6 +99,16 @@ Functions</h2></td></tr>
 <tr class="memitem:gadc507c418b7b19701be88c6b8438c7f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#gadc507c418b7b19701be88c6b8438c7f9">trap_verbose_msg</a> (int level, char *string)</td></tr>
 <tr class="memdesc:gadc507c418b7b19701be88c6b8438c7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">send verbose message to stderr  <a href="group__debug.html#gadc507c418b7b19701be88c6b8438c7f9">More...</a><br /></td></tr>
 <tr class="separator:gadc507c418b7b19701be88c6b8438c7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dcfe918d45603882c13f14c50a07712"><td class="memItemLeft" align="right" valign="top">_Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trap__internal_8c.html#a5dcfe918d45603882c13f14c50a07712">__sync_bool_compare_and_swap_8</a> (int64_t *ptr, int64_t oldvar, int64_t newval)</td></tr>
+<tr class="separator:a5dcfe918d45603882c13f14c50a07712"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ea138068d5672a867450bf28258d7d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trap__internal_8c.html#af7ea138068d5672a867450bf28258d7d">__sync_fetch_and_add_8</a> (uint64_t *ptr, uint64_t value)</td></tr>
+<tr class="separator:af7ea138068d5672a867450bf28258d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280c90d38779a6dfe9a811fe90ddb719"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trap__internal_8c.html#a280c90d38779a6dfe9a811fe90ddb719">__sync_add_and_fetch_8</a> (uint64_t *ptr, uint64_t value)</td></tr>
+<tr class="separator:a280c90d38779a6dfe9a811fe90ddb719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8dc6fad1de2284c38354df2fdc959b"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trap__internal_8c.html#aac8dc6fad1de2284c38354df2fdc959b">__sync_and_and_fetch_8</a> (uint64_t *ptr, uint64_t value)</td></tr>
+<tr class="separator:aac8dc6fad1de2284c38354df2fdc959b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c425573071638073feaa8810b8697f6"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trap__internal_8c.html#a5c425573071638073feaa8810b8697f6">__sync_or_and_fetch_8</a> (uint64_t *ptr, uint64_t value)</td></tr>
+<tr class="separator:a5c425573071638073feaa8810b8697f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -106,6 +116,10 @@ Variables</h2></td></tr>
 <tr class="separator:ga3b3befcce5bb831d533b29013308578e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf2a32a74fdc82cfc2f13a9a8e4d32da1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#gaf2a32a74fdc82cfc2f13a9a8e4d32da1">trap_verbose</a> = -1</td></tr>
 <tr class="separator:gaf2a32a74fdc82cfc2f13a9a8e4d32da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9735d32bc4c81447d8acada6f9a53d3e"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#ga9735d32bc4c81447d8acada6f9a53d3e">trap_err_msg</a> [4096]</td></tr>
+<tr class="separator:ga9735d32bc4c81447d8acada6f9a53d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417e9acbbc27e47555ce6670c64121fb"><td class="memItemLeft" align="right" valign="top">static pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="trap__internal_8c.html#a417e9acbbc27e47555ce6670c64121fb">atomic_mutex</a> = PTHREAD_MUTEX_INITIALIZER</td></tr>
+<tr class="separator:a417e9acbbc27e47555ce6670c64121fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. </p>
@@ -135,6 +149,162 @@ Tomas Cejka <a href="#" onclick="location.href='mai'+'lto:'+'cej'+'ka'+'t@c'+'es
 
 <p class="definition">Definition in file <a class="el" href="trap__internal_8c_source.html">trap_internal.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a280c90d38779a6dfe9a811fe90ddb719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a280c90d38779a6dfe9a811fe90ddb719">&#9670;&nbsp;</a></span>__sync_add_and_fetch_8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t __sync_add_and_fetch_8 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8c_source.html#l00137">137</a> of file <a class="el" href="trap__internal_8c_source.html">trap_internal.c</a>.</p>
+
+</div>
+</div>
+<a id="aac8dc6fad1de2284c38354df2fdc959b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8dc6fad1de2284c38354df2fdc959b">&#9670;&nbsp;</a></span>__sync_and_and_fetch_8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t __sync_and_and_fetch_8 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8c_source.html#l00146">146</a> of file <a class="el" href="trap__internal_8c_source.html">trap_internal.c</a>.</p>
+
+</div>
+</div>
+<a id="a5dcfe918d45603882c13f14c50a07712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dcfe918d45603882c13f14c50a07712">&#9670;&nbsp;</a></span>__sync_bool_compare_and_swap_8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_Bool __sync_bool_compare_and_swap_8 </td>
+          <td>(</td>
+          <td class="paramtype">int64_t *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>oldvar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>newval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8c_source.html#l00119">119</a> of file <a class="el" href="trap__internal_8c_source.html">trap_internal.c</a>.</p>
+
+</div>
+</div>
+<a id="af7ea138068d5672a867450bf28258d7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ea138068d5672a867450bf28258d7d">&#9670;&nbsp;</a></span>__sync_fetch_and_add_8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t __sync_fetch_and_add_8 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8c_source.html#l00128">128</a> of file <a class="el" href="trap__internal_8c_source.html">trap_internal.c</a>.</p>
+
+</div>
+</div>
+<a id="a5c425573071638073feaa8810b8697f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c425573071638073feaa8810b8697f6">&#9670;&nbsp;</a></span>__sync_or_and_fetch_8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t __sync_or_and_fetch_8 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8c_source.html#l00155">155</a> of file <a class="el" href="trap__internal_8c_source.html">trap_internal.c</a>.</p>
+
+</div>
+</div>
 <a id="abc051816fb35ec8ec9cba4d99460acc4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc051816fb35ec8ec9cba4d99460acc4">&#9670;&nbsp;</a></span>get_level()</h2>
 
@@ -178,7 +348,32 @@ Tomas Cejka <a href="#" onclick="location.href='mai'+'lto:'+'cej'+'ka'+'t@c'+'es
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8c_source.html#l00065">65</a> of file <a class="el" href="trap__internal_8c_source.html">trap_internal.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8c_source.html#l00066">66</a> of file <a class="el" href="trap__internal_8c_source.html">trap_internal.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a417e9acbbc27e47555ce6670c64121fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a417e9acbbc27e47555ce6670c64121fb">&#9670;&nbsp;</a></span>atomic_mutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_mutex_t atomic_mutex = PTHREAD_MUTEX_INITIALIZER</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8c_source.html#l00117">117</a> of file <a class="el" href="trap__internal_8c_source.html">trap_internal.c</a>.</p>
 
 </div>
 </div>

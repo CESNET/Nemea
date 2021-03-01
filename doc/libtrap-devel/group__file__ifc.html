@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -74,9 +74,9 @@ Collaboration diagram for file interface module:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__file__ifc.png" border="0" alt="" usemap="#group____file____ifc"/>
 <map name="group____file____ifc" id="group____file____ifc">
-<area shape="rect" id="node1" href="group__file__receiver.html" title="File_receiver" alt="" coords="419,5,523,32"/>
-<area shape="rect" id="node2" href="group__trap__ifc.html" title="TRAP communication\l module interface" alt="" coords="5,23,165,65"/>
-<area shape="rect" id="node4" href="group__file__sender.html" title="File_sender" alt="" coords="423,56,518,83"/>
+<area shape="rect" id="node1" href="group__file__receiver.html" title="File_receiver" alt="" coords="392,5,487,32"/>
+<area shape="rect" id="node2" href="group__trap__ifc.html" title="TRAP communication\l module interface" alt="" coords="5,23,156,65"/>
+<area shape="rect" id="node4" href="group__file__sender.html" title="File_sender" alt="" coords="395,56,484,83"/>
 </map>
 </td></tr></table></center>
 </div>
@@ -102,15 +102,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ga87730dbc566bc75c062ef8320e95ce08"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#ga87730dbc566bc75c062ef8320e95ce08">file_create_dump</a> (void *priv, uint32_t idx, const char *path)</td></tr>
 <tr class="memdesc:ga87730dbc566bc75c062ef8320e95ce08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create file dump with current configuration (for debugging)  <a href="#ga87730dbc566bc75c062ef8320e95ce08">More...</a><br /></td></tr>
 <tr class="separator:ga87730dbc566bc75c062ef8320e95ce08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa1598969a435a167ca39dea276063727"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gaa1598969a435a167ca39dea276063727">create_next_filename</a> (void *priv)</td></tr>
-<tr class="memdesc:gaa1598969a435a167ca39dea276063727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new path and filename from the template created during interface initiation.  <a href="#gaa1598969a435a167ca39dea276063727">More...</a><br /></td></tr>
-<tr class="separator:gaa1598969a435a167ca39dea276063727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac768d695486428c3f6bfec987284b433"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gac768d695486428c3f6bfec987284b433">get_next_file</a> (void *priv)</td></tr>
-<tr class="separator:gac768d695486428c3f6bfec987284b433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1d852753f2e2e9b2f313d6e6ae3a100"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gac1d852753f2e2e9b2f313d6e6ae3a100">open_next_file</a> (<a class="el" href="ifc__file_8h.html#a309be75527e82357484eaba1295e654e">file_private_t</a> *c, char *new_filename)</td></tr>
-<tr class="separator:gac1d852753f2e2e9b2f313d6e6ae3a100"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf1409bc51cad79c4d8df57f1861cda61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gaf1409bc51cad79c4d8df57f1861cda61">open_next_file_wrapper</a> (void *priv)</td></tr>
-<tr class="separator:gaf1409bc51cad79c4d8df57f1861cda61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb8c7500558d6d4827acfab569d2b0af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gaeb8c7500558d6d4827acfab569d2b0af">create_next_filename</a> (<a class="el" href="ifc__file_8h.html#a309be75527e82357484eaba1295e654e">file_private_t</a> *config)</td></tr>
+<tr class="memdesc:gaeb8c7500558d6d4827acfab569d2b0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new path and filename from the template created during interface initialization. New filename is stored in file_private_t-&gt;filename.  <a href="#gaeb8c7500558d6d4827acfab569d2b0af">More...</a><br /></td></tr>
+<tr class="separator:gaeb8c7500558d6d4827acfab569d2b0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0f2fbc2888f6354257ac88d9a9853c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gac0f2fbc2888f6354257ac88d9a9853c1">switch_file</a> (<a class="el" href="ifc__file_8h.html#a309be75527e82357484eaba1295e654e">file_private_t</a> *c)</td></tr>
+<tr class="memdesc:gac0f2fbc2888f6354257ac88d9a9853c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close previous file, open next file (name taken in file_private_t-&gt;filename). Negotiation must be performed after changing the file.  <a href="#gac0f2fbc2888f6354257ac88d9a9853c1">More...</a><br /></td></tr>
+<tr class="separator:gac0f2fbc2888f6354257ac88d9a9853c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga32cd1cfb7fb21703391aee752a0d647e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#ga32cd1cfb7fb21703391aee752a0d647e">switch_file_wrapper</a> (void *priv)</td></tr>
+<tr class="separator:ga32cd1cfb7fb21703391aee752a0d647e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
@@ -139,12 +138,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00123">123</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00122">122</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>
-<a id="gaa1598969a435a167ca39dea276063727"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa1598969a435a167ca39dea276063727">&#9670;&nbsp;</a></span>create_next_filename()</h2>
+<a id="gaeb8c7500558d6d4827acfab569d2b0af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeb8c7500558d6d4827acfab569d2b0af">&#9670;&nbsp;</a></span>create_next_filename()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,23 +151,23 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int create_next_filename </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>priv</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="ifc__file_8h.html#a309be75527e82357484eaba1295e654e">file_private_t</a> *&#160;</td>
+          <td class="paramname"><em>config</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new path and filename from the template created during interface initiation. </p>
+<p>Create a new path and filename from the template created during interface initialization. New filename is stored in file_private_t-&gt;filename. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">priv</td><td>pointer to module private data </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">config</td><td>Pointer to module private data.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success (TRAP_E_OK), TRAP_E_MEMORY if function time(NULL) returns -1, TRAP_E_IO_ERROR if error occurs during directory creation, TRAP_E_BADPARAMS if the specified path and filename exceeds MAX_PATH - 1 bytes. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK on success, TRAP_E_MEMORY if function time(NULL) returns -1, TRAP_E_IO_ERROR if error occurs during directory creation, TRAP_E_BADPARAMS if the specified path and filename exceeds MAX_PATH - 1 bytes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00192">192</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00194">194</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>
@@ -222,7 +221,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00159">159</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00158">158</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>
@@ -250,7 +249,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00079">79</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00074">74</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>
@@ -278,68 +277,47 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00107">107</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00106">106</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>
-<a id="gac768d695486428c3f6bfec987284b433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac768d695486428c3f6bfec987284b433">&#9670;&nbsp;</a></span>get_next_file()</h2>
+<a id="gac0f2fbc2888f6354257ac88d9a9853c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac0f2fbc2888f6354257ac88d9a9853c1">&#9670;&nbsp;</a></span>switch_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* get_next_file </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>priv</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00261">261</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
-
-</div>
-</div>
-<a id="gac1d852753f2e2e9b2f313d6e6ae3a100"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac1d852753f2e2e9b2f313d6e6ae3a100">&#9670;&nbsp;</a></span>open_next_file()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int open_next_file </td>
+          <td class="memname">int switch_file </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="ifc__file_8h.html#a309be75527e82357484eaba1295e654e">file_private_t</a> *&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>c</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>new_filename</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00272">272</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p>Close previous file, open next file (name taken in file_private_t-&gt;filename). Negotiation must be performed after changing the file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">c</td><td>Pointer to module private data.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK on success, TRAP_E_BADPARAMS if the next file cannot be opened. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00277">277</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>
-<a id="gaf1409bc51cad79c4d8df57f1861cda61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf1409bc51cad79c4d8df57f1861cda61">&#9670;&nbsp;</a></span>open_next_file_wrapper()</h2>
+<a id="ga32cd1cfb7fb21703391aee752a0d647e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga32cd1cfb7fb21703391aee752a0d647e">&#9670;&nbsp;</a></span>switch_file_wrapper()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void open_next_file_wrapper </td>
+          <td class="memname">void switch_file_wrapper </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>priv</em></td><td>)</td>
@@ -348,7 +326,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00547">547</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00539">539</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>

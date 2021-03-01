@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generator_5fprivate_5fs',['generator_private_s',['../structgenerator__private__s.html',1,'']]]
+  ['client_5fs',['client_s',['../structclient__s.html',1,'']]]
 ];

@@ -2,8 +2,6 @@ var searchData=
 [
   ['trap_2ec',['trap.c',['../trap_8c.html',1,'']]],
   ['trap_2eh',['trap.h',['../trap_8h.html',1,'']]],
-  ['trap_5fbuffer_2ec',['trap_buffer.c',['../trap__buffer_8c.html',1,'']]],
-  ['trap_5fbuffer_2eh',['trap_buffer.h',['../trap__buffer_8h.html',1,'']]],
   ['trap_5ferror_2ec',['trap_error.c',['../trap__error_8c.html',1,'']]],
   ['trap_5ferror_2eh',['trap_error.h',['../trap__error_8h.html',1,'']]],
   ['trap_5fifc_2eh',['trap_ifc.h',['../trap__ifc_8h.html',1,'']]],

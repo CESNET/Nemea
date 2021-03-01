@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -75,7 +75,7 @@ Collaboration diagram for Simple API:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__simpleapi.png" border="0" alt="" usemap="#group____simpleapi"/>
 <map name="group____simpleapi" id="group____simpleapi">
-<area shape="rect" id="node2" href="group__trap__mess__fmt.html" title="Message format" alt="" coords="145,5,272,32"/>
+<area shape="rect" id="node2" href="group__trap__mess__fmt.html" title="Message format" alt="" coords="141,5,257,32"/>
 </map>
 </td></tr></table></center>
 </div>
@@ -95,8 +95,6 @@ Functions</h2></td></tr>
 <tr class="separator:ga4fc7c94bc72b9400ea765187882d532e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2694fb89b2da11d529ef69c21f2197ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simpleapi.html#ga2694fb89b2da11d529ef69c21f2197ef">trap_finalize</a> ()</td></tr>
 <tr class="separator:ga2694fb89b2da11d529ef69c21f2197ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac8324ccfb8edf2977e3d4782870d4ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simpleapi.html#gaac8324ccfb8edf2977e3d4782870d4ef">trap_get_data</a> (uint32_t ifc_mask, const void **<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t *size, int timeout)</td></tr>
-<tr class="separator:gaac8324ccfb8edf2977e3d4782870d4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab889fdf90a8a4103bfa072c64d2aed1e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simpleapi.html#gab889fdf90a8a4103bfa072c64d2aed1e">trap_send_data</a> (unsigned int ifcidx, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size, int timeout)</td></tr>
 <tr class="separator:gab889fdf90a8a4103bfa072c64d2aed1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac8149d036a3b839adaeb876ccc9fcda5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simpleapi.html#gac8149d036a3b839adaeb876ccc9fcda5">trap_recv</a> (uint32_t ifcidx, const void **<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t *size)</td></tr>
@@ -149,7 +147,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Cleanup function. Disconnect all interfaces and do all necessary cleanup. </p><dl class="section return"><dt>Returns</dt><dd>Error code </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00922">922</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00578">578</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -176,76 +174,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code (0 on success) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00841">841</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
-
-</div>
-</div>
-<a id="gaac8324ccfb8edf2977e3d4782870d4ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaac8324ccfb8edf2977e3d4782870d4ef">&#9670;&nbsp;</a></span>trap_get_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int trap_get_data </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>ifc_mask</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void **&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t *&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>timeout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Read data from input interface. Read a record from one of interfaces specified by <code>ifc_mask</code> and store pointer to it into <code>data</code>. If data are not available on any of specified interfaces, wait until data are available or <code>timeout</code> microseconds elapses. If <code>timeout</code> &lt; 0, wait indefinitely. When function returns due to timeout, contents of <code>data</code> and <code>size</code> are undefined. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ifc_mask</td><td>Mask of interfaces to listen on (if <em>i</em>-th bit is set, interface <em>i</em> is enabled). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Pointer to received data. When only one IFC is selected by ifc_mask, data contains the payload of message. When ifc_mask contains more than one IFC, array of <a class="el" href="group__commonapi.html#ga09574de535c3e73578fa2930b108b38b">trap_multi_result_t</a> is returned. The array size is equal to number of input IFCs. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>Data must not be freed! Library stores incomming data into static array and rewrites it during every <a class="el" href="group__simpleapi.html#gaac8324ccfb8edf2977e3d4782870d4ef">trap_get_data()</a> call. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>Number of bytes of data. When only one IFC is selected by ifc_mask, size contains the size of incoming message. Otherwise, (when more than one IFC are selected) size contains the size of <a class="el" href="group__commonapi.html#ga09574de535c3e73578fa2930b108b38b">trap_multi_result_t</a> array in bytes. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Timeout in microseconds for non-blocking mode; timeout can be also: TRAP_WAIT, TRAP_HALFWAIT, or TRAP_NO_WAIT. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Error code - 0 on success, TRAP_E_TIMEOUT if timeout elapses. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>This function should be replaced by <a class="el" href="group__simpleapi.html#gac8149d036a3b839adaeb876ccc9fcda5" title="Receive data from input interface. ">trap_recv()</a>. </dd></dl>
-<p>Read data from input interface. Read a record from one of interfaces specified by <code>ifc_mask</code> and store pointer to it into <code>data</code>. If <code>ifc_mask</code> contains more than 1 interface, data are retrieve via parallel threads. In this case, resulting <code>data</code> is array of <code><a class="el" href="structtrap__multi__result.html">trap_multi_result</a></code> number of elements same as number of interfaces (returned <code>size</code> is size of array in bytes &mdash; number_of_interfaces * sizeof(trap_multi_result)). If data are not available on any of specified interfaces, wait until data are available or <code>timeout</code> microseconds elapses. If <code>timeout</code> is equal to TRAP_WAIT, wait indefinitely. If <code>timeout</code> is equal to TRAP_NO_WAIT, function is non-blocking with no timeout. When function returns due to timeout, contents of <code>data</code> and <code>size</code> are undefined. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ifc_mask</td><td>Mask of interfaces to listen on (if <em>i</em>-th bit is set, interface <em>i</em> is enabled). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Pointer to data, you have to cast it to appropriate structure. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>Number of bytes of data. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Timeout in microseconds. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Error code - 0 on success, TRAP_E_TIMEOUT if timeout elapses. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00970">970</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00497">497</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -265,7 +194,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Get verbosity level. See trap_set_verbose_level for list of levels. </p><dl class="section return"><dt>Returns</dt><dd>Verbosity level currently set in the library. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01050">1050</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00663">663</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -320,7 +249,7 @@ Variables</h2></td></tr>
 </dl>
 <p>Examples: </p><div class="fragment"><div class="line"><span class="comment">// set 4 seconds timeout</span></div><div class="line"><a class="code" href="group__simpleapi.html#ga63de9d9334839f0fe2871ab5a987be32">trap_ifcctl</a>(<a class="code" href="group__ifctypes.html#ggac188fb5e77d8af514d8091c21a9570c8a95482ca4ea5f849965438493b6c5640c">TRAPIFC_INPUT</a>, 0, <a class="code" href="group__commonapi.html#ggac99821743a91f2288f5ea8d3ae6b424ca7c42332f519ee4671d7f674198d6a023">TRAPCTL_SETTIMEOUT</a>, 4000000);</div><div class="line"><span class="comment">// disable auto-flush</span></div><div class="line"><a class="code" href="group__simpleapi.html#ga63de9d9334839f0fe2871ab5a987be32">trap_ifcctl</a>(<a class="code" href="group__ifctypes.html#ggac188fb5e77d8af514d8091c21a9570c8a3465118a68f82fd201ec4ce516f687aa">TRAPIFC_OUTPUT</a>, 0, <a class="code" href="group__commonapi.html#ggac99821743a91f2288f5ea8d3ae6b424ca69ebb9c0a47e7aa0c21440a6373e083a">TRAPCTL_AUTOFLUSH_TIMEOUT</a>, <a class="code" href="group__trap__timeout.html#gaf0f4e37c635e9cfbd6bba0e0c5d6dfb4">TRAP_NO_AUTO_FLUSH</a>);</div><div class="line"><span class="comment">// disable buffering</span></div><div class="line"><a class="code" href="group__simpleapi.html#ga63de9d9334839f0fe2871ab5a987be32">trap_ifcctl</a>(<a class="code" href="group__ifctypes.html#ggac188fb5e77d8af514d8091c21a9570c8a3465118a68f82fd201ec4ce516f687aa">TRAPIFC_OUTPUT</a>, 0, <a class="code" href="group__commonapi.html#ggac99821743a91f2288f5ea8d3ae6b424ca0698228277af04dfe4c5565de8263538">TRAPCTL_BUFFERSWITCH</a>, 0);</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK on success </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01618">1618</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01231">1231</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -358,7 +287,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code (0 on success) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00870">870</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00526">526</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -384,7 +313,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01285">1285</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00898">898</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -405,7 +334,7 @@ Variables</h2></td></tr>
 <p>Print help about interface specifier. Prints help message about format of interface specifier and description of all available interface types. This message is normally a part of help printed by trap_print_help, this function is useful when you don't use standard TRAP command-line parameters but you still use the same format of interface specifier.</p>
 <p>Print help about interface specifier. Prints help message about format of interface specifier and description of all available interface types. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01525">1525</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01138">1138</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -452,10 +381,10 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code - <a class="el" href="group__errorcodes.html#ga6aabff248f6e15e2e53b06cfd1e8349a" title="Success, no error. ">TRAP_E_OK</a> on success, <a class="el" href="group__errorcodes.html#gaac3c26d22e1f37413af205a7a70a058c" title="Read or write operation timeout. ">TRAP_E_TIMEOUT</a> if timeout elapses.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Data must not be freed! Library stores incomming data into static array and rewrites it during every <a class="el" href="group__simpleapi.html#gaac8324ccfb8edf2977e3d4782870d4ef">trap_get_data()</a> call. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Data must not be freed! Library stores incomming data into static array and rewrites it during every <a class="el" href="group__simpleapi.html#gac8149d036a3b839adaeb876ccc9fcda5" title="Receive data from input interface. ">trap_recv()</a> call. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__simpleapi.html#ga63de9d9334839f0fe2871ab5a987be32" title="Control TRAP interface. ">trap_ifcctl()</a> to set timeout (<a class="el" href="group__commonapi.html#ggac99821743a91f2288f5ea8d3ae6b424ca7c42332f519ee4671d7f674198d6a023" title="Set interface timeout (int32_t): in microseconds for non-blocking mode; timeout can be also: TRAP_WAI...">TRAPCTL_SETTIMEOUT</a>) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01018">1018</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00631">631</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -502,10 +431,9 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code - <a class="el" href="group__errorcodes.html#ga6aabff248f6e15e2e53b06cfd1e8349a" title="Success, no error. ">TRAP_E_OK</a> on success, <a class="el" href="group__errorcodes.html#gaac3c26d22e1f37413af205a7a70a058c" title="Read or write operation timeout. ">TRAP_E_TIMEOUT</a> if timeout elapses.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Data must not be freed! Library stores incomming data into static array and rewrites it during every <a class="el" href="group__simpleapi.html#gaac8324ccfb8edf2977e3d4782870d4ef">trap_get_data()</a> call. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__simpleapi.html#ga63de9d9334839f0fe2871ab5a987be32" title="Control TRAP interface. ">trap_ifcctl()</a> to set timeout (<a class="el" href="group__commonapi.html#ggac99821743a91f2288f5ea8d3ae6b424ca7c42332f519ee4671d7f674198d6a023" title="Set interface timeout (int32_t): in microseconds for non-blocking mode; timeout can be also: TRAP_WAI...">TRAPCTL_SETTIMEOUT</a>) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01011">1011</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00624">624</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -556,9 +484,9 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Error code - 0 on success, TRAP_E_TIMEOUT if timeout elapses. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>This function should be replaced by <a class="el" href="group__simpleapi.html#ga165b017fa4b66422275c4e502ac95d2a" title="Send data via output interface. ">trap_send()</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>This function should be replaced by <a class="el" href="group__simpleapi.html#ga165b017fa4b66422275c4e502ac95d2a" title="Send data via output interface. ">trap_send()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01005">1005</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00618">618</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -586,7 +514,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01628">1628</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01241">1241</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -613,7 +541,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00668">668</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00324">324</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -661,7 +589,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01041">1041</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00654">654</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -679,10 +607,10 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function to terminate module's operation. This function stops all read/write operations on all interfaces. Any waiting in trap_get_data and trap_send_data is interrupted and these functions return immediately with TRAP_E_TERMINATED. Any call of trap_get_data or trap_send_data after call of this function returns TRAP_E_TERMINATED.</p>
+<p>Function to terminate module's operation. This function stops all read/write operations on all interfaces. Any waiting in <a class="el" href="group__simpleapi.html#gac8149d036a3b839adaeb876ccc9fcda5" title="Receive data from input interface. ">trap_recv()</a> and <a class="el" href="group__simpleapi.html#ga165b017fa4b66422275c4e502ac95d2a" title="Send data via output interface. ">trap_send()</a>_data is interrupted and these functions return immediately with TRAP_E_TERMINATED. Any call of <a class="el" href="group__simpleapi.html#gac8149d036a3b839adaeb876ccc9fcda5" title="Receive data from input interface. ">trap_recv()</a> or <a class="el" href="group__simpleapi.html#ga165b017fa4b66422275c4e502ac95d2a" title="Send data via output interface. ">trap_send()</a> after call of this function returns TRAP_E_TERMINATED.</p>
 <p>This function is used to terminate module's operation (asynchronously), e.g. in SIGTERM handler. </p><dl class="section return"><dt>Returns</dt><dd>Always TRAP_E_OK (0). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00907">907</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00563">563</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -701,7 +629,7 @@ Variables</h2></td></tr>
 
 <p>Code of last error (one of the codes above) </p>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00124">124</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00123">123</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -719,7 +647,7 @@ Variables</h2></td></tr>
 
 <p>Human-readable message about last error. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00126">126</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00125">125</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>

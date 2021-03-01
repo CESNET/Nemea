@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -64,9 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">TLS Output IFC<div class="ingroups"><a class="el" href="group__trap__ifc.html">TRAP communication module interface</a> &raquo; <a class="el" href="group__tls__ifc.html">TLS communication interface module</a></div></div>  </div>
@@ -77,7 +75,7 @@ Collaboration diagram for TLS Output IFC:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__tls__sender.png" border="0" alt="" usemap="#group____tls____sender"/>
 <map name="group____tls____sender" id="group____tls____sender">
-<area shape="rect" id="node2" href="group__tls__ifc.html" title="TLS communication interface\l module" alt="" coords="5,5,217,47"/>
+<area shape="rect" id="node2" href="group__tls__ifc.html" title="TLS communication interface\l module" alt="" coords="5,5,199,47"/>
 </map>
 </td></tr></table></center>
 </div>
@@ -88,56 +86,46 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TLS IFC client information.  <a href="structtlsclient__s.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtls__sender__private__s.html">tls_sender_private_s</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TLS IFC client information.  <a href="structtls__sender__private__s.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TLS IFC private information.  <a href="structtls__sender__private__s.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga5ea7505df2ceafb70ae88cc665e338bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga5ea7505df2ceafb70ae88cc665e338bd">tls_SENDER_STATE_STR</a>(st)</td></tr>
-<tr class="separator:ga5ea7505df2ceafb70ae88cc665e338bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gacae6ab8d041be745ba0c3c5934fad13b"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__tls__sender.html#gab4c9969dd6b6362d01804745fdbbcf55">tls_sender_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gacae6ab8d041be745ba0c3c5934fad13b">tls_sender_result_t</a></td></tr>
-<tr class="separator:gacae6ab8d041be745ba0c3c5934fad13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab81355a0ad8e318125a88642ecd3544a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtlsclient__s.html">tlsclient_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gab81355a0ad8e318125a88642ecd3544a">tlsclient_t</a></td></tr>
+<tr class="memdesc:gab81355a0ad8e318125a88642ecd3544a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TLS IFC client information.  <a href="#gab81355a0ad8e318125a88642ecd3544a">More...</a><br /></td></tr>
+<tr class="separator:gab81355a0ad8e318125a88642ecd3544a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga07cc54970619735031e328a849dbbc83"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtls__sender__private__s.html">tls_sender_private_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a></td></tr>
-<tr class="memdesc:ga07cc54970619735031e328a849dbbc83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TLS IFC client information.  <a href="#ga07cc54970619735031e328a849dbbc83">More...</a><br /></td></tr>
+<tr class="memdesc:ga07cc54970619735031e328a849dbbc83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TLS IFC private information.  <a href="#ga07cc54970619735031e328a849dbbc83">More...</a><br /></td></tr>
 <tr class="separator:ga07cc54970619735031e328a849dbbc83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:gab4c9969dd6b6362d01804745fdbbcf55"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gab4c9969dd6b6362d01804745fdbbcf55">tls_sender_result</a> { <a class="el" href="group__tls__sender.html#ggab4c9969dd6b6362d01804745fdbbcf55ad8b4bc2563bd00e53ea036d7cff87ed6">EVERYBODY_PASSED</a>, 
-<a class="el" href="group__tls__sender.html#ggab4c9969dd6b6362d01804745fdbbcf55ae55cf1716ad32d02c23e5bfe0d3e0bee">EVERYBODY_TIMEDOUT</a>, 
-<a class="el" href="group__tls__sender.html#ggab4c9969dd6b6362d01804745fdbbcf55a25e04f87fe3a613f0f16d41e7d402e8f">SOMEBODY_TIMEDOUT</a>
- }</td></tr>
-<tr class="separator:gab4c9969dd6b6362d01804745fdbbcf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga31e27a4e78b29949b7edc71d7d73293b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga31e27a4e78b29949b7edc71d7d73293b">tlsclient_send_state</a> { <br />
-&#160;&#160;<a class="el" href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293baf74634242735711b55d346fb794d30ee">TLSCURRENT_IDLE</a>, 
-<a class="el" href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293ba695cc100ed93ce8f84f3d4107a8f3f94">TLSCURRENT_HEAD</a>, 
-<a class="el" href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293bafee620b20fc21b99fc1553a73b18532e">TLSCURRENT_PAYLOAD</a>, 
-<a class="el" href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293ba1adf98c4061d98e9152a2e9fc41b5be8">TLSCURRENT_COMPLETE</a>, 
-<br />
-&#160;&#160;<a class="el" href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293ba44cce9416d55afdc613a507346c9609c">TLSBACKUP_BUFFER</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ga31e27a4e78b29949b7edc71d7d73293b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for tls client send state.  <a href="group__tls__sender.html#ga31e27a4e78b29949b7edc71d7d73293b">More...</a><br /></td></tr>
-<tr class="separator:ga31e27a4e78b29949b7edc71d7d73293b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga0c3cddbd39a1557ed54b008262883187"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga0c3cddbd39a1557ed54b008262883187">server_disconnected_client</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *c, int cl_id)</td></tr>
-<tr class="separator:ga0c3cddbd39a1557ed54b008262883187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa1efcac065550e471b1599f83859f65"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gaaa1efcac065550e471b1599f83859f65">send_all_data</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *c, struct <a class="el" href="structtlsclient__s.html">tlsclient_s</a> *cl, void **<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t *size, char block)</td></tr>
-<tr class="memdesc:gaaa1efcac065550e471b1599f83859f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to send data block at once.  <a href="#gaaa1efcac065550e471b1599f83859f65">More...</a><br /></td></tr>
-<tr class="separator:gaaa1efcac065550e471b1599f83859f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga566ad038fc3be7b93c2a4905acd64402"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga566ad038fc3be7b93c2a4905acd64402">check_connected_clients</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *config)</td></tr>
-<tr class="separator:ga566ad038fc3be7b93c2a4905acd64402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39f0b37262eb05f7de8e2bfba0209679"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga39f0b37262eb05f7de8e2bfba0209679">tls_sender_conn_phase</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *config, struct timespec *t)</td></tr>
-<tr class="memdesc:ga39f0b37262eb05f7de8e2bfba0209679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if we have connected clients and wait for them.  <a href="#ga39f0b37262eb05f7de8e2bfba0209679">More...</a><br /></td></tr>
-<tr class="separator:ga39f0b37262eb05f7de8e2bfba0209679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3e14ac1fbf599c3ecbca6aee4b6ed9b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga3e14ac1fbf599c3ecbca6aee4b6ed9b5">tls_sender_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t size, int timeout)</td></tr>
-<tr class="memdesc:ga3e14ac1fbf599c3ecbca6aee4b6ed9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data to all connected clients.  <a href="#ga3e14ac1fbf599c3ecbca6aee4b6ed9b5">More...</a><br /></td></tr>
-<tr class="separator:ga3e14ac1fbf599c3ecbca6aee4b6ed9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10574da0c956724741173a3fe5c8eea3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga10574da0c956724741173a3fe5c8eea3">disconnect_client</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *priv, int cl_id)</td></tr>
+<tr class="memdesc:ga10574da0c956724741173a3fe5c8eea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when a client was/is being disconnected.  <a href="#ga10574da0c956724741173a3fe5c8eea3">More...</a><br /></td></tr>
+<tr class="separator:ga10574da0c956724741173a3fe5c8eea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f5aa45f5c8641f9fd83159208d62647"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga3f5aa45f5c8641f9fd83159208d62647">tls_server_disconnect_all_clients</a> (void *priv)</td></tr>
+<tr class="memdesc:ga3f5aa45f5c8641f9fd83159208d62647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function disconnects all clients of the output interface whose private structure is passed via "priv" parameter.  <a href="#ga3f5aa45f5c8641f9fd83159208d62647">More...</a><br /></td></tr>
+<tr class="separator:ga3f5aa45f5c8641f9fd83159208d62647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83472c2cd46eac526175b30d48495135"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga83472c2cd46eac526175b30d48495135">get_cur_timestamp</a> ()</td></tr>
+<tr class="separator:ga83472c2cd46eac526175b30d48495135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3a65816f2a41268758c569a7a368ff1"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gad3a65816f2a41268758c569a7a368ff1">accept_clients_thread</a> (void *arg)</td></tr>
+<tr class="memdesc:gad3a65816f2a41268758c569a7a368ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs in a separate thread and handles new client's connection requests.  <a href="#gad3a65816f2a41268758c569a7a368ff1">More...</a><br /></td></tr>
+<tr class="separator:gad3a65816f2a41268758c569a7a368ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga329b6a3a0d0527736d44acfafd2be576"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga329b6a3a0d0527736d44acfafd2be576">finish_buffer</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *priv, <a class="el" href="ifc__socket__common_8h.html#a9aa12143b2c71bd60b9418ee7f4d3bb6">buffer_t</a> *buffer)</td></tr>
+<tr class="memdesc:ga329b6a3a0d0527736d44acfafd2be576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write buffer size to its header and shift active index.  <a href="#ga329b6a3a0d0527736d44acfafd2be576">More...</a><br /></td></tr>
+<tr class="separator:ga329b6a3a0d0527736d44acfafd2be576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7275190583a84764542fa8814ff0b4de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga7275190583a84764542fa8814ff0b4de">tls_sender_flush</a> (void *priv)</td></tr>
+<tr class="memdesc:ga7275190583a84764542fa8814ff0b4de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force flush of active buffer.  <a href="#ga7275190583a84764542fa8814ff0b4de">More...</a><br /></td></tr>
+<tr class="separator:ga7275190583a84764542fa8814ff0b4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83aa590c182c7739d18df9f42fd90944"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga83aa590c182c7739d18df9f42fd90944">send_data</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *priv, <a class="el" href="group__tls__sender.html#gab81355a0ad8e318125a88642ecd3544a">tlsclient_t</a> *c, uint32_t cl_id)</td></tr>
+<tr class="memdesc:ga83aa590c182c7739d18df9f42fd90944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data to client from his assigned buffer.  <a href="#ga83aa590c182c7739d18df9f42fd90944">More...</a><br /></td></tr>
+<tr class="separator:ga83aa590c182c7739d18df9f42fd90944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga029de4ad961a1d3d89a52cbc5e3a10a0"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga029de4ad961a1d3d89a52cbc5e3a10a0">sending_thread_func</a> (void *priv)</td></tr>
+<tr class="memdesc:ga029de4ad961a1d3d89a52cbc5e3a10a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs in a separate thread. It handles sending data to connected clients for TLS interface.  <a href="#ga029de4ad961a1d3d89a52cbc5e3a10a0">More...</a><br /></td></tr>
+<tr class="separator:ga029de4ad961a1d3d89a52cbc5e3a10a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67c0673f9a702036f37933840891192a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga67c0673f9a702036f37933840891192a">tls_sender_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size, int timeout)</td></tr>
+<tr class="memdesc:ga67c0673f9a702036f37933840891192a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store message into buffer.  <a href="#ga67c0673f9a702036f37933840891192a">More...</a><br /></td></tr>
+<tr class="separator:ga67c0673f9a702036f37933840891192a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad3e0654a4636e0d138b15529aff51131"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gad3e0654a4636e0d138b15529aff51131">tls_sender_terminate</a> (void *priv)</td></tr>
 <tr class="memdesc:gad3e0654a4636e0d138b15529aff51131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set interface state as terminated.  <a href="#gad3e0654a4636e0d138b15529aff51131">More...</a><br /></td></tr>
 <tr class="separator:gad3e0654a4636e0d138b15529aff51131"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,49 +134,20 @@ Functions</h2></td></tr>
 <tr class="separator:gab89480d7e111593867b3d31b8fd7af97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga917b981d1bafb671093a40c0216e07fa"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga917b981d1bafb671093a40c0216e07fa">tls_sender_get_client_count</a> (void *priv)</td></tr>
 <tr class="separator:ga917b981d1bafb671093a40c0216e07fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga523e71d675979d48e01a634ef54d652d"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga523e71d675979d48e01a634ef54d652d">tls_sender_get_client_stats_json</a> (void *priv, json_t *client_stats_arr)</td></tr>
+<tr class="separator:ga523e71d675979d48e01a634ef54d652d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6a5c96daa3b31f978960c4a6e7254dc0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga6a5c96daa3b31f978960c4a6e7254dc0">tls_sender_create_dump</a> (void *priv, uint32_t idx, const char *path)</td></tr>
 <tr class="separator:ga6a5c96daa3b31f978960c4a6e7254dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ad388c97493a90ff558f27a5dddf7e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga6ad388c97493a90ff558f27a5dddf7e7">tlsserver_disconnect_all_clients</a> (void *priv)</td></tr>
-<tr class="memdesc:ga6ad388c97493a90ff558f27a5dddf7e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function disconnects all clients of the output interface whose private structure is passed via "priv" parameter.  <a href="#ga6ad388c97493a90ff558f27a5dddf7e7">More...</a><br /></td></tr>
-<tr class="separator:ga6ad388c97493a90ff558f27a5dddf7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa359345fa6728d47aa48b8d8510cbfa1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gaa359345fa6728d47aa48b8d8510cbfa1">tls_send_ifc_get_id</a> (void *priv)</td></tr>
 <tr class="separator:gaa359345fa6728d47aa48b8d8510cbfa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga70f857962c64531165db580c0820f9d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga70f857962c64531165db580c0820f9d7">create_tls_sender_ifc</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, const char *params, <a class="el" href="group__trap__ifc.html#ga67931b1db8d9f47c96534b924252b370">trap_output_ifc_t</a> *ifc, uint32_t idx)</td></tr>
 <tr class="memdesc:ga70f857962c64531165db580c0820f9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of output TCP/IP IFC module. This function is called by TRAP library to initialize one output interface.  <a href="#ga70f857962c64531165db580c0820f9d7">More...</a><br /></td></tr>
 <tr class="separator:ga70f857962c64531165db580c0820f9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3a65816f2a41268758c569a7a368ff1"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gad3a65816f2a41268758c569a7a368ff1">accept_clients_thread</a> (void *arg)</td></tr>
-<tr class="memdesc:gad3a65816f2a41268758c569a7a368ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for server thread - accepts incoming clients and disconnects them.  <a href="#gad3a65816f2a41268758c569a7a368ff1">More...</a><br /></td></tr>
-<tr class="separator:gad3a65816f2a41268758c569a7a368ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf8253ffec1871584621b3dc838055d87"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gaf8253ffec1871584621b3dc838055d87">server_socket_open</a> (void *priv)</td></tr>
-<tr class="memdesc:gaf8253ffec1871584621b3dc838055d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open TCPIP socket for sender module.  <a href="#gaf8253ffec1871584621b3dc838055d87">More...</a><br /></td></tr>
+<tr class="memdesc:gaf8253ffec1871584621b3dc838055d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open TLS socket for sender module.  <a href="#gaf8253ffec1871584621b3dc838055d87">More...</a><br /></td></tr>
 <tr class="separator:gaf8253ffec1871584621b3dc838055d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga5ea7505df2ceafb70ae88cc665e338bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga5ea7505df2ceafb70ae88cc665e338bd">&#9670;&nbsp;</a></span>tls_SENDER_STATE_STR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define tls_SENDER_STATE_STR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">st</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(st == <a class="code" href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293baf74634242735711b55d346fb794d30ee">TLSCURRENT_IDLE</a> ? <span class="stringliteral">&quot;TLSCURRENT_IDLE&quot;</span>: \</div><div class="line">(st == <a class="code" href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293ba695cc100ed93ce8f84f3d4107a8f3f94">TLSCURRENT_HEAD</a>     ? <span class="stringliteral">&quot;TLSCURRENT_HEAD&quot;</span>: \</div><div class="line">(st == <a class="code" href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293bafee620b20fc21b99fc1553a73b18532e">TLSCURRENT_PAYLOAD</a>  ? <span class="stringliteral">&quot;TLSCURRENT_PAYLOAD&quot;</span>: \</div><div class="line">(st == <a class="code" href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293ba1adf98c4061d98e9152a2e9fc41b5be8">TLSCURRENT_COMPLETE</a> ? <span class="stringliteral">&quot;TLSCURRENT_COMPLETE&quot;</span>: \</div><div class="line">(<span class="stringliteral">&quot;BACKUP_BUFFER&quot;</span>)))))</div><div class="ttc" id="group__tls__sender_html_gga31e27a4e78b29949b7edc71d7d73293baf74634242735711b55d346fb794d30ee"><div class="ttname"><a href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293baf74634242735711b55d346fb794d30ee">TLSCURRENT_IDLE</a></div><div class="ttdef"><b>Definition:</b> <a href="ifc__tls__internal_8h_source.html#l00071">ifc_tls_internal.h:71</a></div></div>
-<div class="ttc" id="group__tls__sender_html_gga31e27a4e78b29949b7edc71d7d73293bafee620b20fc21b99fc1553a73b18532e"><div class="ttname"><a href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293bafee620b20fc21b99fc1553a73b18532e">TLSCURRENT_PAYLOAD</a></div><div class="ttdef"><b>Definition:</b> <a href="ifc__tls__internal_8h_source.html#l00073">ifc_tls_internal.h:73</a></div></div>
-<div class="ttc" id="group__tls__sender_html_gga31e27a4e78b29949b7edc71d7d73293ba1adf98c4061d98e9152a2e9fc41b5be8"><div class="ttname"><a href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293ba1adf98c4061d98e9152a2e9fc41b5be8">TLSCURRENT_COMPLETE</a></div><div class="ttdef"><b>Definition:</b> <a href="ifc__tls__internal_8h_source.html#l00074">ifc_tls_internal.h:74</a></div></div>
-<div class="ttc" id="group__tls__sender_html_gga31e27a4e78b29949b7edc71d7d73293ba695cc100ed93ce8f84f3d4107a8f3f94"><div class="ttname"><a href="group__tls__sender.html#gga31e27a4e78b29949b7edc71d7d73293ba695cc100ed93ce8f84f3d4107a8f3f94">TLSCURRENT_HEAD</a></div><div class="ttdef"><b>Definition:</b> <a href="ifc__tls__internal_8h_source.html#l00072">ifc_tls_internal.h:72</a></div></div>
-</div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="ifc__tls__internal_8h_source.html#l00136">136</a> of file <a class="el" href="ifc__tls__internal_8h_source.html">ifc_tls_internal.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ga07cc54970619735031e328a849dbbc83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga07cc54970619735031e328a849dbbc83">&#9670;&nbsp;</a></span>tls_sender_private_t</h2>
@@ -202,73 +161,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Structure for TLS IFC private information. </p>
+
+</div>
+</div>
+<a id="gab81355a0ad8e318125a88642ecd3544a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab81355a0ad8e318125a88642ecd3544a">&#9670;&nbsp;</a></span>tlsclient_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structtlsclient__s.html">tlsclient_s</a>  <a class="el" href="group__tls__sender.html#gab81355a0ad8e318125a88642ecd3544a">tlsclient_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Structure for TLS IFC client information. </p>
-
-</div>
-</div>
-<a id="gacae6ab8d041be745ba0c3c5934fad13b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacae6ab8d041be745ba0c3c5934fad13b">&#9670;&nbsp;</a></span>tls_sender_result_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="group__tls__sender.html#gab4c9969dd6b6362d01804745fdbbcf55">tls_sender_result</a>  <a class="el" href="group__tls__sender.html#gacae6ab8d041be745ba0c3c5934fad13b">tls_sender_result_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="gab4c9969dd6b6362d01804745fdbbcf55"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab4c9969dd6b6362d01804745fdbbcf55">&#9670;&nbsp;</a></span>tls_sender_result</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__tls__sender.html#gab4c9969dd6b6362d01804745fdbbcf55">tls_sender_result</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggab4c9969dd6b6362d01804745fdbbcf55ad8b4bc2563bd00e53ea036d7cff87ed6"></a>EVERYBODY_PASSED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ggab4c9969dd6b6362d01804745fdbbcf55ae55cf1716ad32d02c23e5bfe0d3e0bee"></a>EVERYBODY_TIMEDOUT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ggab4c9969dd6b6362d01804745fdbbcf55a25e04f87fe3a613f0f16d41e7d402e8f"></a>SOMEBODY_TIMEDOUT&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01225">1225</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
-
-</div>
-</div>
-<a id="ga31e27a4e78b29949b7edc71d7d73293b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga31e27a4e78b29949b7edc71d7d73293b">&#9670;&nbsp;</a></span>tlsclient_send_state</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__tls__sender.html#ga31e27a4e78b29949b7edc71d7d73293b">tlsclient_send_state</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Structure for tls client send state. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga31e27a4e78b29949b7edc71d7d73293baf74634242735711b55d346fb794d30ee"></a>TLSCURRENT_IDLE&#160;</td><td class="fielddoc"><p>waiting for a message in current buffer </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga31e27a4e78b29949b7edc71d7d73293ba695cc100ed93ce8f84f3d4107a8f3f94"></a>TLSCURRENT_HEAD&#160;</td><td class="fielddoc"><p>timeout in header </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga31e27a4e78b29949b7edc71d7d73293bafee620b20fc21b99fc1553a73b18532e"></a>TLSCURRENT_PAYLOAD&#160;</td><td class="fielddoc"><p>timeout in payload </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga31e27a4e78b29949b7edc71d7d73293ba1adf98c4061d98e9152a2e9fc41b5be8"></a>TLSCURRENT_COMPLETE&#160;</td><td class="fielddoc"><p>message sent </p>
-</td></tr>
-<tr><td class="fieldname"><a id="gga31e27a4e78b29949b7edc71d7d73293ba44cce9416d55afdc613a507346c9609c"></a>TLSBACKUP_BUFFER&#160;</td><td class="fielddoc"><p>timeout in backup buffer </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tls__internal_8h_source.html#l00070">70</a> of file <a class="el" href="ifc__tls__internal_8h_source.html">ifc_tls_internal.h</a>.</p>
 
 </div>
 </div>
@@ -297,47 +206,16 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Function for server thread - accepts incoming clients and disconnects them. </p>
+<p>This function runs in a separate thread and handles new client's connection requests. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>tls_sender_private_t structure (private data) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Pointer to interface's private data structure. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>NULL </dd></dl>
-<p>Verifying SSL certificate of client. <br />
- Output interface negotiation </p>
+<p>Verifying SSL certificate of client. </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01914">1914</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
-
-</div>
-</div>
-<a id="ga566ad038fc3be7b93c2a4905acd64402"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga566ad038fc3be7b93c2a4905acd64402">&#9670;&nbsp;</a></span>check_connected_clients()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static char check_connected_clients </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *&#160;</td>
-          <td class="paramname"><em>config</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Check if any client is connected. </p><dl class="section return"><dt>Returns</dt><dd>non-zero if there is a connected client </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01214">1214</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01200">1200</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
@@ -391,12 +269,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success (TRAP_E_OK) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01720">1720</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01883">1883</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
-<a id="gaaa1efcac065550e471b1599f83859f65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaa1efcac065550e471b1599f83859f65">&#9670;&nbsp;</a></span>send_all_data()</h2>
+<a id="ga10574da0c956724741173a3fe5c8eea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga10574da0c956724741173a3fe5c8eea3">&#9670;&nbsp;</a></span>disconnect_client()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,79 +283,10 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int send_all_data </td>
+          <td class="memname">static void disconnect_client </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct <a class="el" href="structtlsclient__s.html">tlsclient_s</a> *&#160;</td>
-          <td class="paramname"><em>cl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void **&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>block</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Try to send data block at once. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>private data </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">cl</td><td>pointer to client structure </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">data</td><td>pointer to beginning of data </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">size</td><td>size of data to send and the rest unsent size of data </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">block</td><td>1 if blocking, 0 if non-blocking </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK, TRAP_E_TIMEOUT, TRAP_E_TERMINATED, TRAP_E_IO_ERROR </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01157">1157</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
-
-</div>
-</div>
-<a id="ga0c3cddbd39a1557ed54b008262883187"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga0c3cddbd39a1557ed54b008262883187">&#9670;&nbsp;</a></span>server_disconnected_client()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void server_disconnected_client </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
+          <td class="paramname"><em>priv</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -493,12 +302,193 @@ Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>This function is called when a client was/is being disconnected. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">priv</td><td>Pointer to interface's private data structure. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cl_id</td><td>Index of the client in 'clients' array. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01139">1139</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+
+</div>
+</div>
+<a id="ga329b6a3a0d0527736d44acfafd2be576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga329b6a3a0d0527736d44acfafd2be576">&#9670;&nbsp;</a></span>finish_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void finish_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *&#160;</td>
+          <td class="paramname"><em>priv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="ifc__socket__common_8h.html#a9aa12143b2c71bd60b9418ee7f4d3bb6">buffer_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write buffer size to its header and shift active index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">priv</td><td>Pointer to output interface private structure. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>Pointer to the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01334">1334</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+
+</div>
+</div>
+<a id="ga83472c2cd46eac526175b30d48495135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83472c2cd46eac526175b30d48495135">&#9670;&nbsp;</a></span>get_cur_timestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t get_cur_timestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Return current time in microseconds.</p>
+<p>This is used to get current timestamp in <a class="el" href="group__tls__sender.html#ga67c0673f9a702036f37933840891192a" title="Store message into buffer. ">tls_sender_send()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>current timestamp </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01186">1186</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+
+</div>
+</div>
+<a id="ga83aa590c182c7739d18df9f42fd90944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83aa590c182c7739d18df9f42fd90944">&#9670;&nbsp;</a></span>send_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int send_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *&#160;</td>
+          <td class="paramname"><em>priv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__tls__sender.html#gab81355a0ad8e318125a88642ecd3544a">tlsclient_t</a> *&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>cl_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Send data to client from his assigned buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">priv</td><td>Pointer to iterface's private data structure. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>Pointer to the client's structure. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cl_id</td><td>Client's index in the 'clients' array.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK successfully sent. </dd>
+<dd>
+TRAP_E_TERMINATED TRAP was terminated. </dd>
+<dd>
+TRAP_E_IO_ERROR send failed although TRAP was not terminated. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01385">1385</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+
+</div>
+</div>
+<a id="ga029de4ad961a1d3d89a52cbc5e3a10a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga029de4ad961a1d3d89a52cbc5e3a10a0">&#9670;&nbsp;</a></span>sending_thread_func()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* sending_thread_func </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>priv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01134">1134</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p>This function runs in a separate thread. It handles sending data to connected clients for TLS interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">priv</td><td>pointer to interface private data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01434">1434</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
@@ -526,7 +516,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Open TCPIP socket for sender module. </p>
+<p>Open TLS socket for sender module. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">priv</td><td>tls_sender_private_t structure (private data) </td></tr>
@@ -535,7 +525,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success (TRAP_E_OK), TRAP_E_IO_ERROR on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l02042">2042</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l02091">2091</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
@@ -555,55 +545,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01695">1695</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
-
-</div>
-</div>
-<a id="ga39f0b37262eb05f7de8e2bfba0209679"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga39f0b37262eb05f7de8e2bfba0209679">&#9670;&nbsp;</a></span>tls_sender_conn_phase()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static int tls_sender_conn_phase </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *&#160;</td>
-          <td class="paramname"><em>config</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct timespec *&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check if we have connected clients and wait for them. </p>
-<p>The function is blocking or non-blocking. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">config</td><td>private data </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>pointer to timeout for sem_timedwait(), NULL when blocking </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK - we have clients, TRAP_E_TIMEOUT - we don't have clients, TRAP_E_TERMINATED - terminating </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01239">1239</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01858">1858</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
@@ -647,7 +589,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01592">1592</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01809">1809</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
@@ -675,7 +617,35 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01528">1528</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01727">1727</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+
+</div>
+</div>
+<a id="ga7275190583a84764542fa8814ff0b4de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7275190583a84764542fa8814ff0b4de">&#9670;&nbsp;</a></span>tls_sender_flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tls_sender_flush </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>priv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Force flush of active buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">priv</td><td>pointer to interface private data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01358">1358</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
@@ -695,12 +665,42 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01579">1579</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01771">1771</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
-<a id="ga3e14ac1fbf599c3ecbca6aee4b6ed9b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3e14ac1fbf599c3ecbca6aee4b6ed9b5">&#9670;&nbsp;</a></span>tls_sender_send()</h2>
+<a id="ga523e71d675979d48e01a634ef54d652d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga523e71d675979d48e01a634ef54d652d">&#9670;&nbsp;</a></span>tls_sender_get_client_stats_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t tls_sender_get_client_stats_json </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>priv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json_t *&#160;</td>
+          <td class="paramname"><em>client_stats_arr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01782">1782</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+
+</div>
+</div>
+<a id="ga67c0673f9a702036f37933840891192a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga67c0673f9a702036f37933840891192a">&#9670;&nbsp;</a></span>tls_sender_send()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -720,7 +720,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
@@ -737,25 +737,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Send data to all connected clients. </p>
-<p>All clients are in 'current' buffer or in 'backup' buffer. All clients get messages from current buffer at first.</p><ul>
-<li>When all buffer is successfully sent to all clients in 'current' buffer, everything is alright.</li>
-<li>When everybody fails due to timeout, everything is alright, everybody stays in 'current' buffer.</li>
-<li>When somebody fails and somebody is successful, failing clients are moved into 'backup' buffer and they have chance to receive the rest of message later. We disconnect all clients that were in 'backup' buffer before moving new ones from 'current' buffer.</li>
-<li>All successful clients from 'backup' buffer are moved back into 'current' buffer.</li>
-</ul>
+<p>Store message into buffer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">priv</td><td>pointer to module private data </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>pointer to data to send </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>size of data to send </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>timeout in microseconds </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>pointer to data to write </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>size of data to write </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>maximum time spent waiting for the message to be stored [microseconds]</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success (TRAP_E_OK), TRAP_E_BAD_FPARAMS if sender was not properly initialized, TRAP_E_TERMINATED if interface was terminated. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK Success. </dd>
+<dd>
+TRAP_E_TIMEOUT Message was not stored into buffer and the attempt should be repeated. </dd>
+<dd>
+TRAP_E_TERMINATED Libtrap was terminated during the process. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01289">1289</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01600">1600</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
@@ -783,18 +781,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01510">1510</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01697">1697</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>
-<a id="ga6ad388c97493a90ff558f27a5dddf7e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6ad388c97493a90ff558f27a5dddf7e7">&#9670;&nbsp;</a></span>tlsserver_disconnect_all_clients()</h2>
+<a id="ga3f5aa45f5c8641f9fd83159208d62647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f5aa45f5c8641f9fd83159208d62647">&#9670;&nbsp;</a></span>tls_server_disconnect_all_clients()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void tlsserver_disconnect_all_clients </td>
+          <td class="memname">void tls_server_disconnect_all_clients </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>priv</em></td><td>)</td>
@@ -811,7 +809,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01671">1671</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l01167">1167</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
 </div>
 </div>

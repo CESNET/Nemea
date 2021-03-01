@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UniRec
-   &#160;<span id="projectnumber">2.3.0</span>
+   &#160;<span id="projectnumber">2.9.3</span>
    </div>
   </td>
  </tr>
@@ -81,7 +81,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="macaddr_8h_source.html">macaddr.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ur__time_8h_source.html">ur_time.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="links_8h_source.html">links.h</a>&quot;</code><br />
-<code>#include &quot;ur_values.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="ur__values_8h_source.html">ur_values.h</a>&quot;</code><br />
 <code>#include &lt;libtrap/trap.h&gt;</code><br />
 </div>
 <p><a href="unirec_8h_source.html">Go to the source code of this file.</a></p>
@@ -123,6 +123,12 @@ Macros</h2></td></tr>
 <tr class="memitem:ab0c059e36cea5fa00b0180248543a123"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8h.html#ab0c059e36cea5fa00b0180248543a123">UR_FIELDS</a>(...)</td></tr>
 <tr class="memdesc:ab0c059e36cea5fa00b0180248543a123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of UniRec fields.  <a href="#ab0c059e36cea5fa00b0180248543a123">More...</a><br /></td></tr>
 <tr class="separator:ab0c059e36cea5fa00b0180248543a123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a243a2fc72cac677ccc100e8a853b965a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8h.html#a243a2fc72cac677ccc100e8a853b965a">UR_ARRAY_DELIMITER</a>&#160;&#160;&#160;' '</td></tr>
+<tr class="memdesc:a243a2fc72cac677ccc100e8a853b965a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delimiter of array elements in string.  <a href="#a243a2fc72cac677ccc100e8a853b965a">More...</a><br /></td></tr>
+<tr class="separator:a243a2fc72cac677ccc100e8a853b965a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ed30dfa27fa7805e7331d11b6c32e06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8h.html#a6ed30dfa27fa7805e7331d11b6c32e06">UR_ARRAY_ALLOC</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:a6ed30dfa27fa7805e7331d11b6c32e06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default alloc size increment for ur_set_array_from_string.  <a href="#a6ed30dfa27fa7805e7331d11b6c32e06">More...</a><br /></td></tr>
+<tr class="separator:a6ed30dfa27fa7805e7331d11b6c32e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a193dc30952d6b8be7caeba1e6e5f2671"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8h.html#a193dc30952d6b8be7caeba1e6e5f2671">UR_ITER_BEGIN</a>&#160;&#160;&#160;(-1)</td></tr>
 <tr class="memdesc:a193dc30952d6b8be7caeba1e6e5f2671"><td class="mdescLeft">&#160;</td><td class="mdescRight">First value in iterating through the fields.  <a href="#a193dc30952d6b8be7caeba1e6e5f2671">More...</a><br /></td></tr>
 <tr class="separator:a193dc30952d6b8be7caeba1e6e5f2671"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,7 +171,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a1a0440dd1b14a93428a69a10581fe8b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8h.html#a1a0440dd1b14a93428a69a10581fe8b9">UR_OK</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:a1a0440dd1b14a93428a69a10581fe8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">No problem.  <a href="#a1a0440dd1b14a93428a69a10581fe8b9">More...</a><br /></td></tr>
 <tr class="separator:a1a0440dd1b14a93428a69a10581fe8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d12294a70c27484f1f273d14c2231a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8h.html#a9d12294a70c27484f1f273d14c2231a1">UR_COUNT_OF_TYPES</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memitem:a9d12294a70c27484f1f273d14c2231a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8h.html#a9d12294a70c27484f1f273d14c2231a1">UR_COUNT_OF_TYPES</a>&#160;&#160;&#160;29</td></tr>
 <tr class="memdesc:a9d12294a70c27484f1f273d14c2231a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constants for all possible types of UniRec fields.  <a href="#a9d12294a70c27484f1f273d14c2231a1">More...</a><br /></td></tr>
 <tr class="separator:a9d12294a70c27484f1f273d14c2231a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae7a20329dfe3f847174cf076d5054cac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__libtraphelpers.html#gae7a20329dfe3f847174cf076d5054cac">TRAP_RECEIVE</a>(ifc_num,  data,  data_size,  tmplt)&#160;&#160;&#160;<a class="el" href="group__libtraphelpers.html#gac3f8ae5f2495115a5b4c04d02646c7b3">TRAP_CTX_RECEIVE</a>(trap_get_global_ctx(), ifc_num, data, data_size, tmplt);</td></tr>
@@ -178,7 +184,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga7c3f3afcdfe5ad24f148ec9231b6e799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get string of a template Get names and sizes of fields separated by comma. Return string has to be freed by user.  <a href="group__urtemplate.html#ga7c3f3afcdfe5ad24f148ec9231b6e799">More...</a><br /></td></tr>
 <tr class="separator:ga7c3f3afcdfe5ad24f148ec9231b6e799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa88f0c45cc9901eabe9baabb88dc1d68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gaa88f0c45cc9901eabe9baabb88dc1d68">ur_size_of</a>(type)&#160;&#160;&#160;<a class="el" href="group__urtemplate.html#ga81f8d7af996a01f4b6e4ac086d483eb0">ur_field_type_size</a>[type]</td></tr>
-<tr class="memdesc:gaa88f0c45cc9901eabe9baabb88dc1d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get size of UniRec type Get size of fixed-length UniRec type. For variable-length type return -1.  <a href="group__urtemplate.html#gaa88f0c45cc9901eabe9baabb88dc1d68">More...</a><br /></td></tr>
+<tr class="memdesc:gaa88f0c45cc9901eabe9baabb88dc1d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get size of UniRec type Get size of fixed-length UniRec type. For variable-length type return value &lt; 0.  <a href="group__urtemplate.html#gaa88f0c45cc9901eabe9baabb88dc1d68">More...</a><br /></td></tr>
 <tr class="separator:gaa88f0c45cc9901eabe9baabb88dc1d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad04c00ef18b154d71d41826d30ceec08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gad04c00ef18b154d71d41826d30ceec08">ur_get_name</a>(field_id)&#160;&#160;&#160;ur_field_specs.ur_field_names[field_id]</td></tr>
 <tr class="memdesc:gad04c00ef18b154d71d41826d30ceec08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name of UniRec field Get name of any UniRec defined field.  <a href="group__urtemplate.html#gad04c00ef18b154d71d41826d30ceec08">More...</a><br /></td></tr>
@@ -187,7 +193,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:gae46ff3befebabc8c83372030a98df592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get type of UniRec field Get type of any UniRec defined field.  <a href="group__urtemplate.html#gae46ff3befebabc8c83372030a98df592">More...</a><br /></td></tr>
 <tr class="separator:gae46ff3befebabc8c83372030a98df592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga770ecf70233ae337f3aa4af9540a11ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga770ecf70233ae337f3aa4af9540a11ba">ur_get_size</a>(field_id)&#160;&#160;&#160;ur_field_specs.ur_field_sizes[field_id]</td></tr>
-<tr class="memdesc:ga770ecf70233ae337f3aa4af9540a11ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get size of UniRec field Get size of a fixed-length UniRec field. When variable-length field is passed, return -1. To get real length of a variable-length field use ur_get_var_len.  <a href="group__urtemplate.html#ga770ecf70233ae337f3aa4af9540a11ba">More...</a><br /></td></tr>
+<tr class="memdesc:ga770ecf70233ae337f3aa4af9540a11ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get size of UniRec field Get size of a fixed-length UniRec field. When variable-length field is passed, return value &lt; 0. To get real length of a variable-length field use ur_get_var_len.  <a href="group__urtemplate.html#ga770ecf70233ae337f3aa4af9540a11ba">More...</a><br /></td></tr>
 <tr class="separator:ga770ecf70233ae337f3aa4af9540a11ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabb1a3fb3e2a05cc0fc77bb79b0da06f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gabb1a3fb3e2a05cc0fc77bb79b0da06f3">ur_get</a>(tmplt,  data,  field_id)&#160;&#160;&#160;(*(field_id ## _T*)((char *)(data) + (tmplt)-&gt;offset[field_id]))</td></tr>
 <tr class="memdesc:gabb1a3fb3e2a05cc0fc77bb79b0da06f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get value of UniRec field Get value of a fixed-length UniRec field. For variable-length fields, use ur_get_ptr or ur_get_ptr_by_id.  <a href="group__urtemplate.html#gabb1a3fb3e2a05cc0fc77bb79b0da06f3">More...</a><br /></td></tr>
@@ -219,16 +225,42 @@ Macros</h2></td></tr>
 <tr class="memitem:ga5aec2178fd7977aad6ec7d3bc409286f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga5aec2178fd7977aad6ec7d3bc409286f">ur_set_string</a>(tmplt,  <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>,  field_id,  str)&#160;&#160;&#160;<a class="el" href="group__urtemplate.html#gadc58a81c9f7eb5a1ec3ba36d97612068">ur_set_var</a>(tmplt, <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, field_id, str, strlen(str))</td></tr>
 <tr class="memdesc:ga5aec2178fd7977aad6ec7d3bc409286f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set variable-length field to given string. Set contents of a variable-length field in the record. Field has to be part of the record. It copies string terminated with \0 and safely moves other variable-length records.  <a href="group__urtemplate.html#ga5aec2178fd7977aad6ec7d3bc409286f">More...</a><br /></td></tr>
 <tr class="separator:ga5aec2178fd7977aad6ec7d3bc409286f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6552e5aeff1fb9a56f38088d5aad84a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga6552e5aeff1fb9a56f38088d5aad84a1">ur_is_array</a>(field_id)&#160;&#160;&#160;(<a class="el" href="group__urtemplate.html#ga81f8d7af996a01f4b6e4ac086d483eb0">ur_field_type_size</a>[<a class="el" href="group__urtemplate.html#gae46ff3befebabc8c83372030a98df592">ur_get_type</a>(field_id)] &lt; 0 ? 1 : 0)</td></tr>
+<tr class="separator:ga6552e5aeff1fb9a56f38088d5aad84a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8cca7b8b7ad644c7e09078a694f701c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gac8cca7b8b7ad644c7e09078a694f701c">ur_array_get_elem_size</a>(field_id)&#160;&#160;&#160;(<a class="el" href="group__urtemplate.html#ga81f8d7af996a01f4b6e4ac086d483eb0">ur_field_type_size</a>[<a class="el" href="group__urtemplate.html#gae46ff3befebabc8c83372030a98df592">ur_get_type</a>(field_id)] &lt; 0 ? -<a class="el" href="group__urtemplate.html#ga81f8d7af996a01f4b6e4ac086d483eb0">ur_field_type_size</a>[<a class="el" href="group__urtemplate.html#gae46ff3befebabc8c83372030a98df592">ur_get_type</a>(field_id)] : <a class="el" href="group__urtemplate.html#ga81f8d7af996a01f4b6e4ac086d483eb0">ur_field_type_size</a>[<a class="el" href="group__urtemplate.html#gae46ff3befebabc8c83372030a98df592">ur_get_type</a>(field_id)])</td></tr>
+<tr class="memdesc:gac8cca7b8b7ad644c7e09078a694f701c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get size of a single element of UniRec field.  <a href="group__urtemplate.html#gac8cca7b8b7ad644c7e09078a694f701c">More...</a><br /></td></tr>
+<tr class="separator:gac8cca7b8b7ad644c7e09078a694f701c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5353703ff967c462766f4e55b63e90b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gac5353703ff967c462766f4e55b63e90b">ur_array_get_elem_cnt</a>(tmplt,  <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>,  field_id)&#160;&#160;&#160;(<a class="el" href="group__urtemplate.html#gaa95364028416eca5e5741dee2533e35a">ur_get_var_len</a>(tmplt, <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, field_id) / <a class="el" href="group__urtemplate.html#gac8cca7b8b7ad644c7e09078a694f701c">ur_array_get_elem_size</a>(field_id))</td></tr>
+<tr class="memdesc:gac5353703ff967c462766f4e55b63e90b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of elements stored in an UniRec array.  <a href="group__urtemplate.html#gac5353703ff967c462766f4e55b63e90b">More...</a><br /></td></tr>
+<tr class="separator:gac5353703ff967c462766f4e55b63e90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga79d29f865b6f6bcdac7a186f6919f071"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga79d29f865b6f6bcdac7a186f6919f071">ur_array_get_elem_type</a>(field_id)&#160;&#160;&#160;<a class="el" href="group__urtemplate.html#gab50744832dee040515e0723ac30c85b9">ur_field_array_elem_type</a>[<a class="el" href="group__urtemplate.html#gae46ff3befebabc8c83372030a98df592">ur_get_type</a>(field_id)]</td></tr>
+<tr class="memdesc:ga79d29f865b6f6bcdac7a186f6919f071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get type of an element stored in an UniRec array.  <a href="group__urtemplate.html#ga79d29f865b6f6bcdac7a186f6919f071">More...</a><br /></td></tr>
+<tr class="separator:ga79d29f865b6f6bcdac7a186f6919f071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3026242086e13048c784f8c1c0af8295"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga3026242086e13048c784f8c1c0af8295">ur_array_set</a>(tmplt,  <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>,  field_id,  index,  element)</td></tr>
+<tr class="memdesc:ga3026242086e13048c784f8c1c0af8295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set element to array at given index. Automatically resizes array when index is out of array bounds. Set contents of a variable-length field in the record. Field has to be part of the record.  <a href="group__urtemplate.html#ga3026242086e13048c784f8c1c0af8295">More...</a><br /></td></tr>
+<tr class="separator:ga3026242086e13048c784f8c1c0af8295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e639638c4136863ae875b0622039c95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga4e639638c4136863ae875b0622039c95">ur_array_append</a>(tmplt,  <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>,  field_id,  element)</td></tr>
+<tr class="memdesc:ga4e639638c4136863ae875b0622039c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set element to array at last position. Automatically resizes array.  <a href="group__urtemplate.html#ga4e639638c4136863ae875b0622039c95">More...</a><br /></td></tr>
+<tr class="separator:ga4e639638c4136863ae875b0622039c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba7a2278e2f8ee60048d0188e04acbdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gaba7a2278e2f8ee60048d0188e04acbdb">ur_array_clear</a>(tmplt,  <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>,  field_id)&#160;&#160;&#160;<a class="el" href="group__urtemplate.html#ga61e624b3e32c5c6e79dcab1ebcc6d31f">ur_array_resize</a>(tmplt, <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, field_id, 0)</td></tr>
+<tr class="memdesc:gaba7a2278e2f8ee60048d0188e04acbdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear contents of an UniRec array. Array is resized to 0 elements.  <a href="group__urtemplate.html#gaba7a2278e2f8ee60048d0188e04acbdb">More...</a><br /></td></tr>
+<tr class="separator:gaba7a2278e2f8ee60048d0188e04acbdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga382ab2ea34097f2a55303ef8b953a3a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga382ab2ea34097f2a55303ef8b953a3a5">ur_array_get</a>(tmplt,  <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>,  field_id,  index)&#160;&#160;&#160;((field_id ## _T)((char *)(<a class="el" href="example__unirec_8c.html#a1be5c783827bbb7c21da30485dbf4d6f">ur_get_ptr_by_id</a>(tmplt, <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, field_id))))[index]</td></tr>
+<tr class="memdesc:ga382ab2ea34097f2a55303ef8b953a3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get element of an array field at given index.  <a href="group__urtemplate.html#ga382ab2ea34097f2a55303ef8b953a3a5">More...</a><br /></td></tr>
+<tr class="separator:ga382ab2ea34097f2a55303ef8b953a3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5dfdf2e69ec5498aee45a5f401154a10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga5dfdf2e69ec5498aee45a5f401154a10">ur_array_allocate</a>(tmplt,  <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>,  field_id,  elem_cnt)&#160;&#160;&#160;<a class="el" href="group__urtemplate.html#ga61e624b3e32c5c6e79dcab1ebcc6d31f">ur_array_resize</a>(tmplt, <a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, field_id, (elem_cnt) * <a class="el" href="group__urtemplate.html#gac8cca7b8b7ad644c7e09078a694f701c">ur_array_get_elem_size</a>(field_id))</td></tr>
+<tr class="memdesc:ga5dfdf2e69ec5498aee45a5f401154a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preallocates UniRec array field to have requested number of elements.  <a href="group__urtemplate.html#ga5dfdf2e69ec5498aee45a5f401154a10">More...</a><br /></td></tr>
+<tr class="separator:ga5dfdf2e69ec5498aee45a5f401154a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafd4879120b30f35f9753e2104eb55920"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gafd4879120b30f35f9753e2104eb55920">ur_is_present</a>(tmplt,  field_id)&#160;&#160;&#160;((tmplt)-&gt;offset_size &gt; (field_id) &amp;&amp; (tmplt)-&gt;offset[(field_id)] != <a class="el" href="unirec_8h.html#a82342fa356ae9d09be33db986f6d2df2">UR_INVALID_OFFSET</a>)</td></tr>
 <tr class="memdesc:gafd4879120b30f35f9753e2104eb55920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is given field present in given template? Return true (non-zero value) if given template contains field with given ID.  <a href="group__urtemplate.html#gafd4879120b30f35f9753e2104eb55920">More...</a><br /></td></tr>
 <tr class="separator:gafd4879120b30f35f9753e2104eb55920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga25036db976a342e9e321805601e3be4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga25036db976a342e9e321805601e3be4b">ur_is_varlen</a>(field_id)&#160;&#160;&#160;(ur_field_specs.ur_field_sizes[field_id] == -1)</td></tr>
+<tr class="memitem:ga25036db976a342e9e321805601e3be4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga25036db976a342e9e321805601e3be4b">ur_is_varlen</a>(field_id)&#160;&#160;&#160;(ur_field_specs.ur_field_sizes[field_id] &lt; 0)</td></tr>
 <tr class="memdesc:ga25036db976a342e9e321805601e3be4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is given field variable-length? Return true (non-zero value) if given ID refers to a field with variable length.  <a href="group__urtemplate.html#ga25036db976a342e9e321805601e3be4b">More...</a><br /></td></tr>
 <tr class="separator:ga25036db976a342e9e321805601e3be4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab57c3017aef297977968847da9e05911"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gab57c3017aef297977968847da9e05911">ur_is_dynamic</a>(field_id)&#160;&#160;&#160;<a class="el" href="group__urtemplate.html#ga25036db976a342e9e321805601e3be4b">ur_is_varlen</a>(field_id)</td></tr>
 <tr class="memdesc:gab57c3017aef297977968847da9e05911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alias for ur_is_varlen (for backwards compatibility only)  <a href="group__urtemplate.html#gab57c3017aef297977968847da9e05911">More...</a><br /></td></tr>
 <tr class="separator:gab57c3017aef297977968847da9e05911"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9943882334417879956e79261450cd06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga9943882334417879956e79261450cd06">ur_is_fixlen</a>(field_id)&#160;&#160;&#160;(ur_field_specs.ur_field_sizes[field_id] != -1)</td></tr>
+<tr class="memitem:ga9943882334417879956e79261450cd06"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga9943882334417879956e79261450cd06">ur_is_fixlen</a>(field_id)&#160;&#160;&#160;(ur_field_specs.ur_field_sizes[field_id] &gt;= 0)</td></tr>
 <tr class="memdesc:ga9943882334417879956e79261450cd06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is given field fixed-length? Return true (non-zero value) if given ID refers to a field with fixed length.  <a href="group__urtemplate.html#ga9943882334417879956e79261450cd06">More...</a><br /></td></tr>
 <tr class="separator:ga9943882334417879956e79261450cd06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa98993f5da922c40edc2c8adb8a949ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gaa98993f5da922c40edc2c8adb8a949ad">ur_is_static</a>(field_id)&#160;&#160;&#160;<a class="el" href="group__urtemplate.html#ga9943882334417879956e79261450cd06">ur_is_fixlen</a>(field_id)</td></tr>
@@ -297,7 +329,24 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a83881000b9637c4905af7a052238cb40">UR_TYPE_DOUBLE</a>, 
 <a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a69882977753a49d1458e07f809aeb6c9">UR_TYPE_IP</a>, 
 <a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030ae3546993ce8e00ca138c5c0f9c1a04bb">UR_TYPE_MAC</a>, 
-<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030ac5e66194d71459394d2eff516ce2c2d1">UR_TYPE_TIME</a>
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030ac5e66194d71459394d2eff516ce2c2d1">UR_TYPE_TIME</a>, 
+<br />
+&#160;&#160;<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a70a968786786d21a6a660a13fe3223fe">UR_TYPE_A_UINT8</a>, 
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a4df09d1f670ddf5d9c9dbcb673363644">UR_TYPE_A_INT8</a>, 
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a0b5171d1d7a246b38f54432225643c88">UR_TYPE_A_UINT16</a>, 
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a55a41f0046863f726ca928d4f1f0ff9b">UR_TYPE_A_INT16</a>, 
+<br />
+&#160;&#160;<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a0240abefd383c0b55f967dffbca5b120">UR_TYPE_A_UINT32</a>, 
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a29ab493b2740a556d98711af608dae7b">UR_TYPE_A_INT32</a>, 
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030aaf863c8abca426e263925a0c28f965ca">UR_TYPE_A_UINT64</a>, 
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a0bae68cb3e9261cd3701d4e4ae6e5b95">UR_TYPE_A_INT64</a>, 
+<br />
+&#160;&#160;<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030aa5ca4aa48c327c055fe123af7e378f0d">UR_TYPE_A_FLOAT</a>, 
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a0c1842f638c23e9c7a2bb0713e61c77d">UR_TYPE_A_DOUBLE</a>, 
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030a1e45c640bb5f4ca8076a0376966dc2fb">UR_TYPE_A_IP</a>, 
+<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030abba7da5eebad49147205de8d9728597d">UR_TYPE_A_MAC</a>, 
+<br />
+&#160;&#160;<a class="el" href="unirec_8h.html#a05c900af0773d6801f191b14f29c6030ad3bc3f2010aabdf48e1ecd2a37eec7f2">UR_TYPE_A_TIME</a>
 <br />
  }</td></tr>
 <tr class="separator:a05c900af0773d6801f191b14f29c6030"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,6 +364,9 @@ Functions</h2></td></tr>
 <tr class="separator:gabfbfcce0fe6729ceb692d09541336c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae511d9e52485818f2513fe5f2e1d564c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gae511d9e52485818f2513fe5f2e1d564c">ur_get_field_type_from_str</a> (const char *type)</td></tr>
 <tr class="separator:gae511d9e52485818f2513fe5f2e1d564c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75d85b3a23dbd6c4c82d21747d4506b0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga75d85b3a23dbd6c4c82d21747d4506b0">ur_array_append_get_ptr</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, void *<a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, int field_id)</td></tr>
+<tr class="memdesc:ga75d85b3a23dbd6c4c82d21747d4506b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate new element at the end of array and return its pointer.  <a href="group__urtemplate.html#ga75d85b3a23dbd6c4c82d21747d4506b0">More...</a><br /></td></tr>
+<tr class="separator:ga75d85b3a23dbd6c4c82d21747d4506b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga238d68dc4d1dc5b0369e907b0e2d9711"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga238d68dc4d1dc5b0369e907b0e2d9711">ur_init</a> (<a class="el" href="unirec_8h.html#structur__static__field__specs__t">ur_static_field_specs_t</a> field_specs_static)</td></tr>
 <tr class="memdesc:ga238d68dc4d1dc5b0369e907b0e2d9711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize UniRec structures Initialize UniRec structures. Function is called during defining first own field.  <a href="group__urtemplate.html#ga238d68dc4d1dc5b0369e907b0e2d9711">More...</a><br /></td></tr>
 <tr class="separator:ga238d68dc4d1dc5b0369e907b0e2d9711"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -381,6 +433,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gadc58a81c9f7eb5a1ec3ba36d97612068"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gadc58a81c9f7eb5a1ec3ba36d97612068">ur_set_var</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, void *<a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, int field_id, const void *val_ptr, int val_len)</td></tr>
 <tr class="memdesc:gadc58a81c9f7eb5a1ec3ba36d97612068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set content of variable-length UniRec field Copy given data into variable-length UniRec field, set its offset and length in a record and move data which are behind this field. For better performance use function ur_clear_varlen, before setting all variable fields in record.  <a href="group__urtemplate.html#gadc58a81c9f7eb5a1ec3ba36d97612068">More...</a><br /></td></tr>
 <tr class="separator:gadc58a81c9f7eb5a1ec3ba36d97612068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61e624b3e32c5c6e79dcab1ebcc6d31f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga61e624b3e32c5c6e79dcab1ebcc6d31f">ur_array_resize</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, void *<a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, int field_id, int len)</td></tr>
+<tr class="memdesc:ga61e624b3e32c5c6e79dcab1ebcc6d31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change length of a array field.  <a href="group__urtemplate.html#ga61e624b3e32c5c6e79dcab1ebcc6d31f">More...</a><br /></td></tr>
+<tr class="separator:ga61e624b3e32c5c6e79dcab1ebcc6d31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1a1a56a89c745a13823db8ef01fcb07b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga1a1a56a89c745a13823db8ef01fcb07b">ur_clear_varlen</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, void *<a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>)</td></tr>
 <tr class="memdesc:ga1a1a56a89c745a13823db8ef01fcb07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear variable-length part of a record. For better performance of setting content to variable-length fields, use this function before setting of all the variable-length fields. This function will clear all the variable-length fields, so they don't have to be moved in memory during setting of them.  <a href="group__urtemplate.html#ga1a1a56a89c745a13823db8ef01fcb07b">More...</a><br /></td></tr>
 <tr class="separator:ga1a1a56a89c745a13823db8ef01fcb07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -406,6 +461,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8877cbc958a4943aaf720154f8338ae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unirec_8h.html#a0d8bbc1307c342a3a83bc2f5193e5fdf">ur_iter_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga8877cbc958a4943aaf720154f8338ae3">ur_iter_fields_record_order</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, int index)</td></tr>
 <tr class="memdesc:ga8877cbc958a4943aaf720154f8338ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over fields of a template This function can be used to iterate over all fields of a given template. It returns n-th ID of a record specified by index. If the return value is UR_ITER_END. The index is higher than count of fields in the template. Example usage: int i = 0; while ((id = ur_iter_fields(&amp;tmplt, i++)) != UR_ITER_END) { ... } The order of fields is given by the order in the record.  <a href="group__urtemplate.html#ga8877cbc958a4943aaf720154f8338ae3">More...</a><br /></td></tr>
 <tr class="separator:ga8877cbc958a4943aaf720154f8338ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2f3f81ef535393f36ccf1ad49a4e510"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gae2f3f81ef535393f36ccf1ad49a4e510">ur_set_array_from_string</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmpl, void *data, <a class="el" href="unirec_8h.html#a17cba425af74e590b73d23d4e0fda44a">ur_field_id_t</a> f_id, const char *v)</td></tr>
+<tr class="memdesc:gae2f3f81ef535393f36ccf1ad49a4e510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set value of a UniRec array field.  <a href="group__urtemplate.html#gae2f3f81ef535393f36ccf1ad49a4e510">More...</a><br /></td></tr>
+<tr class="separator:gae2f3f81ef535393f36ccf1ad49a4e510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae60aa0708ffef7cadd5a1d7663eb8083"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gae60aa0708ffef7cadd5a1d7663eb8083">ur_set_from_string</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmpl, void *data, <a class="el" href="unirec_8h.html#a17cba425af74e590b73d23d4e0fda44a">ur_field_id_t</a> f_id, const char *v)</td></tr>
 <tr class="memdesc:gae60aa0708ffef7cadd5a1d7663eb8083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set value of a UniRec field.  <a href="group__urtemplate.html#gae60aa0708ffef7cadd5a1d7663eb8083">More...</a><br /></td></tr>
 <tr class="separator:gae60aa0708ffef7cadd5a1d7663eb8083"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -430,6 +488,9 @@ Variables</h2></td></tr>
 <tr class="memitem:ga2a84dc8eb5478757192b2df4004c148a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga2a84dc8eb5478757192b2df4004c148a">ur_field_type_str</a> []</td></tr>
 <tr class="memdesc:ga2a84dc8eb5478757192b2df4004c148a"><td class="mdescLeft">&#160;</td><td class="mdescRight">UniRec data types.  <a href="group__urtemplate.html#ga2a84dc8eb5478757192b2df4004c148a">More...</a><br /></td></tr>
 <tr class="separator:ga2a84dc8eb5478757192b2df4004c148a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab50744832dee040515e0723ac30c85b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gab50744832dee040515e0723ac30c85b9">ur_field_array_elem_type</a> []</td></tr>
+<tr class="memdesc:gab50744832dee040515e0723ac30c85b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">UniRec array element types.  <a href="group__urtemplate.html#gab50744832dee040515e0723ac30c85b9">More...</a><br /></td></tr>
+<tr class="separator:gab50744832dee040515e0723ac30c85b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8b963edd959e1d4bdd91d82807a384ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unirec_8h.html#structur__field__specs__t">ur_field_specs_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga8b963edd959e1d4bdd91d82807a384ba">ur_field_specs</a></td></tr>
 <tr class="memdesc:ga8b963edd959e1d4bdd91d82807a384ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure that lists UniRec field specifications such as names, types, id.  <a href="group__urtemplate.html#ga8b963edd959e1d4bdd91d82807a384ba">More...</a><br /></td></tr>
 <tr class="separator:ga8b963edd959e1d4bdd91d82807a384ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -459,7 +520,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
 </div><div class="memdoc">
 <div class="textblock"><p>Linked list for undefined field ids Linked list consisting of field ids, which are freed after operation undefine. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00126">126</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00143">143</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -491,7 +552,7 @@ Pointer to next item in the linked list. </td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>UniRec default field list It contains all fields which are specified statically in source code of a module. This structure is passed to <a class="el" href="group__urtemplate.html#ga238d68dc4d1dc5b0369e907b0e2d9711" title="Initialize UniRec structures Initialize UniRec structures. Function is called during defining first o...">ur_init()</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00135">135</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00152">152</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -535,7 +596,7 @@ Last specified ID. </td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>UniRec fields structure It contains all fields which are statically defined by UR_FIELDS(...) and run-time generated fields. This structure can be modified during run-time by generating new fields and erasing existing fields. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00147">147</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00164">164</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -604,7 +665,7 @@ linked list of free (undefined) IDs </td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>Sorting fields structure This structure is used to sort fields by their size and name. The structure is passed to the sorting algorithm. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00165">165</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00182">182</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -642,7 +703,7 @@ Size of a field. </td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>UniRec template. It contains a table mapping a field to its position in an UniRec record. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00174">174</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00191">191</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -714,6 +775,42 @@ Size of static part. </td></tr>
 
 </div>
 </div>
+<a id="a6ed30dfa27fa7805e7331d11b6c32e06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ed30dfa27fa7805e7331d11b6c32e06">&#9670;&nbsp;</a></span>UR_ARRAY_ALLOC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UR_ARRAY_ALLOC&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default alloc size increment for ur_set_array_from_string. </p>
+
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00073">73</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+
+</div>
+</div>
+<a id="a243a2fc72cac677ccc100e8a853b965a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243a2fc72cac677ccc100e8a853b965a">&#9670;&nbsp;</a></span>UR_ARRAY_DELIMITER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UR_ARRAY_DELIMITER&#160;&#160;&#160;' '</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Delimiter of array elements in string. </p>
+
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00072">72</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+
+</div>
+</div>
 <a id="a9d12294a70c27484f1f273d14c2231a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d12294a70c27484f1f273d14c2231a1">&#9670;&nbsp;</a></span>UR_COUNT_OF_TYPES</h2>
 
@@ -721,7 +818,7 @@ Size of static part. </td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define UR_COUNT_OF_TYPES&#160;&#160;&#160;16</td>
+          <td class="memname">#define UR_COUNT_OF_TYPES&#160;&#160;&#160;29</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -729,7 +826,7 @@ Size of static part. </td></tr>
 <p>Constants for all possible types of UniRec fields. </p>
 <p>Count of types of UniRec fields </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00092">92</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00094">94</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -795,7 +892,7 @@ Size of static part. </td></tr>
 
 <p>The field ID is not present in a template. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00083">83</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00085">85</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -813,7 +910,7 @@ Size of static part. </td></tr>
 
 <p>The given name is not present in a template. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00085">85</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00087">87</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -831,7 +928,7 @@ Size of static part. </td></tr>
 
 <p>The given parameter is wrong. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00082">82</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00084">84</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -849,7 +946,7 @@ Size of static part. </td></tr>
 
 <p>The type of a field is not defined. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00086">86</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00088">88</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -867,7 +964,7 @@ Size of static part. </td></tr>
 
 <p>Problem during allocating memory. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00087">87</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00089">89</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -885,7 +982,7 @@ Size of static part. </td></tr>
 
 <p>The type of a field is different. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00084">84</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00086">86</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -961,7 +1058,7 @@ Size of static part. </td></tr>
 
 <p>Indicator if the UniRec has been initialized by calling function ur_init. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00079">79</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00081">81</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -979,7 +1076,7 @@ Size of static part. </td></tr>
 
 <p>ID of invalid field. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00080">80</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00082">82</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -997,7 +1094,7 @@ Size of static part. </td></tr>
 
 <p>Default value of all offsets (value is not in the record) </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00076">76</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00078">78</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -1015,7 +1112,7 @@ Size of static part. </td></tr>
 
 <p>First value in iterating through the fields. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00073">73</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00075">75</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -1033,7 +1130,7 @@ Size of static part. </td></tr>
 
 <p>Last value in iterating through the fields. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00074">74</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00076">76</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -1051,7 +1148,7 @@ Size of static part. </td></tr>
 
 <p>Value of variable "first_dynamic" if no dynamic values are present. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00077">77</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00079">79</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -1069,7 +1166,7 @@ Size of static part. </td></tr>
 
 <p>No problem. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00088">88</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00090">90</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -1087,7 +1184,7 @@ Size of static part. </td></tr>
 
 <p>Indicator if the UniRec has not been initialized by calling function ur_init. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00078">78</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00080">80</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -1106,7 +1203,7 @@ Size of static part. </td></tr>
 
 <p>Type of UniRec field identifiers. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00119">119</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00136">136</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -1124,7 +1221,7 @@ Size of static part. </td></tr>
 
 <p>Type for identifying iteration id through all fields. </p>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00120">120</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00137">137</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -1173,9 +1270,35 @@ Size of static part. </td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030ac5e66194d71459394d2eff516ce2c2d1"></a>UR_TYPE_TIME&#160;</td><td class="fielddoc"><p>time (64b) </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030a70a968786786d21a6a660a13fe3223fe"></a>UR_TYPE_A_UINT8&#160;</td><td class="fielddoc"><p>unsigned int (8b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030a4df09d1f670ddf5d9c9dbcb673363644"></a>UR_TYPE_A_INT8&#160;</td><td class="fielddoc"><p>int (8b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030a0b5171d1d7a246b38f54432225643c88"></a>UR_TYPE_A_UINT16&#160;</td><td class="fielddoc"><p>unsigned int (16b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030a55a41f0046863f726ca928d4f1f0ff9b"></a>UR_TYPE_A_INT16&#160;</td><td class="fielddoc"><p>int (8b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030a0240abefd383c0b55f967dffbca5b120"></a>UR_TYPE_A_UINT32&#160;</td><td class="fielddoc"><p>unsigned int (32b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030a29ab493b2740a556d98711af608dae7b"></a>UR_TYPE_A_INT32&#160;</td><td class="fielddoc"><p>int (32b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030aaf863c8abca426e263925a0c28f965ca"></a>UR_TYPE_A_UINT64&#160;</td><td class="fielddoc"><p>unsigned int (64b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030a0bae68cb3e9261cd3701d4e4ae6e5b95"></a>UR_TYPE_A_INT64&#160;</td><td class="fielddoc"><p>int (64b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030aa5ca4aa48c327c055fe123af7e378f0d"></a>UR_TYPE_A_FLOAT&#160;</td><td class="fielddoc"><p>float (32b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030a0c1842f638c23e9c7a2bb0713e61c77d"></a>UR_TYPE_A_DOUBLE&#160;</td><td class="fielddoc"><p>double (64b) array </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030a1e45c640bb5f4ca8076a0376966dc2fb"></a>UR_TYPE_A_IP&#160;</td><td class="fielddoc"><p>IP address (128b) array. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030abba7da5eebad49147205de8d9728597d"></a>UR_TYPE_A_MAC&#160;</td><td class="fielddoc"><p>MAC address (48b) array. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a05c900af0773d6801f191b14f29c6030ad3bc3f2010aabdf48e1ecd2a37eec7f2"></a>UR_TYPE_A_TIME&#160;</td><td class="fielddoc"><p>time (64b) array </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00093">93</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00095">95</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>
@@ -1201,7 +1324,7 @@ Size of static part. </td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00112">112</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8h_source.html#l00129">129</a> of file <a class="el" href="unirec_8h_source.html">unirec.h</a>.</p>
 
 </div>
 </div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -73,18 +73,29 @@ Collaboration diagram for File_sender:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__file__sender.png" border="0" alt="" usemap="#group____file____sender"/>
 <map name="group____file____sender" id="group____file____sender">
-<area shape="rect" id="node1" href="group__file__ifc.html" title="file interface module" alt="" coords="5,5,163,32"/>
+<area shape="rect" id="node1" href="group__file__ifc.html" title="file interface module" alt="" coords="5,5,145,32"/>
 </map>
 </td></tr></table></center>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gae01cf73d1609f9e36dbe6e840668fefe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#gae01cf73d1609f9e36dbe6e840668fefe">file_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t size, int timeout)</td></tr>
-<tr class="memdesc:gae01cf73d1609f9e36dbe6e840668fefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to a file. Data to write are expected as a trap_buffer_header_t structure, thus actual length of data to be written is determined from trap_buffer_header_t-&gt;data_length trap_buffer_header_t-&gt;data_length is expected to be in network byte order (little endian)  <a href="#gae01cf73d1609f9e36dbe6e840668fefe">More...</a><br /></td></tr>
-<tr class="separator:gae01cf73d1609f9e36dbe6e840668fefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca49ec64aaa518a6e2e9c5396ccd3dc9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#gaca49ec64aaa518a6e2e9c5396ccd3dc9">file_write_buffer</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t size, int timeout)</td></tr>
+<tr class="memdesc:gaca49ec64aaa518a6e2e9c5396ccd3dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to a file. Data to write are expected as a trap_buffer_header_t structure, thus actual length of data to be written is determined from trap_buffer_header_t-&gt;data_length trap_buffer_header_t-&gt;data_length is expected to be in network byte order (little endian)  <a href="#gaca49ec64aaa518a6e2e9c5396ccd3dc9">More...</a><br /></td></tr>
+<tr class="separator:gaca49ec64aaa518a6e2e9c5396ccd3dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga584d20386ac54de01865ab04c1ec99df"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga584d20386ac54de01865ab04c1ec99df">finish_buffer</a> (<a class="el" href="ifc__file_8h.html#a6771f3504e314bf07a67292019daf0fc">file_buffer_t</a> *buffer)</td></tr>
+<tr class="separator:ga584d20386ac54de01865ab04c1ec99df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3570e854829adb6314a2589e10393f9f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga3570e854829adb6314a2589e10393f9f">insert_into_buffer</a> (<a class="el" href="ifc__file_8h.html#a6771f3504e314bf07a67292019daf0fc">file_buffer_t</a> *buffer, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size)</td></tr>
+<tr class="separator:ga3570e854829adb6314a2589e10393f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga159700c278c2b3bfdc40b0dbca3880d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga159700c278c2b3bfdc40b0dbca3880d6">file_flush</a> (void *priv)</td></tr>
+<tr class="separator:ga159700c278c2b3bfdc40b0dbca3880d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga919f85f1befced920f91f1c8e7cd4e69"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga919f85f1befced920f91f1c8e7cd4e69">file_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size, int timeout)</td></tr>
+<tr class="memdesc:ga919f85f1befced920f91f1c8e7cd4e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store message into buffer. Write buffer into file if full. If buffering is disabled, the message is sent to the output interface immediately.  <a href="#ga919f85f1befced920f91f1c8e7cd4e69">More...</a><br /></td></tr>
+<tr class="separator:ga919f85f1befced920f91f1c8e7cd4e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad8d2e1557a04cd5c6a2fd5c722ecaacd"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#gad8d2e1557a04cd5c6a2fd5c722ecaacd">file_get_client_count</a> (void *priv)</td></tr>
 <tr class="separator:gad8d2e1557a04cd5c6a2fd5c722ecaacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga372655b12fa8a43fcba5e0240306885b"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga372655b12fa8a43fcba5e0240306885b">file_get_client_stats_json</a> (void *priv, json_t *client_stats_arr)</td></tr>
+<tr class="separator:ga372655b12fa8a43fcba5e0240306885b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8884e86269fc6b140df7f8a2b1927ed2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga8884e86269fc6b140df7f8a2b1927ed2">file_send_ifc_get_id</a> (void *priv)</td></tr>
 <tr class="separator:ga8884e86269fc6b140df7f8a2b1927ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5c7c2366ebad27e5ff4e66322ed7ec73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga5c7c2366ebad27e5ff4e66322ed7ec73">create_file_send_ifc</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, const char *params, <a class="el" href="group__trap__ifc.html#ga67931b1db8d9f47c96534b924252b370">trap_output_ifc_t</a> *ifc, uint32_t idx)</td></tr>
@@ -143,7 +154,27 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success (TRAP_E_OK), TRAP_E_MEMORY, TRAP_E_BADPARAMS on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00668">668</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00765">765</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+
+</div>
+</div>
+<a id="ga159700c278c2b3bfdc40b0dbca3880d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga159700c278c2b3bfdc40b0dbca3880d6">&#9670;&nbsp;</a></span>file_flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void file_flush </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>priv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00655">655</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>
@@ -163,18 +194,134 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00647">647</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00738">738</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>
-<a id="gae01cf73d1609f9e36dbe6e840668fefe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae01cf73d1609f9e36dbe6e840668fefe">&#9670;&nbsp;</a></span>file_send()</h2>
+<a id="ga372655b12fa8a43fcba5e0240306885b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga372655b12fa8a43fcba5e0240306885b">&#9670;&nbsp;</a></span>file_get_client_stats_json()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int file_send </td>
+          <td class="memname">int8_t file_get_client_stats_json </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>priv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json_t *&#160;</td>
+          <td class="paramname"><em>client_stats_arr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00743">743</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+
+</div>
+</div>
+<a id="ga919f85f1befced920f91f1c8e7cd4e69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga919f85f1befced920f91f1c8e7cd4e69">&#9670;&nbsp;</a></span>file_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int file_send </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>priv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Store message into buffer. Write buffer into file if full. If buffering is disabled, the message is sent to the output interface immediately. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">priv</td><td>pointer to module private data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>pointer to data to write </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>size of data to write </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>NOT USED IN THIS INTERFACE</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK Success. </dd>
+<dd>
+TRAP_E_TIMEOUT Message was not stored into buffer and the attempt should be repeated. </dd>
+<dd>
+TRAP_E_TERMINATED Libtrap was terminated during the process. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00688">688</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+
+</div>
+</div>
+<a id="ga8884e86269fc6b140df7f8a2b1927ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8884e86269fc6b140df7f8a2b1927ed2">&#9670;&nbsp;</a></span>file_send_ifc_get_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* file_send_ifc_get_id </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>priv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00749">749</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+
+</div>
+</div>
+<a id="gaca49ec64aaa518a6e2e9c5396ccd3dc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca49ec64aaa518a6e2e9c5396ccd3dc9">&#9670;&nbsp;</a></span>file_write_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int file_write_buffer </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>priv</em>, </td>
@@ -215,29 +362,81 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>0 on success (TRAP_E_OK), TTRAP_E_IO_ERROR if error occurs during writing, TRAP_E_TERMINATED if interface was terminated. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success (TRAP_E_OK), TRAP_E_IO_ERROR if error occurs during writing, TRAP_E_TERMINATED if interface was terminated. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00569">569</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00564">564</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>
-<a id="ga8884e86269fc6b140df7f8a2b1927ed2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8884e86269fc6b140df7f8a2b1927ed2">&#9670;&nbsp;</a></span>file_send_ifc_get_id()</h2>
+<a id="ga584d20386ac54de01865ab04c1ec99df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga584d20386ac54de01865ab04c1ec99df">&#9670;&nbsp;</a></span>finish_buffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* file_send_ifc_get_id </td>
+          <td class="memname">static void finish_buffer </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>priv</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="ifc__file_8h.html#a6771f3504e314bf07a67292019daf0fc">file_buffer_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00652">652</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00640">640</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
+
+</div>
+</div>
+<a id="ga3570e854829adb6314a2589e10393f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3570e854829adb6314a2589e10393f9f">&#9670;&nbsp;</a></span>insert_into_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void insert_into_buffer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ifc__file_8h.html#a6771f3504e314bf07a67292019daf0fc">file_buffer_t</a> *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00647">647</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>

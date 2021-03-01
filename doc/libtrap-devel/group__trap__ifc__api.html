@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -73,7 +73,7 @@ Collaboration diagram for IFC API:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__trap__ifc__api.png" border="0" alt="" usemap="#group____trap____ifc____api"/>
 <map name="group____trap____ifc____api" id="group____trap____ifc____api">
-<area shape="rect" id="node2" href="group__trap__ifc.html" title="TRAP communication\l module interface" alt="" coords="5,5,165,47"/>
+<area shape="rect" id="node2" href="group__trap__ifc.html" title="TRAP communication\l module interface" alt="" coords="5,5,156,47"/>
 </map>
 </td></tr></table></center>
 </div>
@@ -82,8 +82,10 @@ Collaboration diagram for IFC API:</div>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga4df8e9b4c9b942e791128088c490bd58"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#ga4df8e9b4c9b942e791128088c490bd58">ifc_recv_func_t</a>) (void *p, void *d, uint32_t *s, int t)</td></tr>
 <tr class="separator:ga4df8e9b4c9b942e791128088c490bd58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae85ace25918982f8ff30c0ceaa6291f2"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#gae85ace25918982f8ff30c0ceaa6291f2">ifc_send_func_t</a>) (void *p, const void *d, uint32_t s, int t)</td></tr>
-<tr class="separator:gae85ace25918982f8ff30c0ceaa6291f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfcce0a5be5c71565e19f8605c607283"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#gabfcce0a5be5c71565e19f8605c607283">ifc_send_func_t</a>) (void *p, const void *d, uint16_t s, int t)</td></tr>
+<tr class="separator:gabfcce0a5be5c71565e19f8605c607283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c977395d33e33ab6fde6c50b8f25f7d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#ga7c977395d33e33ab6fde6c50b8f25f7d">ifc_flush_func_t</a>) (void *p)</td></tr>
+<tr class="separator:ga7c977395d33e33ab6fde6c50b8f25f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf5f4628c38e49b659827242e0c9dbac1"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#gaf5f4628c38e49b659827242e0c9dbac1">ifc_disconn_clients_func_t</a>) (void *p)</td></tr>
 <tr class="separator:gaf5f4628c38e49b659827242e0c9dbac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga135751b3a4b270e8681881877095ec21"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#ga135751b3a4b270e8681881877095ec21">ifc_terminate_func_t</a>) (void *p)</td></tr>
@@ -94,6 +96,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:gad789bf24bbd5e30da20fc11dc732c544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa49b0bc8ebc826ed9112a1cb228eeef1"><td class="memItemLeft" align="right" valign="top">typedef int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#gaa49b0bc8ebc826ed9112a1cb228eeef1">ifc_get_client_count_func_t</a>) (void *p)</td></tr>
 <tr class="separator:gaa49b0bc8ebc826ed9112a1cb228eeef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa32b9a8860575cb4e268d06d0937de22"><td class="memItemLeft" align="right" valign="top">typedef int8_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#gaa32b9a8860575cb4e268d06d0937de22">ifc_get_client_stats_json_func_t</a>) (void *p, json_t *client_stats_arr)</td></tr>
+<tr class="separator:gaa32b9a8860575cb4e268d06d0937de22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacb6c2dfcdb3afeeb6a61aa249ba2fcf6"><td class="memItemLeft" align="right" valign="top">typedef char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#gacb6c2dfcdb3afeeb6a61aa249ba2fcf6">ifc_get_id_func_t</a>) (void *priv)</td></tr>
 <tr class="separator:gacb6c2dfcdb3afeeb6a61aa249ba2fcf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3d55759655bbae5059f00e151eafb5ff"><td class="memItemLeft" align="right" valign="top">typedef uint8_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc__api.html#ga3d55759655bbae5059f00e151eafb5ff">ifc_is_conn_func_t</a>) (void *priv)</td></tr>
@@ -123,7 +127,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00131">131</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00137">137</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>
@@ -146,7 +150,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00121">121</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00127">127</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>
@@ -169,7 +173,30 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00107">107</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00113">113</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7c977395d33e33ab6fde6c50b8f25f7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c977395d33e33ab6fde6c50b8f25f7d">&#9670;&nbsp;</a></span>ifc_flush_func_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* ifc_flush_func_t) (void *p)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Force flush on interface</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>pointer to IFC's private memory allocated by constructor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00106">106</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>
@@ -193,7 +220,32 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of clients that are connected to this IFC </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00139">139</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00145">145</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa32b9a8860575cb4e268d06d0937de22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa32b9a8860575cb4e268d06d0937de22">&#9670;&nbsp;</a></span>ifc_get_client_stats_json_func_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int8_t(* ifc_get_client_stats_json_func_t) (void *p, json_t *client_stats_arr)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get json array with client statistics</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>pointer to IFC's private memory allocated by constructor </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">client_stats_arr</td><td>pointer to JSON array to be filled with client statistics </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 (TRUE) on success, otherwise 0 (FALSE) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00154">154</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>
@@ -217,7 +269,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>pointer to char (private memory of the ifc - do not free!). TCP and UNIXSOCKET ifces return port and name of socket, file ifc returns name of the file, GENERATOR and BLACKHOLE ifces return NULL. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00149">149</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00164">164</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>
@@ -241,7 +293,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 (TRUE) if connected, otherwise 0 (FALSE) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00157">157</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00172">172</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>
@@ -269,23 +321,23 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK on success </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00086">86</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00085">85</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>
-<a id="gae85ace25918982f8ff30c0ceaa6291f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae85ace25918982f8ff30c0ceaa6291f2">&#9670;&nbsp;</a></span>ifc_send_func_t</h2>
+<a id="gabfcce0a5be5c71565e19f8605c607283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfcce0a5be5c71565e19f8605c607283">&#9670;&nbsp;</a></span>ifc_send_func_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int(* ifc_send_func_t) (void *p, const void *d, uint32_t s, int t)</td>
+          <td class="memname">typedef int(* ifc_send_func_t) (void *p, const void *d, uint16_t s, int t)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Send one message via this IFC.</p>
-<p>This function is called from <a class="el" href="group__buffering.html#gae89e8d39db55da40a48f03c59f4c46b9">trap_store_into_buffer()</a> when there is a need to send new data.</p>
+<p>This function is called from trap_store_into_buffer() when there is a need to send new data.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>pointer to IFC's private memory allocated by constructor </td></tr>
@@ -297,7 +349,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK on success </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00100">100</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00099">99</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>
@@ -320,7 +372,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00114">114</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00120">120</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>

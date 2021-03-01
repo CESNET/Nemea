@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -69,8 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ifc_tls.c File Reference</div>  </div>
@@ -108,17 +106,19 @@ $(function() {
 <code>#include &quot;<a class="el" href="trap__error_8h_source.html">trap_error.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ifc__tls_8h_source.html">ifc_tls.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ifc__tls__internal_8h_source.html">ifc_tls_internal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ifc__socket__common_8h_source.html">ifc_socket_common.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ifc_tls.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="ifc__tls_8c__incl.png" border="0" usemap="#src_2ifc__tls_8c" alt=""/></div>
 <map name="src_2ifc__tls_8c" id="src_2ifc__tls_8c">
-<area shape="rect" id="node25" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="2817,229,2944,271"/>
-<area shape="rect" id="node30" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="2625,155,2742,181"/>
-<area shape="rect" id="node32" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="1850,237,1933,263"/>
-<area shape="rect" id="node34" href="trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="2627,80,2724,107"/>
-<area shape="rect" id="node35" href="ifc__tls_8h.html" title="ifc_tls.h" alt="" coords="1291,155,1364,181"/>
-<area shape="rect" id="node36" href="ifc__tls__internal_8h.html" title="TRAP TCP/IP interfaces private structures. " alt="" coords="1582,80,1713,107"/>
+<area shape="rect" id="node25" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="2714,229,2829,271"/>
+<area shape="rect" id="node30" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="2535,155,2639,181"/>
+<area shape="rect" id="node32" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="1724,237,1800,263"/>
+<area shape="rect" id="node34" href="trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="2537,80,2625,107"/>
+<area shape="rect" id="node35" href="ifc__tls_8h.html" title="ifc_tls.h" alt="" coords="779,155,847,181"/>
+<area shape="rect" id="node36" href="ifc__tls__internal_8h.html" title="TRAP TCP/IP interfaces private structures. " alt="" coords="1502,80,1619,107"/>
+<area shape="rect" id="node37" href="ifc__socket__common_8h.html" title="This file contains common functions and structures used in socket based interfaces (tcp&#45;ip / tls)..." alt="" coords="1877,155,2026,181"/>
 </map>
 </div>
 </div>
@@ -147,23 +147,8 @@ Macros</h2></td></tr>
 <tr class="separator:gafa99ec4acc4ecb2dc3c2d05da15d0e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3acffbd305ee72dcd4593c0d8af64a4f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__ifc.html#ga3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(a,  b)&#160;&#160;&#160;((a)&gt;(b)?(b):(a))</td></tr>
 <tr class="separator:ga3acffbd305ee72dcd4593c0d8af64a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafcd38906d9a32f5e20c50141c8f0bf14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__ifc.html#gafcd38906d9a32f5e20c50141c8f0bf14">DEFAULT_MAX_DATA_LENGTH</a>&#160;&#160;&#160;(sizeof(<a class="el" href="trap__internal_8h.html#a40b126ea10058bade088e6246959fd97">trap_buffer_header_t</a>) + 1024)</td></tr>
-<tr class="separator:gafcd38906d9a32f5e20c50141c8f0bf14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad884d561977a239709b5c729f22608f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__ifc.html#gad884d561977a239709b5c729f22608f2">MAX_CLIENTS_ARR_SIZE</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:gad884d561977a239709b5c729f22608f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:gacae6ab8d041be745ba0c3c5934fad13b"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__tls__sender.html#gab4c9969dd6b6362d01804745fdbbcf55">tls_sender_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gacae6ab8d041be745ba0c3c5934fad13b">tls_sender_result_t</a></td></tr>
-<tr class="separator:gacae6ab8d041be745ba0c3c5934fad13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:gab4c9969dd6b6362d01804745fdbbcf55"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gab4c9969dd6b6362d01804745fdbbcf55">tls_sender_result</a> { <a class="el" href="group__tls__sender.html#ggab4c9969dd6b6362d01804745fdbbcf55ad8b4bc2563bd00e53ea036d7cff87ed6">EVERYBODY_PASSED</a>, 
-<a class="el" href="group__tls__sender.html#ggab4c9969dd6b6362d01804745fdbbcf55ae55cf1716ad32d02c23e5bfe0d3e0bee">EVERYBODY_TIMEDOUT</a>, 
-<a class="el" href="group__tls__sender.html#ggab4c9969dd6b6362d01804745fdbbcf55a25e04f87fe3a613f0f16d41e7d402e8f">SOMEBODY_TIMEDOUT</a>
- }</td></tr>
-<tr class="separator:gab4c9969dd6b6362d01804745fdbbcf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7782d5beaec931dd3bcfa060c6bf9bbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__tls_8c.html#a7782d5beaec931dd3bcfa060c6bf9bbd">X</a>(pointer)</td></tr>
+<tr class="separator:a7782d5beaec931dd3bcfa060c6bf9bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -186,7 +171,7 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7d3a1df60320e3e2c58be93bdec7e452"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__receiver.html#ga7d3a1df60320e3e2c58be93bdec7e452">client_socket_disconnect</a> (void *priv)</td></tr>
 <tr class="separator:ga7d3a1df60320e3e2c58be93bdec7e452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf8253ffec1871584621b3dc838055d87"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gaf8253ffec1871584621b3dc838055d87">server_socket_open</a> (void *priv)</td></tr>
-<tr class="memdesc:gaf8253ffec1871584621b3dc838055d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open TCPIP socket for sender module.  <a href="group__tls__sender.html#gaf8253ffec1871584621b3dc838055d87">More...</a><br /></td></tr>
+<tr class="memdesc:gaf8253ffec1871584621b3dc838055d87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open TLS socket for sender module.  <a href="group__tls__sender.html#gaf8253ffec1871584621b3dc838055d87">More...</a><br /></td></tr>
 <tr class="separator:gaf8253ffec1871584621b3dc838055d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga67d03b167f8adca86cde7eeed5850982"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__ifc.html#ga67d03b167f8adca86cde7eeed5850982">get_in_addr</a> (struct sockaddr *sa)</td></tr>
 <tr class="memdesc:ga67d03b167f8adca86cde7eeed5850982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sockaddr, IPv4 or IPv6.  <a href="group__tls__ifc.html#ga67d03b167f8adca86cde7eeed5850982">More...</a><br /></td></tr>
@@ -200,7 +185,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga21cd7b2e5b2a0b0839a8d796b618fadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set interface state as terminated.  <a href="group__tls__receiver.html#ga21cd7b2e5b2a0b0839a8d796b618fadf">More...</a><br /></td></tr>
 <tr class="separator:ga21cd7b2e5b2a0b0839a8d796b618fadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa1c6a709f10285070373a2153e5c99bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__receiver.html#gaa1c6a709f10285070373a2153e5c99bd">tls_receiver_destroy</a> (void *priv)</td></tr>
-<tr class="memdesc:gaa1c6a709f10285070373a2153e5c99bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of TCPIP receiver (input ifc)  <a href="group__tls__receiver.html#gaa1c6a709f10285070373a2153e5c99bd">More...</a><br /></td></tr>
+<tr class="memdesc:gaa1c6a709f10285070373a2153e5c99bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of TLS receiver (input ifc)  <a href="group__tls__receiver.html#gaa1c6a709f10285070373a2153e5c99bd">More...</a><br /></td></tr>
 <tr class="separator:gaa1c6a709f10285070373a2153e5c99bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1ce46e0e5685ba0484f6c20d6634f0be"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__receiver.html#ga1ce46e0e5685ba0484f6c20d6634f0be">tls_receiver_create_dump</a> (void *priv, uint32_t idx, const char *path)</td></tr>
 <tr class="separator:ga1ce46e0e5685ba0484f6c20d6634f0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -213,19 +198,32 @@ Functions</h2></td></tr>
 <tr class="separator:ga825fd4776caae6897e8c8e941fe4de33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaad3458f11c60698cc6a994bb9f812e2c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__receiver.html#gaad3458f11c60698cc6a994bb9f812e2c">wait_for_connection</a> (int sock, struct timeval *tv)</td></tr>
 <tr class="separator:gaad3458f11c60698cc6a994bb9f812e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0c3cddbd39a1557ed54b008262883187"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga0c3cddbd39a1557ed54b008262883187">server_disconnected_client</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *c, int cl_id)</td></tr>
-<tr class="separator:ga0c3cddbd39a1557ed54b008262883187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa1efcac065550e471b1599f83859f65"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gaaa1efcac065550e471b1599f83859f65">send_all_data</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *c, struct <a class="el" href="structtlsclient__s.html">tlsclient_s</a> *cl, void **<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t *size, char block)</td></tr>
-<tr class="memdesc:gaaa1efcac065550e471b1599f83859f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to send data block at once.  <a href="group__tls__sender.html#gaaa1efcac065550e471b1599f83859f65">More...</a><br /></td></tr>
-<tr class="separator:gaaa1efcac065550e471b1599f83859f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga566ad038fc3be7b93c2a4905acd64402"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga566ad038fc3be7b93c2a4905acd64402">check_connected_clients</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *config)</td></tr>
-<tr class="separator:ga566ad038fc3be7b93c2a4905acd64402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39f0b37262eb05f7de8e2bfba0209679"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga39f0b37262eb05f7de8e2bfba0209679">tls_sender_conn_phase</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *config, struct timespec *t)</td></tr>
-<tr class="memdesc:ga39f0b37262eb05f7de8e2bfba0209679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if we have connected clients and wait for them.  <a href="group__tls__sender.html#ga39f0b37262eb05f7de8e2bfba0209679">More...</a><br /></td></tr>
-<tr class="separator:ga39f0b37262eb05f7de8e2bfba0209679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3e14ac1fbf599c3ecbca6aee4b6ed9b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga3e14ac1fbf599c3ecbca6aee4b6ed9b5">tls_sender_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t size, int timeout)</td></tr>
-<tr class="memdesc:ga3e14ac1fbf599c3ecbca6aee4b6ed9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data to all connected clients.  <a href="group__tls__sender.html#ga3e14ac1fbf599c3ecbca6aee4b6ed9b5">More...</a><br /></td></tr>
-<tr class="separator:ga3e14ac1fbf599c3ecbca6aee4b6ed9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10574da0c956724741173a3fe5c8eea3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga10574da0c956724741173a3fe5c8eea3">disconnect_client</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *priv, int cl_id)</td></tr>
+<tr class="memdesc:ga10574da0c956724741173a3fe5c8eea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when a client was/is being disconnected.  <a href="group__tls__sender.html#ga10574da0c956724741173a3fe5c8eea3">More...</a><br /></td></tr>
+<tr class="separator:ga10574da0c956724741173a3fe5c8eea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f5aa45f5c8641f9fd83159208d62647"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga3f5aa45f5c8641f9fd83159208d62647">tls_server_disconnect_all_clients</a> (void *priv)</td></tr>
+<tr class="memdesc:ga3f5aa45f5c8641f9fd83159208d62647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function disconnects all clients of the output interface whose private structure is passed via "priv" parameter.  <a href="group__tls__sender.html#ga3f5aa45f5c8641f9fd83159208d62647">More...</a><br /></td></tr>
+<tr class="separator:ga3f5aa45f5c8641f9fd83159208d62647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83472c2cd46eac526175b30d48495135"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga83472c2cd46eac526175b30d48495135">get_cur_timestamp</a> ()</td></tr>
+<tr class="separator:ga83472c2cd46eac526175b30d48495135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3a65816f2a41268758c569a7a368ff1"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gad3a65816f2a41268758c569a7a368ff1">accept_clients_thread</a> (void *arg)</td></tr>
+<tr class="memdesc:gad3a65816f2a41268758c569a7a368ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs in a separate thread and handles new client's connection requests.  <a href="group__tls__sender.html#gad3a65816f2a41268758c569a7a368ff1">More...</a><br /></td></tr>
+<tr class="separator:gad3a65816f2a41268758c569a7a368ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga329b6a3a0d0527736d44acfafd2be576"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga329b6a3a0d0527736d44acfafd2be576">finish_buffer</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *priv, <a class="el" href="ifc__socket__common_8h.html#a9aa12143b2c71bd60b9418ee7f4d3bb6">buffer_t</a> *buffer)</td></tr>
+<tr class="memdesc:ga329b6a3a0d0527736d44acfafd2be576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write buffer size to its header and shift active index.  <a href="group__tls__sender.html#ga329b6a3a0d0527736d44acfafd2be576">More...</a><br /></td></tr>
+<tr class="separator:ga329b6a3a0d0527736d44acfafd2be576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7275190583a84764542fa8814ff0b4de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga7275190583a84764542fa8814ff0b4de">tls_sender_flush</a> (void *priv)</td></tr>
+<tr class="memdesc:ga7275190583a84764542fa8814ff0b4de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force flush of active buffer.  <a href="group__tls__sender.html#ga7275190583a84764542fa8814ff0b4de">More...</a><br /></td></tr>
+<tr class="separator:ga7275190583a84764542fa8814ff0b4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83aa590c182c7739d18df9f42fd90944"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga83aa590c182c7739d18df9f42fd90944">send_data</a> (<a class="el" href="group__tls__sender.html#ga07cc54970619735031e328a849dbbc83">tls_sender_private_t</a> *priv, <a class="el" href="group__tls__sender.html#gab81355a0ad8e318125a88642ecd3544a">tlsclient_t</a> *c, uint32_t cl_id)</td></tr>
+<tr class="memdesc:ga83aa590c182c7739d18df9f42fd90944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data to client from his assigned buffer.  <a href="group__tls__sender.html#ga83aa590c182c7739d18df9f42fd90944">More...</a><br /></td></tr>
+<tr class="separator:ga83aa590c182c7739d18df9f42fd90944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga029de4ad961a1d3d89a52cbc5e3a10a0"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga029de4ad961a1d3d89a52cbc5e3a10a0">sending_thread_func</a> (void *priv)</td></tr>
+<tr class="memdesc:ga029de4ad961a1d3d89a52cbc5e3a10a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs in a separate thread. It handles sending data to connected clients for TLS interface.  <a href="group__tls__sender.html#ga029de4ad961a1d3d89a52cbc5e3a10a0">More...</a><br /></td></tr>
+<tr class="separator:ga029de4ad961a1d3d89a52cbc5e3a10a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67c0673f9a702036f37933840891192a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga67c0673f9a702036f37933840891192a">tls_sender_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size, int timeout)</td></tr>
+<tr class="memdesc:ga67c0673f9a702036f37933840891192a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store message into buffer.  <a href="group__tls__sender.html#ga67c0673f9a702036f37933840891192a">More...</a><br /></td></tr>
+<tr class="separator:ga67c0673f9a702036f37933840891192a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad3e0654a4636e0d138b15529aff51131"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gad3e0654a4636e0d138b15529aff51131">tls_sender_terminate</a> (void *priv)</td></tr>
 <tr class="memdesc:gad3e0654a4636e0d138b15529aff51131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set interface state as terminated.  <a href="group__tls__sender.html#gad3e0654a4636e0d138b15529aff51131">More...</a><br /></td></tr>
 <tr class="separator:gad3e0654a4636e0d138b15529aff51131"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -234,19 +232,15 @@ Functions</h2></td></tr>
 <tr class="separator:gab89480d7e111593867b3d31b8fd7af97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga917b981d1bafb671093a40c0216e07fa"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga917b981d1bafb671093a40c0216e07fa">tls_sender_get_client_count</a> (void *priv)</td></tr>
 <tr class="separator:ga917b981d1bafb671093a40c0216e07fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga523e71d675979d48e01a634ef54d652d"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga523e71d675979d48e01a634ef54d652d">tls_sender_get_client_stats_json</a> (void *priv, json_t *client_stats_arr)</td></tr>
+<tr class="separator:ga523e71d675979d48e01a634ef54d652d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6a5c96daa3b31f978960c4a6e7254dc0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga6a5c96daa3b31f978960c4a6e7254dc0">tls_sender_create_dump</a> (void *priv, uint32_t idx, const char *path)</td></tr>
 <tr class="separator:ga6a5c96daa3b31f978960c4a6e7254dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ad388c97493a90ff558f27a5dddf7e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga6ad388c97493a90ff558f27a5dddf7e7">tlsserver_disconnect_all_clients</a> (void *priv)</td></tr>
-<tr class="memdesc:ga6ad388c97493a90ff558f27a5dddf7e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function disconnects all clients of the output interface whose private structure is passed via "priv" parameter.  <a href="group__tls__sender.html#ga6ad388c97493a90ff558f27a5dddf7e7">More...</a><br /></td></tr>
-<tr class="separator:ga6ad388c97493a90ff558f27a5dddf7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa359345fa6728d47aa48b8d8510cbfa1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gaa359345fa6728d47aa48b8d8510cbfa1">tls_send_ifc_get_id</a> (void *priv)</td></tr>
 <tr class="separator:gaa359345fa6728d47aa48b8d8510cbfa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga70f857962c64531165db580c0820f9d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#ga70f857962c64531165db580c0820f9d7">create_tls_sender_ifc</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, const char *params, <a class="el" href="group__trap__ifc.html#ga67931b1db8d9f47c96534b924252b370">trap_output_ifc_t</a> *ifc, uint32_t idx)</td></tr>
 <tr class="memdesc:ga70f857962c64531165db580c0820f9d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of output TCP/IP IFC module. This function is called by TRAP library to initialize one output interface.  <a href="group__tls__sender.html#ga70f857962c64531165db580c0820f9d7">More...</a><br /></td></tr>
 <tr class="separator:ga70f857962c64531165db580c0820f9d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3a65816f2a41268758c569a7a368ff1"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tls__sender.html#gad3a65816f2a41268758c569a7a368ff1">accept_clients_thread</a> (void *arg)</td></tr>
-<tr class="memdesc:gad3a65816f2a41268758c569a7a368ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for server thread - accepts incoming clients and disconnects them.  <a href="group__tls__sender.html#gad3a65816f2a41268758c569a7a368ff1">More...</a><br /></td></tr>
-<tr class="separator:gad3a65816f2a41268758c569a7a368ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>TRAP TCP with TLS interfaces. </p>
@@ -271,6 +265,24 @@ Jaroslav Hlavac <a href="#" onclick="location.href='mai'+'lto:'+'hla'+'va'+'j20'
 
 <p class="definition">Definition at line <a class="el" href="ifc__tls_8c_source.html#l00045">45</a> of file <a class="el" href="ifc__tls_8c_source.html">ifc_tls.c</a>.</p>
 
+</div>
+</div>
+<a id="a7782d5beaec931dd3bcfa060c6bf9bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7782d5beaec931dd3bcfa060c6bf9bbd">&#9670;&nbsp;</a></span>X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define X</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">pointer</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">free(pointer); \</div><div class="line">   pointer = NULL;</div></div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

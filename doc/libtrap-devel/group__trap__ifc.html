@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -77,10 +77,10 @@ Collaboration diagram for TRAP communication module interface:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__trap__ifc.png" border="0" alt="" usemap="#group____trap____ifc"/>
 <map name="group____trap____ifc" id="group____trap____ifc">
-<area shape="rect" id="node1" href="group__tcpip__ifc.html" title="TCP/IP and UNIX socket\l communication interface\l module" alt="" coords="225,5,414,61"/>
-<area shape="rect" id="node2" href="group__trap__ifc__api.html" title="IFC API" alt="" coords="286,85,353,112"/>
-<area shape="rect" id="node4" href="group__file__ifc.html" title="file interface module" alt="" coords="241,136,398,163"/>
-<area shape="rect" id="node5" href="group__tls__ifc.html" title="TLS communication interface\l module" alt="" coords="213,187,425,229"/>
+<area shape="rect" id="node1" href="group__tcpip__ifc.html" title="TCP/IP and UNIX socket\l communication interface\l module" alt="" coords="215,5,386,61"/>
+<area shape="rect" id="node2" href="group__trap__ifc__api.html" title="IFC API" alt="" coords="265,85,336,112"/>
+<area shape="rect" id="node4" href="group__file__ifc.html" title="file interface module" alt="" coords="231,136,371,163"/>
+<area shape="rect" id="node5" href="group__tls__ifc.html" title="TLS communication interface\l module" alt="" coords="204,187,397,229"/>
 </map>
 </td></tr></table></center>
 </div>
@@ -105,12 +105,6 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:gad07bb879ce0202781a899975d34c8430"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc.html#gad07bb879ce0202781a899975d34c8430">NONBLOCKING_ATTEMPTS</a>&#160;&#160;&#160;3</td></tr>
-<tr class="separator:gad07bb879ce0202781a899975d34c8430"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga33baac16f74d5f127d28ae473daa22c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc.html#ga33baac16f74d5f127d28ae473daa22c5">NONBLOCKING_MINWAIT</a>&#160;&#160;&#160;1000</td></tr>
-<tr class="separator:ga33baac16f74d5f127d28ae473daa22c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga33baac16f74d5f127d28ae473daa22c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc.html#ga33baac16f74d5f127d28ae473daa22c5">NONBLOCKING_MINWAIT</a>&#160;&#160;&#160;1000</td></tr>
-<tr class="separator:ga33baac16f74d5f127d28ae473daa22c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaeacfd016f643e97abb67df075de9be83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc.html#gaeacfd016f643e97abb67df075de9be83">TRAP_IFC_DEFAULT_MAX_CLIENTS</a>&#160;&#160;&#160;64</td></tr>
 <tr class="separator:gaeacfd016f643e97abb67df075de9be83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -132,57 +126,6 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gad07bb879ce0202781a899975d34c8430"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad07bb879ce0202781a899975d34c8430">&#9670;&nbsp;</a></span>NONBLOCKING_ATTEMPTS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NONBLOCKING_ATTEMPTS&#160;&#160;&#160;3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>How many times to try on EAGAIN for send()? </p>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00052">52</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="ga33baac16f74d5f127d28ae473daa22c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga33baac16f74d5f127d28ae473daa22c5">&#9670;&nbsp;</a></span>NONBLOCKING_MINWAIT <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NONBLOCKING_MINWAIT&#160;&#160;&#160;1000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>How long to sleep between two non-blocking attempts for send()? </p>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tls__internal_8h_source.html#l00056">56</a> of file <a class="el" href="ifc__tls__internal_8h_source.html">ifc_tls_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="ga33baac16f74d5f127d28ae473daa22c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga33baac16f74d5f127d28ae473daa22c5">&#9670;&nbsp;</a></span>NONBLOCKING_MINWAIT <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NONBLOCKING_MINWAIT&#160;&#160;&#160;1000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>How long to sleep between two non-blocking attempts for send()? </p>
-
-<p class="definition">Definition at line <a class="el" href="ifc__tcpip__internal_8h_source.html#l00057">57</a> of file <a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>.</p>
-
-</div>
-</div>
 <a id="gaeacfd016f643e97abb67df075de9be83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaeacfd016f643e97abb67df075de9be83">&#9670;&nbsp;</a></span>TRAP_IFC_DEFAULT_MAX_CLIENTS</h2>
 
@@ -196,7 +139,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Default max number of clients that can connect to output interface. It takes effect when no value is given during interface initialization. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00065">65</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__ifc_8h_source.html#l00064">64</a> of file <a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>.</p>
 
 </div>
 </div>
@@ -267,7 +210,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01577">1577</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01190">1190</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -306,14 +249,14 @@ Functions</h2></td></tr>
 <p>Internal function for setting of timeout structs according to libtrap timeout. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>timeout given to <a class="el" href="group__simpleapi.html#gaac8324ccfb8edf2977e3d4782870d4ef">trap_get_data()</a> or <a class="el" href="group__simpleapi.html#gab889fdf90a8a4103bfa072c64d2aed1e">trap_send_data()</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>timeout in microseconds, or <a class="el" href="group__trap__timeout.html">TRAP Timeout</a> </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">tm</td><td>used for select() call when non-blocking </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">tmnblk</td><td>used for sem_timedwait() call to block on semaphore. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01598">1598</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01211">1211</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>

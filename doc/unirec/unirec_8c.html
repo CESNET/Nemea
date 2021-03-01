@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UniRec
-   &#160;<span id="projectnumber">2.3.0</span>
+   &#160;<span id="projectnumber">2.9.3</span>
    </div>
   </td>
  </tr>
@@ -83,13 +83,15 @@ $(function() {
 <code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="unirec_8h_source.html">unirec.h</a>&quot;</code><br />
 <code>#include &lt;libtrap/trap.h&gt;</code><br />
-<code>#include &quot;ur_values.c&quot;</code><br />
+<code>#include &quot;<a class="el" href="ur__values_8c_source.html">ur_values.c</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="inline_8h_source.html">inline.h</a>&quot;</code><br />
 </div>
 <p><a href="unirec_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a8fb447618db946a9e2a596d9ea18763f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8c.html#a8fb447618db946a9e2a596d9ea18763f">_DEFAULT_SOURCE</a></td></tr>
+<tr class="separator:a8fb447618db946a9e2a596d9ea18763f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3d8a3bd0c0b677acef144f2c2ef6d73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8c.html#ad3d8a3bd0c0b677acef144f2c2ef6d73">_BSD_SOURCE</a></td></tr>
 <tr class="separator:ad3d8a3bd0c0b677acef144f2c2ef6d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78c99ffd76a7bb3c8c74db76207e9ab4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unirec_8c.html#a78c99ffd76a7bb3c8c74db76207e9ab4">_XOPEN_SOURCE</a></td></tr>
@@ -211,6 +213,12 @@ Functions</h2></td></tr>
 <tr class="memitem:gadc58a81c9f7eb5a1ec3ba36d97612068"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gadc58a81c9f7eb5a1ec3ba36d97612068">ur_set_var</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, void *<a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, int field_id, const void *val_ptr, int val_len)</td></tr>
 <tr class="memdesc:gadc58a81c9f7eb5a1ec3ba36d97612068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set content of variable-length UniRec field Copy given data into variable-length UniRec field, set its offset and length in a record and move data which are behind this field. For better performance use function ur_clear_varlen, before setting all variable fields in record.  <a href="group__urtemplate.html#gadc58a81c9f7eb5a1ec3ba36d97612068">More...</a><br /></td></tr>
 <tr class="separator:gadc58a81c9f7eb5a1ec3ba36d97612068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61e624b3e32c5c6e79dcab1ebcc6d31f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga61e624b3e32c5c6e79dcab1ebcc6d31f">ur_array_resize</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, void *<a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, int field_id, int len)</td></tr>
+<tr class="memdesc:ga61e624b3e32c5c6e79dcab1ebcc6d31f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change length of a array field.  <a href="group__urtemplate.html#ga61e624b3e32c5c6e79dcab1ebcc6d31f">More...</a><br /></td></tr>
+<tr class="separator:ga61e624b3e32c5c6e79dcab1ebcc6d31f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75d85b3a23dbd6c4c82d21747d4506b0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga75d85b3a23dbd6c4c82d21747d4506b0">ur_array_append_get_ptr</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, void *<a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>, int field_id)</td></tr>
+<tr class="memdesc:ga75d85b3a23dbd6c4c82d21747d4506b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate new element at the end of array and return its pointer.  <a href="group__urtemplate.html#ga75d85b3a23dbd6c4c82d21747d4506b0">More...</a><br /></td></tr>
+<tr class="separator:ga75d85b3a23dbd6c4c82d21747d4506b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1a1a56a89c745a13823db8ef01fcb07b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga1a1a56a89c745a13823db8ef01fcb07b">ur_clear_varlen</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, void *<a class="el" href="example__unirec_8c.html#ac37164e80df5f86d98247768effab54d">rec</a>)</td></tr>
 <tr class="memdesc:ga1a1a56a89c745a13823db8ef01fcb07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear variable-length part of a record. For better performance of setting content to variable-length fields, use this function before setting of all the variable-length fields. This function will clear all the variable-length fields, so they don't have to be moved in memory during setting of them.  <a href="group__urtemplate.html#ga1a1a56a89c745a13823db8ef01fcb07b">More...</a><br /></td></tr>
 <tr class="separator:ga1a1a56a89c745a13823db8ef01fcb07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -236,6 +244,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8877cbc958a4943aaf720154f8338ae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unirec_8h.html#a0d8bbc1307c342a3a83bc2f5193e5fdf">ur_iter_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga8877cbc958a4943aaf720154f8338ae3">ur_iter_fields_record_order</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmplt, int index)</td></tr>
 <tr class="memdesc:ga8877cbc958a4943aaf720154f8338ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over fields of a template This function can be used to iterate over all fields of a given template. It returns n-th ID of a record specified by index. If the return value is UR_ITER_END. The index is higher than count of fields in the template. Example usage: int i = 0; while ((id = ur_iter_fields(&amp;tmplt, i++)) != UR_ITER_END) { ... } The order of fields is given by the order in the record.  <a href="group__urtemplate.html#ga8877cbc958a4943aaf720154f8338ae3">More...</a><br /></td></tr>
 <tr class="separator:ga8877cbc958a4943aaf720154f8338ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2f3f81ef535393f36ccf1ad49a4e510"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gae2f3f81ef535393f36ccf1ad49a4e510">ur_set_array_from_string</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmpl, void *data, <a class="el" href="unirec_8h.html#a17cba425af74e590b73d23d4e0fda44a">ur_field_id_t</a> f_id, const char *v)</td></tr>
+<tr class="memdesc:gae2f3f81ef535393f36ccf1ad49a4e510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set value of a UniRec array field.  <a href="group__urtemplate.html#gae2f3f81ef535393f36ccf1ad49a4e510">More...</a><br /></td></tr>
+<tr class="separator:gae2f3f81ef535393f36ccf1ad49a4e510"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae60aa0708ffef7cadd5a1d7663eb8083"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gae60aa0708ffef7cadd5a1d7663eb8083">ur_set_from_string</a> (const <a class="el" href="unirec_8h.html#structur__template__t">ur_template_t</a> *tmpl, void *data, <a class="el" href="unirec_8h.html#a17cba425af74e590b73d23d4e0fda44a">ur_field_id_t</a> f_id, const char *v)</td></tr>
 <tr class="memdesc:gae60aa0708ffef7cadd5a1d7663eb8083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set value of a UniRec field.  <a href="group__urtemplate.html#gae60aa0708ffef7cadd5a1d7663eb8083">More...</a><br /></td></tr>
 <tr class="separator:gae60aa0708ffef7cadd5a1d7663eb8083"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -277,6 +288,9 @@ Variables</h2></td></tr>
 <tr class="memitem:ga2a84dc8eb5478757192b2df4004c148a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga2a84dc8eb5478757192b2df4004c148a">ur_field_type_str</a> []</td></tr>
 <tr class="memdesc:ga2a84dc8eb5478757192b2df4004c148a"><td class="mdescLeft">&#160;</td><td class="mdescRight">UniRec data types.  <a href="group__urtemplate.html#ga2a84dc8eb5478757192b2df4004c148a">More...</a><br /></td></tr>
 <tr class="separator:ga2a84dc8eb5478757192b2df4004c148a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab50744832dee040515e0723ac30c85b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#gab50744832dee040515e0723ac30c85b9">ur_field_array_elem_type</a> []</td></tr>
+<tr class="memdesc:gab50744832dee040515e0723ac30c85b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">UniRec array element data types.  <a href="group__urtemplate.html#gab50744832dee040515e0723ac30c85b9">More...</a><br /></td></tr>
+<tr class="separator:gab50744832dee040515e0723ac30c85b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8b963edd959e1d4bdd91d82807a384ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unirec_8h.html#structur__field__specs__t">ur_field_specs_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__urtemplate.html#ga8b963edd959e1d4bdd91d82807a384ba">ur_field_specs</a></td></tr>
 <tr class="memdesc:ga8b963edd959e1d4bdd91d82807a384ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure that lists UniRec field specifications such as names, types, id.  <a href="group__urtemplate.html#ga8b963edd959e1d4bdd91d82807a384ba">More...</a><br /></td></tr>
 <tr class="separator:ga8b963edd959e1d4bdd91d82807a384ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -307,7 +321,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l00048">48</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l00049">49</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
 
 </div>
 </div>
@@ -319,6 +333,22 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
       <table class="memname">
         <tr>
           <td class="memname">#define _BSD_SOURCE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l00047">47</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
+
+</div>
+</div>
+<a id="a8fb447618db946a9e2a596d9ea18763f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fb447618db946a9e2a596d9ea18763f">&#9670;&nbsp;</a></span>_DEFAULT_SOURCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _DEFAULT_SOURCE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -339,7 +369,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l00047">47</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l00048">48</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
 
 </div>
 </div>
@@ -379,7 +409,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Positive number (&gt;0) if addr1 &gt; addr2, negative number (&lt;0) if addr1 &lt; addr2, and zero (=0) if addr1 == addr2. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00107">107</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00118">118</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -407,7 +437,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>MAC address stored as mac_addr_t. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00071">71</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00083">83</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -446,7 +476,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 on success, 0 on error i.e. string is not a valid MAC address. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00087">87</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00099">99</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -484,7 +514,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00130">130</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00144">144</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -522,7 +552,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00118">118</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00129">129</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -570,7 +600,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l00303">303</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l00368">368</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
 
 </div>
 </div>
@@ -612,7 +642,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l01061">1061</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l01126">1126</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
 
 </div>
 </div>
@@ -629,7 +659,7 @@ Zdenek Rosa <a href="#" onclick="location.href='mai'+'lto:'+'ros'+'az'+'den'+'@f
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l00139">139</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="unirec_8c_source.html#l00204">204</a> of file <a class="el" href="unirec_8c_source.html">unirec.c</a>.</p>
 
 </div>
 </div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -75,12 +75,11 @@ Collaboration diagram for file_private_s:</div>
 <div class="dyncontent">
 <div class="center"><img src="structfile__private__s__coll__graph.png" border="0" usemap="#file__private__s_coll__map" alt="Collaboration graph"/></div>
 <map name="file__private__s_coll__map" id="file__private__s_coll__map">
-<area shape="rect" id="node2" href="structtrap__ctx__priv__s.html" title="trap_ctx_priv_s" alt="" coords="337,107,459,133"/>
-<area shape="rect" id="node3" href="structtrap__output__ifc__s.html" title="trap_output_ifc_s" alt="" coords="7,5,142,32"/>
-<area shape="rect" id="node4" href="structtrap__multi__result.html" title="trap_multi_result" alt="" coords="8,56,141,83"/>
-<area shape="rect" id="node5" href="structreader__threads__s.html" title="reader_threads_s" alt="" coords="7,107,142,133"/>
-<area shape="rect" id="node6" href="structtrap__input__ifc__s.html" title="trap_input_ifc_s" alt="" coords="12,157,137,184"/>
-<area shape="rect" id="node7" href="structout__ifc__timeout__s.html" title="out_ifc_timeout_s" alt="" coords="5,208,144,235"/>
+<area shape="rect" id="node2" href="structtrap__ctx__priv__s.html" title="trap_ctx_priv_s" alt="" coords="163,95,274,121"/>
+<area shape="rect" id="node3" href="structtrap__output__ifc__s.html" title="trap_output_ifc_s" alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node4" href="structautoflush__timeouts.html" title="List of autoflush timeouts of output interfaces. " alt="" coords="153,5,285,32"/>
+<area shape="rect" id="node5" href="structtrap__input__ifc__s.html" title="trap_input_ifc_s" alt="" coords="321,5,436,32"/>
+<area shape="rect" id="node6" href="structfile__buffer__s.html" title="file_buffer_s" alt="" coords="299,95,392,121"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -90,10 +89,12 @@ Data Fields</h2></td></tr>
 <tr class="separator:ae5af1c6b080272c106d3e397a3190bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f49fbacaadcec3fc9c914c663f3bd77"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a0f49fbacaadcec3fc9c914c663f3bd77">fd</a></td></tr>
 <tr class="separator:a0f49fbacaadcec3fc9c914c663f3bd77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a3694d34807552bdc40f4e1dfe9ba57"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a3a3694d34807552bdc40f4e1dfe9ba57">create_time</a></td></tr>
+<tr class="separator:a3a3694d34807552bdc40f4e1dfe9ba57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea5dc7260d32d183302f3ba816031265"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#aea5dc7260d32d183302f3ba816031265">files</a></td></tr>
 <tr class="separator:aea5dc7260d32d183302f3ba816031265"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf74aec92dda1a31a71432d0493189ff"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#adf74aec92dda1a31a71432d0493189ff">filename_tmplt</a> [PATH_MAX]</td></tr>
-<tr class="separator:adf74aec92dda1a31a71432d0493189ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a67bd241648aef4aaafb4797219657"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#ad5a67bd241648aef4aaafb4797219657">filename_tmplt</a> [<a class="el" href="ifc__file_8h.html#a9068e2ed91bc9b753cfa65d6fb849290">FILENAME_TEMPLATE_LEN</a>]</td></tr>
+<tr class="separator:ad5a67bd241648aef4aaafb4797219657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf8b68231ba794c9b46a6ff5975054de"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#acf8b68231ba794c9b46a6ff5975054de">filename</a> [PATH_MAX]</td></tr>
 <tr class="separator:acf8b68231ba794c9b46a6ff5975054de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab92bb308a82414c03133b8aba613eea3"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#ab92bb308a82414c03133b8aba613eea3">mode</a> [3]</td></tr>
@@ -102,23 +103,58 @@ Data Fields</h2></td></tr>
 <tr class="separator:aff4a8fb12ae452ebcc50581860764b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a49aa9f86e4da7c239d89f3a180ef8b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a6a49aa9f86e4da7c239d89f3a180ef8b">neg_initialized</a></td></tr>
 <tr class="separator:a6a49aa9f86e4da7c239d89f3a180ef8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a3694d34807552bdc40f4e1dfe9ba57"><td class="memItemLeft" align="right" valign="top">time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a3a3694d34807552bdc40f4e1dfe9ba57">create_time</a></td></tr>
-<tr class="separator:a3a3694d34807552bdc40f4e1dfe9ba57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2f4657b5403afcad3efedee95a8dd08"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#ad2f4657b5403afcad3efedee95a8dd08">file_index</a></td></tr>
-<tr class="separator:ad2f4657b5403afcad3efedee95a8dd08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55ebea6fbf61fd71d7c07a1d1a6ed5ac"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a55ebea6fbf61fd71d7c07a1d1a6ed5ac">file_cnt</a></td></tr>
-<tr class="separator:a55ebea6fbf61fd71d7c07a1d1a6ed5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fde42ac826019a1de2caa53208d2773"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a8fde42ac826019a1de2caa53208d2773">ifc_idx</a></td></tr>
-<tr class="separator:a8fde42ac826019a1de2caa53208d2773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eacdca484084ad746ef7a3680406459"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a9eacdca484084ad746ef7a3680406459">file_index</a></td></tr>
+<tr class="separator:a9eacdca484084ad746ef7a3680406459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d4ae5dcc1efdc5f9f8c6f6c4bc184e1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a0d4ae5dcc1efdc5f9f8c6f6c4bc184e1">file_cnt</a></td></tr>
+<tr class="separator:a0d4ae5dcc1efdc5f9f8c6f6c4bc184e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25e4771159d10884bf7b2e1f5cfa253d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a25e4771159d10884bf7b2e1f5cfa253d">file_change_size</a></td></tr>
 <tr class="separator:a25e4771159d10884bf7b2e1f5cfa253d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6f5db2aa05e5f2b18538927013eeee1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#ad6f5db2aa05e5f2b18538927013eeee1">file_change_time</a></td></tr>
 <tr class="separator:ad6f5db2aa05e5f2b18538927013eeee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13716e3cdd9c15f593fcf2958829613c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a13716e3cdd9c15f593fcf2958829613c">buffer_size</a></td></tr>
+<tr class="separator:a13716e3cdd9c15f593fcf2958829613c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fde42ac826019a1de2caa53208d2773"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a8fde42ac826019a1de2caa53208d2773">ifc_idx</a></td></tr>
+<tr class="separator:a8fde42ac826019a1de2caa53208d2773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ff9df8afeac5f74c30f019ae696b256"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ifc__file_8h.html#a6771f3504e314bf07a67292019daf0fc">file_buffer_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfile__private__s.html#a8ff9df8afeac5f74c30f019ae696b256">buffer</a></td></tr>
+<tr class="separator:a8ff9df8afeac5f74c30f019ae696b256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00049">49</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00065">65</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="a8ff9df8afeac5f74c30f019ae696b256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ff9df8afeac5f74c30f019ae696b256">&#9670;&nbsp;</a></span>buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ifc__file_8h.html#a6771f3504e314bf07a67292019daf0fc">file_buffer_t</a> file_private_s::buffer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00082">82</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+
+</div>
+</div>
+<a id="a13716e3cdd9c15f593fcf2958829613c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13716e3cdd9c15f593fcf2958829613c">&#9670;&nbsp;</a></span>buffer_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t file_private_s::buffer_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Buffer size [bytes] </p>
+
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00079">79</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+
+</div>
+</div>
 <a id="a3a3694d34807552bdc40f4e1dfe9ba57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a3694d34807552bdc40f4e1dfe9ba57">&#9670;&nbsp;</a></span>create_time</h2>
 
@@ -131,7 +167,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00058">58</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00068">68</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -147,7 +183,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00050">50</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00066">66</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -163,7 +199,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00051">51</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00067">67</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -179,7 +215,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00062">62</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00077">77</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -195,39 +231,39 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00063">63</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00078">78</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
-<a id="a55ebea6fbf61fd71d7c07a1d1a6ed5ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55ebea6fbf61fd71d7c07a1d1a6ed5ac">&#9670;&nbsp;</a></span>file_cnt</h2>
+<a id="a0d4ae5dcc1efdc5f9f8c6f6c4bc184e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d4ae5dcc1efdc5f9f8c6f6c4bc184e1">&#9670;&nbsp;</a></span>file_cnt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t file_private_s::file_cnt</td>
+          <td class="memname">uint16_t file_private_s::file_cnt</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00060">60</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00076">76</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
-<a id="ad2f4657b5403afcad3efedee95a8dd08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2f4657b5403afcad3efedee95a8dd08">&#9670;&nbsp;</a></span>file_index</h2>
+<a id="a9eacdca484084ad746ef7a3680406459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eacdca484084ad746ef7a3680406459">&#9670;&nbsp;</a></span>file_index</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t file_private_s::file_index</td>
+          <td class="memname">uint16_t file_private_s::file_index</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00059">59</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00075">75</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -243,23 +279,23 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00054">54</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00071">71</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
-<a id="adf74aec92dda1a31a71432d0493189ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf74aec92dda1a31a71432d0493189ff">&#9670;&nbsp;</a></span>filename_tmplt</h2>
+<a id="ad5a67bd241648aef4aaafb4797219657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5a67bd241648aef4aaafb4797219657">&#9670;&nbsp;</a></span>filename_tmplt</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char file_private_s::filename_tmplt[PATH_MAX]</td>
+          <td class="memname">char file_private_s::filename_tmplt[<a class="el" href="ifc__file_8h.html#a9068e2ed91bc9b753cfa65d6fb849290">FILENAME_TEMPLATE_LEN</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00053">53</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00070">70</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -275,7 +311,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00052">52</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00069">69</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -290,8 +326,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Index of interface in 'ctx-&gt;out_ifc_list' array </p>
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00061">61</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00080">80</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -307,7 +344,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00056">56</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00073">73</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -323,7 +360,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00055">55</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00072">72</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>
@@ -339,7 +376,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00057">57</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__file_8h_source.html#l00074">74</a> of file <a class="el" href="ifc__file_8h_source.html">ifc_file.h</a>.</p>
 
 </div>
 </div>

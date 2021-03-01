@@ -1,10 +1,11 @@
 <map id="src/trap.c" name="src/trap.c">
-<area shape="rect" id="node19" href="$trap_8h.html" title="Interface of TRAP library. " alt="" coords="418,229,545,271"/>
-<area shape="rect" id="node22" href="$trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="519,155,636,181"/>
-<area shape="rect" id="node23" href="$trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="1718,237,1800,263"/>
-<area shape="rect" id="node25" href="$trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="373,80,470,107"/>
-<area shape="rect" id="node27" href="$ifc__dummy_8h.html" title="TRAP dummy interfaces (generator and blackhole) " alt="" coords="1840,155,1945,181"/>
-<area shape="rect" id="node28" href="$ifc__tcpip_8h.html" title="TRAP TCP/IP interfaces. " alt="" coords="1969,155,2058,181"/>
-<area shape="rect" id="node29" href="$ifc__tcpip__internal_8h.html" title="TRAP TCP/IP interfaces private structures. " alt="" coords="1930,80,2076,107"/>
-<area shape="rect" id="node30" href="$ifc__file_8h.html" title="TRAP file interfaces. " alt="" coords="1654,80,1731,107"/>
+<area shape="rect" id="node20" href="$trap_8h.html" title="Interface of TRAP library. " alt="" coords="407,229,521,271"/>
+<area shape="rect" id="node23" href="$trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="607,155,711,181"/>
+<area shape="rect" id="node24" href="$trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="1653,237,1729,263"/>
+<area shape="rect" id="node26" href="$trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="317,80,405,107"/>
+<area shape="rect" id="node28" href="$ifc__dummy_8h.html" title="TRAP dummy interfaces (generator and blackhole) " alt="" coords="1659,155,1755,181"/>
+<area shape="rect" id="node29" href="$ifc__tcpip_8h.html" title="TRAP TCP/IP interfaces. " alt="" coords="1779,155,1861,181"/>
+<area shape="rect" id="node30" href="$ifc__tcpip__internal_8h.html" title="TRAP TCP/IP interfaces private structures. " alt="" coords="2005,80,2136,107"/>
+<area shape="rect" id="node32" href="$ifc__file_8h.html" title="TRAP file interfaces. " alt="" coords="1882,80,1953,107"/>
+<area shape="rect" id="node31" href="$ifc__socket__common_8h.html" title="This file contains common functions and structures used in socket based interfaces (tcp&#45;ip / tls)..." alt="" coords="2024,155,2173,181"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="Message format" name="Message format">
-<area shape="rect" id="node1" href="$group__simpleapi.html" title="Simple API" alt="" coords="35,5,127,32"/>
-<area shape="rect" id="node3" href="$group__commonapi.html" title="Common libtrap API" alt="" coords="5,56,157,83"/>
-<area shape="rect" id="node4" href="$group__contextapi.html" title="Context API" alt="" coords="32,107,131,133"/>
+<area shape="rect" id="node1" href="$group__simpleapi.html" title="Simple API" alt="" coords="31,5,119,32"/>
+<area shape="rect" id="node3" href="$group__commonapi.html" title="Common libtrap API" alt="" coords="5,56,145,83"/>
+<area shape="rect" id="node4" href="$group__contextapi.html" title="Context API" alt="" coords="28,107,123,133"/>
 </map>

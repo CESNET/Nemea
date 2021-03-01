@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -74,7 +74,7 @@ Collaboration diagram for Context API:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__contextapi.png" border="0" alt="" usemap="#group____contextapi"/>
 <map name="group____contextapi" id="group____contextapi">
-<area shape="rect" id="node1" href="group__trap__mess__fmt.html" title="Message format" alt="" coords="152,5,279,32"/>
+<area shape="rect" id="node1" href="group__trap__mess__fmt.html" title="Message format" alt="" coords="148,5,264,32"/>
 </map>
 </td></tr></table></center>
 </div>
@@ -93,11 +93,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ga8fb998ec081c6f0ad96a669d95efcfe7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__contextapi.html#ga8fb998ec081c6f0ad96a669d95efcfe7">trap_ctx_terminate</a> (<a class="el" href="trap_8h.html#a008a51aeb2d1f379beb493108407ce97">trap_ctx_t</a> *ctx)</td></tr>
 <tr class="memdesc:ga8fb998ec081c6f0ad96a669d95efcfe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminate libtrap context.  <a href="#ga8fb998ec081c6f0ad96a669d95efcfe7">More...</a><br /></td></tr>
 <tr class="separator:ga8fb998ec081c6f0ad96a669d95efcfe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac2470aae7d6bdea292f422d061a4485b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__contextapi.html#gac2470aae7d6bdea292f422d061a4485b">trap_ctx_recv</a> (<a class="el" href="trap_8h.html#a008a51aeb2d1f379beb493108407ce97">trap_ctx_t</a> *ctx, uint32_t ifcidx, const void **<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t *size)</td></tr>
-<tr class="separator:gac2470aae7d6bdea292f422d061a4485b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad124806d3f71ac0f63df28f44f68bb47"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__contextapi.html#gad124806d3f71ac0f63df28f44f68bb47">trap_ctx_multi_recv</a> (<a class="el" href="trap_8h.html#a008a51aeb2d1f379beb493108407ce97">trap_ctx_t</a> *ctx, uint32_t ifc_mask, const void **<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t *size)</td></tr>
-<tr class="memdesc:gad124806d3f71ac0f63df28f44f68bb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from input interfaces according to ifc_mask.  <a href="#gad124806d3f71ac0f63df28f44f68bb47">More...</a><br /></td></tr>
-<tr class="separator:gad124806d3f71ac0f63df28f44f68bb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83472c2cd46eac526175b30d48495135"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__contextapi.html#ga83472c2cd46eac526175b30d48495135">get_cur_timestamp</a> ()</td></tr>
+<tr class="separator:ga83472c2cd46eac526175b30d48495135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga000e7c5b259aad735f066f2e5e8529bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__contextapi.html#ga000e7c5b259aad735f066f2e5e8529bb">trap_ctx_recv</a> (<a class="el" href="trap_8h.html#a008a51aeb2d1f379beb493108407ce97">trap_ctx_t</a> *ctx, uint32_t ifc, const void **<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t *size)</td></tr>
+<tr class="memdesc:ga000e7c5b259aad735f066f2e5e8529bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from input interface.  <a href="#ga000e7c5b259aad735f066f2e5e8529bb">More...</a><br /></td></tr>
+<tr class="separator:ga000e7c5b259aad735f066f2e5e8529bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5b84d682c3c68fe814896f7f002b319b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__contextapi.html#ga5b84d682c3c68fe814896f7f002b319b">trap_ctx_finalize</a> (<a class="el" href="trap_8h.html#a008a51aeb2d1f379beb493108407ce97">trap_ctx_t</a> **ctx)</td></tr>
 <tr class="memdesc:ga5b84d682c3c68fe814896f7f002b319b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminate libtrap context and free resources.  <a href="#ga5b84d682c3c68fe814896f7f002b319b">More...</a><br /></td></tr>
 <tr class="separator:ga5b84d682c3c68fe814896f7f002b319b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,6 +155,33 @@ Functions</h2></td></tr>
 <p>This API allows user to use multiple instances of libtrap in the same process.</p>
 <p>The API is similar to <a class="el" href="group__simpleapi.html">Simple API</a>. The difference is in the private context memory that is returned by <a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a> and is freed by <a class="el" href="group__contextapi.html#ga5b84d682c3c68fe814896f7f002b319b" title="Terminate libtrap context and free resources. ">trap_ctx_finalize()</a>. Obtained context pointer must be passed to all functions from context API. </p>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga83472c2cd46eac526175b30d48495135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83472c2cd46eac526175b30d48495135">&#9670;&nbsp;</a></span>get_cur_timestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t get_cur_timestamp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01370">1370</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+
+</div>
+</div>
 <a id="ga9fdbcb1c73cc4df9cef9b1e782cfb6af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9fdbcb1c73cc4df9cef9b1e782cfb6af">&#9670;&nbsp;</a></span>handle_inifc_setters()</h2>
 
@@ -197,7 +224,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01999">1999</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01506">1506</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -243,7 +270,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02093">2093</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01600">1600</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -289,7 +316,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01975">1975</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01482">1482</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -308,7 +335,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01643">1643</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01251">1251</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -348,7 +375,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l03025">3025</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02473">2473</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -370,6 +397,7 @@ Functions</h2></td></tr>
 
 <p>Terminate libtrap context and free resources. </p>
 <p>Cleanup function. Disconnect all interfaces and do all necessary cleanup. </p><dl class="section return"><dt>Returns</dt><dd>Error code</dd></dl>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -378,7 +406,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01884">1884</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01409">1409</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -419,7 +447,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Number of connected clients. -1 on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l03047">3047</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02495">2495</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -440,6 +468,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get last result code from libtrap context. </p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -448,7 +477,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__errorcodes.html">Error codes</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02685">2685</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02102">2102</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -469,6 +498,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get last (error) message from libtrap context. </p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -477,7 +507,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Text string with last (error) message from libtrap context. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02691">2691</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02108">2108</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -554,6 +584,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Control TRAP interface. </p>
+<p>This function is thread safe.</p>
 <dl class="section note"><dt>Note</dt><dd>Type and request types were changed from enum because of python wrapper.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -567,7 +598,7 @@ Functions</h2></td></tr>
 </dl>
 <p>Examples: </p><div class="fragment"><div class="line"><span class="comment">// set 4 seconds timeout</span></div><div class="line"><a class="code" href="group__contextapi.html#ga5ef43a88e58beb25cfbceed7643e5fba">trap_ctx_ifcctl</a>(ctx, <a class="code" href="group__ifctypes.html#ggac188fb5e77d8af514d8091c21a9570c8a95482ca4ea5f849965438493b6c5640c">TRAPIFC_INPUT</a>, 0, <a class="code" href="group__commonapi.html#ggac99821743a91f2288f5ea8d3ae6b424ca7c42332f519ee4671d7f674198d6a023">TRAPCTL_SETTIMEOUT</a>, 4000000);</div><div class="line"><span class="comment">// disable auto-flush</span></div><div class="line"><a class="code" href="group__contextapi.html#ga5ef43a88e58beb25cfbceed7643e5fba">trap_ctx_ifcctl</a>(ctx, <a class="code" href="group__ifctypes.html#ggac188fb5e77d8af514d8091c21a9570c8a3465118a68f82fd201ec4ce516f687aa">TRAPIFC_OUTPUT</a>, 0, <a class="code" href="group__commonapi.html#ggac99821743a91f2288f5ea8d3ae6b424ca69ebb9c0a47e7aa0c21440a6373e083a">TRAPCTL_AUTOFLUSH_TIMEOUT</a>, <a class="code" href="group__trap__timeout.html#gaf0f4e37c635e9cfbd6bba0e0c5d6dfb4">TRAP_NO_AUTO_FLUSH</a>);</div><div class="line"><span class="comment">// disable buffering</span></div><div class="line"><a class="code" href="group__contextapi.html#ga5ef43a88e58beb25cfbceed7643e5fba">trap_ctx_ifcctl</a>(ctx, <a class="code" href="group__ifctypes.html#ggac188fb5e77d8af514d8091c21a9570c8a3465118a68f82fd201ec4ce516f687aa">TRAPIFC_OUTPUT</a>, 0, <a class="code" href="group__commonapi.html#ggac99821743a91f2288f5ea8d3ae6b424ca0698228277af04dfe4c5565de8263538">TRAPCTL_BUFFERSWITCH</a>, 0);</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK on success </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02589">2589</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02019">2019</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -599,6 +630,7 @@ Functions</h2></td></tr>
 
 <p>Initialize and return the context of libtrap. </p>
 <dl class="section return"><dt>Returns</dt><dd>context, NULL when allocation failed.</dd></dl>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">module_info</td><td>Pointer to struct containing info about the module. </td></tr>
@@ -608,7 +640,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to context (context needs to be checked for error value by <a class="el" href="group__contextapi.html#ga2902ffa62edfbfae946d232ff446b1f4" title="Get last result code from libtrap context. ">trap_ctx_get_last_error()</a> function), NULL on memory error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02279">2279</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01786">1786</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -645,6 +677,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialize and return the context of libtrap. </p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">module_info</td><td>Pointer to struct containing info about the module. </td></tr>
@@ -655,7 +688,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to context (context needs to be checked for error value by <a class="el" href="group__contextapi.html#ga2902ffa62edfbfae946d232ff446b1f4" title="Get last result code from libtrap context. ">trap_ctx_get_last_error()</a> function), NULL on memory error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02295">2295</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01802">1802</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -710,6 +743,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initialize and return the context of libtrap. </p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of the NEMEA module (libtrap context). </td></tr>
@@ -723,69 +757,12 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to context (context needs to be checked for error value by <a class="el" href="group__contextapi.html#ga2902ffa62edfbfae946d232ff446b1f4" title="Get last result code from libtrap context. ">trap_ctx_get_last_error()</a> function), NULL on memory error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02224">2224</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01731">1731</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
-<a id="gad124806d3f71ac0f63df28f44f68bb47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad124806d3f71ac0f63df28f44f68bb47">&#9670;&nbsp;</a></span>trap_ctx_multi_recv()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int trap_ctx_multi_recv </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="trap_8h.html#a008a51aeb2d1f379beb493108407ce97">trap_ctx_t</a> *&#160;</td>
-          <td class="paramname"><em>ctx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>ifc_mask</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void **&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t *&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Read data from input interfaces according to ifc_mask. </p>
-<p>Read a record from one of interfaces specified by <code>ifc_mask</code> and store pointer to it into <code>data</code>. If data are not available on any of specified interfaces, wait until data are available or <code>timeout</code> elapses. If <code>timeout</code> &lt; 0, wait indefinitely. When function returns due to timeout, contents of <code>data</code> and <code>size</code> are undefined.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ifc_mask</td><td>Mask of interfaces to listen on (if <em>i</em>-th bit is set, interface <em>i</em> is enabled). </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Pointer to received data. The result is an array of <a class="el" href="group__commonapi.html#ga09574de535c3e73578fa2930b108b38b">trap_multi_result_t</a>. The size of array is equal to the number of input IFCs. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>Size of data in bytes containing the size of <a class="el" href="group__commonapi.html#ga09574de535c3e73578fa2930b108b38b">trap_multi_result_t</a> array in bytes. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Error code - 0 on success, TRAP_E_TIMEOUT if timeout elapses.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Data must not be freed! Library stores incomming data into static array and rewrites it during every <a class="el" href="group__simpleapi.html#gaac8324ccfb8edf2977e3d4782870d4ef">trap_get_data()</a> call. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__contextapi.html#ga5ef43a88e58beb25cfbceed7643e5fba" title="Control TRAP interface. ">trap_ctx_ifcctl</a>, <a class="el" href="group__commonapi.html#ga09574de535c3e73578fa2930b108b38b">trap_multi_result_t</a> </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01819">1819</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
-
-</div>
-</div>
-<a id="gac2470aae7d6bdea292f422d061a4485b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac2470aae7d6bdea292f422d061a4485b">&#9670;&nbsp;</a></span>trap_ctx_recv()</h2>
+<a id="ga000e7c5b259aad735f066f2e5e8529bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga000e7c5b259aad735f066f2e5e8529bb">&#9670;&nbsp;</a></span>trap_ctx_recv()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -821,7 +798,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Read data from input interface.</p>
+
+<p>Read data from input interface. </p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -834,7 +813,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Error code - TRAP_E_OK on success, TRAP_E_TIMEOUT if timeout elapses. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__contextapi.html#ga5ef43a88e58beb25cfbceed7643e5fba" title="Control TRAP interface. ">trap_ctx_ifcctl</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01778">1778</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01379">1379</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -877,7 +856,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Send data via output interface. </p>
-<p>Write data of size <code>size</code> given by <code>data</code> pointer into interface <code>ifc</code>. If data cannot be written immediately (e.g. because of full buffer or lost connection), wait until write is possible or <code>timeout</code> microseconds elapses. If <code>timeout</code> &lt; 0, wait indefinitely.</p>
+<p>Write data of size <code>size</code> given by <code>data</code> pointer into interface <code>ifc</code>. If data cannot be written immediately (e.g. because of full buffer or lost connection), wait until write is possible or <code>timeout</code> microseconds elapses. If <code>timeout</code> &lt; 0, wait indefinitely. This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -890,7 +869,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Error code - 0 on success, TRAP_E_TIMEOUT if timeout elapses. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__contextapi.html#ga5ef43a88e58beb25cfbceed7643e5fba" title="Control TRAP interface. ">trap_ctx_ifcctl</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01935">1935</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01448">1448</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -921,6 +900,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Force flush of buffer. </p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -929,7 +909,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02697">2697</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02115">2115</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -995,6 +975,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Terminate libtrap context. </p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -1003,7 +984,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK on success. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01751">1751</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01342">1342</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -1052,6 +1033,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Control TRAP interface. </p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#gad63272a184d3a4f5a386bf10629f4266" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -1065,7 +1047,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>TRAP_E_OK on success</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__contextapi.html#ga5ef43a88e58beb25cfbceed7643e5fba" title="Control TRAP interface. ">trap_ctx_ifcctl()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02602">2602</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02032">2032</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -1085,7 +1067,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01650">1650</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01258">1258</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -1139,7 +1121,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>EXIT_SUCCESS on success, EXIT_FAILURE on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02035">2035</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01542">1542</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -1193,7 +1175,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>EXIT_SUCCESS on success, EXIT_FAILURE on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l02168">2168</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l01675">1675</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>

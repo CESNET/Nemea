@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -83,6 +83,12 @@ Variables</h2></td></tr>
 <tr class="separator:gae918d788c4f2e3b77fc3e3c9d7eef7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabf8d83b97e6807743758827a9627a7b9"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ctxifccounters.html#gabf8d83b97e6807743758827a9627a7b9">trap_ctx_priv_s::counter_recv_buffer</a></td></tr>
 <tr class="separator:gabf8d83b97e6807743758827a9627a7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e34bd70f9d3373186a8bf6d5870733f"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ctxifccounters.html#ga5e34bd70f9d3373186a8bf6d5870733f">trap_ctx_priv_s::counter_recv_delay_last</a></td></tr>
+<tr class="separator:ga5e34bd70f9d3373186a8bf6d5870733f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga94165668161797455663b67406badc8c"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ctxifccounters.html#ga94165668161797455663b67406badc8c">trap_ctx_priv_s::counter_recv_delay_total</a></td></tr>
+<tr class="separator:ga94165668161797455663b67406badc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef1f0d9cee8a5c519c741aa5d3c8f79a"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ctxifccounters.html#gaef1f0d9cee8a5c519c741aa5d3c8f79a">trap_ctx_priv_s::recv_delay_timestamp</a></td></tr>
+<tr class="separator:gaef1f0d9cee8a5c519c741aa5d3c8f79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>The counters are sent by <a class="el" href="group__supervisor.html#ga5f455505997f558e3f975b54a55aa65d">service_thread_routine()</a> via service IFC (e.g. to supervisor). </p>
@@ -98,9 +104,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>counter_autoflush is incremented within <a class="el" href="trap_8c.html#a624826fb76fe8c9b128780adc22ee65b">trap_automatic_flush_thr()</a> after flushing buffer. </p>
+<p>counter_autoflush is incremented within trap_automatic_flush_thr() after flushing buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00363">363</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00325">325</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -117,7 +123,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>counter_dropped_message is incremented within <a class="el" href="group__contextapi.html#ga9201daf1d4b3123b1caeab26e50c3a61" title="Send data via output interface. ">trap_ctx_send()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00351">351</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00313">313</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -134,7 +140,41 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>counter_recv_buffer is incremented within <a class="el" href="group__buffering.html#ga1b570e9a0c3871ef23cc9fc649a110a1">trap_read_from_buffer()</a> after successful receiving buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00367">367</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00329">329</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ga5e34bd70f9d3373186a8bf6d5870733f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e34bd70f9d3373186a8bf6d5870733f">&#9670;&nbsp;</a></span>counter_recv_delay_last</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t* trap_ctx_priv_s::counter_recv_delay_last</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>counter_recv_delay_last represents time interval between last two recv() calls (in microseconds). </p>
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00333">333</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="ga94165668161797455663b67406badc8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga94165668161797455663b67406badc8c">&#9670;&nbsp;</a></span>counter_recv_delay_total</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t* trap_ctx_priv_s::counter_recv_delay_total</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>counter_recv_delay_total represents total time spent outside of recv() function (in microseconds). </p>
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00337">337</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -149,9 +189,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>counter_recv_message is incremented within <a class="el" href="group__contextapi.html#gac2470aae7d6bdea292f422d061a4485b">trap_ctx_recv()</a>. </p>
+<p>counter_recv_message is incremented within <a class="el" href="group__contextapi.html#ga000e7c5b259aad735f066f2e5e8529bb" title="Read data from input interface. ">trap_ctx_recv()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00355">355</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00317">317</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -166,9 +206,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>counter_send_buffer is incremented within <a class="el" href="group__buffering.html#gae89e8d39db55da40a48f03c59f4c46b9">trap_store_into_buffer()</a> after sending buffer. </p>
+<p>counter_send_buffer is incremented within trap_store_into_buffer() after sending buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00359">359</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00321">321</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -185,7 +225,24 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>counter_send_message is incremented within <a class="el" href="group__contextapi.html#ga9201daf1d4b3123b1caeab26e50c3a61" title="Send data via output interface. ">trap_ctx_send()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00347">347</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00309">309</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="gaef1f0d9cee8a5c519c741aa5d3c8f79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef1f0d9cee8a5c519c741aa5d3c8f79a">&#9670;&nbsp;</a></span>recv_delay_timestamp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t* trap_ctx_priv_s::recv_delay_timestamp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>recv_delay_timestamp is used to determine the time that has elapsed between last two recv() calls </p>
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00341">341</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>

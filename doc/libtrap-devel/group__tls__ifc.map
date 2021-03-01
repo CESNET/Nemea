@@ -1,5 +1,5 @@
 <map id="TLS communication interface module" name="TLS communication interface module">
-<area shape="rect" id="node1" href="$group__tls__sender.html" title="TLS Output IFC" alt="" coords="473,5,591,32"/>
-<area shape="rect" id="node2" href="$group__trap__ifc.html" title="TRAP communication\l module interface" alt="" coords="5,23,165,65"/>
-<area shape="rect" id="node4" href="$group__tls__receiver.html" title="TLS Input IFC" alt="" coords="479,56,585,83"/>
+<area shape="rect" id="node1" href="$group__tls__sender.html" title="TLS Output IFC" alt="" coords="445,5,560,32"/>
+<area shape="rect" id="node2" href="$group__trap__ifc.html" title="TRAP communication\l module interface" alt="" coords="5,23,156,65"/>
+<area shape="rect" id="node4" href="$group__tls__receiver.html" title="TLS Input IFC" alt="" coords="450,56,555,83"/>
 </map>

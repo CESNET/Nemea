@@ -1,24 +1,11 @@
 var searchData=
 [
-  ['ur_5fcount_5fof_5ftypes',['UR_COUNT_OF_TYPES',['../unirec_8h.html#a9d12294a70c27484f1f273d14c2231a1',1,'unirec.h']]],
-  ['ur_5fdefault_5flength_5fof_5ffield_5fname',['UR_DEFAULT_LENGTH_OF_FIELD_NAME',['../unirec_8h.html#a4821db36ecbefac234e93423e1572d8b',1,'unirec.h']]],
-  ['ur_5fdefault_5flength_5fof_5ffield_5ftype',['UR_DEFAULT_LENGTH_OF_FIELD_TYPE',['../unirec_8h.html#a19c4a8e87b02d9f08120d80ee99d377d',1,'unirec.h']]],
-  ['ur_5fdefault_5flength_5fof_5ftemplate',['UR_DEFAULT_LENGTH_OF_TEMPLATE',['../unirec_8h.html#a6d4be6c0e3ab412dad7052b6b92cf064',1,'unirec.h']]],
-  ['ur_5fe_5finvalid_5ffield_5fid',['UR_E_INVALID_FIELD_ID',['../unirec_8h.html#ae983554dcd55068c660732abb7cc29a9',1,'unirec.h']]],
-  ['ur_5fe_5finvalid_5fname',['UR_E_INVALID_NAME',['../unirec_8h.html#a3286791b4d19706d580fb5dbf07ed5f4',1,'unirec.h']]],
-  ['ur_5fe_5finvalid_5fparameter',['UR_E_INVALID_PARAMETER',['../unirec_8h.html#ab5f672a177d78e7c11abe1922c424b92',1,'unirec.h']]],
-  ['ur_5fe_5finvalid_5ftype',['UR_E_INVALID_TYPE',['../unirec_8h.html#ab7dca2db4854ed9db6ffff65d4d9d10a',1,'unirec.h']]],
-  ['ur_5fe_5fmemory',['UR_E_MEMORY',['../unirec_8h.html#a0e9b91b96ad7672de1171b543e5d68f6',1,'unirec.h']]],
-  ['ur_5fe_5ftype_5fmismatch',['UR_E_TYPE_MISMATCH',['../unirec_8h.html#a272389ab0926da72541efdaf1bf9377c',1,'unirec.h']]],
-  ['ur_5ffield_5fid_5fmax',['UR_FIELD_ID_MAX',['../unirec_8h.html#aac640f7c39c04cb3b3ca150da6e46454',1,'unirec.h']]],
-  ['ur_5ffields',['UR_FIELDS',['../unirec_8h.html#ab0c059e36cea5fa00b0180248543a123',1,'unirec.h']]],
-  ['ur_5finitial_5fsize_5ffields_5ftable',['UR_INITIAL_SIZE_FIELDS_TABLE',['../unirec_8h.html#aa5d7494a2e5265dce181ecdcfaeaaaea',1,'unirec.h']]],
-  ['ur_5finitialized',['UR_INITIALIZED',['../unirec_8h.html#a1c3c1c127c05a89b0e87197d022e7107',1,'unirec.h']]],
-  ['ur_5finvalid_5ffield',['UR_INVALID_FIELD',['../unirec_8h.html#a378cb4e4ce3b8c02b30690e8857c3875',1,'unirec.h']]],
-  ['ur_5finvalid_5foffset',['UR_INVALID_OFFSET',['../unirec_8h.html#a82342fa356ae9d09be33db986f6d2df2',1,'unirec.h']]],
-  ['ur_5fiter_5fbegin',['UR_ITER_BEGIN',['../unirec_8h.html#a193dc30952d6b8be7caeba1e6e5f2671',1,'unirec.h']]],
-  ['ur_5fiter_5fend',['UR_ITER_END',['../unirec_8h.html#accf8d970c42f19c249ece4959a7f38b6',1,'unirec.h']]],
-  ['ur_5fno_5fdynamic_5fvalues',['UR_NO_DYNAMIC_VALUES',['../unirec_8h.html#a8b797b7bc9ad2159ef020009f031542a',1,'unirec.h']]],
-  ['ur_5fok',['UR_OK',['../unirec_8h.html#a1a0440dd1b14a93428a69a10581fe8b9',1,'unirec.h']]],
-  ['ur_5funinitialized',['UR_UNINITIALIZED',['../unirec_8h.html#a09399c945b0bccbf812eac654e23ca3b',1,'unirec.h']]]
+  ['package',['PACKAGE',['../config_8h.html#aca8570fb706c81df371b7f9bc454ae03',1,'config.h']]],
+  ['package_5fbugreport',['PACKAGE_BUGREPORT',['../config_8h.html#a1d1d2d7f8d2f95b376954d649ab03233',1,'config.h']]],
+  ['package_5fname',['PACKAGE_NAME',['../config_8h.html#a1c0439e4355794c09b64274849eb0279',1,'config.h']]],
+  ['package_5fstring',['PACKAGE_STRING',['../config_8h.html#ac73e6f903c16eca7710f92e36e1c6fbf',1,'config.h']]],
+  ['package_5ftarname',['PACKAGE_TARNAME',['../config_8h.html#af415af6bfede0e8d5453708afe68651c',1,'config.h']]],
+  ['package_5furl',['PACKAGE_URL',['../config_8h.html#a5c93853116d5a50307b6744f147840aa',1,'config.h']]],
+  ['package_5fversion',['PACKAGE_VERSION',['../config_8h.html#aa326a05d5e30f9e9a4bb0b4469d5d0c0',1,'config.h']]],
+  ['prix8',['PRIx8',['../macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c',1,'macaddr.h']]]
 ];

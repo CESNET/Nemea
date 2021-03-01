@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7eipaddr_5fcpp',['~IPaddr_cpp',['../classIPaddr__cpp.html#ae4af8442dd70b4143b7acbc10baf83e0',1,'IPaddr_cpp']]]
+  ['printf',['printf',['../example__unirec_8c.html#a31c673502d2deeb8064d17eeab267f87',1,'printf(&quot;%u %u %u %s\, ur_get(tmplt, buffer, F_FOO), ip_get_v4_as_int(&amp;(ur_get(tmplt, buffer, F_IP))), ur_get_var_len(tmplt, buffer, F_STR1), ur_get_ptr(tmplt, buffer, F_STR1)):&#160;example_unirec.c'],['../example__unirec_8c.html#a3611124c0bc459a33ea819c7dbc4a339',1,'printf(&quot; new field %d\, new_id):&#160;example_unirec.c'],['../example__unirec_8c.html#a6740088f3eb98704a218ab6f951c5eb4',1,'printf(&quot;%u %u %s %u %s %u\, ur_get(tmplt, buffer2, F_BAR), ur_get_var_len(tmplt, buffer2, F_STR1), ur_get_ptr(tmplt, buffer2, F_STR1), ur_get_var_len(tmplt, buffer2, F_STR2), ur_get_ptr(tmplt, buffer2, F_STR2), *(uint16_t *) ur_get_ptr_by_id(tmplt, buffer2, new_id)):&#160;example_unirec.c']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tmplt1',['tmplt1',['../example__unirec_8c.html#a593f6e2ec4c598e1fdee4cadf6b59bf6',1,'example_unirec.c']]],
-  ['tmplt2',['tmplt2',['../example__unirec_8c.html#a67205fb81bdf5e95cf28eb5ab0c8af67',1,'example_unirec.c']]]
+  ['size',['size',['../unirec_8h.html#a20d9d5eb643e04cdb13a84195993ef92',1,'field_spec_t']]],
+  ['static_5fsize',['static_size',['../unirec_8h.html#a5ec4e8fb6f0bacae7cda7af77f8ef1e2',1,'ur_template_t']]]
 ];

@@ -1,8 +1,9 @@
 <map id="src/ifc_tls.c" name="src/ifc_tls.c">
-<area shape="rect" id="node25" href="$trap_8h.html" title="Interface of TRAP library. " alt="" coords="2817,229,2944,271"/>
-<area shape="rect" id="node30" href="$trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="2625,155,2742,181"/>
-<area shape="rect" id="node32" href="$trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="1850,237,1933,263"/>
-<area shape="rect" id="node34" href="$trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="2627,80,2724,107"/>
-<area shape="rect" id="node35" href="$ifc__tls_8h.html" title="ifc_tls.h" alt="" coords="1291,155,1364,181"/>
-<area shape="rect" id="node36" href="$ifc__tls__internal_8h.html" title="TRAP TCP/IP interfaces private structures. " alt="" coords="1582,80,1713,107"/>
+<area shape="rect" id="node25" href="$trap_8h.html" title="Interface of TRAP library. " alt="" coords="2714,229,2829,271"/>
+<area shape="rect" id="node30" href="$trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="2535,155,2639,181"/>
+<area shape="rect" id="node32" href="$trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="1724,237,1800,263"/>
+<area shape="rect" id="node34" href="$trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="2537,80,2625,107"/>
+<area shape="rect" id="node35" href="$ifc__tls_8h.html" title="ifc_tls.h" alt="" coords="779,155,847,181"/>
+<area shape="rect" id="node36" href="$ifc__tls__internal_8h.html" title="TRAP TCP/IP interfaces private structures. " alt="" coords="1502,80,1619,107"/>
+<area shape="rect" id="node37" href="$ifc__socket__common_8h.html" title="This file contains common functions and structures used in socket based interfaces (tcp&#45;ip / tls)..." alt="" coords="1877,155,2026,181"/>
 </map>

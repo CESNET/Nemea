@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -67,8 +67,9 @@ $(function() {
 <h3><a id="index__"></a>- _ -</h3><ul>
 <li>_GNU_SOURCE
 : <a class="el" href="ifc__file_8c.html#a369266c24eacffb87046522897a570d5">ifc_file.c</a>
-, <a class="el" href="ifc__tls_8c.html#a369266c24eacffb87046522897a570d5">ifc_tls.c</a>
 , <a class="el" href="ifc__tcpip_8c.html#a369266c24eacffb87046522897a570d5">ifc_tcpip.c</a>
+, <a class="el" href="ifc__tls_8c.html#a369266c24eacffb87046522897a570d5">ifc_tls.c</a>
+, <a class="el" href="trap_8c.html#a369266c24eacffb87046522897a570d5">trap.c</a>
 </li>
 </ul>
 
@@ -82,8 +83,11 @@ $(function() {
 
 
 <h3><a id="index_b"></a>- b -</h3><ul>
-<li>BLOCKSIZE_TOTAL
-: <a class="el" href="trap__buffer_8c.html#a88cbdf447c9d32da63b49366c0e54f76">trap_buffer.c</a>
+<li>BUFFER_COUNT_PARAM_LENGTH
+: <a class="el" href="ifc__socket__common_8h.html#ae22b2c9c46dc10414c8d881852a0fc1b">ifc_socket_common.h</a>
+</li>
+<li>BUFFER_SIZE_PARAM_LENGTH
+: <a class="el" href="ifc__socket__common_8h.html#a3604cb3c53c3d7a47be21b88c67f7d4e">ifc_socket_common.h</a>
 </li>
 </ul>
 
@@ -97,21 +101,23 @@ $(function() {
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
-<li>DBG_PRINT
-: <a class="el" href="trap__buffer_8c.html#a76520932a9de1d3ad79aa033570ff22d">trap_buffer.c</a>
-</li>
 <li>DEBUG_BUF
 : <a class="el" href="group__debug.html#gaca33582f6f59846d3883aaa5cafbc255">trap_internal.h</a>
 </li>
 <li>DEBUG_IFC
 : <a class="el" href="group__debug.html#ga0fcd05fb668244871f6aa40e3ede934c">trap_internal.h</a>
 </li>
-<li>DEBUG_PRINTS
-: <a class="el" href="trap__buffer_8c.html#a58cc141c7897c4a5035c400ce2b83fb2">trap_buffer.c</a>
+<li>DEFAULT_BUFFER_COUNT
+: <a class="el" href="ifc__socket__common_8h.html#abb7814611632e59302550e4bbdfc2005">ifc_socket_common.h</a>
+</li>
+<li>DEFAULT_BUFFER_SIZE
+: <a class="el" href="ifc__socket__common_8h.html#a6e576a3c6530636d68b7a220480bcd32">ifc_socket_common.h</a>
+</li>
+<li>DEFAULT_MAX_CLIENTS
+: <a class="el" href="ifc__socket__common_8h.html#abb5b90442e7148e1b85e6879c2e0efc9">ifc_socket_common.h</a>
 </li>
 <li>DEFAULT_MAX_DATA_LENGTH
-: <a class="el" href="group__tcpip__ifc.html#gafcd38906d9a32f5e20c50141c8f0bf14">ifc_tcpip.c</a>
-, <a class="el" href="group__tls__ifc.html#gafcd38906d9a32f5e20c50141c8f0bf14">ifc_tls.c</a>
+: <a class="el" href="ifc__socket__common_8h.html#afcd38906d9a32f5e20c50141c8f0bf14">ifc_socket_common.h</a>
 </li>
 <li>DEFAULT_MAX_TERMINAL_WIDTH
 : <a class="el" href="trap__internal_8h.html#ad3274a76aef689d61eef22cfce054a32">trap_internal.h</a>
@@ -122,12 +128,19 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_f"></a>- f -</h3><ul>
+<li>FILE_SIZE_SUFFIX_LEN
+: <a class="el" href="ifc__file_8h.html#a571617d34d96af5b74c232074e5d26c4">ifc_file.h</a>
+</li>
+<li>FILENAME_TEMPLATE_LEN
+: <a class="el" href="ifc__file_8h.html#a9068e2ed91bc9b753cfa65d6fb849290">ifc_file.h</a>
+</li>
+</ul>
+
+
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>ifcdir2str
 : <a class="el" href="trap_8c.html#a4aa0658cd79f30e7969f0d6821634b95">trap.c</a>
-</li>
-<li>IN_IFC_RESULTS_SIZE
-: <a class="el" href="trap_8c.html#a677fc595ea4a72363c8c0f1176a4911c">trap.c</a>
 </li>
 <li>INLINE
 : <a class="el" href="group__debug.html#ga2eb6f9e0395b47b8d5e3eeae4fe0c116">trap_internal.h</a>
@@ -147,16 +160,15 @@ $(function() {
 : <a class="el" href="group__tcpip__ifc.html#gafa99ec4acc4ecb2dc3c2d05da15d0e3f">ifc_tcpip.c</a>
 , <a class="el" href="group__tls__ifc.html#gafa99ec4acc4ecb2dc3c2d05da15d0e3f">ifc_tls.c</a>
 </li>
-<li>MAX_CLIENTS_ARR_SIZE
-: <a class="el" href="group__tls__ifc.html#gad884d561977a239709b5c729f22608f2">ifc_tls.c</a>
-, <a class="el" href="group__tcpip__ifc.html#gad884d561977a239709b5c729f22608f2">ifc_tcpip.c</a>
+<li>MAX_CLIENTS_PARAM_LENGTH
+: <a class="el" href="ifc__socket__common_8h.html#a77f9ace440910c6f2b3269f4c7369f94">ifc_socket_common.h</a>
 </li>
 <li>MAX_ERROR_MSG_BUFF_SIZE
 : <a class="el" href="trap__internal_8h.html#a7b6916131b97898f1808dc119f4fc94a">trap_internal.h</a>
 </li>
 <li>MAX_RECOVERY_TRY
-: <a class="el" href="group__tls__ifc.html#gabd9ed2a4e39c7dde3a7c579902c47e2b">ifc_tls.c</a>
-, <a class="el" href="group__tcpip__ifc.html#gabd9ed2a4e39c7dde3a7c579902c47e2b">ifc_tcpip.c</a>
+: <a class="el" href="group__tcpip__ifc.html#gabd9ed2a4e39c7dde3a7c579902c47e2b">ifc_tcpip.c</a>
+, <a class="el" href="group__tls__ifc.html#gabd9ed2a4e39c7dde3a7c579902c47e2b">ifc_tls.c</a>
 </li>
 <li>MIN
 : <a class="el" href="group__tcpip__ifc.html#ga3acffbd305ee72dcd4593c0d8af64a4f">ifc_tcpip.c</a>
@@ -196,12 +208,8 @@ $(function() {
 <li>NEG_RES_SENDER_FMT_SUBSET
 : <a class="el" href="group__negotiationretvals.html#gac42409677946fb411027b1185bc36181">trap_internal.h</a>
 </li>
-<li>NONBLOCKING_ATTEMPTS
-: <a class="el" href="group__trap__ifc.html#gad07bb879ce0202781a899975d34c8430">ifc_tcpip_internal.h</a>
-</li>
-<li>NONBLOCKING_MINWAIT
-: <a class="el" href="group__trap__ifc.html#ga33baac16f74d5f127d28ae473daa22c5">ifc_tcpip_internal.h</a>
-, <a class="el" href="group__trap__ifc.html#ga33baac16f74d5f127d28ae473daa22c5">ifc_tls_internal.h</a>
+<li>NO_CLIENTS_SLEEP
+: <a class="el" href="ifc__socket__common_8h.html#a631c86aff75159dd3ed01e0af87014f2">ifc_socket_common.h</a>
 </li>
 </ul>
 
@@ -215,12 +223,6 @@ $(function() {
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
-<li>SAFE_PATH
-: <a class="el" href="ifc__file_8c.html#a3741a2529a3630f0de93fb8d5fe7c166">ifc_file.c</a>
-</li>
-<li>SEM_PSHARED
-: <a class="el" href="trap_8c.html#a4075f52717436f85b78556ab2ce0a49b">trap.c</a>
-</li>
 <li>SEND_DATA
 : <a class="el" href="trap_8c.html#a7a5458fe1bcdcc9871a50d236a808bc3">trap.c</a>
 </li>
@@ -233,51 +235,36 @@ $(function() {
 <li>SERVICE_SET_COM
 : <a class="el" href="trap__internal_8h.html#a0f4ca0b39a8bbce034c63b8cbb227ba1">trap_internal.h</a>
 </li>
+<li>SIZE_PARAM
+: <a class="el" href="ifc__file_8h.html#ae6d0889243aace97bb08b801aabbac78">ifc_file.h</a>
+</li>
+<li>SIZE_PARAM_LEN
+: <a class="el" href="ifc__file_8h.html#a27a9fc95c885214eb8e9f3954deb9fab">ifc_file.h</a>
+</li>
 </ul>
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
-<li>TB_EMPTY
-: <a class="el" href="trap__buffer_8h.html#a05f672bf09649854f019235bbe4a954b">trap_buffer.h</a>
-</li>
-<li>TB_ERROR
-: <a class="el" href="trap__buffer_8h.html#a9c038e84f8174ac07ccc27c621408666">trap_buffer.h</a>
-</li>
-<li>TB_FILL_END
-: <a class="el" href="group__trap__buffer__recv.html#ga34c600045c9797e5dad807002ccc007c">trap_buffer.h</a>
-</li>
-<li>TB_FILL_START
-: <a class="el" href="group__trap__buffer__recv.html#gab2712fd4fe1ccd3faa7f4a7e2e808115">trap_buffer.h</a>
-</li>
-<li>TB_FLUSH_END
-: <a class="el" href="group__trap__buffer__send.html#ga479c8c14d95086e47db044506720d4d2">trap_buffer.h</a>
-</li>
-<li>TB_FLUSH_START
-: <a class="el" href="group__trap__buffer__send.html#gafeee7184bf431291c5e43424ee5ee53b">trap_buffer.h</a>
-</li>
-<li>TB_FULL
-: <a class="el" href="trap__buffer_8h.html#a4bd1ba6bb4bfda6f637db5f9dd0ac03d">trap_buffer.h</a>
-</li>
-<li>TB_SUCCESS
-: <a class="el" href="trap__buffer_8h.html#aa34cd446daa184bb22cc9d4ef67855fb">trap_buffer.h</a>
-</li>
-<li>TB_USED_NEWBLOCK
-: <a class="el" href="trap__buffer_8h.html#aa48b023223a9b32fea9d0d58c237d32c">trap_buffer.h</a>
-</li>
 <li>TCPIP_IFC_PARAMS_DELIMITER
 : <a class="el" href="ifc__tcpip_8h.html#accae29cc0e813979cb529363038e3015">ifc_tcpip.h</a>
-</li>
-<li>TCPIP_SENDER_STATE_STR
-: <a class="el" href="group__tcpip__sender.html#ga08a59de89da2c9087ce88c7805ab4fd2">ifc_tcpip_internal.h</a>
 </li>
 <li>TCPIP_SOCKETTYPE_STR
 : <a class="el" href="ifc__tcpip_8h.html#a643bf83d44a7112dffafa71688057d4c">ifc_tcpip.h</a>
 </li>
+<li>TIME_FORMAT_STRING
+: <a class="el" href="ifc__file_8h.html#a768ea84a7b5818ac12d03ad83f7d6193">ifc_file.h</a>
+</li>
+<li>TIME_FORMAT_STRING_LEN
+: <a class="el" href="ifc__file_8h.html#ad526578db98c7054e96c3344a18697d0">ifc_file.h</a>
+</li>
+<li>TIME_PARAM
+: <a class="el" href="ifc__file_8h.html#a30ac80fc92df5812ff3f626b00b63b2d">ifc_file.h</a>
+</li>
+<li>TIME_PARAM_LEN
+: <a class="el" href="ifc__file_8h.html#a9e2217118253dafa9f8b31342b0fcfb1">ifc_file.h</a>
+</li>
 <li>TLS_PARAMS_DELIMITER
 : <a class="el" href="ifc__tls_8h.html#aa83e6c8b7d7a04ea8428ce4178e1f54c">ifc_tls.h</a>
-</li>
-<li>tls_SENDER_STATE_STR
-: <a class="el" href="group__tls__sender.html#ga5ea7505df2ceafb70ae88cc665e338bd">ifc_tls_internal.h</a>
 </li>
 <li>trap_ctx_t
 : <a class="el" href="trap_8h.html#a008a51aeb2d1f379beb493108407ce97">trap.h</a>
@@ -339,6 +326,9 @@ $(function() {
 <li>TRAP_E_MEMORY
 : <a class="el" href="group__errorcodes.html#ga79663abf02abe99caaed1d00477948fd">trap.h</a>
 </li>
+<li>TRAP_E_NEGOTIATION_FAILED
+: <a class="el" href="group__errorcodes.html#gaf23088e9550dde38a9169d734c530866">trap.h</a>
+</li>
 <li>TRAP_E_NOT_INITIALIZED
 : <a class="el" href="group__errorcodes.html#gaa49e5036605bb9cab9948bc086a26fa3">trap.h</a>
 </li>
@@ -396,9 +386,6 @@ $(function() {
 <li>TRAP_IN_IFC_COUNTERS
 : <a class="el" href="trap__internal_8h.html#a82b80275c4cd93352d15631373b11d47">trap_internal.h</a>
 </li>
-<li>TRAP_MASK_ALL
-: <a class="el" href="group__commonapi.html#ga109da88991df05299ab3e07e49a7923f">trap.h</a>
-</li>
 <li>TRAP_NO_AUTO_FLUSH
 : <a class="el" href="group__trap__timeout.html#gaf0f4e37c635e9cfbd6bba0e0c5d6dfb4">trap.h</a>
 </li>
@@ -428,8 +415,8 @@ $(function() {
 : <a class="el" href="ifc__tcpip_8h.html#a9a43a10e1db0d4d4f9254776ca795d51">ifc_tcpip.h</a>
 </li>
 <li>USEC_IN_SEC
-: <a class="el" href="group__tls__ifc.html#ga72467fb3c401ef8777d20cf99416e39e">ifc_tls.c</a>
-, <a class="el" href="group__tcpip__ifc.html#ga72467fb3c401ef8777d20cf99416e39e">ifc_tcpip.c</a>
+: <a class="el" href="group__tcpip__ifc.html#ga72467fb3c401ef8777d20cf99416e39e">ifc_tcpip.c</a>
+, <a class="el" href="group__tls__ifc.html#ga72467fb3c401ef8777d20cf99416e39e">ifc_tls.c</a>
 </li>
 </ul>
 
@@ -444,8 +431,8 @@ $(function() {
 <h3><a id="index_x"></a>- x -</h3><ul>
 <li>X
 : <a class="el" href="ifc__tcpip_8c.html#a53042471e9975ea6e004fafe0266f1c9">ifc_tcpip.c</a>
-, <a class="el" href="trap_8c.html#a045b94c0576825bf7f83aa58a69d7b45">trap.c</a>
-, <a class="el" href="ifc__tcpip_8c.html#a7782d5beaec931dd3bcfa060c6bf9bbd">ifc_tcpip.c</a>
+, <a class="el" href="ifc__tls_8c.html#a7782d5beaec931dd3bcfa060c6bf9bbd">ifc_tls.c</a>
+, <a class="el" href="trap_8c.html#a93ee0641006e250f610013636769b06d">trap.c</a>
 </li>
 </ul>
 </div><!-- contents -->

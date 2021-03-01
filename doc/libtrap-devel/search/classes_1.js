@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['file_5fprivate_5fs',['file_private_s',['../structfile__private__s.html',1,'']]]
+  ['buffer_5fs',['buffer_s',['../structbuffer__s.html',1,'']]]
 ];

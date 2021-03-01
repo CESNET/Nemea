@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unix_5faddr',['unix_addr',['../uniontcpip__socket__addr.html#af3851c41de7540cb7c6cbef21b04a850',1,'tcpip_socket_addr::unix_addr()'],['../uniontls__socket__addr.html#aa3a8625b304cdbce27b115c951abbae3',1,'tls_socket_addr::unix_addr()']]]
+  ['wr_5findex',['wr_index',['../structfile__buffer__s.html#ab829db2e26b5af715fb2346977d8fd7b',1,'file_buffer_s::wr_index()'],['../structbuffer__s.html#a0fa940aa266e3ea33e46a13c1a570a3f',1,'buffer_s::wr_index()']]]
 ];

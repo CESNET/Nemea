@@ -1,15 +1,16 @@
 var searchData=
 [
-  ['generator_5fdestroy',['generator_destroy',['../ifc__dummy_8c.html#a5f5b4ed13c71d88e3227816269408d7d',1,'ifc_dummy.c']]],
-  ['generator_5fifc_5fget_5fid',['generator_ifc_get_id',['../ifc__dummy_8c.html#a1b40bee42c536c742a9533b56740e78e',1,'ifc_dummy.c']]],
-  ['generator_5fifc_5fis_5fconn',['generator_ifc_is_conn',['../ifc__dummy_8c.html#afd5cb06e77b00bc241680b7590698571',1,'ifc_dummy.c']]],
-  ['generator_5frecv',['generator_recv',['../ifc__dummy_8c.html#a203edf773b635e53b635b60139495bdb',1,'ifc_dummy.c']]],
-  ['generator_5fterminate',['generator_terminate',['../ifc__dummy_8c.html#a6987f7fe70dc8e21205dac583bb2457c',1,'ifc_dummy.c']]],
-  ['get_5fcur_5ftimestamp',['get_cur_timestamp',['../group__tcpip__receiver.html#ga83472c2cd46eac526175b30d48495135',1,'ifc_tcpip.c']]],
-  ['get_5fin_5faddr',['get_in_addr',['../group__tcpip__ifc.html#ga67d03b167f8adca86cde7eeed5850982',1,'get_in_addr(struct sockaddr *sa):&#160;ifc_tcpip.c'],['../group__tls__ifc.html#ga67d03b167f8adca86cde7eeed5850982',1,'get_in_addr(struct sockaddr *sa):&#160;ifc_tls.c']]],
-  ['get_5flevel',['get_level',['../trap__internal_8c.html#abc051816fb35ec8ec9cba4d99460acc4',1,'trap_internal.c']]],
-  ['get_5fmodule_5fname',['get_module_name',['../trap_8c.html#ac7b9ed8ab44057b9ad6a53f98b81d4a4',1,'trap.c']]],
-  ['get_5fnext_5ffile',['get_next_file',['../group__file__ifc.html#gac768d695486428c3f6bfec987284b433',1,'ifc_file.c']]],
-  ['get_5fparam_5fby_5fdelimiter',['get_param_by_delimiter',['../trap_8c.html#a2186e85312c99ab71fb9466c9fda0e5a',1,'trap.c']]],
-  ['get_5fterminal_5fwidth',['get_terminal_width',['../trap_8c.html#a4d05e2325a8020e342295597aef447a4',1,'trap.c']]]
+  ['file_5fcreate_5fdump',['file_create_dump',['../group__file__ifc.html#ga87730dbc566bc75c062ef8320e95ce08',1,'ifc_file.c']]],
+  ['file_5fdestroy',['file_destroy',['../group__file__ifc.html#gaab5dc7028507246eaa18eb0ce1bbfa60',1,'ifc_file.c']]],
+  ['file_5fflush',['file_flush',['../group__file__sender.html#ga159700c278c2b3bfdc40b0dbca3880d6',1,'ifc_file.c']]],
+  ['file_5fget_5fclient_5fcount',['file_get_client_count',['../group__file__sender.html#gad8d2e1557a04cd5c6a2fd5c722ecaacd',1,'ifc_file.c']]],
+  ['file_5fget_5fclient_5fstats_5fjson',['file_get_client_stats_json',['../group__file__sender.html#ga372655b12fa8a43fcba5e0240306885b',1,'ifc_file.c']]],
+  ['file_5frecv',['file_recv',['../group__file__receiver.html#ga04d056bce3131b5857c1b337a9c4341d',1,'ifc_file.c']]],
+  ['file_5frecv_5fifc_5fget_5fid',['file_recv_ifc_get_id',['../group__file__receiver.html#ga56fb5e7e44c4cc38d2fdc1c5a1ccd91a',1,'ifc_file.c']]],
+  ['file_5frecv_5fifc_5fis_5fconn',['file_recv_ifc_is_conn',['../group__file__receiver.html#ga495ae064256c7d03083b842c9dc5f0cf',1,'ifc_file.c']]],
+  ['file_5fsend',['file_send',['../group__file__sender.html#ga919f85f1befced920f91f1c8e7cd4e69',1,'ifc_file.c']]],
+  ['file_5fsend_5fifc_5fget_5fid',['file_send_ifc_get_id',['../group__file__sender.html#ga8884e86269fc6b140df7f8a2b1927ed2',1,'ifc_file.c']]],
+  ['file_5fterminate',['file_terminate',['../group__file__ifc.html#ga46fc8df7837e8ea42e85133a9fcd3e49',1,'ifc_file.c']]],
+  ['file_5fwrite_5fbuffer',['file_write_buffer',['../group__file__sender.html#gaca49ec64aaa518a6e2e9c5396ccd3dc9',1,'ifc_file.c']]],
+  ['finish_5fbuffer',['finish_buffer',['../group__file__sender.html#ga584d20386ac54de01865ab04c1ec99df',1,'finish_buffer(file_buffer_t *buffer):&#160;ifc_file.c'],['../group__tcpip__sender.html#gab869dcac96b4cbda388a9d40a35c5eb7',1,'finish_buffer(tcpip_sender_private_t *priv, buffer_t *buffer):&#160;ifc_tcpip.c'],['../group__tls__sender.html#ga329b6a3a0d0527736d44acfafd2be576',1,'finish_buffer(tls_sender_private_t *priv, buffer_t *buffer):&#160;ifc_tls.c']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['data',['data',['../structtb__block__data__s.html#a0db3aa4890283205f436c08ed609d4d0',1,'tb_block_data_s::data()'],['../structtb__block__s.html#ac0537e312ec151a8f93a2e601cc75d23',1,'tb_block_s::data()'],['../structtrap__buffer__header__s.html#aae10443c28056e457903d575569b0d28',1,'trap_buffer_header_s::data()'],['../trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f',1,'data():&#160;trap_internal.h']]],
+  ['data',['data',['../structfile__buffer__s.html#a919ba393df19d1834772b610ca3f25fe',1,'file_buffer_s::data()'],['../structbuffer__s.html#ac522c6bea3709dcbfb638b5c49e70a6f',1,'buffer_s::data()'],['../structtrap__buffer__header__s.html#aae10443c28056e457903d575569b0d28',1,'trap_buffer_header_s::data()'],['../trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f',1,'data():&#160;trap_internal.h']]],
   ['data_5ffmt_5fspec',['data_fmt_spec',['../structtrap__input__ifc__s.html#a79c2aec80238bff3237d36d51f8a2243',1,'trap_input_ifc_s::data_fmt_spec()'],['../structtrap__output__ifc__s.html#a093102d7e5d3d6d4bd826e4a24263d11',1,'trap_output_ifc_s::data_fmt_spec()']]],
   ['data_5ffmt_5fspec_5fsize',['data_fmt_spec_size',['../structhello__msg__header__s.html#ae37e4704fcec4bf662271a2d1a8b5620',1,'hello_msg_header_s']]],
   ['data_5flength',['data_length',['../structtrap__buffer__header__s.html#aed3f6bcfd1e281004b06a20ba2fda99d',1,'trap_buffer_header_s::data_length()'],['../trap__internal_8h.html#af0cc3d1d5957cce931bb8e02130c6550',1,'data_length():&#160;trap_internal.h']]],
@@ -11,14 +11,16 @@ var searchData=
   ['data_5fwait_5fsize',['data_wait_size',['../structtcpip__receiver__private__s.html#aaf78da3865264b84f90d2aa6a799edd6',1,'tcpip_receiver_private_s::data_wait_size()'],['../structtls__receiver__private__s.html#a67fa5b6ad8f2119bb56d37f6a3ac9c3e',1,'tls_receiver_private_s::data_wait_size()']]],
   ['datatimeout',['datatimeout',['../structtrap__input__ifc__s.html#a4c37dc3eb2f6cfb02bd3828fa3ea8fb4',1,'trap_input_ifc_s::datatimeout()'],['../structtrap__output__ifc__s.html#abb71b89e140f0ee7a6d9af206b6cfb67',1,'trap_output_ifc_s::datatimeout()']]],
   ['datatimeout_5ffixed',['datatimeout_fixed',['../structtrap__input__ifc__s.html#a9050603d789b2ce45a6107f8b0f082f8',1,'trap_input_ifc_s::datatimeout_fixed()'],['../structtrap__output__ifc__s.html#a3f6cd83e1b2ec500efa23323f3dce5e1',1,'trap_output_ifc_s::datatimeout_fixed()']]],
-  ['dbg_5fprint',['DBG_PRINT',['../trap__buffer_8c.html#a76520932a9de1d3ad79aa033570ff22d',1,'trap_buffer.c']]],
   ['debug_5fbuf',['DEBUG_BUF',['../group__debug.html#gaca33582f6f59846d3883aaa5cafbc255',1,'trap_internal.h']]],
   ['debug_5fifc',['DEBUG_IFC',['../group__debug.html#ga0fcd05fb668244871f6aa40e3ede934c',1,'trap_internal.h']]],
-  ['debug_5fprints',['DEBUG_PRINTS',['../trap__buffer_8c.html#a58cc141c7897c4a5035c400ce2b83fb2',1,'trap_buffer.c']]],
+  ['default_5fbuffer_5fcount',['DEFAULT_BUFFER_COUNT',['../ifc__socket__common_8h.html#abb7814611632e59302550e4bbdfc2005',1,'ifc_socket_common.h']]],
+  ['default_5fbuffer_5fsize',['DEFAULT_BUFFER_SIZE',['../ifc__socket__common_8h.html#a6e576a3c6530636d68b7a220480bcd32',1,'ifc_socket_common.h']]],
   ['default_5ferr_5fmsg',['default_err_msg',['../trap__error_8c.html#a1eb88024c15fe7f4533fe79a397bfbc4',1,'default_err_msg():&#160;trap_error.c'],['../trap__error_8h.html#a1eb88024c15fe7f4533fe79a397bfbc4',1,'default_err_msg():&#160;trap_error.c']]],
-  ['default_5fmax_5fdata_5flength',['DEFAULT_MAX_DATA_LENGTH',['../group__tcpip__ifc.html#gafcd38906d9a32f5e20c50141c8f0bf14',1,'DEFAULT_MAX_DATA_LENGTH():&#160;ifc_tcpip.c'],['../group__tls__ifc.html#gafcd38906d9a32f5e20c50141c8f0bf14',1,'DEFAULT_MAX_DATA_LENGTH():&#160;ifc_tls.c']]],
+  ['default_5fmax_5fclients',['DEFAULT_MAX_CLIENTS',['../ifc__socket__common_8h.html#abb5b90442e7148e1b85e6879c2e0efc9',1,'ifc_socket_common.h']]],
+  ['default_5fmax_5fdata_5flength',['DEFAULT_MAX_DATA_LENGTH',['../ifc__socket__common_8h.html#afcd38906d9a32f5e20c50141c8f0bf14',1,'ifc_socket_common.h']]],
   ['default_5fmax_5fterminal_5fwidth',['DEFAULT_MAX_TERMINAL_WIDTH',['../trap__internal_8h.html#ad3274a76aef689d61eef22cfce054a32',1,'trap_internal.h']]],
   ['default_5fsocket_5fformat',['DEFAULT_SOCKET_FORMAT',['../ifc__tcpip_8h.html#a3f82a78a0f6bc22720d5d62919a3a756',1,'ifc_tcpip.h']]],
+  ['del_5findex',['del_index',['../ifc__socket__common_8h.html#a7eb87b37dc056b1535404fdc12a42bd3',1,'ifc_socket_common.h']]],
   ['deprecated_20list',['Deprecated List',['../deprecated.html',1,'']]],
   ['dest_5faddr',['dest_addr',['../structtcpip__receiver__private__s.html#a111fa5f95510969bfd4e925edf7237d4',1,'tcpip_receiver_private_s::dest_addr()'],['../structtls__receiver__private__s.html#a8f3cfa12b5fa34c4de91aac7f1c51c7c',1,'tls_receiver_private_s::dest_addr()']]],
   ['dest_5fport',['dest_port',['../structtcpip__receiver__private__s.html#a7ea56509c6a257092d8368a4ad590742',1,'tcpip_receiver_private_s::dest_port()'],['../structtls__receiver__private__s.html#ac28adda0e00270bfb2d9807bf7dc9aeb',1,'tls_receiver_private_s::dest_port()']]],
@@ -26,5 +28,6 @@ var searchData=
   ['development_20of_20libtrap_20interface',['Development of libtrap interface',['../devel-ifc.html',1,'']]],
   ['develop_2dinterface_2etxt',['develop-interface.txt',['../develop-interface_8txt.html',1,'']]],
   ['disconn_5fclients',['disconn_clients',['../structtrap__output__ifc__s.html#a8a0e19f2cf99eafe6de0b4b116946c34',1,'trap_output_ifc_s']]],
+  ['disconnect_5fclient',['disconnect_client',['../group__tcpip__sender.html#gad8033ef37f49bbe4b01b29a511f107a7',1,'disconnect_client(tcpip_sender_private_t *priv, int cl_id):&#160;ifc_tcpip.c'],['../group__tls__sender.html#ga10574da0c956724741173a3fe5c8eea3',1,'disconnect_client(tls_sender_private_t *priv, int cl_id):&#160;ifc_tls.c']]],
   ['development_20documentation',['Development documentation',['../index.html',1,'']]]
 ];

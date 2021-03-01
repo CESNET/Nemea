@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UniRec
-   &#160;<span id="projectnumber">2.3.0</span>
+   &#160;<span id="projectnumber">2.9.3</span>
    </div>
   </td>
  </tr>
@@ -74,8 +74,9 @@ $(function() {
 <p>Structure to store MAC address and associated functions.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;inttypes.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;netinet/ether.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="inline_8h_source.html">inline.h</a>&quot;</code><br />
 </div>
 <p><a href="macaddr_8h_source.html">Go to the source code of this file.</a></p>
@@ -84,6 +85,14 @@ $(function() {
 Macros</h2></td></tr>
 <tr class="memitem:a60867f758ccbfd1d74983d5fc87bf99a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macaddr_8h.html#a60867f758ccbfd1d74983d5fc87bf99a">MAC_STR_LEN</a>&#160;&#160;&#160;18</td></tr>
 <tr class="separator:a60867f758ccbfd1d74983d5fc87bf99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac1acc1d24060aeee7791a99d1a3a8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a>&#160;&#160;&#160;&quot;x&quot;</td></tr>
+<tr class="separator:adac1acc1d24060aeee7791a99d1a3a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79b1f201c12273510e1fdebfb3a66e9d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a>&#160;&#160;&#160;&quot;hhx&quot;</td></tr>
+<tr class="separator:a79b1f201c12273510e1fdebfb3a66e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d95aa03c8fa958373947e95cda10132"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macaddr_8h.html#a9d95aa03c8fa958373947e95cda10132">MAC_ADD_FORMAT_SCN</a>&#160;&#160;&#160;&quot;%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;&quot;</td></tr>
+<tr class="separator:a9d95aa03c8fa958373947e95cda10132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99418c30c5572f728f2c9765f8f1a810"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macaddr_8h.html#a99418c30c5572f728f2c9765f8f1a810">MAC_ADD_FORMAT_PRI</a>&#160;&#160;&#160;&quot;%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;&quot;</td></tr>
+<tr class="separator:a99418c30c5572f728f2c9765f8f1a810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -112,6 +121,38 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a99418c30c5572f728f2c9765f8f1a810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99418c30c5572f728f2c9765f8f1a810">&#9670;&nbsp;</a></span>MAC_ADD_FORMAT_PRI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAC_ADD_FORMAT_PRI&#160;&#160;&#160;&quot;%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#adac1acc1d24060aeee7791a99d1a3a8c">PRIx8</a> &quot;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00068">68</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+
+</div>
+</div>
+<a id="a9d95aa03c8fa958373947e95cda10132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d95aa03c8fa958373947e95cda10132">&#9670;&nbsp;</a></span>MAC_ADD_FORMAT_SCN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAC_ADD_FORMAT_SCN&#160;&#160;&#160;&quot;%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;:%02&quot; <a class="el" href="macaddr_8h.html#a79b1f201c12273510e1fdebfb3a66e9d">SCNx8</a> &quot;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00067">67</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+
+</div>
+</div>
 <a id="a60867f758ccbfd1d74983d5fc87bf99a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60867f758ccbfd1d74983d5fc87bf99a">&#9670;&nbsp;</a></span>MAC_STR_LEN</h2>
 
@@ -124,7 +165,39 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00056">56</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00057">57</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+
+</div>
+</div>
+<a id="adac1acc1d24060aeee7791a99d1a3a8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac1acc1d24060aeee7791a99d1a3a8c">&#9670;&nbsp;</a></span>PRIx8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PRIx8&#160;&#160;&#160;&quot;x&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00060">60</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+
+</div>
+</div>
+<a id="a79b1f201c12273510e1fdebfb3a66e9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79b1f201c12273510e1fdebfb3a66e9d">&#9670;&nbsp;</a></span>SCNx8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCNx8&#160;&#160;&#160;&quot;hhx&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00064">64</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -146,7 +219,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Structure containing MAC address bytes. </p>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00061">61</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00073">73</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -185,7 +258,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Positive number (&gt;0) if addr1 &gt; addr2, negative number (&lt;0) if addr1 &lt; addr2, and zero (=0) if addr1 == addr2. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00107">107</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00118">118</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -213,7 +286,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>MAC address stored as mac_addr_t. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00071">71</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00083">83</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -252,7 +325,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>1 on success, 0 on error i.e. string is not a valid MAC address. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00087">87</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00099">99</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -290,7 +363,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00130">130</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00144">144</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -328,7 +401,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00118">118</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00129">129</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>
@@ -345,7 +418,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00063">63</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="macaddr_8h_source.html#l00075">75</a> of file <a class="el" href="macaddr_8h_source.html">macaddr.h</a>.</p>
 
 </div>
 </div>

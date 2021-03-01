@@ -1,10 +1,10 @@
 <map id="src/trap_internal.h" name="src/trap_internal.h">
-<area shape="rect" id="node2" href="$trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="340,80,460,107"/>
-<area shape="rect" id="node4" href="$ifc__file_8c.html" title="TRAP file interfaces. " alt="" coords="5,155,104,181"/>
-<area shape="rect" id="node5" href="$ifc__tcpip_8c.html" title="TRAP TCP/IP interfaces. " alt="" coords="129,155,239,181"/>
-<area shape="rect" id="node6" href="$ifc__tls_8c.html" title="TRAP TCP with TLS interfaces. " alt="" coords="557,155,651,181"/>
-<area shape="rect" id="node7" href="$trap_8c.html" title="TRAP library base. " alt="" coords="676,155,759,181"/>
-<area shape="rect" id="node9" href="$trap__internal_8c.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="585,80,724,107"/>
-<area shape="rect" id="node3" href="$ifc__dummy_8c.html" title="TRAP dummy interfaces (generator and blackhole) " alt="" coords="263,155,390,181"/>
-<area shape="rect" id="node8" href="$trap__error_8c.html" title="Error handling for TRAP. " alt="" coords="414,155,533,181"/>
+<area shape="rect" id="node2" href="$trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="325,80,435,107"/>
+<area shape="rect" id="node4" href="$ifc__file_8c.html" title="TRAP file interfaces. " alt="" coords="5,155,99,181"/>
+<area shape="rect" id="node5" href="$ifc__tcpip_8c.html" title="TRAP TCP/IP interfaces. " alt="" coords="123,155,227,181"/>
+<area shape="rect" id="node6" href="$ifc__tls_8c.html" title="TRAP TCP with TLS interfaces. " alt="" coords="529,155,620,181"/>
+<area shape="rect" id="node7" href="$trap_8c.html" title="TRAP library base. " alt="" coords="644,155,721,181"/>
+<area shape="rect" id="node9" href="$trap__internal_8c.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="562,80,689,107"/>
+<area shape="rect" id="node3" href="$ifc__dummy_8c.html" title="TRAP dummy interfaces (generator and blackhole) " alt="" coords="251,155,370,181"/>
+<area shape="rect" id="node8" href="$trap__error_8c.html" title="Error handling for TRAP. " alt="" coords="394,155,505,181"/>
 </map>

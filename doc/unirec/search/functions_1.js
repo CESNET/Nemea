@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['compare_5ffields',['compare_fields',['../group__urtemplate.html#gaf893df4c0a8d17cae3f8999e9bcce312',1,'compare_fields(const void *field1, const void *field2):&#160;unirec.c'],['../group__urtemplate.html#gaf893df4c0a8d17cae3f8999e9bcce312',1,'compare_fields(const void *field1, const void *field2):&#160;unirec.c']]]
+  ['add_5fdata',['add_data',['../ip__prefix__search_8c.html#a9864b24744feaad0462a326e434a8f9b',1,'add_data(ipps_interval_t *interval, void *data, size_t data_len):&#160;ip_prefix_search.c'],['../ipps__internal_8h.html#a9864b24744feaad0462a326e434a8f9b',1,'add_data(ipps_interval_t *interval, void *data, size_t data_len):&#160;ip_prefix_search.c']]]
 ];

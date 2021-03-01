@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -69,8 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ifc_tcpip.c File Reference</div>  </div>
@@ -96,23 +94,26 @@ $(function() {
 <code>#include &lt;errno.h&gt;</code><br />
 <code>#include &lt;semaphore.h&gt;</code><br />
 <code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;poll.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="trap_8h_source.html">../include/libtrap/trap.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="trap__ifc_8h_source.html">trap_ifc.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="trap__error_8h_source.html">trap_error.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ifc__tcpip_8h_source.html">ifc_tcpip.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ifc__tcpip__internal_8h_source.html">ifc_tcpip_internal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ifc__socket__common_8h_source.html">ifc_socket_common.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ifc_tcpip.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="ifc__tcpip_8c__incl.png" border="0" usemap="#src_2ifc__tcpip_8c" alt=""/></div>
 <map name="src_2ifc__tcpip_8c" id="src_2ifc__tcpip_8c">
-<area shape="rect" id="node19" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="847,229,973,271"/>
-<area shape="rect" id="node24" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="489,155,606,181"/>
-<area shape="rect" id="node26" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="627,237,710,263"/>
-<area shape="rect" id="node28" href="trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="847,80,944,107"/>
-<area shape="rect" id="node29" href="ifc__tcpip_8h.html" title="TRAP TCP/IP interfaces. " alt="" coords="631,155,720,181"/>
-<area shape="rect" id="node30" href="ifc__tcpip__internal_8h.html" title="TRAP TCP/IP interfaces private structures. " alt="" coords="2110,80,2257,107"/>
+<area shape="rect" id="node20" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="765,229,879,271"/>
+<area shape="rect" id="node25" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="573,155,677,181"/>
+<area shape="rect" id="node27" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="419,237,495,263"/>
+<area shape="rect" id="node29" href="trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="802,80,890,107"/>
+<area shape="rect" id="node30" href="ifc__tcpip_8h.html" title="TRAP TCP/IP interfaces. " alt="" coords="415,155,498,181"/>
+<area shape="rect" id="node31" href="ifc__tcpip__internal_8h.html" title="TRAP TCP/IP interfaces private structures. " alt="" coords="2026,80,2157,107"/>
+<area shape="rect" id="node32" href="ifc__socket__common_8h.html" title="This file contains common functions and structures used in socket based interfaces (tcp&#45;ip / tls)..." alt="" coords="2067,155,2217,181"/>
 </map>
 </div>
 </div>
@@ -141,10 +142,6 @@ Macros</h2></td></tr>
 <tr class="separator:gafa99ec4acc4ecb2dc3c2d05da15d0e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3acffbd305ee72dcd4593c0d8af64a4f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__ifc.html#ga3acffbd305ee72dcd4593c0d8af64a4f">MIN</a>(a,  b)&#160;&#160;&#160;((a)&gt;(b)?(b):(a))</td></tr>
 <tr class="separator:ga3acffbd305ee72dcd4593c0d8af64a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafcd38906d9a32f5e20c50141c8f0bf14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__ifc.html#gafcd38906d9a32f5e20c50141c8f0bf14">DEFAULT_MAX_DATA_LENGTH</a>&#160;&#160;&#160;(sizeof(<a class="el" href="trap__internal_8h.html#a40b126ea10058bade088e6246959fd97">trap_buffer_header_t</a>) + 1024)</td></tr>
-<tr class="separator:gafcd38906d9a32f5e20c50141c8f0bf14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad884d561977a239709b5c729f22608f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__ifc.html#gad884d561977a239709b5c729f22608f2">MAX_CLIENTS_ARR_SIZE</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:gad884d561977a239709b5c729f22608f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53042471e9975ea6e004fafe0266f1c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__tcpip_8c.html#a53042471e9975ea6e004fafe0266f1c9">X</a>(p)</td></tr>
 <tr class="separator:a53042471e9975ea6e004fafe0266f1c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7782d5beaec931dd3bcfa060c6bf9bbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__tcpip_8c.html#a7782d5beaec931dd3bcfa060c6bf9bbd">X</a>(pointer)</td></tr>
@@ -153,19 +150,6 @@ Macros</h2></td></tr>
 <tr class="separator:a618c2e7d70c13a7d7f980ce67333f0ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7782d5beaec931dd3bcfa060c6bf9bbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__tcpip_8c.html#a7782d5beaec931dd3bcfa060c6bf9bbd">X</a>(pointer)</td></tr>
 <tr class="separator:a7782d5beaec931dd3bcfa060c6bf9bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga1a44f61fa14280b8e825b346add230cf"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__tcpip__sender.html#gac9d2a14d5f36c214bfd88d8bcc67c259">tcpip_sender_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga1a44f61fa14280b8e825b346add230cf">tcpip_sender_result_t</a></td></tr>
-<tr class="separator:ga1a44f61fa14280b8e825b346add230cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:gac9d2a14d5f36c214bfd88d8bcc67c259"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gac9d2a14d5f36c214bfd88d8bcc67c259">tcpip_sender_result</a> { <a class="el" href="group__tcpip__sender.html#ggac9d2a14d5f36c214bfd88d8bcc67c259ad8b4bc2563bd00e53ea036d7cff87ed6">EVERYBODY_PASSED</a>, 
-<a class="el" href="group__tcpip__sender.html#ggac9d2a14d5f36c214bfd88d8bcc67c259ae55cf1716ad32d02c23e5bfe0d3e0bee">EVERYBODY_TIMEDOUT</a>, 
-<a class="el" href="group__tcpip__sender.html#ggac9d2a14d5f36c214bfd88d8bcc67c259a25e04f87fe3a613f0f16d41e7d402e8f">SOMEBODY_TIMEDOUT</a>
- }</td></tr>
-<tr class="separator:gac9d2a14d5f36c214bfd88d8bcc67c259"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -209,19 +193,30 @@ Functions</h2></td></tr>
 <tr class="separator:gae9c7c5600b33d5225fe4a8d04a1b3af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaad3458f11c60698cc6a994bb9f812e2c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__receiver.html#gaad3458f11c60698cc6a994bb9f812e2c">wait_for_connection</a> (int sock, struct timeval *tv)</td></tr>
 <tr class="separator:gaad3458f11c60698cc6a994bb9f812e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeea6e61d3ac18a0bc93c3ed4ca0835e0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gaeea6e61d3ac18a0bc93c3ed4ca0835e0">server_disconnected_client</a> (<a class="el" href="group__tcpip__sender.html#ga45657b399741b8bd08cbfcef2ad490f1">tcpip_sender_private_t</a> *c, int cl_id)</td></tr>
-<tr class="separator:gaeea6e61d3ac18a0bc93c3ed4ca0835e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga625c5b454f5713b830835f99b02a4906"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga625c5b454f5713b830835f99b02a4906">send_all_data</a> (<a class="el" href="group__tcpip__sender.html#ga45657b399741b8bd08cbfcef2ad490f1">tcpip_sender_private_t</a> *c, int sd, void **<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t *size, char block)</td></tr>
-<tr class="memdesc:ga625c5b454f5713b830835f99b02a4906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to send data block at once.  <a href="group__tcpip__sender.html#ga625c5b454f5713b830835f99b02a4906">More...</a><br /></td></tr>
-<tr class="separator:ga625c5b454f5713b830835f99b02a4906"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga86bc8a32ffabaa87eaa11c09aaf295f2"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga86bc8a32ffabaa87eaa11c09aaf295f2">check_connected_clients</a> (<a class="el" href="group__tcpip__sender.html#ga45657b399741b8bd08cbfcef2ad490f1">tcpip_sender_private_t</a> *config)</td></tr>
-<tr class="separator:ga86bc8a32ffabaa87eaa11c09aaf295f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1f3543821451224ebabbf5119821f29"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gab1f3543821451224ebabbf5119821f29">tcpip_sender_conn_phase</a> (<a class="el" href="group__tcpip__sender.html#ga45657b399741b8bd08cbfcef2ad490f1">tcpip_sender_private_t</a> *config, struct timespec *t)</td></tr>
-<tr class="memdesc:gab1f3543821451224ebabbf5119821f29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if we have connected clients and wait for them.  <a href="group__tcpip__sender.html#gab1f3543821451224ebabbf5119821f29">More...</a><br /></td></tr>
-<tr class="separator:gab1f3543821451224ebabbf5119821f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacd668f1daf856a31e3fc665448dcef9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gacd668f1daf856a31e3fc665448dcef9c">tcpip_sender_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t size, int timeout)</td></tr>
-<tr class="memdesc:gacd668f1daf856a31e3fc665448dcef9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data to all connected clients.  <a href="group__tcpip__sender.html#gacd668f1daf856a31e3fc665448dcef9c">More...</a><br /></td></tr>
-<tr class="separator:gacd668f1daf856a31e3fc665448dcef9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8033ef37f49bbe4b01b29a511f107a7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gad8033ef37f49bbe4b01b29a511f107a7">disconnect_client</a> (<a class="el" href="group__tcpip__sender.html#ga45657b399741b8bd08cbfcef2ad490f1">tcpip_sender_private_t</a> *priv, int cl_id)</td></tr>
+<tr class="memdesc:gad8033ef37f49bbe4b01b29a511f107a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when a client was/is being disconnected.  <a href="group__tcpip__sender.html#gad8033ef37f49bbe4b01b29a511f107a7">More...</a><br /></td></tr>
+<tr class="separator:gad8033ef37f49bbe4b01b29a511f107a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab09f65cfd346e2d795e09e7b3533e95a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gab09f65cfd346e2d795e09e7b3533e95a">tcpip_server_disconnect_all_clients</a> (void *priv)</td></tr>
+<tr class="memdesc:gab09f65cfd346e2d795e09e7b3533e95a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function disconnects all clients of the output interface whose private structure is passed via "priv" parameter.  <a href="group__tcpip__sender.html#gab09f65cfd346e2d795e09e7b3533e95a">More...</a><br /></td></tr>
+<tr class="separator:gab09f65cfd346e2d795e09e7b3533e95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3a65816f2a41268758c569a7a368ff1"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gad3a65816f2a41268758c569a7a368ff1">accept_clients_thread</a> (void *arg)</td></tr>
+<tr class="memdesc:gad3a65816f2a41268758c569a7a368ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs in a separate thread and handles new client's connection requests.  <a href="group__tcpip__sender.html#gad3a65816f2a41268758c569a7a368ff1">More...</a><br /></td></tr>
+<tr class="separator:gad3a65816f2a41268758c569a7a368ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab869dcac96b4cbda388a9d40a35c5eb7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gab869dcac96b4cbda388a9d40a35c5eb7">finish_buffer</a> (<a class="el" href="group__tcpip__sender.html#ga45657b399741b8bd08cbfcef2ad490f1">tcpip_sender_private_t</a> *priv, <a class="el" href="ifc__socket__common_8h.html#a9aa12143b2c71bd60b9418ee7f4d3bb6">buffer_t</a> *buffer)</td></tr>
+<tr class="memdesc:gab869dcac96b4cbda388a9d40a35c5eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write buffer size to its header and shift active index.  <a href="group__tcpip__sender.html#gab869dcac96b4cbda388a9d40a35c5eb7">More...</a><br /></td></tr>
+<tr class="separator:gab869dcac96b4cbda388a9d40a35c5eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84f6fd9cc7f2ecb7f175f2149b6381a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga84f6fd9cc7f2ecb7f175f2149b6381a5">tcpip_sender_flush</a> (void *priv)</td></tr>
+<tr class="memdesc:ga84f6fd9cc7f2ecb7f175f2149b6381a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force flush of active buffer.  <a href="group__tcpip__sender.html#ga84f6fd9cc7f2ecb7f175f2149b6381a5">More...</a><br /></td></tr>
+<tr class="separator:ga84f6fd9cc7f2ecb7f175f2149b6381a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c122c5ed90b47bd03fa9e22b18d5c82"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga1c122c5ed90b47bd03fa9e22b18d5c82">send_data</a> (<a class="el" href="group__tcpip__sender.html#ga45657b399741b8bd08cbfcef2ad490f1">tcpip_sender_private_t</a> *priv, <a class="el" href="group__tcpip__sender.html#ga8db229da62af6e778b15d0dfeab62c2d">client_t</a> *c, uint32_t cl_id)</td></tr>
+<tr class="memdesc:ga1c122c5ed90b47bd03fa9e22b18d5c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data to client from his assigned buffer.  <a href="group__tcpip__sender.html#ga1c122c5ed90b47bd03fa9e22b18d5c82">More...</a><br /></td></tr>
+<tr class="separator:ga1c122c5ed90b47bd03fa9e22b18d5c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga029de4ad961a1d3d89a52cbc5e3a10a0"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga029de4ad961a1d3d89a52cbc5e3a10a0">sending_thread_func</a> (void *priv)</td></tr>
+<tr class="memdesc:ga029de4ad961a1d3d89a52cbc5e3a10a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function runs in a separate thread. It handles sending data to connected clients for TCPIP and UNIX interfaces.  <a href="group__tcpip__sender.html#ga029de4ad961a1d3d89a52cbc5e3a10a0">More...</a><br /></td></tr>
+<tr class="separator:ga029de4ad961a1d3d89a52cbc5e3a10a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c778885040ccd9dafe56b1f9ecd355f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga4c778885040ccd9dafe56b1f9ecd355f">tcpip_sender_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size, int timeout)</td></tr>
+<tr class="memdesc:ga4c778885040ccd9dafe56b1f9ecd355f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store message into buffer.  <a href="group__tcpip__sender.html#ga4c778885040ccd9dafe56b1f9ecd355f">More...</a><br /></td></tr>
+<tr class="separator:ga4c778885040ccd9dafe56b1f9ecd355f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0b43746d012021fe6af3b6fde17d12c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga0b43746d012021fe6af3b6fde17d12c3">tcpip_sender_terminate</a> (void *priv)</td></tr>
 <tr class="memdesc:ga0b43746d012021fe6af3b6fde17d12c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set interface state as terminated.  <a href="group__tcpip__sender.html#ga0b43746d012021fe6af3b6fde17d12c3">More...</a><br /></td></tr>
 <tr class="separator:ga0b43746d012021fe6af3b6fde17d12c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,19 +225,15 @@ Functions</h2></td></tr>
 <tr class="separator:ga5ad10441ac50af06112eee9db2047919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3d1beceb2af358ffb6116184e9f61026"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga3d1beceb2af358ffb6116184e9f61026">tcpip_sender_get_client_count</a> (void *priv)</td></tr>
 <tr class="separator:ga3d1beceb2af358ffb6116184e9f61026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga610a2d03c2351110e984fc74c26356bf"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga610a2d03c2351110e984fc74c26356bf">tcpip_sender_get_client_stats_json</a> (void *priv, json_t *client_stats_arr)</td></tr>
+<tr class="separator:ga610a2d03c2351110e984fc74c26356bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7cb4c51ce43d85a04c6406a17fc1fe0b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga7cb4c51ce43d85a04c6406a17fc1fe0b">tcpip_sender_create_dump</a> (void *priv, uint32_t idx, const char *path)</td></tr>
 <tr class="separator:ga7cb4c51ce43d85a04c6406a17fc1fe0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3b32b86681586a07367820893fff98d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga3b32b86681586a07367820893fff98d3">server_disconnect_all_clients</a> (void *priv)</td></tr>
-<tr class="memdesc:ga3b32b86681586a07367820893fff98d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function disconnects all clients of the output interface whose private structure is passed via "priv" parameter.  <a href="group__tcpip__sender.html#ga3b32b86681586a07367820893fff98d3">More...</a><br /></td></tr>
-<tr class="separator:ga3b32b86681586a07367820893fff98d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga90dbe211caa71064dd3c44b9eac5932a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga90dbe211caa71064dd3c44b9eac5932a">tcpip_send_ifc_get_id</a> (void *priv)</td></tr>
 <tr class="separator:ga90dbe211caa71064dd3c44b9eac5932a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga19dfb1ff5fc8916e8c4bd1e0800bf9df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga19dfb1ff5fc8916e8c4bd1e0800bf9df">create_tcpip_sender_ifc</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, const char *params, <a class="el" href="group__trap__ifc.html#ga67931b1db8d9f47c96534b924252b370">trap_output_ifc_t</a> *ifc, uint32_t idx, enum <a class="el" href="ifc__tcpip_8h.html#a5893d62a74cf9d99455f8226678f68e6">tcpip_ifc_sockettype</a> type)</td></tr>
 <tr class="memdesc:ga19dfb1ff5fc8916e8c4bd1e0800bf9df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of output TCP/IP IFC module. This function is called by TRAP library to initialize one output interface.  <a href="group__tcpip__sender.html#ga19dfb1ff5fc8916e8c4bd1e0800bf9df">More...</a><br /></td></tr>
 <tr class="separator:ga19dfb1ff5fc8916e8c4bd1e0800bf9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3a65816f2a41268758c569a7a368ff1"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gad3a65816f2a41268758c569a7a368ff1">accept_clients_thread</a> (void *arg)</td></tr>
-<tr class="memdesc:gad3a65816f2a41268758c569a7a368ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for server thread - accepts incoming clients and disconnects them.  <a href="group__tcpip__sender.html#gad3a65816f2a41268758c569a7a368ff1">More...</a><br /></td></tr>
-<tr class="separator:gad3a65816f2a41268758c569a7a368ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>TRAP TCP/IP interfaces. </p>

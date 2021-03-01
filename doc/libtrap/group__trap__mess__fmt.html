@@ -19,7 +19,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">libtrap
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -51,7 +51,7 @@ Collaboration diagram for Message format:</div>
 <div class="dyncontent">
 <center><table><tr><td><img src="group__trap__mess__fmt.png" border="0" alt="" usemap="#group____trap____mess____fmt"/>
 <map name="group____trap____mess____fmt" id="group____trap____mess____fmt">
-<area shape="rect" id="node2" href="group__commonapi.html" title="Common libtrap API" alt="" coords="5,5,143,32"/>
+<area shape="rect" id="node2" href="group__commonapi.html" title="Common libtrap API" alt="" coords="5,5,145,32"/>
 </map>
 </td></tr></table></center>
 </div>
@@ -117,7 +117,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="trap_8h_source.html#l00238">238</a> of file <a class="el" href="trap_8h_source.html">trap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8h_source.html#l00225">225</a> of file <a class="el" href="trap_8h_source.html">trap.h</a>.</p>
 
 </div>
 </div>
@@ -144,7 +144,7 @@ Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="trap_8h_source.html#l00255">255</a> of file <a class="el" href="trap_8h_source.html">trap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8h_source.html#l00242">242</a> of file <a class="el" href="trap_8h_source.html">trap.h</a>.</p>
 
 </div>
 </div>
@@ -193,7 +193,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Get message format and template that is set on IFC.</p>
-<p>On output IFC it should return the values that were set. On input IFC it should return format and template that was received.</p>
+<p>On output IFC it should return the values that were set. On input IFC it should return format and template that was received. This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#ga0401aae8bc25cfd01b1124baf7bd863a" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -234,6 +234,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Returns current state of an input interface on specified index.</p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#ga0401aae8bc25cfd01b1124baf7bd863a" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -283,6 +284,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set format of messages on output IFC.</p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#ga0401aae8bc25cfd01b1124baf7bd863a" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -333,6 +335,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set format of messages expected on input IFC.</p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#ga0401aae8bc25cfd01b1124baf7bd863a" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -384,6 +387,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set format of messages on output IFC.</p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#ga0401aae8bc25cfd01b1124baf7bd863a" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>
@@ -434,6 +438,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set format of messages expected on input IFC.</p>
+<p>This function is thread safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Pointer to the private libtrap context data (<a class="el" href="group__contextapi.html#ga0401aae8bc25cfd01b1124baf7bd863a" title="Initialize and return the context of libtrap. ">trap_ctx_init()</a>). </td></tr>

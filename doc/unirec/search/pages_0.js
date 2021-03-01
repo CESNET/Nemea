@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['unirec_3a_20content_20of_20documentation',['UniRec: Content of documentation',['../index.html',1,'']]],
-  ['unirec',['UniRec',['../md_doc_intro.html',1,'']]],
-  ['unirec',['UniRec',['../md_README.html',1,'']]]
+  ['ip_20prefix_20binary_20search',['IP prefix binary search',['../md_README-ip_prefix_search.html',1,'']]]
 ];

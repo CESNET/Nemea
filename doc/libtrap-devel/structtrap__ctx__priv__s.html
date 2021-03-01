@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -75,11 +75,9 @@ Collaboration diagram for trap_ctx_priv_s:</div>
 <div class="dyncontent">
 <div class="center"><img src="structtrap__ctx__priv__s__coll__graph.png" border="0" usemap="#trap__ctx__priv__s_coll__map" alt="Collaboration graph"/></div>
 <map name="trap__ctx__priv__s_coll__map" id="trap__ctx__priv__s_coll__map">
-<area shape="rect" id="node2" href="structtrap__output__ifc__s.html" title="trap_output_ifc_s" alt="" coords="7,5,142,32"/>
-<area shape="rect" id="node3" href="structtrap__multi__result.html" title="trap_multi_result" alt="" coords="8,56,141,83"/>
-<area shape="rect" id="node4" href="structreader__threads__s.html" title="reader_threads_s" alt="" coords="7,107,142,133"/>
-<area shape="rect" id="node5" href="structtrap__input__ifc__s.html" title="trap_input_ifc_s" alt="" coords="12,157,137,184"/>
-<area shape="rect" id="node6" href="structout__ifc__timeout__s.html" title="out_ifc_timeout_s" alt="" coords="5,208,144,235"/>
+<area shape="rect" id="node2" href="structtrap__output__ifc__s.html" title="trap_output_ifc_s" alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node3" href="structautoflush__timeouts.html" title="List of autoflush timeouts of output interfaces. " alt="" coords="153,5,285,32"/>
+<area shape="rect" id="node4" href="structtrap__input__ifc__s.html" title="trap_input_ifc_s" alt="" coords="321,5,436,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -87,10 +85,10 @@ Collaboration diagram for trap_ctx_priv_s:</div>
 Data Fields</h2></td></tr>
 <tr class="memitem:a91a63a3c23a2bd6e97ea4b1bbe69219b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a91a63a3c23a2bd6e97ea4b1bbe69219b">initialized</a></td></tr>
 <tr class="separator:a91a63a3c23a2bd6e97ea4b1bbe69219b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f60bd22104a0fb06eb665ed0f62e0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a55f60bd22104a0fb06eb665ed0f62e0a">terminated</a></td></tr>
-<tr class="separator:a55f60bd22104a0fb06eb665ed0f62e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a207de8c93be82813ad4babbc3f78ebad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a207de8c93be82813ad4babbc3f78ebad">ifc_change</a></td></tr>
-<tr class="separator:a207de8c93be82813ad4babbc3f78ebad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1766aa58f50d6d56d3ec7b7d03830e82"><td class="memItemLeft" align="right" valign="top">volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a1766aa58f50d6d56d3ec7b7d03830e82">terminated</a></td></tr>
+<tr class="separator:a1766aa58f50d6d56d3ec7b7d03830e82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63bd99bb735df5ac63113537fb03f765"><td class="memItemLeft" align="right" valign="top">volatile int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a63bd99bb735df5ac63113537fb03f765">ifc_change</a></td></tr>
+<tr class="separator:a63bd99bb735df5ac63113537fb03f765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3df9ece66f6d6a59a99a720f12132539"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a3df9ece66f6d6a59a99a720f12132539">trap_last_error</a></td></tr>
 <tr class="separator:a3df9ece66f6d6a59a99a720f12132539"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f89537f85add16fd2359ae690999247"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a9f89537f85add16fd2359ae690999247">trap_last_error_msg</a></td></tr>
@@ -105,24 +103,12 @@ Data Fields</h2></td></tr>
 <tr class="separator:a2e4d1aa8eb64743dda03cee9430197d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f71f0c46759591ff11107870d66111b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a1f71f0c46759591ff11107870d66111b">num_ifc_out</a></td></tr>
 <tr class="separator:a1f71f0c46759591ff11107870d66111b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8613d21f79a5543e14489ec34773fcc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__commonapi.html#ga09574de535c3e73578fa2930b108b38b">trap_multi_result_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a8613d21f79a5543e14489ec34773fcc9">in_ifc_results</a></td></tr>
-<tr class="separator:a8613d21f79a5543e14489ec34773fcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61f86431123ad98238d934e907b608a5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a61f86431123ad98238d934e907b608a5">get_data_timeout</a></td></tr>
 <tr class="separator:a61f86431123ad98238d934e907b608a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02defc9f88f85532412e0ceb1a969918"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structreader__threads__s.html">reader_threads_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a02defc9f88f85532412e0ceb1a969918">reader_threads</a></td></tr>
-<tr class="separator:a02defc9f88f85532412e0ceb1a969918"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46885fa066dce58ffbd37f2d5e4abcb4"><td class="memItemLeft" align="right" valign="top">sem_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a46885fa066dce58ffbd37f2d5e4abcb4">sem_collector</a></td></tr>
-<tr class="separator:a46885fa066dce58ffbd37f2d5e4abcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6940d95e929c62b32a619da27dcbf47f"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a6940d95e929c62b32a619da27dcbf47f">mut_sem_collector</a></td></tr>
-<tr class="separator:a6940d95e929c62b32a619da27dcbf47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4620e5353d3d9308b71b03762d82b67"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#ac4620e5353d3d9308b71b03762d82b67">readers_count</a></td></tr>
-<tr class="separator:ac4620e5353d3d9308b71b03762d82b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a468cf11faf30ffb084fe96781b3eb500"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a468cf11faf30ffb084fe96781b3eb500">timeout_thread</a></td></tr>
-<tr class="separator:a468cf11faf30ffb084fe96781b3eb500"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27971c02026630d913c42a00544b5145"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a27971c02026630d913c42a00544b5145">timeout_thread_initialized</a></td></tr>
-<tr class="separator:a27971c02026630d913c42a00544b5145"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ccc6d25b1d576f9af9f09687ca0bdc0"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structout__ifc__timeout__s.html">out_ifc_timeout_s</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a5ccc6d25b1d576f9af9f09687ca0bdc0">ifc_autoflush_timeout</a></td></tr>
-<tr class="separator:a5ccc6d25b1d576f9af9f09687ca0bdc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ac9f3b84a8531e68be50a39c21e0126"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a1ac9f3b84a8531e68be50a39c21e0126">error_mtx</a></td></tr>
+<tr class="separator:a1ac9f3b84a8531e68be50a39c21e0126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d5cc5cb537abe973335b0ddc7c0815"><td class="memItemLeft" align="right" valign="top"><a class="el" href="trap__internal_8h.html#a86ac574ead4f87e3db30492d68f4b55e">ifc_autoflush_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a69d5cc5cb537abe973335b0ddc7c0815">ifc_autoflush_timeout</a></td></tr>
+<tr class="separator:a69d5cc5cb537abe973335b0ddc7c0815"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8679c035870a267754ced49a2d3260e9"><td class="memItemLeft" align="right" valign="top">pthread_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a8679c035870a267754ced49a2d3260e9">service_thread</a></td></tr>
 <tr class="separator:a8679c035870a267754ced49a2d3260e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ff58b090a07f9fbc6795ecbcda326ee"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a2ff58b090a07f9fbc6795ecbcda326ee">service_ifc_name</a></td></tr>
@@ -141,32 +127,19 @@ Data Fields</h2></td></tr>
 <tr class="separator:gae918d788c4f2e3b77fc3e3c9d7eef7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabf8d83b97e6807743758827a9627a7b9"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ctxifccounters.html#gabf8d83b97e6807743758827a9627a7b9">counter_recv_buffer</a></td></tr>
 <tr class="separator:gabf8d83b97e6807743758827a9627a7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d10aa5aeb574ea74b56bbf09fc7d7fa"><td class="memItemLeft" align="right" valign="top">pthread_rwlock_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtrap__ctx__priv__s.html#a5d10aa5aeb574ea74b56bbf09fc7d7fa">context_lock</a></td></tr>
-<tr class="separator:a5d10aa5aeb574ea74b56bbf09fc7d7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e34bd70f9d3373186a8bf6d5870733f"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ctxifccounters.html#ga5e34bd70f9d3373186a8bf6d5870733f">counter_recv_delay_last</a></td></tr>
+<tr class="separator:ga5e34bd70f9d3373186a8bf6d5870733f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga94165668161797455663b67406badc8c"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ctxifccounters.html#ga94165668161797455663b67406badc8c">counter_recv_delay_total</a></td></tr>
+<tr class="separator:ga94165668161797455663b67406badc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef1f0d9cee8a5c519c741aa5d3c8f79a"><td class="memItemLeft" align="right" valign="top">uint64_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__ctxifccounters.html#gaef1f0d9cee8a5c519c741aa5d3c8f79a">recv_delay_timestamp</a></td></tr>
+<tr class="separator:gaef1f0d9cee8a5c519c741aa5d3c8f79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Libtrap context structure.</p>
 <p>It contains the whole context of one instance of libtrap. The context contains arrays of communication interfaces (IFC), buffers, locks/mutexes. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00224">224</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00220">220</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a5d10aa5aeb574ea74b56bbf09fc7d7fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d10aa5aeb574ea74b56bbf09fc7d7fa">&#9670;&nbsp;</a></span>context_lock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">pthread_rwlock_t trap_ctx_priv_s::context_lock</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Lock context (this structure) </p>
-
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00375">375</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
-
-</div>
-</div>
 <a id="aeef7583ee81ee1466988bfb119cfe2f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeef7583ee81ee1466988bfb119cfe2f6">&#9670;&nbsp;</a></span>error_msg_buffer</h2>
 
@@ -180,7 +153,24 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Buffer for dynamically generated messages </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00252">252</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00248">248</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ac9f3b84a8531e68be50a39c21e0126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ac9f3b84a8531e68be50a39c21e0126">&#9670;&nbsp;</a></span>error_mtx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_mutex_t trap_ctx_priv_s::error_mtx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Lock setting last error code and last error message. </p>
+
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00278">278</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -197,41 +187,41 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Timeout common to all readers for multiread feature </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00282">282</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00273">273</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
-<a id="a5ccc6d25b1d576f9af9f09687ca0bdc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ccc6d25b1d576f9af9f09687ca0bdc0">&#9670;&nbsp;</a></span>ifc_autoflush_timeout</h2>
+<a id="a69d5cc5cb537abe973335b0ddc7c0815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d5cc5cb537abe973335b0ddc7c0815">&#9670;&nbsp;</a></span>ifc_autoflush_timeout</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structout__ifc__timeout__s.html">out_ifc_timeout_s</a>* trap_ctx_priv_s::ifc_autoflush_timeout</td>
+          <td class="memname"><a class="el" href="trap__internal_8h.html#a86ac574ead4f87e3db30492d68f4b55e">ifc_autoflush_t</a>* trap_ctx_priv_s::ifc_autoflush_timeout</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Timeouts for autoflush </p>
+<p>Timeouts for autoflush thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00321">321</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00283">283</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
-<a id="a207de8c93be82813ad4babbc3f78ebad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a207de8c93be82813ad4babbc3f78ebad">&#9670;&nbsp;</a></span>ifc_change</h2>
+<a id="a63bd99bb735df5ac63113537fb03f765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63bd99bb735df5ac63113537fb03f765">&#9670;&nbsp;</a></span>ifc_change</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int trap_ctx_priv_s::ifc_change</td>
+          <td class="memname">volatile int trap_ctx_priv_s::ifc_change</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Is output interface parameter changed? (0 ~ false, should run) </p>
+<p>Number of interface changes waiting to be applied. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00237">237</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00233">233</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -248,24 +238,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Array of input interfaces </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00257">257</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a8613d21f79a5543e14489ec34773fcc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8613d21f79a5543e14489ec34773fcc9">&#9670;&nbsp;</a></span>in_ifc_results</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__commonapi.html#ga09574de535c3e73578fa2930b108b38b">trap_multi_result_t</a>* trap_ctx_priv_s::in_ifc_results</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Array of results for multiread feature </p>
-
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00277">277</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00253">253</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -282,24 +255,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Is libtrap initialized correctly? (0 ~ false) </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00228">228</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a6940d95e929c62b32a619da27dcbf47f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6940d95e929c62b32a619da27dcbf47f">&#9670;&nbsp;</a></span>mut_sem_collector</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">pthread_mutex_t trap_ctx_priv_s::mut_sem_collector</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Mutex for manipulation with readers_count. </p>
-
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00298">298</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00224">224</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -316,7 +272,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Number of input interfaces </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00267">267</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00263">263</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -333,7 +289,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Number of output interfaces </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00272">272</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00268">268</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -350,58 +306,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Arrays of output interfaces </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00262">262</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a02defc9f88f85532412e0ceb1a969918"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02defc9f88f85532412e0ceb1a969918">&#9670;&nbsp;</a></span>reader_threads</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structreader__threads__s.html">reader_threads_s</a>* trap_ctx_priv_s::reader_threads</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Reader threads for multiread feature </p>
-
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00287">287</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="ac4620e5353d3d9308b71b03762d82b67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4620e5353d3d9308b71b03762d82b67">&#9670;&nbsp;</a></span>readers_count</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int32_t trap_ctx_priv_s::readers_count</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Number of reader threads that will read messages during multiread (set by collector thread). Every client decreases this value and the last reader (readers_count equals 0 after decrementation) wakes the collector thread. </p>
-
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00306">306</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a46885fa066dce58ffbd37f2d5e4abcb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46885fa066dce58ffbd37f2d5e4abcb4">&#9670;&nbsp;</a></span>sem_collector</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">sem_t trap_ctx_priv_s::sem_collector</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Semaphore used when collector (main thread, caller of ifc's recv) waits for incoming data from all threads. </p>
-
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00293">293</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00258">258</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -418,7 +323,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Name of the service IFC socket, it is disabled when NULL. </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00331">331</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00293">293</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -435,7 +340,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Service thread that enables communication with module </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00326">326</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00288">288</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -452,58 +357,24 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Indicator of initialized service thread </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00336">336</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00298">298</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
-<a id="a55f60bd22104a0fb06eb665ed0f62e0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55f60bd22104a0fb06eb665ed0f62e0a">&#9670;&nbsp;</a></span>terminated</h2>
+<a id="a1766aa58f50d6d56d3ec7b7d03830e82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1766aa58f50d6d56d3ec7b7d03830e82">&#9670;&nbsp;</a></span>terminated</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int trap_ctx_priv_s::terminated</td>
+          <td class="memname">volatile int trap_ctx_priv_s::terminated</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Is libtrap terminated? (0 ~ false, should run) </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00232">232</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a468cf11faf30ffb084fe96781b3eb500"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a468cf11faf30ffb084fe96781b3eb500">&#9670;&nbsp;</a></span>timeout_thread</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">pthread_t trap_ctx_priv_s::timeout_thread</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Thread to handle timeouts on output interfaces. </p>
-
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00311">311</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
-
-</div>
-</div>
-<a id="a27971c02026630d913c42a00544b5145"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27971c02026630d913c42a00544b5145">&#9670;&nbsp;</a></span>timeout_thread_initialized</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int trap_ctx_priv_s::timeout_thread_initialized</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Indicator of initialized autoflush thread </p>
-
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00316">316</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00228">228</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -520,7 +391,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Code of last error (one of the codes above) </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00242">242</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00238">238</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>
@@ -537,7 +408,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>Human-readable message about last error </p>
 
-<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00247">247</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap__internal_8h_source.html#l00243">243</a> of file <a class="el" href="trap__internal_8h_source.html">trap_internal.h</a>.</p>
 
 </div>
 </div>

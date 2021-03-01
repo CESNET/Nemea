@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -76,57 +76,9 @@ Functions</h2></td></tr>
 <tr class="separator:gab4ba2c95a8817983f23a58aae093f48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1b570e9a0c3871ef23cc9fc649a110a1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buffering.html#ga1b570e9a0c3871ef23cc9fc649a110a1">trap_read_from_buffer</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, uint32_t ifc_idx, const void **<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t *size, int timeout)</td></tr>
 <tr class="separator:ga1b570e9a0c3871ef23cc9fc649a110a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac63e35af0cd7a9aa4285f00d94a68270"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buffering.html#gac63e35af0cd7a9aa4285f00d94a68270">insert_into_buffer</a> (<a class="el" href="group__trap__ifc.html#ga67931b1db8d9f47c96534b924252b370">trap_output_ifc_t</a> *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, const uint16_t size)</td></tr>
-<tr class="separator:gac63e35af0cd7a9aa4285f00d94a68270"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae89e8d39db55da40a48f03c59f4c46b9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__buffering.html#gae89e8d39db55da40a48f03c59f4c46b9">trap_store_into_buffer</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, unsigned int ifc, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size, int timeout, char flush)</td></tr>
-<tr class="separator:gae89e8d39db55da40a48f03c59f4c46b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gac63e35af0cd7a9aa4285f00d94a68270"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gac63e35af0cd7a9aa4285f00d94a68270">&#9670;&nbsp;</a></span>insert_into_buffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void insert_into_buffer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__trap__ifc.html#ga67931b1db8d9f47c96534b924252b370">trap_output_ifc_t</a> *&#160;</td>
-          <td class="paramname"><em>priv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint16_t&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00327">327</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
-
-</div>
-</div>
 <a id="gab4ba2c95a8817983f23a58aae093f48f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab4ba2c95a8817983f23a58aae093f48f">&#9670;&nbsp;</a></span>trap_check_buffer_content()</h2>
 
@@ -163,7 +115,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, number of errors otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00231">231</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00222">222</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>
@@ -230,69 +182,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00262">262</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
-
-</div>
-</div>
-<a id="gae89e8d39db55da40a48f03c59f4c46b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae89e8d39db55da40a48f03c59f4c46b9">&#9670;&nbsp;</a></span>trap_store_into_buffer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static int trap_store_into_buffer </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *&#160;</td>
-          <td class="paramname"><em>ctx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>ifc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>timeout</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>flush</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00337">337</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trap_8c_source.html#l00253">253</a> of file <a class="el" href="trap_8c_source.html">trap.c</a>.</p>
 
 </div>
 </div>

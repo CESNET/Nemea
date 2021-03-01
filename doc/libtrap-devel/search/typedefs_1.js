@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generator_5fprivate_5ft',['generator_private_t',['../ifc__dummy_8c.html#a605f9f7108e53a58658ef2baee532ccd',1,'ifc_dummy.c']]]
+  ['client_5ft',['client_t',['../group__tcpip__sender.html#ga8db229da62af6e778b15d0dfeab62c2d',1,'ifc_tcpip_internal.h']]]
 ];

@@ -1,9 +1,7 @@
 <map id="tls_receiver_private_s" name="tls_receiver_private_s">
-<area shape="rect" id="node2" href="$structtrap__buffer__header__s.html" title="trap_buffer_header_s" alt="" coords="337,56,496,83"/>
-<area shape="rect" id="node3" href="$structtrap__ctx__priv__s.html" title="trap_ctx_priv_s" alt="" coords="356,107,477,133"/>
-<area shape="rect" id="node4" href="$structtrap__output__ifc__s.html" title="trap_output_ifc_s" alt="" coords="7,5,142,32"/>
-<area shape="rect" id="node5" href="$structtrap__multi__result.html" title="trap_multi_result" alt="" coords="8,56,141,83"/>
-<area shape="rect" id="node6" href="$structreader__threads__s.html" title="reader_threads_s" alt="" coords="7,107,142,133"/>
-<area shape="rect" id="node7" href="$structtrap__input__ifc__s.html" title="trap_input_ifc_s" alt="" coords="12,157,137,184"/>
-<area shape="rect" id="node8" href="$structout__ifc__timeout__s.html" title="out_ifc_timeout_s" alt="" coords="5,208,144,235"/>
+<area shape="rect" id="node2" href="$structtrap__buffer__header__s.html" title="trap_buffer_header_s" alt="" coords="5,95,149,121"/>
+<area shape="rect" id="node3" href="$structtrap__ctx__priv__s.html" title="trap_ctx_priv_s" alt="" coords="174,95,285,121"/>
+<area shape="rect" id="node4" href="$structtrap__output__ifc__s.html" title="trap_output_ifc_s" alt="" coords="16,5,139,32"/>
+<area shape="rect" id="node5" href="$structautoflush__timeouts.html" title="List of autoflush timeouts of output interfaces. " alt="" coords="163,5,295,32"/>
+<area shape="rect" id="node6" href="$structtrap__input__ifc__s.html" title="trap_input_ifc_s" alt="" coords="332,5,447,32"/>
 </map>

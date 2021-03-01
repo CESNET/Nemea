@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['mem',['mem',['../structtrap__buffer__s.html#a82aefee42bc886d7d8933f628d8bf2a6',1,'trap_buffer_s']]],
-  ['message',['message',['../structtrap__multi__result.html#a6befb83ebd5cf113aedf4cf0eefb06ee',1,'trap_multi_result']]],
-  ['message_5fsize',['message_size',['../structtrap__multi__result.html#a067c01951ed1c711a65795f695b0b41e',1,'trap_multi_result']]],
-  ['mode',['mode',['../structfile__private__s.html#ab92bb308a82414c03133b8aba613eea3',1,'file_private_s']]],
-  ['mut_5fsem_5fcollector',['mut_sem_collector',['../structtrap__ctx__priv__s.html#a6940d95e929c62b32a619da27dcbf47f',1,'trap_ctx_priv_s']]]
+  ['neg_5finitialized',['neg_initialized',['../structfile__private__s.html#a6a49aa9f86e4da7c239d89f3a180ef8b',1,'file_private_s']]],
+  ['num_5fifc_5fin',['num_ifc_in',['../structtrap__ctx__priv__s.html#a2e4d1aa8eb64743dda03cee9430197d1',1,'trap_ctx_priv_s']]],
+  ['num_5fifc_5fout',['num_ifc_out',['../structtrap__ctx__priv__s.html#a1f71f0c46759591ff11107870d66111b',1,'trap_ctx_priv_s']]]
 ];

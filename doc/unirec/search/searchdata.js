@@ -3,14 +3,14 @@ var indexSectionsWithContent =
   0: "_abcdefhilmnoprstuv",
   1: "fiu",
   2: "ceilmru",
-  3: "_cfimpu",
-  4: "abcdfilmnorstu",
+  3: "_abcdfimnpu",
+  4: "abcdfhilmnorstuv",
   5: "u",
   6: "u",
   7: "u",
-  8: "_hilmpstuv",
-  9: "hiltu",
-  10: "u"
+  8: "_cdhilmnpstuv",
+  9: "chiltu",
+  10: "iu"
 };
 
 var indexSectionNames =

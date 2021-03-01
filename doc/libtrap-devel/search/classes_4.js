@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['msg_5fheader_5fs',['msg_header_s',['../structmsg__header__s.html',1,'']]]
+  ['generator_5fprivate_5fs',['generator_private_s',['../structgenerator__private__s.html',1,'']]]
 ];

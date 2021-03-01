@@ -1,6 +1,6 @@
 <map id="src/trap_error.c" name="src/trap_error.c">
-<area shape="rect" id="node2" href="$trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="418,80,515,107"/>
-<area shape="rect" id="node6" href="$trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="408,155,525,181"/>
-<area shape="rect" id="node9" href="$trap_8h.html" title="Interface of TRAP library. " alt="" coords="237,229,363,271"/>
-<area shape="rect" id="node13" href="$trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="465,237,548,263"/>
+<area shape="rect" id="node2" href="$trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="391,80,479,107"/>
+<area shape="rect" id="node6" href="$trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="383,155,487,181"/>
+<area shape="rect" id="node9" href="$trap_8h.html" title="Interface of TRAP library. " alt="" coords="223,229,337,271"/>
+<area shape="rect" id="node13" href="$trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="435,237,511,263"/>
 </map>

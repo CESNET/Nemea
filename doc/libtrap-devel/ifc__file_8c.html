@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -96,11 +96,11 @@ Include dependency graph for ifc_file.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="ifc__file_8c__incl.png" border="0" usemap="#src_2ifc__file_8c" alt=""/></div>
 <map name="src_2ifc__file_8c" id="src_2ifc__file_8c">
-<area shape="rect" id="node12" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="746,229,873,271"/>
-<area shape="rect" id="node16" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="1098,237,1180,263"/>
-<area shape="rect" id="node20" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="906,155,1023,181"/>
-<area shape="rect" id="node22" href="trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="181,80,278,107"/>
-<area shape="rect" id="node23" href="ifc__file_8h.html" title="TRAP file interfaces. " alt="" coords="1098,80,1175,107"/>
+<area shape="rect" id="node12" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="707,229,821,271"/>
+<area shape="rect" id="node16" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="1041,237,1117,263"/>
+<area shape="rect" id="node20" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="861,155,965,181"/>
+<area shape="rect" id="node22" href="trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="172,80,260,107"/>
+<area shape="rect" id="node23" href="ifc__file_8h.html" title="TRAP file interfaces. " alt="" coords="1041,80,1111,107"/>
 </map>
 </div>
 </div>
@@ -110,8 +110,6 @@ Include dependency graph for ifc_file.c:</div>
 Macros</h2></td></tr>
 <tr class="memitem:a369266c24eacffb87046522897a570d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__file_8c.html#a369266c24eacffb87046522897a570d5">_GNU_SOURCE</a></td></tr>
 <tr class="separator:a369266c24eacffb87046522897a570d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3741a2529a3630f0de93fb8d5fe7c166"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__file_8c.html#a3741a2529a3630f0de93fb8d5fe7c166">SAFE_PATH</a>&#160;&#160;&#160;PATH_MAX + 11</td></tr>
-<tr class="separator:a3741a2529a3630f0de93fb8d5fe7c166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -127,13 +125,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga87730dbc566bc75c062ef8320e95ce08"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#ga87730dbc566bc75c062ef8320e95ce08">file_create_dump</a> (void *priv, uint32_t idx, const char *path)</td></tr>
 <tr class="memdesc:ga87730dbc566bc75c062ef8320e95ce08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create file dump with current configuration (for debugging)  <a href="group__file__ifc.html#ga87730dbc566bc75c062ef8320e95ce08">More...</a><br /></td></tr>
 <tr class="separator:ga87730dbc566bc75c062ef8320e95ce08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa1598969a435a167ca39dea276063727"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gaa1598969a435a167ca39dea276063727">create_next_filename</a> (void *priv)</td></tr>
-<tr class="memdesc:gaa1598969a435a167ca39dea276063727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new path and filename from the template created during interface initiation.  <a href="group__file__ifc.html#gaa1598969a435a167ca39dea276063727">More...</a><br /></td></tr>
-<tr class="separator:gaa1598969a435a167ca39dea276063727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac768d695486428c3f6bfec987284b433"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gac768d695486428c3f6bfec987284b433">get_next_file</a> (void *priv)</td></tr>
-<tr class="separator:gac768d695486428c3f6bfec987284b433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1d852753f2e2e9b2f313d6e6ae3a100"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gac1d852753f2e2e9b2f313d6e6ae3a100">open_next_file</a> (<a class="el" href="ifc__file_8h.html#a309be75527e82357484eaba1295e654e">file_private_t</a> *c, char *new_filename)</td></tr>
-<tr class="separator:gac1d852753f2e2e9b2f313d6e6ae3a100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb8c7500558d6d4827acfab569d2b0af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gaeb8c7500558d6d4827acfab569d2b0af">create_next_filename</a> (<a class="el" href="ifc__file_8h.html#a309be75527e82357484eaba1295e654e">file_private_t</a> *config)</td></tr>
+<tr class="memdesc:gaeb8c7500558d6d4827acfab569d2b0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new path and filename from the template created during interface initialization. New filename is stored in file_private_t-&gt;filename.  <a href="group__file__ifc.html#gaeb8c7500558d6d4827acfab569d2b0af">More...</a><br /></td></tr>
+<tr class="separator:gaeb8c7500558d6d4827acfab569d2b0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0f2fbc2888f6354257ac88d9a9853c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gac0f2fbc2888f6354257ac88d9a9853c1">switch_file</a> (<a class="el" href="ifc__file_8h.html#a309be75527e82357484eaba1295e654e">file_private_t</a> *c)</td></tr>
+<tr class="memdesc:gac0f2fbc2888f6354257ac88d9a9853c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close previous file, open next file (name taken in file_private_t-&gt;filename). Negotiation must be performed after changing the file.  <a href="group__file__ifc.html#gac0f2fbc2888f6354257ac88d9a9853c1">More...</a><br /></td></tr>
+<tr class="separator:gac0f2fbc2888f6354257ac88d9a9853c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga04d056bce3131b5857c1b337a9c4341d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__receiver.html#ga04d056bce3131b5857c1b337a9c4341d">file_recv</a> (void *priv, void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t *size, int timeout)</td></tr>
 <tr class="memdesc:ga04d056bce3131b5857c1b337a9c4341d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from a file.  <a href="group__file__receiver.html#ga04d056bce3131b5857c1b337a9c4341d">More...</a><br /></td></tr>
 <tr class="separator:ga04d056bce3131b5857c1b337a9c4341d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,13 +141,24 @@ Functions</h2></td></tr>
 <tr class="memitem:gadc3824536a691ef65c730c0047ae1f6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__receiver.html#gadc3824536a691ef65c730c0047ae1f6c">create_file_recv_ifc</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, const char *params, <a class="el" href="group__trap__ifc.html#ga7fed1038d017739605bf620f60d86f3d">trap_input_ifc_t</a> *ifc, uint32_t idx)</td></tr>
 <tr class="memdesc:gadc3824536a691ef65c730c0047ae1f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate and initiate file input interface. This function is called by TRAP library to initialize one input interface.  <a href="group__file__receiver.html#gadc3824536a691ef65c730c0047ae1f6c">More...</a><br /></td></tr>
 <tr class="separator:gadc3824536a691ef65c730c0047ae1f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf1409bc51cad79c4d8df57f1861cda61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#gaf1409bc51cad79c4d8df57f1861cda61">open_next_file_wrapper</a> (void *priv)</td></tr>
-<tr class="separator:gaf1409bc51cad79c4d8df57f1861cda61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae01cf73d1609f9e36dbe6e840668fefe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#gae01cf73d1609f9e36dbe6e840668fefe">file_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t size, int timeout)</td></tr>
-<tr class="memdesc:gae01cf73d1609f9e36dbe6e840668fefe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to a file. Data to write are expected as a trap_buffer_header_t structure, thus actual length of data to be written is determined from trap_buffer_header_t-&gt;data_length trap_buffer_header_t-&gt;data_length is expected to be in network byte order (little endian)  <a href="group__file__sender.html#gae01cf73d1609f9e36dbe6e840668fefe">More...</a><br /></td></tr>
-<tr class="separator:gae01cf73d1609f9e36dbe6e840668fefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga32cd1cfb7fb21703391aee752a0d647e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__ifc.html#ga32cd1cfb7fb21703391aee752a0d647e">switch_file_wrapper</a> (void *priv)</td></tr>
+<tr class="separator:ga32cd1cfb7fb21703391aee752a0d647e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca49ec64aaa518a6e2e9c5396ccd3dc9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#gaca49ec64aaa518a6e2e9c5396ccd3dc9">file_write_buffer</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t size, int timeout)</td></tr>
+<tr class="memdesc:gaca49ec64aaa518a6e2e9c5396ccd3dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to a file. Data to write are expected as a trap_buffer_header_t structure, thus actual length of data to be written is determined from trap_buffer_header_t-&gt;data_length trap_buffer_header_t-&gt;data_length is expected to be in network byte order (little endian)  <a href="group__file__sender.html#gaca49ec64aaa518a6e2e9c5396ccd3dc9">More...</a><br /></td></tr>
+<tr class="separator:gaca49ec64aaa518a6e2e9c5396ccd3dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga584d20386ac54de01865ab04c1ec99df"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga584d20386ac54de01865ab04c1ec99df">finish_buffer</a> (<a class="el" href="ifc__file_8h.html#a6771f3504e314bf07a67292019daf0fc">file_buffer_t</a> *buffer)</td></tr>
+<tr class="separator:ga584d20386ac54de01865ab04c1ec99df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3570e854829adb6314a2589e10393f9f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga3570e854829adb6314a2589e10393f9f">insert_into_buffer</a> (<a class="el" href="ifc__file_8h.html#a6771f3504e314bf07a67292019daf0fc">file_buffer_t</a> *buffer, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size)</td></tr>
+<tr class="separator:ga3570e854829adb6314a2589e10393f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga159700c278c2b3bfdc40b0dbca3880d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga159700c278c2b3bfdc40b0dbca3880d6">file_flush</a> (void *priv)</td></tr>
+<tr class="separator:ga159700c278c2b3bfdc40b0dbca3880d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga919f85f1befced920f91f1c8e7cd4e69"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga919f85f1befced920f91f1c8e7cd4e69">file_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size, int timeout)</td></tr>
+<tr class="memdesc:ga919f85f1befced920f91f1c8e7cd4e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store message into buffer. Write buffer into file if full. If buffering is disabled, the message is sent to the output interface immediately.  <a href="group__file__sender.html#ga919f85f1befced920f91f1c8e7cd4e69">More...</a><br /></td></tr>
+<tr class="separator:ga919f85f1befced920f91f1c8e7cd4e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad8d2e1557a04cd5c6a2fd5c722ecaacd"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#gad8d2e1557a04cd5c6a2fd5c722ecaacd">file_get_client_count</a> (void *priv)</td></tr>
 <tr class="separator:gad8d2e1557a04cd5c6a2fd5c722ecaacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga372655b12fa8a43fcba5e0240306885b"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga372655b12fa8a43fcba5e0240306885b">file_get_client_stats_json</a> (void *priv, json_t *client_stats_arr)</td></tr>
+<tr class="separator:ga372655b12fa8a43fcba5e0240306885b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8884e86269fc6b140df7f8a2b1927ed2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga8884e86269fc6b140df7f8a2b1927ed2">file_send_ifc_get_id</a> (void *priv)</td></tr>
 <tr class="separator:ga8884e86269fc6b140df7f8a2b1927ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5c7c2366ebad27e5ff4e66322ed7ec73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__file__sender.html#ga5c7c2366ebad27e5ff4e66322ed7ec73">create_file_send_ifc</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, const char *params, <a class="el" href="group__trap__ifc.html#ga67931b1db8d9f47c96534b924252b370">trap_output_ifc_t</a> *ifc, uint32_t idx)</td></tr>
@@ -177,22 +185,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00043">43</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
-
-</div>
-</div>
-<a id="a3741a2529a3630f0de93fb8d5fe7c166"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3741a2529a3630f0de93fb8d5fe7c166">&#9670;&nbsp;</a></span>SAFE_PATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SAFE_PATH&#160;&#160;&#160;PATH_MAX + 11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="ifc__file_8c_source.html#l00063">63</a> of file <a class="el" href="ifc__file_8c_source.html">ifc_file.c</a>.</p>
 
 </div>
 </div>

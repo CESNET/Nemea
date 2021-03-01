@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['file_5fprivate_5ft',['file_private_t',['../ifc__file_8h.html#a309be75527e82357484eaba1295e654e',1,'ifc_file.h']]]
+  ['buffer_5ft',['buffer_t',['../ifc__socket__common_8h.html#a9aa12143b2c71bd60b9418ee7f4d3bb6',1,'ifc_socket_common.h']]]
 ];

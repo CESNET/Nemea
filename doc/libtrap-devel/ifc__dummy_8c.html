@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -90,10 +90,10 @@ Include dependency graph for ifc_dummy.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="ifc__dummy_8c__incl.png" border="0" usemap="#src_2ifc__dummy_8c" alt=""/></div>
 <map name="src_2ifc__dummy_8c" id="src_2ifc__dummy_8c">
-<area shape="rect" id="node7" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="579,229,706,271"/>
-<area shape="rect" id="node12" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="140,237,223,263"/>
-<area shape="rect" id="node16" href="trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="527,80,625,107"/>
-<area shape="rect" id="node17" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="488,155,605,181"/>
+<area shape="rect" id="node7" href="trap_8h.html" title="Interface of TRAP library. " alt="" coords="555,229,670,271"/>
+<area shape="rect" id="node12" href="trap__ifc_8h.html" title="Interface of TRAP interfaces. " alt="" coords="131,237,207,263"/>
+<area shape="rect" id="node16" href="trap__error_8h.html" title="Error handling for TRAP. " alt="" coords="505,80,593,107"/>
+<area shape="rect" id="node17" href="trap__internal_8h.html" title="Internal functions and macros for libtrap Verbose and debug macros from libcommlbr. " alt="" coords="467,155,571,181"/>
 </map>
 </div>
 </div>
@@ -125,14 +125,18 @@ Functions</h2></td></tr>
 <tr class="separator:afd5cb06e77b00bc241680b7590698571"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e7d094e5d1db868b323b52fa76b9636"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#a6e7d094e5d1db868b323b52fa76b9636">create_generator_ifc</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, char *params, <a class="el" href="group__trap__ifc.html#ga7fed1038d017739605bf620f60d86f3d">trap_input_ifc_t</a> *ifc)</td></tr>
 <tr class="separator:a6e7d094e5d1db868b323b52fa76b9636"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0a23602e05ba3cb2ea2fada56e78d3f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#aa0a23602e05ba3cb2ea2fada56e78d3f">blackhole_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint32_t size, int timeout)</td></tr>
-<tr class="separator:aa0a23602e05ba3cb2ea2fada56e78d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7c40601ef4e8017c3d2a36b758b716"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#a9a7c40601ef4e8017c3d2a36b758b716">blackhole_send</a> (void *priv, const void *<a class="el" href="trap__internal_8h.html#ac3c027f9a365f5741871df5ace13943f">data</a>, uint16_t size, int timeout)</td></tr>
+<tr class="separator:a9a7c40601ef4e8017c3d2a36b758b716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10b1f70e84c818d39d44894d923b938e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#a10b1f70e84c818d39d44894d923b938e">blackhole_flush</a> (void *priv)</td></tr>
+<tr class="separator:a10b1f70e84c818d39d44894d923b938e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab392f3cf1b0144994ee015604f4dc216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#ab392f3cf1b0144994ee015604f4dc216">blackhole_terminate</a> (void *priv)</td></tr>
 <tr class="separator:ab392f3cf1b0144994ee015604f4dc216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac56203fa44517d4715c2a3217106ced2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#ac56203fa44517d4715c2a3217106ced2">blackhole_destroy</a> (void *priv)</td></tr>
 <tr class="separator:ac56203fa44517d4715c2a3217106ced2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a87d918cf7dc8762ca7b7c175e66afd"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#a3a87d918cf7dc8762ca7b7c175e66afd">blackhole_get_client_count</a> (void *priv)</td></tr>
 <tr class="separator:a3a87d918cf7dc8762ca7b7c175e66afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfd570c7ba9523508aa88b80326048e7"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#abfd570c7ba9523508aa88b80326048e7">blackhole_get_client_stats_json</a> (void *priv, json_t *client_stats_arr)</td></tr>
+<tr class="separator:abfd570c7ba9523508aa88b80326048e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8ce96b416b251a97c0018dfe2d755be"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#ad8ce96b416b251a97c0018dfe2d755be">blackhole_ifc_get_id</a> (void *priv)</td></tr>
 <tr class="separator:ad8ce96b416b251a97c0018dfe2d755be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7edb3a6122008f3ea180f8adad08117"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ifc__dummy_8c.html#ab7edb3a6122008f3ea180f8adad08117">create_blackhole_ifc</a> (<a class="el" href="group__debug.html#ga7c1820c9482b11ef772ed7ef95d4f7f0">trap_ctx_priv_t</a> *ctx, char *params, <a class="el" href="group__trap__ifc.html#ga67931b1db8d9f47c96534b924252b370">trap_output_ifc_t</a> *ifc)</td></tr>
@@ -178,7 +182,27 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00199">199</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00204">204</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
+
+</div>
+</div>
+<a id="a10b1f70e84c818d39d44894d923b938e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b1f70e84c818d39d44894d923b938e">&#9670;&nbsp;</a></span>blackhole_flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void blackhole_flush </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>priv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00193">193</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
 
 </div>
 </div>
@@ -198,7 +222,37 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00204">204</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00209">209</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
+
+</div>
+</div>
+<a id="abfd570c7ba9523508aa88b80326048e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfd570c7ba9523508aa88b80326048e7">&#9670;&nbsp;</a></span>blackhole_get_client_stats_json()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t blackhole_get_client_stats_json </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>priv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">json_t *&#160;</td>
+          <td class="paramname"><em>client_stats_arr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00215">215</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
 
 </div>
 </div>
@@ -218,12 +272,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00210">210</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00222">222</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
 
 </div>
 </div>
-<a id="aa0a23602e05ba3cb2ea2fada56e78d3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0a23602e05ba3cb2ea2fada56e78d3f">&#9670;&nbsp;</a></span>blackhole_send()</h2>
+<a id="a9a7c40601ef4e8017c3d2a36b758b716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7c40601ef4e8017c3d2a36b758b716">&#9670;&nbsp;</a></span>blackhole_send()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +297,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>size</em>, </td>
         </tr>
         <tr>
@@ -280,7 +334,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00193">193</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00198">198</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
 
 </div>
 </div>
@@ -325,7 +379,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Always returns 0. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00215">215</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ifc__dummy_8c_source.html#l00227">227</a> of file <a class="el" href="ifc__dummy_8c_source.html">ifc_dummy.c</a>.</p>
 
 </div>
 </div>

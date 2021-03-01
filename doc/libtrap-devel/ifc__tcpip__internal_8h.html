@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Libtrap: Internal development docs
-   &#160;<span id="projectnumber">0.11.7</span>
+   &#160;<span id="projectnumber">1.16.1</span>
    </div>
   </td>
  </tr>
@@ -68,9 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">ifc_tcpip_internal.h File Reference</div>  </div>
 </div><!--header-->
@@ -78,13 +76,22 @@ $(function() {
 
 <p>TRAP TCP/IP interfaces private structures.  
 <a href="#details">More...</a></p>
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &quot;<a class="el" href="ifc__socket__common_8h_source.html">ifc_socket_common.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for ifc_tcpip_internal.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="ifc__tcpip__internal_8h__incl.png" border="0" usemap="#src_2ifc__tcpip__internal_8h" alt=""/></div>
+<map name="src_2ifc__tcpip__internal_8h" id="src_2ifc__tcpip__internal_8h">
+<area shape="rect" id="node2" href="ifc__socket__common_8h.html" title="This file contains common functions and structures used in socket based interfaces (tcp&#45;ip / tls)..." alt="" coords="7,80,157,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ifc__tcpip__internal_8h__dep__incl.png" border="0" usemap="#src_2ifc__tcpip__internal_8hdep" alt=""/></div>
 <map name="src_2ifc__tcpip__internal_8hdep" id="src_2ifc__tcpip__internal_8hdep">
-<area shape="rect" id="node2" href="ifc__tcpip_8c.html" title="TRAP TCP/IP interfaces. " alt="" coords="5,80,116,107"/>
-<area shape="rect" id="node3" href="trap_8c.html" title="TRAP library base. " alt="" coords="141,80,223,107"/>
+<area shape="rect" id="node2" href="ifc__tcpip_8c.html" title="TRAP TCP/IP interfaces. " alt="" coords="5,80,109,107"/>
+<area shape="rect" id="node3" href="trap_8c.html" title="TRAP library base. " alt="" coords="133,80,211,107"/>
 </map>
 </div>
 </div>
@@ -93,40 +100,24 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structclient__s.html">client_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TCP/IP IFC client information.  <a href="structclient__s.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__sender__private__s.html">tcpip_sender_private_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TCP/IP IFC private information.  <a href="structtcpip__sender__private__s.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtcpip__receiver__private__s.html">tcpip_receiver_private_s</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gad07bb879ce0202781a899975d34c8430"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc.html#gad07bb879ce0202781a899975d34c8430">NONBLOCKING_ATTEMPTS</a>&#160;&#160;&#160;3</td></tr>
-<tr class="separator:gad07bb879ce0202781a899975d34c8430"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga33baac16f74d5f127d28ae473daa22c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__trap__ifc.html#ga33baac16f74d5f127d28ae473daa22c5">NONBLOCKING_MINWAIT</a>&#160;&#160;&#160;1000</td></tr>
-<tr class="separator:ga33baac16f74d5f127d28ae473daa22c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga08a59de89da2c9087ce88c7805ab4fd2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga08a59de89da2c9087ce88c7805ab4fd2">TCPIP_SENDER_STATE_STR</a>(st)</td></tr>
-<tr class="separator:ga08a59de89da2c9087ce88c7805ab4fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ga8db229da62af6e778b15d0dfeab62c2d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structclient__s.html">client_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga8db229da62af6e778b15d0dfeab62c2d">client_t</a></td></tr>
+<tr class="memdesc:ga8db229da62af6e778b15d0dfeab62c2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TCP/IP IFC client information.  <a href="group__tcpip__sender.html#ga8db229da62af6e778b15d0dfeab62c2d">More...</a><br /></td></tr>
+<tr class="separator:ga8db229da62af6e778b15d0dfeab62c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga45657b399741b8bd08cbfcef2ad490f1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtcpip__sender__private__s.html">tcpip_sender_private_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#ga45657b399741b8bd08cbfcef2ad490f1">tcpip_sender_private_t</a></td></tr>
+<tr class="memdesc:ga45657b399741b8bd08cbfcef2ad490f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure for TCP/IP IFC private information.  <a href="group__tcpip__sender.html#ga45657b399741b8bd08cbfcef2ad490f1">More...</a><br /></td></tr>
 <tr class="separator:ga45657b399741b8bd08cbfcef2ad490f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8c4c1adea41d582cd619ce9ee9b27aa3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtcpip__receiver__private__s.html">tcpip_receiver_private_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__receiver.html#ga8c4c1adea41d582cd619ce9ee9b27aa3">tcpip_receiver_private_t</a></td></tr>
 <tr class="separator:ga8c4c1adea41d582cd619ce9ee9b27aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:gaf04b911ad265af7e9f2871d48cb9ba76"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tcpip__sender.html#gaf04b911ad265af7e9f2871d48cb9ba76">client_send_state</a> { <br />
-&#160;&#160;<a class="el" href="group__tcpip__sender.html#ggaf04b911ad265af7e9f2871d48cb9ba76a427aaed3bd6153417cf63e63a7e59569">CURRENT_IDLE</a>, 
-<a class="el" href="group__tcpip__sender.html#ggaf04b911ad265af7e9f2871d48cb9ba76a77371af98c1a1064923dc5d344962f6d">CURRENT_HEAD</a>, 
-<a class="el" href="group__tcpip__sender.html#ggaf04b911ad265af7e9f2871d48cb9ba76a6565dd608c99558d63047e15c4382df8">CURRENT_PAYLOAD</a>, 
-<a class="el" href="group__tcpip__sender.html#ggaf04b911ad265af7e9f2871d48cb9ba76a0ca445b9f24688896a9c9f3c8937f077">CURRENT_COMPLETE</a>, 
-<br />
-&#160;&#160;<a class="el" href="group__tcpip__sender.html#ggaf04b911ad265af7e9f2871d48cb9ba76a65673a8b72b76e8ff280b5d0730beaec">BACKUP_BUFFER</a>
-<br />
- }</td></tr>
-<tr class="separator:gaf04b911ad265af7e9f2871d48cb9ba76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>TRAP TCP/IP interfaces private structures. </p>

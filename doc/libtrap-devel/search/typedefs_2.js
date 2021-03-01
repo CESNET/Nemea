@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hello_5fmsg_5fheader_5ft',['hello_msg_header_t',['../group__debug.html#ga0bb675fdd36b974d3cdf9b7405863eb1',1,'trap_internal.h']]]
+  ['file_5fbuffer_5ft',['file_buffer_t',['../ifc__file_8h.html#a6771f3504e314bf07a67292019daf0fc',1,'ifc_file.h']]],
+  ['file_5fprivate_5ft',['file_private_t',['../ifc__file_8h.html#a309be75527e82357484eaba1295e654e',1,'ifc_file.h']]]
 ];

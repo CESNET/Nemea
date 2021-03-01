@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['name',['name',['../unirec_8h.html#a3b5886d926b0a4ae0959eaf4aba18201',1,'field_spec_t']]],
-  ['new_5fid',['new_id',['../example__unirec_8c.html#a14c622b14dcd4a0b0db6cd5cdd948cee',1,'example_unirec.c']]],
-  ['next',['next',['../unirec_8h.html#a0ee1b233f020b9f8bd5236fceb501cb9',1,'ur_field_id_linked_list_s']]]
+  ['mac_5faddr_5ft',['mac_addr_t',['../macaddr_8h.html#a5cb542bc605d9e6641afdd9dd6a6314e',1,'macaddr.h']]],
+  ['mask',['mask',['../ip__prefix__search_8h.html#ae3ae852da1c3c9a0ef2e595ab9109735',1,'ipps_network_t']]]
 ];
