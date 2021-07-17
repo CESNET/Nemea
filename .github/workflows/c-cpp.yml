@@ -30,6 +30,4 @@ jobs:
       run: ( cd nemea-framework/pytrap; sudo python3 setup.py install; cd ../pycommon; sudo python3 setup.py install; )
     - name: make check
       run: make check || find -name '*.sh.log' -exec cat {} +
-    - name: make distcheck
-      run: make distcheck
 
