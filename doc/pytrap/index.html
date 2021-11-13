@@ -1,1069 +1,127 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.9.2" />
-<title>pytrap API documentation</title>
-<meta name="description" content="TRAP extension for python3 (pytrap) …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
-<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
-</head>
-<body>
-<main>
-<article id="content">
-<header>
-<h1 class="title">Module <code>pytrap</code></h1>
-</header>
-<section id="section-intro">
-<p>TRAP extension for python3 (pytrap).</p>
-<p>This module can be used to write NEMEA module.
-It consists of
-two main classes: <em>TrapCtx</em> and <em>UnirecTemplate</em>.
-<em>TrapCtx</em>
-contains communication interface, actually, it is a wrapper
-for libtrap.
-<em>UnirecTemplate</em> can be used for data access and
-manipulation.
-It uses UniRec macros and functions in order to
-retrieve value of a field and to store value into data message.</p>
-<p>Simple example to receive and send one message:</p>
-<pre><code>import pytrap
-c = pytrap.TrapCtx()
-c.init(["-i", "u:socket1,u:socket2"], 1, 1)
-fmttype = pytrap.FMT_UNIREC
-fmtspec = "ipaddr SRC_IP"
-c.setRequiredFmt(0, fmttype, fmtspec)
-rec = pytrap.UnirecTemplate(fmtspec)
-try:
-    data = c.recv()
-except pytrap.FormatChanged as e:
-    fmttype, fmtspec = c.getDataFmt(0)
-    rec = pytrap.UnirecTemplate(fmtspec)
-    data = e.data
-c.setDataFmt(0, fmttype, fmtspec)
-rec.setData(data)
-print(rec.strRecord())
-# send the message that was received:
-c.send(data)
-c.finalize()
-</code></pre>
-<p>Simple example for data access using rec - UnirecTemplate instance:</p>
-<pre><code>print(rec.SRC_IP)
-rec.SRC_IP = pytrap.UnirecIPAddr("127.0.0.1")
-print(getattr(rec, "SRC_IP"))
-rec.TIME_FIRST = pytrap.UnirecTime(12345678)
-print(rec.TIME_FIRST)
-print(rec.TIME_FIRST.toDatetime())
-</code></pre>
-<p>Simple example for creation of new message of UnirecTemplate:</p>
-<pre><code># 100 is the maximal total size of fields with variable length
-data = rec.createMessage(100)
-rec.DST_PORT = 80
-</code></pre>
-<p>createMessage() should be called just at the beginning of program
-or when format change is needed.</p>
-<p>There is a complete example module:
-<a href="https://github.com/CESNET/Nemea-Framework/tree/master/examples/python">https://github.com/CESNET/Nemea-Framework/tree/master/examples/python</a></p>
-<p>For more details, see docstring of the classes and methods.</p>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="pytrap.getTrapVersion"><code class="name flex">
-<span>def <span class="ident">getTrapVersion</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get the version of libtrap.</p>
-<h2 id="returns">Returns</h2>
-<p>tuple(str, str): libtrap version, git version.</p></div>
-</dd>
-</dl>
-</section>
-<section>
-<h2 class="section-title" id="header-classes">Classes</h2>
-<dl>
-<dt id="pytrap.FormatChanged"><code class="flex name class">
-<span>class <span class="ident">FormatChanged</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-</ul>
-</dd>
-<dt id="pytrap.FormatMismatch"><code class="flex name class">
-<span>class <span class="ident">FormatMismatch</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-</ul>
-</dd>
-<dt id="pytrap.Terminated"><code class="flex name class">
-<span>class <span class="ident">Terminated</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-</ul>
-</dd>
-<dt id="pytrap.TimeoutError"><code class="flex name class">
-<span>class <span class="ident">TimeoutError</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></li>
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-</ul>
-</dd>
-<dt id="pytrap.TrapCtx"><code class="flex name class">
-<span>class <span class="ident">TrapCtx</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Class represents libtrap context. It must be initialized using init()
-and finalized and the end of usage finalize().
-To terminate blocking libtrap functions use terminate().</p></div>
-<h3>Methods</h3>
-<dl>
-<dt id="pytrap.TrapCtx.finalize"><code class="name flex">
-<span>def <span class="ident">finalize</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Free allocated memory.</p></div>
-</dd>
-<dt id="pytrap.TrapCtx.getDataFmt"><code class="name flex">
-<span>def <span class="ident">getDataFmt</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get data format that was negotiated via input IFC.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>ifcidx</code></strong> :&ensp;<code>Optional[int]</code></dt>
-<dd>Index of IFC (default: 0).</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>Tuple(int, string): Type of format and specifier (see setRequiredFmt()).</p></div>
-</dd>
-<dt id="pytrap.TrapCtx.getInIFCState"><code class="name flex">
-<span>def <span class="ident">getInIFCState</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get the state of input IFC.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>ifcidx</code></strong> :&ensp;<code>int</code></dt>
-<dd>Index of IFC.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>int</code></dt>
-<dd>One of module's constants (FMTS_WAITING, FMTS_OK, FMTS_MISMATCH, FMTS_CHANGED).</dd>
-</dl>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></code></dt>
-<dd>Bad index is passed or TRAP is not initialized.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.getVerboseLevel"><code class="name flex">
-<span>def <span class="ident">getVerboseLevel</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get current verbose level.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>int</code></dt>
-<dd>Level of verbosity. See setVerboseLevel() for possible values.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.ifcctl"><code class="name flex">
-<span>def <span class="ident">ifcctl</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Change settings of TRAP IFC.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>ifcidx</code></strong> :&ensp;<code>int</code></dt>
-<dd>Index of IFC.</dd>
-<dt><strong><code>dir_in</code></strong> :&ensp;<code>bool</code></dt>
-<dd>If True, input IFC will be modified, output IFC otherwise.</dd>
-<dt><strong><code>request</code></strong> :&ensp;<code>int</code></dt>
-<dd>Type of request given by a module's constant (CTL_AUTOFLUSH, CTL_BUFFERSWITCH, CTL_TIMEOUT).</dd>
-<dt><strong><code>value</code></strong> :&ensp;<code>int</code></dt>
-<dd>Parameter value of the chosen <code>request</code>.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.init"><code class="name flex">
-<span>def <span class="ident">init</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Initialization of TRAP.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>argv</code></strong> :&ensp;<code>list[str]</code></dt>
-<dd>Arguments of the process.</dd>
-<dt><strong><code>ifcin</code></strong> :&ensp;<code>Optional[int]</code></dt>
-<dd><code>ifcin</code> is a number of input IFC (default: 1).</dd>
-<dt><strong><code>ifcout</code></strong> :&ensp;<code>Optional[int]</code></dt>
-<dd><code>ifcout</code> is a number of output IFC (default: 0).</dd>
-<dt><strong><code>module_name</code></strong> :&ensp;<code>Optional[str]</code></dt>
-<dd>Set name of this module.</dd>
-<dt><strong><code>module_desc</code></strong> :&ensp;<code>Optional[str]</code></dt>
-<dd>Set description of this module.</dd>
-<dt><strong><code>service_ifcname</code></strong> :&ensp;<code>Optional[str]</code></dt>
-<dd>Set identifier of service IFC, PID is used when omitted, set to "" (empty string) to disable service IFC.</dd>
-</dl>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></code></dt>
-<dd>Initialization failed.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.recv"><code class="name flex">
-<span>def <span class="ident">recv</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Receive data via TRAP interface.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>ifcidx</code></strong> :&ensp;<code>Optional[int]</code></dt>
-<dd>Index of input IFC (default: 0).</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>bytearray</code></dt>
-<dd>Received data.</dd>
-</dl>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code><a title="pytrap.TimeoutError" href="#pytrap.TimeoutError">TimeoutError</a></code></dt>
-<dd>Receiving data failed due to elapsed timeout.</dd>
-<dt><code><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></code></dt>
-<dd>Bad index given.</dd>
-<dt><code><a title="pytrap.FormatChanged" href="#pytrap.FormatChanged">FormatChanged</a></code></dt>
-<dd>Data format was changed, it is necessary to
-update template.
-The received data is in <code>data</code> attribute
-of the FormatChanged instance.</dd>
-<dt><code><a title="pytrap.Terminated" href="#pytrap.Terminated">Terminated</a></code></dt>
-<dd>The TRAP IFC was terminated.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.send"><code class="name flex">
-<span>def <span class="ident">send</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Send data via TRAP interface.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>bytes</code></strong> :&ensp;<code>bytearray</code> or <code>bytes</code></dt>
-<dd>Data to send.</dd>
-<dt><strong><code>ifcidx</code></strong> :&ensp;<code>Optional[int]</code></dt>
-<dd>Index of output IFC (default: 0).</dd>
-</dl>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code><a title="pytrap.TimeoutError" href="#pytrap.TimeoutError">TimeoutError</a></code></dt>
-<dd>Receiving data failed due to elapsed timeout.</dd>
-<dt><code><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></code></dt>
-<dd>Bad size or bad index given.</dd>
-<dt><code><a title="pytrap.Terminated" href="#pytrap.Terminated">Terminated</a></code></dt>
-<dd>The TRAP IFC was terminated.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.sendFlush"><code class="name flex">
-<span>def <span class="ident">sendFlush</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Force sending buffer for IFC with ifcidx index.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>ifcidx</code></strong> :&ensp;<code>Optional[int]</code></dt>
-<dd>Index of IFC (default: 0).</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.setDataFmt"><code class="name flex">
-<span>def <span class="ident">setDataFmt</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Set data format for output IFC.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>ifcidx</code></strong> :&ensp;<code>int</code></dt>
-<dd>Index of IFC.</dd>
-<dt><strong><code>type</code></strong> :&ensp;<code>Optional[int]</code></dt>
-<dd>Type of format (FMT_RAW, FMT_UNIREC), (default: FMT_UNIREC).</dd>
-<dt><strong><code>spec</code></strong> :&ensp;<code>Optional[string]</code></dt>
-<dd>Specifier of data format (default: "").</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.setRequiredFmt"><code class="name flex">
-<span>def <span class="ident">setRequiredFmt</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Set required data format for input IFC.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>ifcidx</code></strong> :&ensp;<code>int</code></dt>
-<dd>Index of IFC.</dd>
-<dt><strong><code>type</code></strong> :&ensp;<code>Optional[int]</code></dt>
-<dd>Type of format: FMT_RAW, FMT_UNIREC (default: FMT_UNIREC)</dd>
-<dt><strong><code>spec</code></strong> :&ensp;<code>Optional[string]</code></dt>
-<dd>Specifier of data format (UniRec specifier for FMT_UNIREC type) (default: "").</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.setVerboseLevel"><code class="name flex">
-<span>def <span class="ident">setVerboseLevel</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Set the verbose level of TRAP.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>level</code></strong> :&ensp;<code>int</code></dt>
-<dd>Level of verbosity the higher value the more verbose.
-Possible values: VERB_ERRORS (-3), VERB_WARNINGS (-2), VERB_NOTICES (-1) = default, VERB_VERBOSE (0), VERB_VERBOSE2 (1), VERB_VERBOSE3 (2).</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.TrapCtx.terminate"><code class="name flex">
-<span>def <span class="ident">terminate</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Terminate TRAP.</p></div>
-</dd>
-</dl>
-</dd>
-<dt id="pytrap.TrapError"><code class="flex name class">
-<span>class <span class="ident">TrapError</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-</ul>
-<h3>Subclasses</h3>
-<ul class="hlist">
-<li><a title="pytrap.FormatChanged" href="#pytrap.FormatChanged">FormatChanged</a></li>
-<li><a title="pytrap.FormatMismatch" href="#pytrap.FormatMismatch">FormatMismatch</a></li>
-<li><a title="pytrap.Terminated" href="#pytrap.Terminated">Terminated</a></li>
-<li><a title="pytrap.TimeoutError" href="#pytrap.TimeoutError">TimeoutError</a></li>
-</ul>
-</dd>
-<dt id="pytrap.TrapHelp"><code class="flex name class">
-<span>class <span class="ident">TrapHelp</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Common base class for all non-exit exceptions.</p></div>
-<h3>Ancestors</h3>
-<ul class="hlist">
-<li>builtins.Exception</li>
-<li>builtins.BaseException</li>
-</ul>
-</dd>
-<dt id="pytrap.UnirecIPAddr"><code class="flex name class">
-<span>class <span class="ident">UnirecIPAddr</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>UnirecIPAddr(ip)
-Class for UniRec IP Address storage and base data access.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>ip</code></strong> :&ensp;<code>str</code></dt>
-<dd>text represented IPv4 or IPv6 address</dd>
-</dl></div>
-<h3>Methods</h3>
-<dl>
-<dt id="pytrap.UnirecIPAddr.dec"><code class="name flex">
-<span>def <span class="ident">dec</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Decrement IP address.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code><a title="pytrap.UnirecIPAddr" href="#pytrap.UnirecIPAddr">UnirecIPAddr</a></code></dt>
-<dd>New decremented IPAddress.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecIPAddr.inc"><code class="name flex">
-<span>def <span class="ident">inc</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Increment IP address.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code><a title="pytrap.UnirecIPAddr" href="#pytrap.UnirecIPAddr">UnirecIPAddr</a></code></dt>
-<dd>New incremented IPAddress.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecIPAddr.isIPv4"><code class="name flex">
-<span>def <span class="ident">isIPv4</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Check if the address is IPv4.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>bool</code></dt>
-<dd>True if the address is IPv4.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecIPAddr.isIPv6"><code class="name flex">
-<span>def <span class="ident">isIPv6</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Check if the address is IPv6.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>bool</code></dt>
-<dd>True if the address is IPv6.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecIPAddr.isNull"><code class="name flex">
-<span>def <span class="ident">isNull</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Check if the address is null (IPv4 or IPv6), i.e. "0.0.0.0" or "::".</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>bool</code></dt>
-<dd>True if the address is null.</dd>
-</dl></div>
-</dd>
-</dl>
-</dd>
-<dt id="pytrap.UnirecIPAddrRange"><code class="flex name class">
-<span>class <span class="ident">UnirecIPAddrRange</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>UnirecIPAddrRange(start, [end])
-Class for UniRec IP Address Range storage and base data access.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>start</code></strong> :&ensp;<code>str</code></dt>
-<dd>text represented IPv4 address or prefix using /mask notation</dd>
-<dt><strong><code>end</code></strong> :&ensp;<code>Optional[str]</code></dt>
-<dd>text represented IPv4 address of end of the range</dd>
-</dl>
-<p>(start must not contain /mask)</p></div>
-<h3>Instance variables</h3>
-<dl>
-<dt id="pytrap.UnirecIPAddrRange.end"><code class="name">var <span class="ident">end</span></code></dt>
-<dd>
-<div class="desc"><p>High IP address of range</p></div>
-</dd>
-<dt id="pytrap.UnirecIPAddrRange.start"><code class="name">var <span class="ident">start</span></code></dt>
-<dd>
-<div class="desc"><p>Low IP address of range</p></div>
-</dd>
-</dl>
-<h3>Methods</h3>
-<dl>
-<dt id="pytrap.UnirecIPAddrRange.isIn"><code class="name flex">
-<span>def <span class="ident">isIn</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Check if the address is in IP range.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>ipaddr</code></strong></dt>
-<dd>UnirecIPAddr structReturns:</dd>
-<dt><strong><code>long</code></strong></dt>
-<dd>-1 if ipaddr &lt; start of range, 0 if ipaddr is in interval, 1 if ipaddr &gt; end of range .</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecIPAddrRange.isOverlap"><code class="name flex">
-<span>def <span class="ident">isOverlap</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Check if 2 ranges sorted by start IP overlap.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>other</code></strong></dt>
-<dd>UnirecIPAddrRange, second interval to compareReturns:</dd>
-<dt><strong><code>bool</code></strong></dt>
-<dd>True if ranges are overlaps.</dd>
-</dl></div>
-</dd>
-</dl>
-</dd>
-<dt id="pytrap.UnirecMACAddr"><code class="flex name class">
-<span>class <span class="ident">UnirecMACAddr</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>UnirecMACAddr(mac)
-Class for UniRec MAC Address storage and base data access.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>mac</code></strong> :&ensp;<code>str</code></dt>
-<dd>text represented MAC address (e.g. "00:11:22:33:44:55")</dd>
-</dl></div>
-<h3>Methods</h3>
-<dl>
-<dt id="pytrap.UnirecMACAddr.dec"><code class="name flex">
-<span>def <span class="ident">dec</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Decrement MAC address.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code><a title="pytrap.UnirecMACAddr" href="#pytrap.UnirecMACAddr">UnirecMACAddr</a></code></dt>
-<dd>New decremented MAC address.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecMACAddr.inc"><code class="name flex">
-<span>def <span class="ident">inc</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Increment MAC address.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code><a title="pytrap.UnirecMACAddr" href="#pytrap.UnirecMACAddr">UnirecMACAddr</a></code></dt>
-<dd>New incremented MAC address.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecMACAddr.isNull"><code class="name flex">
-<span>def <span class="ident">isNull</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Check if the MAC address is null, i.e. "00:00:00:00:00:00".</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>bool</code></dt>
-<dd>True if the address is null.</dd>
-</dl></div>
-</dd>
-</dl>
-</dd>
-<dt id="pytrap.UnirecMACAddrRange"><code class="flex name class">
-<span>class <span class="ident">UnirecMACAddrRange</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>UnirecMACAddrRange(start, end)
-Class for UniRec MAC Address Range storage and base data access.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>start</code></strong> :&ensp;<code><a title="pytrap.UnirecMACAddr" href="#pytrap.UnirecMACAddr">UnirecMACAddr</a></code></dt>
-<dd>text represented MAC address or prefix using /mask notation</dd>
-<dt><strong><code>end</code></strong> :&ensp;<code><a title="pytrap.UnirecMACAddr" href="#pytrap.UnirecMACAddr">UnirecMACAddr</a></code></dt>
-<dd>text represented MAC address of end of the range</dd>
-</dl>
-<p>(start must not contain /mask)</p></div>
-<h3>Instance variables</h3>
-<dl>
-<dt id="pytrap.UnirecMACAddrRange.end"><code class="name">var <span class="ident">end</span></code></dt>
-<dd>
-<div class="desc"><p>High MAC address of range</p></div>
-</dd>
-<dt id="pytrap.UnirecMACAddrRange.start"><code class="name">var <span class="ident">start</span></code></dt>
-<dd>
-<div class="desc"><p>Low MAC address of range</p></div>
-</dd>
-</dl>
-<h3>Methods</h3>
-<dl>
-<dt id="pytrap.UnirecMACAddrRange.isIn"><code class="name flex">
-<span>def <span class="ident">isIn</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Check if the address is in MAC range.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>macaddr</code></strong></dt>
-<dd>UnirecMACAddr structReturns:</dd>
-<dt><strong><code>long</code></strong></dt>
-<dd>-1 if macaddr &lt; start of range, 0 if macaddr is in interval, 1 if macaddr &gt; end of range .</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecMACAddrRange.isOverlap"><code class="name flex">
-<span>def <span class="ident">isOverlap</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Check if 2 ranges sorted by start MAC overlap.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>other</code></strong></dt>
-<dd>UnirecMACAddrRange, second interval to compareReturns:</dd>
-<dt><strong><code>bool</code></strong></dt>
-<dd>True if ranges are overlaps.</dd>
-</dl></div>
-</dd>
-</dl>
-</dd>
-<dt id="pytrap.UnirecTemplate"><code class="flex name class">
-<span>class <span class="ident">UnirecTemplate</span></span>
-<span>(</span><span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>UnirecTime(spec)
-Class for UniRec template storage and base data access.</p>
-<h2 id="example">Example</h2>
-<p>UnirecTemplate("ipaddr SRC_IP,uint16 SRC_PORT,time START")
-creates a template with tree fields.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>spec</code></strong> :&ensp;<code>str</code></dt>
-<dd>UniRec template specifier - list of field types and names</dd>
-</dl></div>
-<h3>Methods</h3>
-<dl>
-<dt id="pytrap.UnirecTemplate.copy"><code class="name flex">
-<span>def <span class="ident">copy</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Create a new instance with the same format specifier without data.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code><a title="pytrap.UnirecTemplate" href="#pytrap.UnirecTemplate">UnirecTemplate</a></code></dt>
-<dd>New copy of object (not just reference).</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.createMessage"><code class="name flex">
-<span>def <span class="ident">createMessage</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Create a message that can be filled in with values according to the template.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>dyn_size</code></strong> :&ensp;<code>Optional[int]</code></dt>
-<dd>Maximal size of variable data (in total) (default: 0).</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>bytearray</code></dt>
-<dd>Allocated memory that can be filled in using set().</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.get"><code class="name flex">
-<span>def <span class="ident">get</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get value of the field from the UniRec message.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>data</code></strong> :&ensp;<code>bytearray</code> or <code>bytes</code></dt>
-<dd>Data - UniRec message.</dd>
-<dt><strong><code>field_name</code></strong> :&ensp;<code>str</code></dt>
-<dd>Field name.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>(object): Retrieved value of the field (depends on UniRec template).</p>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code>TypeError</code></dt>
-<dd>Data argument must be bytearray or bytes.</dd>
-<dt><code><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></code></dt>
-<dd>Field name was not found.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.getByID"><code class="name flex">
-<span>def <span class="ident">getByID</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get value of the field from the UniRec message.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>data</code></strong> :&ensp;<code>bytearray</code> or <code>bytes</code></dt>
-<dd>Data - UniRec message.</dd>
-<dt><strong><code>field_id</code></strong> :&ensp;<code>int</code></dt>
-<dd>Field ID (use getFieldsDict()).</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>(object): Retrieved value of the field (depends on UniRec template).</p>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code>TypeError</code></dt>
-<dd>Data argument must be bytearray or bytes.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.getData"><code class="name flex">
-<span>def <span class="ident">getData</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get data that was already set using setData.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>bytearray</code></dt>
-<dd>Data - UniRec message.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.getFieldType"><code class="name flex">
-<span>def <span class="ident">getFieldType</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get type of given field.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>field_name</code></strong> :&ensp;<code>str</code></dt>
-<dd>Field name.</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>type</code></dt>
-<dd>Type object (e.g. int, str or pytrap.UnirecIPAddr).</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.getFieldsDict"><code class="name flex">
-<span>def <span class="ident">getFieldsDict</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get set of fields of the template.</p>
-<h2 id="returns">Returns</h2>
-<p>Dict(str,int): Dictionary of field_id with field name as a key.</p></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.recFixlenSize"><code class="name flex">
-<span>def <span class="ident">recFixlenSize</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get size of fixed part of UniRec record.</p>
-<p>This is the minimal size of a record with given template,i.e. the size with all variable-length fields empty.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>int</code></dt>
-<dd>Size of fixed part of template in bytes</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.recSize"><code class="name flex">
-<span>def <span class="ident">recSize</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get size of UniRec record.</p>
-<p>Return total size of valid record data, i.e. number of bytes occupied by all fields.This may be less than allocated size of 'data'.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>data</code></strong> :&ensp;<code>Optional[bytearray</code> or <code>bytes]</code></dt>
-<dd>Data of UniRec message (optional if previously set by setData)Returns:</dd>
-<dt><strong><code>int</code></strong></dt>
-<dd>Size of record data in bytes</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.recVarlenSize"><code class="name flex">
-<span>def <span class="ident">recVarlenSize</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get size of variable-length part of UniRec record.</p>
-<p>Return total size of all variable-length fields.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>data</code></strong> :&ensp;<code>Optional[bytearray</code> or <code>bytes]</code></dt>
-<dd>Data of UniRec message (optional if previously set by setData)Returns:</dd>
-<dt><strong><code>int</code></strong></dt>
-<dd>Total size of variable-length fields in bytes</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.set"><code class="name flex">
-<span>def <span class="ident">set</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Set value of the field in the UniRec message.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>data</code></strong> :&ensp;<code>bytearray</code> or <code>bytes</code></dt>
-<dd>Data - UniRec message.</dd>
-<dt><strong><code>field_name</code></strong> :&ensp;<code>str</code></dt>
-<dd>Field name.</dd>
-<dt><strong><code>value</code></strong> :&ensp;<code>object</code></dt>
-<dd>New value of the field (depends on UniRec template).</dd>
-</dl>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code>TypeError</code></dt>
-<dd>Bad object type of value was given.</dd>
-<dt><code><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></code></dt>
-<dd>Field was not found.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.setByID"><code class="name flex">
-<span>def <span class="ident">setByID</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Set value of the field in the UniRec message.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>data</code></strong> :&ensp;<code>bytearray</code> or <code>bytes</code></dt>
-<dd>Data - UniRec message.</dd>
-<dt><strong><code>field_id</code></strong> :&ensp;<code>int</code></dt>
-<dd>Field ID.</dd>
-<dt><strong><code>value</code></strong> :&ensp;<code>object</code></dt>
-<dd>New value of the field (depends on UniRec template).</dd>
-</dl>
-<h2 id="raises">Raises</h2>
-<dl>
-<dt><code>TypeError</code></dt>
-<dd>Bad object type of value was given.</dd>
-<dt><code><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></code></dt>
-<dd>Field was not found.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.setData"><code class="name flex">
-<span>def <span class="ident">setData</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Set data for attribute access.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>data</code></strong> :&ensp;<code>bytearray</code> or <code>bytes</code></dt>
-<dd>Data - UniRec message.</dd>
-</dl></div>
-</dd>
-<dt id="pytrap.UnirecTemplate.strRecord"><code class="name flex">
-<span>def <span class="ident">strRecord</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get values of record in readable format.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code>str</code></dt>
-<dd>String in key=value format.</dd>
-</dl></div>
-</dd>
-</dl>
-</dd>
-<dt id="pytrap.UnirecTime"><code class="flex name class">
-<span>class <span class="ident">UnirecTime</span></span>
-<span>(</span><span>*args, **kwargs)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>UnirecTime(int(seconds), [int(miliseconds)])
-UnirecTime(double(secs_and_msecs))
-UnirecTime(str("2019-03-18T12:11:10Z"))
-Class for UniRec timestamp storage and base data access.</p>
-<pre><code>Args:
-    str: datetime, e.g., "2019-03-18T12:11:10.123Z"
-    double or int: number of seconds
-    Optional[int]: number of miliseconds (when the first argument is int)
 
-Raises:
-    TypeError: unsupported type was provided or string is malformed.
-</code></pre></div>
-<h3>Static methods</h3>
-<dl>
-<dt id="pytrap.UnirecTime.fromDatetime"><code class="name flex">
-<span>def <span class="ident">fromDatetime</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get UnirecTime from a datetime object.</p>
-<h2 id="returns">Returns</h2>
-<p>(UnirecTime): Retrieved timestamp.</p></div>
-</dd>
-<dt id="pytrap.UnirecTime.now"><code class="name flex">
-<span>def <span class="ident">now</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get UnirecTime instance of current time.</p>
-<h2 id="returns">Returns</h2>
-<p>(UnirecTime): Current date and time.</p></div>
-</dd>
-</dl>
-<h3>Methods</h3>
-<dl>
-<dt id="pytrap.UnirecTime.format"><code class="name flex">
-<span>def <span class="ident">format</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get timestamp as a datetime object.</p>
-<h2 id="args">Args</h2>
-<dl>
-<dt><strong><code>format</code></strong> :&ensp;<code>Optional[str]</code></dt>
-<dd>Formatting string, same as for datetime.strftime (default: "%FT%TZ").</dd>
-</dl>
-<h2 id="returns">Returns</h2>
-<p>(str): Formatted timestamp as string.</p></div>
-</dd>
-<dt id="pytrap.UnirecTime.getMiliSeconds"><code class="name flex">
-<span>def <span class="ident">getMiliSeconds</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get number of seconds of timestamp.</p>
-<h2 id="returns">Returns</h2>
-<p>(long): Retrieved number of seconds.</p></div>
-</dd>
-<dt id="pytrap.UnirecTime.getSeconds"><code class="name flex">
-<span>def <span class="ident">getSeconds</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get number of seconds of timestamp.</p>
-<h2 id="returns">Returns</h2>
-<p>(long): Retrieved number of seconds.</p></div>
-</dd>
-<dt id="pytrap.UnirecTime.getTimeAsFloat"><code class="name flex">
-<span>def <span class="ident">getTimeAsFloat</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get number of seconds of timestamp.</p>
-<h2 id="returns">Returns</h2>
-<p>(double): Retrieved timestamp as floating point number.</p></div>
-</dd>
-<dt id="pytrap.UnirecTime.toDatetime"><code class="name flex">
-<span>def <span class="ident">toDatetime</span></span>(<span>...)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Get timestamp as a datetime object.</p>
-<h2 id="returns">Returns</h2>
-<p>(datetime): Retrieved timestamp as datetime.</p></div>
-</dd>
-</dl>
-</dd>
-</dl>
-</section>
-</article>
-<nav id="sidebar">
-<h1>Index</h1>
-<div class="toc">
-<ul></ul>
-</div>
-<ul id="index">
-<li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="">
-<li><code><a title="pytrap.getTrapVersion" href="#pytrap.getTrapVersion">getTrapVersion</a></code></li>
-</ul>
-</li>
-<li><h3><a href="#header-classes">Classes</a></h3>
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to pytrap’s documentation! &#8212; nemea-pytrap 0.14.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pytrap module" href="pytrap.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pytrap.html" title="pytrap module"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">nemea-pytrap 0.14.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to pytrap’s documentation!</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-pytrap-s-documentation">
+<h1>Welcome to pytrap’s documentation!<a class="headerlink" href="#welcome-to-pytrap-s-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li>
-<h4><code><a title="pytrap.FormatChanged" href="#pytrap.FormatChanged">FormatChanged</a></code></h4>
-</li>
-<li>
-<h4><code><a title="pytrap.FormatMismatch" href="#pytrap.FormatMismatch">FormatMismatch</a></code></h4>
-</li>
-<li>
-<h4><code><a title="pytrap.Terminated" href="#pytrap.Terminated">Terminated</a></code></h4>
-</li>
-<li>
-<h4><code><a title="pytrap.TimeoutError" href="#pytrap.TimeoutError">TimeoutError</a></code></h4>
-</li>
-<li>
-<h4><code><a title="pytrap.TrapCtx" href="#pytrap.TrapCtx">TrapCtx</a></code></h4>
-<ul class="two-column">
-<li><code><a title="pytrap.TrapCtx.finalize" href="#pytrap.TrapCtx.finalize">finalize</a></code></li>
-<li><code><a title="pytrap.TrapCtx.getDataFmt" href="#pytrap.TrapCtx.getDataFmt">getDataFmt</a></code></li>
-<li><code><a title="pytrap.TrapCtx.getInIFCState" href="#pytrap.TrapCtx.getInIFCState">getInIFCState</a></code></li>
-<li><code><a title="pytrap.TrapCtx.getVerboseLevel" href="#pytrap.TrapCtx.getVerboseLevel">getVerboseLevel</a></code></li>
-<li><code><a title="pytrap.TrapCtx.ifcctl" href="#pytrap.TrapCtx.ifcctl">ifcctl</a></code></li>
-<li><code><a title="pytrap.TrapCtx.init" href="#pytrap.TrapCtx.init">init</a></code></li>
-<li><code><a title="pytrap.TrapCtx.recv" href="#pytrap.TrapCtx.recv">recv</a></code></li>
-<li><code><a title="pytrap.TrapCtx.send" href="#pytrap.TrapCtx.send">send</a></code></li>
-<li><code><a title="pytrap.TrapCtx.sendFlush" href="#pytrap.TrapCtx.sendFlush">sendFlush</a></code></li>
-<li><code><a title="pytrap.TrapCtx.setDataFmt" href="#pytrap.TrapCtx.setDataFmt">setDataFmt</a></code></li>
-<li><code><a title="pytrap.TrapCtx.setRequiredFmt" href="#pytrap.TrapCtx.setRequiredFmt">setRequiredFmt</a></code></li>
-<li><code><a title="pytrap.TrapCtx.setVerboseLevel" href="#pytrap.TrapCtx.setVerboseLevel">setVerboseLevel</a></code></li>
-<li><code><a title="pytrap.TrapCtx.terminate" href="#pytrap.TrapCtx.terminate">terminate</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="pytrap.TrapError" href="#pytrap.TrapError">TrapError</a></code></h4>
-</li>
-<li>
-<h4><code><a title="pytrap.TrapHelp" href="#pytrap.TrapHelp">TrapHelp</a></code></h4>
-</li>
-<li>
-<h4><code><a title="pytrap.UnirecIPAddr" href="#pytrap.UnirecIPAddr">UnirecIPAddr</a></code></h4>
-<ul class="">
-<li><code><a title="pytrap.UnirecIPAddr.dec" href="#pytrap.UnirecIPAddr.dec">dec</a></code></li>
-<li><code><a title="pytrap.UnirecIPAddr.inc" href="#pytrap.UnirecIPAddr.inc">inc</a></code></li>
-<li><code><a title="pytrap.UnirecIPAddr.isIPv4" href="#pytrap.UnirecIPAddr.isIPv4">isIPv4</a></code></li>
-<li><code><a title="pytrap.UnirecIPAddr.isIPv6" href="#pytrap.UnirecIPAddr.isIPv6">isIPv6</a></code></li>
-<li><code><a title="pytrap.UnirecIPAddr.isNull" href="#pytrap.UnirecIPAddr.isNull">isNull</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="pytrap.UnirecIPAddrRange" href="#pytrap.UnirecIPAddrRange">UnirecIPAddrRange</a></code></h4>
-<ul class="">
-<li><code><a title="pytrap.UnirecIPAddrRange.end" href="#pytrap.UnirecIPAddrRange.end">end</a></code></li>
-<li><code><a title="pytrap.UnirecIPAddrRange.isIn" href="#pytrap.UnirecIPAddrRange.isIn">isIn</a></code></li>
-<li><code><a title="pytrap.UnirecIPAddrRange.isOverlap" href="#pytrap.UnirecIPAddrRange.isOverlap">isOverlap</a></code></li>
-<li><code><a title="pytrap.UnirecIPAddrRange.start" href="#pytrap.UnirecIPAddrRange.start">start</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="pytrap.UnirecMACAddr" href="#pytrap.UnirecMACAddr">UnirecMACAddr</a></code></h4>
-<ul class="">
-<li><code><a title="pytrap.UnirecMACAddr.dec" href="#pytrap.UnirecMACAddr.dec">dec</a></code></li>
-<li><code><a title="pytrap.UnirecMACAddr.inc" href="#pytrap.UnirecMACAddr.inc">inc</a></code></li>
-<li><code><a title="pytrap.UnirecMACAddr.isNull" href="#pytrap.UnirecMACAddr.isNull">isNull</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="pytrap.UnirecMACAddrRange" href="#pytrap.UnirecMACAddrRange">UnirecMACAddrRange</a></code></h4>
-<ul class="">
-<li><code><a title="pytrap.UnirecMACAddrRange.end" href="#pytrap.UnirecMACAddrRange.end">end</a></code></li>
-<li><code><a title="pytrap.UnirecMACAddrRange.isIn" href="#pytrap.UnirecMACAddrRange.isIn">isIn</a></code></li>
-<li><code><a title="pytrap.UnirecMACAddrRange.isOverlap" href="#pytrap.UnirecMACAddrRange.isOverlap">isOverlap</a></code></li>
-<li><code><a title="pytrap.UnirecMACAddrRange.start" href="#pytrap.UnirecMACAddrRange.start">start</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="pytrap.UnirecTemplate" href="#pytrap.UnirecTemplate">UnirecTemplate</a></code></h4>
-<ul class="two-column">
-<li><code><a title="pytrap.UnirecTemplate.copy" href="#pytrap.UnirecTemplate.copy">copy</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.createMessage" href="#pytrap.UnirecTemplate.createMessage">createMessage</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.get" href="#pytrap.UnirecTemplate.get">get</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.getByID" href="#pytrap.UnirecTemplate.getByID">getByID</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.getData" href="#pytrap.UnirecTemplate.getData">getData</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.getFieldType" href="#pytrap.UnirecTemplate.getFieldType">getFieldType</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.getFieldsDict" href="#pytrap.UnirecTemplate.getFieldsDict">getFieldsDict</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.recFixlenSize" href="#pytrap.UnirecTemplate.recFixlenSize">recFixlenSize</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.recSize" href="#pytrap.UnirecTemplate.recSize">recSize</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.recVarlenSize" href="#pytrap.UnirecTemplate.recVarlenSize">recVarlenSize</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.set" href="#pytrap.UnirecTemplate.set">set</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.setByID" href="#pytrap.UnirecTemplate.setByID">setByID</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.setData" href="#pytrap.UnirecTemplate.setData">setData</a></code></li>
-<li><code><a title="pytrap.UnirecTemplate.strRecord" href="#pytrap.UnirecTemplate.strRecord">strRecord</a></code></li>
-</ul>
-</li>
-<li>
-<h4><code><a title="pytrap.UnirecTime" href="#pytrap.UnirecTime">UnirecTime</a></code></h4>
-<ul class="two-column">
-<li><code><a title="pytrap.UnirecTime.format" href="#pytrap.UnirecTime.format">format</a></code></li>
-<li><code><a title="pytrap.UnirecTime.fromDatetime" href="#pytrap.UnirecTime.fromDatetime">fromDatetime</a></code></li>
-<li><code><a title="pytrap.UnirecTime.getMiliSeconds" href="#pytrap.UnirecTime.getMiliSeconds">getMiliSeconds</a></code></li>
-<li><code><a title="pytrap.UnirecTime.getSeconds" href="#pytrap.UnirecTime.getSeconds">getSeconds</a></code></li>
-<li><code><a title="pytrap.UnirecTime.getTimeAsFloat" href="#pytrap.UnirecTime.getTimeAsFloat">getTimeAsFloat</a></code></li>
-<li><code><a title="pytrap.UnirecTime.now" href="#pytrap.UnirecTime.now">now</a></code></li>
-<li><code><a title="pytrap.UnirecTime.toDatetime" href="#pytrap.UnirecTime.toDatetime">toDatetime</a></code></li>
+<li class="toctree-l1"><a class="reference internal" href="pytrap.html">pytrap module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recvbulk.html">Receiving data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recvbulk.html#reading-in-loop">Reading in loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recvbulk.html#bulk-reading">Bulk reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recvbulk.html#load-for-pandas-dataframe">Load for pandas DataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recvbulk.html#load-into-array-list">Load into array (list)</a></li>
 </ul>
 </li>
 </ul>
-</li>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</nav>
-</main>
-<footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
-</footer>
-</body>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to pytrap’s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pytrap.html"
+                        title="next chapter">pytrap module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pytrap.html" title="pytrap module"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">nemea-pytrap 0.14.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to pytrap’s documentation!</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Tomas Cejka, CESNET.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
 </html>

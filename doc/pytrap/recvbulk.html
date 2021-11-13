@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receiving data &#8212; nemea-pytrap 0.14.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pytrap module" href="pytrap.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pytrap.html" title="pytrap module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">nemea-pytrap 0.14.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Receiving data</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="receiving-data">
+<h1>Receiving data<a class="headerlink" href="#receiving-data" title="Permalink to this headline">¶</a></h1>
+<p>The following examples were taken from test script and it shows comparison of two
+different approaches to receive and process UniRec records.</p>
+<div class="section" id="reading-in-loop">
+<h2>Reading in loop<a class="headerlink" href="#reading-in-loop" title="Permalink to this headline">¶</a></h2>
+<p>The first example is a classical one with main loop and processing UniRec messages one by one:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pytrap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Start Receiver</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">pytrap</span><span class="o">.</span><span class="n">TrapCtx</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">.</span><span class="n">init</span><span class="p">([</span><span class="s2">&quot;-i&quot;</span><span class="p">,</span> <span class="s2">&quot;f:/tmp/pytrap_test3&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">.</span><span class="n">setRequiredFmt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pytrap</span><span class="o">.</span><span class="n">FMT_UNIREC</span><span class="p">,</span> <span class="n">urtempl</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">startt</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">d</span> <span class="o">=</span> <span class="n">c2</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">d</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">break</span>
+<span class="gp">... </span>    <span class="n">t</span><span class="o">.</span><span class="n">setData</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">getDict</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">startt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;recv() Elapsed time for </span><span class="si">{</span><span class="n">messages</span><span class="si">}</span><span class="s2"> messages is: </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">recv() Elapsed time for 10000000 messages is: 9.396470939999999</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bulk-reading">
+<h2>Bulk reading<a class="headerlink" href="#bulk-reading" title="Permalink to this headline">¶</a></h2>
+<p>The second example seems to be more efficient and faster, however, it loads all data into memory (so beware of <cite>time</cite> and <cite>count</cite> parameters):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pytrap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Start Receiver</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">pytrap</span><span class="o">.</span><span class="n">TrapCtx</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">.</span><span class="n">init</span><span class="p">([</span><span class="s2">&quot;-i&quot;</span><span class="p">,</span> <span class="s2">&quot;f:/tmp/pytrap_test3&quot;</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">.</span><span class="n">setRequiredFmt</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pytrap</span><span class="o">.</span><span class="n">FMT_UNIREC</span><span class="p">,</span> <span class="n">urtempl</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">startt</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">c2</span><span class="o">.</span><span class="n">recvBulk</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="n">messages</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">process_time</span><span class="p">()</span> <span class="o">-</span> <span class="n">startt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;recvBulk() Elapsed time for </span><span class="si">{</span><span class="n">messages</span><span class="si">}</span><span class="s2"> messages is: </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="go">recvBulk() Elapsed time for 10000000 messages is: 5.647379766</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="load-for-pandas-dataframe">
+<h2>Load for pandas DataFrame<a class="headerlink" href="#load-for-pandas-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>To load data (5 records) into pandas.DataFrame, it is very simple like this:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pytrap</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pytrap</span><span class="o">.</span><span class="n">read_nemea</span><span class="p">(</span><span class="s2">&quot;f:~/pstats.trapcap&quot;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">                     DST_IP                  SRC_IP  BYTES  BYTES_REV  ...            D_PHISTS_SIZES              S_PHISTS_IPT            S_PHISTS_SIZES                                      PPI_PKT_TIMES</span>
+<span class="go">0           185.199.111.133           192.168.1.248    143        143  ...                        []                        []                        []                   [1636152115.816, 1636152115.827]</span>
+<span class="go">1           185.199.111.133           192.168.1.248    143        143  ...  [0, 0, 1, 0, 0, 0, 0, 0]  [0, 0, 0, 0, 0, 0, 0, 0]  [0, 0, 1, 0, 0, 0, 0, 0]                   [1636152115.816, 1636152115.827]</span>
+<span class="go">2               3.68.63.139           192.168.1.248    159        161  ...                        []                        []                        []                   [1636152118.645, 1636152118.668]</span>
+<span class="go">3               3.68.63.139           192.168.1.248    159        161  ...  [0, 0, 1, 0, 0, 0, 0, 0]  [0, 0, 0, 0, 0, 0, 0, 0]  [0, 0, 1, 0, 0, 0, 0, 0]                   [1636152118.645, 1636152118.668]</span>
+<span class="go">4  2a00:1450:4014:80c::200e  2001:470:5828:100::82e   1216       1547  ...                        []                        []                        []  [1636152112.855, 1636152112.856, 1636152112.95...</span>
+</pre></div>
+</div>
+<p>[5 rows x 25 columns]
+&gt;&gt;&gt;</p>
+</div>
+<div class="section" id="load-into-array-list">
+<h2>Load into array (list)<a class="headerlink" href="#load-into-array-list" title="Permalink to this headline">¶</a></h2>
+<p>It can be also switched to return array:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pytrap</span><span class="o">.</span><span class="n">read_nemea</span><span class="p">(</span><span class="s2">&quot;f:~/pstats.trapcap&quot;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">array</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">[{&#39;DST_IP&#39;: UnirecIPAddr(&#39;185.199.111.133&#39;), &#39;SRC_IP&#39;: UnirecIPAddr(&#39;192.168.1.248&#39;), &#39;BYTES&#39;: 143, &#39;BYTES_REV&#39;: 143, &#39;LINK_BIT_FIELD&#39;: 1, &#39;TIME_FIRST&#39;: UnirecTime(1636152115, 816), &#39;TIME_LAST&#39;: UnirecTime(1636152115, 827), &#39;DST_MAC&#39;: UnirecMACAddr(&#39;ac:84:c6:52:dd:15&#39;), &#39;SRC_MAC&#39;: UnirecMACAddr(&#39;d4:3b:04:6d:31:2f&#39;), &#39;PACKETS&#39;: 2, &#39;PACKETS_REV&#39;: 2, &#39;DST_PORT&#39;: 443, &#39;SRC_PORT&#39;: 51922, &#39;DIR_BIT_FIELD&#39;: 0, &#39;PROTOCOL&#39;: 6, &#39;TCP_FLAGS&#39;: 24, &#39;TCP_FLAGS_REV&#39;: 24, &#39;PPI_PKT_DIRECTIONS&#39;: [1, -1], &#39;PPI_PKT_FLAGS&#39;: [24, 24], &#39;PPI_PKT_LENGTHS&#39;: [39, 39], &#39;D_PHISTS_IPT&#39;: [], &#39;D_PHISTS_SIZES&#39;: [], &#39;S_PHISTS_IPT&#39;: [], &#39;S_PHISTS_SIZES&#39;: [], &#39;PPI_PKT_TIMES&#39;: [UnirecTime(1636152115, 816), UnirecTime(1636152115, 827)]}, {&#39;DST_IP&#39;: UnirecIPAddr(&#39;185.199.111.133&#39;), &#39;SRC_IP&#39;: UnirecIPAddr(&#39;192.168.1.248&#39;), &#39;BYTES&#39;: 143, &#39;BYTES_REV&#39;: 143, &#39;LINK_BIT_FIELD&#39;: 1, &#39;TIME_FIRST&#39;: UnirecTime(1636152115, 816), &#39;TIME_LAST&#39;: UnirecTime(1636152115, 827), &#39;DST_MAC&#39;: UnirecMACAddr(&#39;ac:84:c6:52:dd:15&#39;), &#39;SRC_MAC&#39;: UnirecMACAddr(&#39;d4:3b:04:6d:31:2f&#39;), &#39;PACKETS&#39;: 2, &#39;PACKETS_REV&#39;: 2, &#39;DST_PORT&#39;: 443, &#39;SRC_PORT&#39;: 51922, &#39;DIR_BIT_FIELD&#39;: 0, &#39;PROTOCOL&#39;: 6, &#39;TCP_FLAGS&#39;: 24, &#39;TCP_FLAGS_REV&#39;: 24, &#39;PPI_PKT_DIRECTIONS&#39;: [1, -1], &#39;PPI_PKT_FLAGS&#39;: [24, 24], &#39;PPI_PKT_LENGTHS&#39;: [39, 39], &#39;D_PHISTS_IPT&#39;: [0, 0, 0, 0, 0, 0, 0, 0], &#39;D_PHISTS_SIZES&#39;: [0, 0, 1, 0, 0, 0, 0, 0], &#39;S_PHISTS_IPT&#39;: [0, 0, 0, 0, 0, 0, 0, 0], &#39;S_PHISTS_SIZES&#39;: [0, 0, 1, 0, 0, 0, 0, 0], &#39;PPI_PKT_TIMES&#39;: [UnirecTime(1636152115, 816), UnirecTime(1636152115, 827)]}]</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Receiving data</a><ul>
+<li><a class="reference internal" href="#reading-in-loop">Reading in loop</a></li>
+<li><a class="reference internal" href="#bulk-reading">Bulk reading</a></li>
+<li><a class="reference internal" href="#load-for-pandas-dataframe">Load for pandas DataFrame</a></li>
+<li><a class="reference internal" href="#load-into-array-list">Load into array (list)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pytrap.html"
+                        title="previous chapter">pytrap module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/recvbulk.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pytrap.html" title="pytrap module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">nemea-pytrap 0.14.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Receiving data</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Tomas Cejka, CESNET.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+  </body>
+</html>
