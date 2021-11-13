@@ -17,3 +17,8 @@ github_username:
 
 # Build settings
 markdown: kramdown
+include:
+  - _static
+  - _modules
+  - _sources
+
