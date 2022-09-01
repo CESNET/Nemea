@@ -209,6 +209,31 @@ Note: to use this action, the reporter module must be started with `--trap` and 
 
 Action arguments: No arguments.
 
+### syslog
+
+Send the message into *syslog*.
+
+Action arguments:
+
+- identifier - string, identification of log entries in syslog; `journalctl` can find them using `-t identifier`
+- logoption - string, options (flags) to control behavior of the syslog logging, it can be chained using `|` operator (binary or)
+- facility - string, facility that is used for syslog (e.g., `LOG_DAEMON`, `LOG_USER`)
+- priority - string, priority of the message that is used for syslog (e.g., `LOG_ALERT`)
+
+To find all possible values of the arguments, see man syslog.h (https://www.man7.org/linux/man-pages/man0/syslog.h.0p.html).
+
+Example:
+
+```
+custom_actions:
+  - id: mysyslog
+    syslog:
+      identifier: NEMEA
+      logoption: LOG_PID | LOG_CONS
+      facility: LOG_DAEMON
+      priority: LOG_ALERT
+```
+
 ### drop
 
 Implicitly defined action, it can be used without any definition in `custom_actions` section. Moreover, it MUST NOT be defined in `custom_actions`.
