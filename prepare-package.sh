@@ -170,7 +170,7 @@ git commit -a -m "$name: increased version, updated ChangeLog, released RPM pack
 echo "I will build the new RPM to get source package (SRPM)"
 if [ "$name" = ipfixprobe ]; then
 # ipfixprobe has no bootstrap.sh
-autoreconf -i &&./configure -q --enable-nemearpm && make rpm
+autoreconf -i &&./configure -q --enable-coprrpm && make rpm
 else
 ./bootstrap.sh &&./configure -q && make rpm
 fi
